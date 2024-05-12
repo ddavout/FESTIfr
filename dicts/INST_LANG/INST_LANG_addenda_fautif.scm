@@ -183,6 +183,7 @@
 (lex.add.entry '("rations_nou" nil ((("rh" "a") 0) (("t" "j" "ohn") 0) (("n" "u") 0))))
 (lex.add.entry '("portions_nou" nil ((("p" "oh" "rh") 0) (("t" "j" "ohn") 0) (("n" "u") 0))))
 (lex.add.entry '("ration_VER" "VER" ((("rh" "a") 0) (("t" "j" "ohn") 0))))
+(lex.add.entry '("ration_NOM" NOM ((("rh" "a") 0) (("s" "j" "ohn") 0))))
 
 
 (lex.add.entry '("tout_autant" ADV (((t u)0)((t o)0)((t ahn)0))))

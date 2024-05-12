@@ -60,9 +60,13 @@
 
 (lex.add.entry '("l_argent" nil (((l a rh)0) ((zh ahn)0))))
 
-(lex.add.entry '("d_argent_VER" VER (((d a rh)0) ((zh ahn)0)))); erreur tokenizer ???
+(lex.add.entry '("d_argent_VER" VER (((d a rh)0) ((zh ahn)0)))); en cas d'erreur tokenizer ???
 (lex.add.entry '("c_est_à_dire" nil ((( s eh)0) ((t a )0) (( d i rh)0))))
+(lex.add.entry '("n_est_pas_VER" "VER" ((("n" "eh")0)(("p" "a")0))))
+
+(lex.add.entry '("n_est_ce_pas_ADV" "ADV" ((("n" "eh" "s")0)(("p" "a")0))))
 (lex.add.entry '("quant_à_PRE" "PRE" (((k ahn)0) ((t a) 0))))
+
 (lex.add.entry '("fils_fis_NOM" "NOM" (((f i s)0))))
 (lex.add.entry '("sens_NOM" NOM ((("s" "ahn" "s") 0))))
 (lex.add.entry '("sens_VER" VER ((("s" "ahn") 0))))

@@ -34623,6 +34623,7 @@ MNCL
 ("entremetteuse" ((NOM -5.686))()); C
 ("entremise" ((NOM -5.959)(VER -6.696))()); C
 ("entremêlant" ((VER -6.696))()); C
+("entremêle" ((VER -6.395))()); C
 ("entremêlent" ((VER -6.395))()); C
 ("entremêlé" ((VER -6.696))()); C
 ("entremêlées" ((VER -6.298))()); C
@@ -112089,8 +112090,7 @@ MNCL
 ; emploi substantivé N'est_ce rien que ce rien qui nous délivre de tout?
 ; to be continued "l_o
 ;("abbaye" ((NOM -4.833))()); C
-;("c'est_à_dire" ((ADV -2.222))()); NON
-;("c_est_à_dire" ((ADV -2.222))()); NON
+
 ;("com" ((ADV -5.907)(NOM -3.453))()); C
 ;("d'abord" ((ADV -2.783))()); C
 ;("d'autres" ((ADJ:ind -1.348)(PRO:ind -2.008))()); C

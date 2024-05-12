@@ -4,10 +4,21 @@
 ; d'autre part mettre des prononciations préférées
 ; ex rôle oh ou o
 ; Rq on peut occulter un mot en omettant le pos dans son entrée d'addenda
+ 
+; éviter de dépendre de la LTS pour les mots "essentiels"
+; par exemple ceux intervenant dans les scripts, ou dans INST_LANG_words_lists
+
+; encore du travail de nettoyage à faire, avant de pouvoir utiliser ces entrées
+; pour fournir une nouvelle LTS
+; entrées inutiles, commentaires obsolètes; 
+; pour une LTS légère, utiliser à bon escient les autres addenda (notamment réfractaire et foreign)
+
 (defvar verbose_addendas)
 (if verbose_addendas (format t "addenda.scm loaded"))
-; on a prehook hache NOM
-; /!\ fre_symbols_tab
+
+; à cause du pb LTS sur les hw
+(lex.add.entry '( "sui" nil ((("s" "hw" i) 0))))
+
 ; issus de stats de tests (partiel !)
 ;; TODO
 ; n'aurait pas du être là mais dans addenda_test en attendant tri
@@ -73,7 +84,6 @@
 (lex.add.entry '("californie" nil ((("k" "a") 0) (("l" "i") 0) (("f" "oh" "rh") 0) (("n" "i") 0))))
 (lex.add.entry '("cela" nil ((("s" "ae") 0) (("l" "a") 0))))
 (lex.add.entry '("celui" nil ((("s" "ae") 0) (("l" "hw" i) 0))))
-;(lex.add.entry '("cet_ADJ_dem" "ADJ_dem" ((("s" "ahn" "t") 0))))
 (lex.add.entry '("chacun" nil ((("sh" "a") 0) (("k" "oen") 0))))
 (lex.add.entry '("chaque" nil ((("sh" "a" "k") 0))))
 (lex.add.entry '("chartreuse" nil ((("sh" "a" "rh") 0) (("t" "rh" "eu" "z") 0))))
@@ -84,7 +94,7 @@
 (lex.add.entry '("clément" nil ((("k" "l" "e") 0) (("m" "ahn") 0))))
 (lex.add.entry '("coca" nil ((("k" "oh") 0) (("k" "a") 0))))
 (lex.add.entry '("comme" nil ((("k" "oh" "m") 0))))
-(lex.add.entry '("comment_nil" nil ((("k" "oh") 0) (("m" "ahn") 0))))
+(lex.add.entry '("comment" nil ((("k" "oh") 0) (("m" "ahn") 0))))
 (lex.add.entry '("corneille" nil ((("k" "oh" "rh") 0) (("n" "eh" "j") 0))))
 (lex.add.entry '("d_aucun" nil ((("d" "o") 0) (("k" "oen") 0))))
 (lex.add.entry '("dequel" nil ((("d" "e") 0) (("k" "eh" "l") 0))))
@@ -109,7 +119,6 @@
 (lex.add.entry '("issu" nil ((("i") 0) (("s" "y") 0))))
 (lex.add.entry '("j_aime" nil ((("zh" "eh" "m") 0))))
 (lex.add.entry '("j_avè" nil ((("zh" "a") 0) (("v" "eh") 0))))
-(lex.add.entry '("j_irai" nil ((("zh" "i") 0) (("rh" "eh") 0))))
 (lex.add.entry '("j_é" nil ((("zh" "e") 0))))
 (lex.add.entry '("jean_brillant" nil ((("zh" "ahn") 0) (("b" "rh" "i") 0) (("j" "ahn") 0))))
 (lex.add.entry '("juda" nil ((("zh" "y") 0) (("d" "a") 0))))
@@ -423,7 +432,7 @@
 (lex.add.entry '("cédille" nil ((("s" "e") 0) (("d" "i" "j") 0))))
 (lex.add.entry '("cédé" nil ((("s" "e") 0) (("d" "e") 0))))
 (lex.add.entry '("côté" nil ((("k" "o") 0) (("t" "e") 0))))
-(lex.add.entry '("d'exclamation" nil ((("d" "eh" "k" "s") 0) (("k" "l" "a") 0) (("m" "a") 0) (("s" "j" "ohn") 0))))
+(lex.add.entry '("d_exclamation" nil ((("d" "eh" "k" "s") 0) (("k" "l" "a") 0) (("m" "a") 0) (("s" "j" "ohn") 0))))
 (lex.add.entry '("d_achille" nil ((("d" "a") 0) (("sh" "i" "l") 0))))
 (lex.add.entry '("d_argentine" nil ((("d" "a" "rh") 0) (("zh" "ahn") 0) (("t" "i" "n") 0))))
 (lex.add.entry '("d_arménie" nil ((("d" "a" "rh") 0) (("m" "e") 0) (("n" "i") 0))))
@@ -1143,7 +1152,7 @@
 (lex.add.entry '("résulte" nil ((("rh" "e") 0) (("z" "y" "l" "t") 0))))
 (lex.add.entry '("résumé" nil ((("rh" "e") 0) (("z" "y") 0) (("m" "e") 0))))
 (lex.add.entry '("révélère" nil ((("rh" "e") 0) (("v" "e") 0) (("l" "eh" "rh") 0))))
-(lex.add.entry '("s'il" nil ((("s" "i" "l") 0))))
+(lex.add.entry '("s_il" nil ((("s" "i" "l") 0))))
 (lex.add.entry '("s_adresse" nil ((("s" "a") 0) (("d" "rh" "eh" "s") 0))))
 (lex.add.entry '("s_agi" nil ((("s" "a") 0) (("zh" "i") 0))))
 (lex.add.entry '("s_arrangé" nil ((("s" "a") 0) (("rh" "ahn") 0) (("zh" "e") 0))))
@@ -1224,7 +1233,7 @@
 (lex.add.entry '("souvent" nil ((("s" "u")0) (("v" "ahn") 0))))
 (lex.add.entry '("sponsor" nil ((("s" "p" "ohn") 0) (("s" "oh" "rh") 0))))
 (lex.add.entry '("spécialiste" nil ((("s" "p" "e") 0) (("s" "j" "a") 0) (("l" "i" "s" "t") 0))))
-(lex.add.entry '("stupide" nil ((("s" "t" "a") 0) (("p" "i" "d") 0))))
+(lex.add.entry '("stupide" nil ((("s" "t" "u") 0) (("p" "i" "d") 0))))
 (lex.add.entry '("su" nil ((("s" "y") 0))))
 (lex.add.entry '("succinctement" nil ((("s" "y" "k") 0) (("s" "ehn" "k") 0) (("t" "ae") 0) (("m" "ahn") 0))))
 (lex.add.entry '("sucre" nil ((("s" "y" "k" "rh") 0))))
@@ -1243,7 +1252,7 @@
 (lex.add.entry '("sé" nil ((("s" "e") 0))))
 (lex.add.entry '("t_aime" nil ((("t" "eh" "m") 0))))
 (lex.add.entry '("t_elle" nil ((("t" "eh" "l") 0))))  
-(lex.add.entry '("tact" nil ((("t" "a" "k") 0))))
+(lex.add.entry '("tact" nil ((("t" "a" "k" t) 0))))
 (lex.add.entry '("talent" nil ((("t" "a") 0) (("l" "ahn") 0))))
 (lex.add.entry '("tant" nil ((("t" "ahn") 0))))
 (lex.add.entry '("tardé" nil ((("t" "a" "rh") 0) (("d" "e") 0))))
@@ -1414,7 +1423,6 @@
 (lex.add.entry '("sept" nil ((("s" "eh" "t") 0)))); et non pas un s e p
 (lex.add.entry '("français" nil ((("f" "rh" "ahn") 0) (("s" "eh") 0)))); eh et non e
 (lex.add.entry '("livre_ci" nil ((("l" "i") 0) (("v" "rh" "ae")0) (("s" "i") 0))))
-(lex.add.entry '("lui" nil ((("l" "hw" "i") 0))))
 (lex.add.entry '("neuf" NOM ((("n" "oe" "f")0)))) 
 ;(lex.add.entry '("
 ;; pas besoin(lex.add.entry '("minuscule" nil ((( "m" "i") 0) (("n" "y" "s") 0) (("k" "y" "l") 0)))); et non pas
@@ -1460,12 +1468,10 @@
 ;(lex.add.entry '("ou_" nil (((u)0))))
 (lex.add.entry '("s_il_PRO:per" "PRO:per" (((s i l)0))))
 (lex.add.entry '("de_PRE" PRE (((d ae)0))))
-(lex.add.entry '("De_PRE" PRE (((d ae)0))))
-(lex.add.entry '("de_nil" nil (((d ae)0))))
-(lex.add.entry '("zan_nil" nil (((z ahn)0))))
+(lex.add.entry '("de_ART:ind" ART:ind (((d ae)0))))
 ;(lex.add.entry '(mnémonique
 ;(lex.add.entry '("abdomen_" nil (((a b)0)((d oh)0)((m eh n)0)))); cérumen
-;(lex.add.entry '("dolmen_nil" nil (((d oh l)0)((m eh n)0))))
+(lex.add.entry '("dolmen" nil (((d oh l)0)((m eh n)0))))
 ;;(lex.add.entry '(barman, dan, doberman
 ;;(lex.add.entry '(clergyman
 ; ben ADV b5
@@ -1531,79 +1537,76 @@
 ; et CON e
 ; eu nil y
 ; mais CON mE
-(lex.add.entry '("hélas" nil (((e)0)((l a)0)))); hélas ONO
-; lts mal entrainée /!\  TODO check
-;(lex.add.entry '("absurde_nil" nil ((("a" p)0)(("s" "y" "rh" "d")0))))
-;(lex.add.entry '("approvisionnement_nil" nil ((("a")0)(("p" "rh" "oh")0)(("v" "i")0)(("z" "j" "oh" "n")0)(("m" "ahn")0))))
-;(lex.add.entry '("paiera_nil" nil ((("p" "eh")0)((rh a)0))))
-;(lex.add.entry '("bataille_nil" nil ((("b" "a")0)(("t" "a" "j")0))))
+(lex.add.entry '("héla" nil (((e)0)((l a)0)))); pour hélas ONO  voir refractaire
+
+(lex.add.entry '("absurde" nil ((("a" p)0)(("s" "y" "rh" "d")0))))
+(lex.add.entry '("approvisionnement" nil ((("a")0)(("p" "rh" "oh")0)(("v" "i")0)(("z" "j" "oh" "n")0)(("m" "ahn")0))))
+(lex.add.entry '("paiera" nil ((("p" "eh")0)((rh a)0))))
 ; tous les Jean_ !
 ; pas ((("zh" "i")0)(("ahn")0)(("p" "o" "l")0))
 ; en attendant déclaration POS dans freeling
-(lex.add.entry '("Jean_Paul_nil" nil ((("zh" "ahn")0)(("p" "oh" "l")0))))
+(lex.add.entry '("jean_paul" nil ((("zh" "ahn")0)(("p" "oh" "l")0))))
 ; *il avec l muet
 (lex.add.entry '("gentil" nil (((zh ahn)0)((t i)0))))
 ; sur les mots *ien-(voyelle) ahn à la place de ehn
 ; croyance mauvaise décomposition ? TODO
-(lex.add.entry '("tech_nil" nil (((t eh k)0))))
+(lex.add.entry '("tech" nil (((t eh k)0))))
 (lex.add.entry '("mauvais" nil (((m oh) 0)((v eh) 0))))
                      ;;;; ================= TODO =========
 ; TODO revoir "VER" radical
 ;; ajout de wordroot pour gérondif ?
 ; o versus oh
-(lex.add.entry '("hydrogène_nil" nil (((i)0)((d rh o)0)((zh eh n)0))))
-(lex.add.entry '("hydroélectricité_nil" nil (((i)0)((d rh o)0)((e)0)((l eh k)0)((t rh i)0)((s i)0)(("t" "e")0))))
-(lex.add.entry '("l_hydroélectricité_nil" nil (((l i)0)((d rh o)0)((e)0)((l eh k)0)((t rh i)0)((s i)0)(("t" "e")0))))
-; exemple de mauvais slice word ?
-;(lex.add.entry '("entremêle_nil" nil (((ahn)0)((t rh ae)0)((m eh l)0))))
-(lex.add.entry '("absurdité_nil" nil ((("a" "p")0)(("s" "y" "rh")0)(("d" "a")0)(("t" "e")0))))
-(lex.add.entry '("objet_nil" nil (((oh b)0)((zh eh)0))))
-(lex.add.entry '("subtile_nil" nil ((("s" "y" p)0)(("t" "i" "l")0))))
-(lex.add.entry '("objectif_nil" nil (((oh b)0)((zh eh k)0)((t i f)0))))
-(lex.add.entry '("l_objectif_nil" nil (((l oh b)0)((zh eh k)0)((t i f)0))))
-(lex.add.entry '("d_objectif_nil" nil (((d oh b)0)((zh eh k)0)((t i f)0))));
-(lex.add.entry '("nagoya_nil" nil ((("n" "a")0)(("g" "w" "a")0)(("j" "a")0))))
-(lex.add.entry '("croyance_nil" nil (((k rh w a)0)((j ahn s)0))))
-(lex.add.entry '("suggéré_nil" nil (((s y g)0)((zh e)0)((rh e)0))))
-(lex.add.entry '("suggère_nil" nil (((s y g)0)((zh eh rh)0))))
-(lex.add.entry '("également_nil" nil (((e)0)((g a l)0)((m ahn)0))))
-; pb lié à netlex_syllabify avec un mot contenant la *lettre* - TODO faisable
-(lex.add.entry '("ouvre bouteille_nil" nil (((u)0)((v rh ae)0)(("b" "u")0)(("t" "eh" "j")0))))
-(lex.add.entry '("chemin-là_nil" nil ((("sh" "ae")0)(("m" "ehn")0)(("l" "a")0))))
+(lex.add.entry '("hydrogène" nil (((i)0)((d rh o)0)((zh eh n)0))))
+(lex.add.entry '("hydroélectricité" nil (((i)0)((d rh o)0)((e)0)((l eh k)0)((t rh i)0)((s i)0)(("t" "e")0))))
+(lex.add.entry '("l_hydroélectricité" nil (((l i)0)((d rh o)0)((e)0)((l eh k)0)((t rh i)0)((s i)0)(("t" "e")0))))
+
+(lex.add.entry '("entremêle" nil (((ahn)0)((t rh ae)0)((m eh l)0))))
+(lex.add.entry '("absurdité" nil ((("a" "p")0)(("s" "y" "rh")0)(("d" "i")0)(("t" "e")0))))
+(lex.add.entry '("objet" nil (((oh b)0)((zh eh)0))))
+(lex.add.entry '("subtile" nil ((("s" "y" p)0)(("t" "i" "l")0))))
+(lex.add.entry '("objectif" nil (((oh b)0)((zh eh k)0)((t i f)0))))
+(lex.add.entry '("l_objectif" nil (((l oh b)0)((zh eh k)0)((t i f)0))))
+(lex.add.entry '("d_objectif" nil (((d oh b)0)((zh eh k)0)((t i f)0))));
+(lex.add.entry '("nagoya" nil ((("n" "a")0)(("g" "oh")0)(("j" "a")0))))
+(lex.add.entry '("croyance" nil (((k rh w a)0)((j ahn s)0))))
+(lex.add.entry '("suggéré" nil (((s y g)0)((zh e)0)((rh e)0))))
+(lex.add.entry '("suggère" nil (((s y g)0)((zh eh rh)0))))
+(lex.add.entry '("également" nil (((e)0)((g a l)0)((m ahn)0))))
+
+(lex.add.entry '("ouvre bouteille" nil (((u)0)((v rh ae)0)(("b" "u")0)(("t" "eh" "j")0))))
+(lex.add.entry '("chemin-là" nil ((("sh" "ae")0)(("m" "ehn")0)(("l" "a")0))))
 ; confusion "hw" 
-;;; tempo(lex.add.entry '("suis_nil" nil (((s hw i)0))))
-(lex.add.entry '("lui_nil" nil (((l hw i)0))))
+(lex.add.entry '("lui" nil (((l hw i)0))))
 (lex.add.entry '("ennuyè" nil ((("ahn")0)(("n" "hw" i)0)(("j" "eh")0))))
-(lex.add.entry '("ennuyè_nil" nil ((("ahn")0)(("n" "hw" i)0)(("j" "eh")0))))
-(lex.add.entry '("ensuite_nil" nil (((ahn)0)((s "hw" "i" "t")0))))
+(lex.add.entry '("ensuite" nil (((ahn)0)((s "hw" "i" "t")0))))
 ; les ch / k
-(lex.add.entry '("technique_nil" nil (((t eh k)0)((n i k)0))))
-(lex.add.entry '("chélidoine_nil" nil (((k e)0)((l i)0)((d w a n)0))))
-(lex.add.entry '("chié_nil" nil (((sh j e)0))))
-(lex.add.entry '("crain_nil" nil (((k rh ehn)0))))
+(lex.add.entry '("technique" nil (((t eh k)0)((n i k)0))))
+(lex.add.entry '("chélidoine" nil (((k e)0)((l i)0)((d w a n)0))))
+(lex.add.entry '("chié" nil (((sh j e)0))))
+(lex.add.entry '("crain" nil (((k rh ehn)0))))
 ; les qu k/kw
-(lex.add.entry '("quatorze_nil" nil (((k a)0)((t oh rh z)0))))
+(lex.add.entry '("quatorze" nil (((k a)0)((t oh rh z)0))))
 ;termunaison ?
-(lex.add.entry '("fixant_nil" nil (((f i k)0)((s ahn)0))))
-(lex.add.entry '("bien_être_nil" nil (((b j ehn)0)((n eh t rh)0))))
-(lex.add.entry '("flot_nil" nil (((f l o)0)))) ; pas u
-(lex.add.entry '("art_nil" nil (((o rh)0))))
-(lex.add.entry '("z_en_nil" nil (((z ahn)0))))
-(lex.add.entry '("syndicat_nil" nil (((s ehn)0)((d i)0)((k a)0))))
-(lex.add.entry '("syndic_nil" nil (((s ehn)0)((d i k)0))))
-(lex.add.entry '("pays_nil" nil (((p e)0)((i)0)))) ;
-(lex.add.entry '("mot_nil" nil (((m o)0))))
+(lex.add.entry '("fixant" nil (((f i k)0)((s ahn)0))))
+(lex.add.entry '("bien_être" nil (((b j ehn)0)((n eh t rh)0))))
+(lex.add.entry '("flot" nil (((f l o)0)))) ; pas u
+(lex.add.entry '("art" nil (((o rh)0))))
+(lex.add.entry '("z_en" nil (((z ahn)0))))
+(lex.add.entry '("syndicat" nil (((s ehn)0)((d i)0)((k a)0))))
+(lex.add.entry '("syndic" nil (((s ehn)0)((d i k)0))))
+(lex.add.entry '("pays_NOM" NOM (((p e)0)((i)0)))) ;
+(lex.add.entry '("mot" nil (((m o)0))))
 ; cause chgt de pt de vue lts
-(lex.add.entry '("enthousiasme_nil" nil ((("ahn")0)(("t" "u")0)(("z" "j" "a" "s" "m")0))))
+(lex.add.entry '("enthousiasme" nil ((("ahn")0)(("t" "u")0)(("z" "j" "a" "s" "m")0))))
 ; voir alternative extension de wordroot
-;;(lex.add.entry '("voteron_nil" nil (((v oh)0)((t rh ohn)0))))
-;;(lex.add.entry '("travailleron_nil" nil (((t rh a)0)((v a j)0)((rh ohn)0))))
+(lex.add.entry '("voteron" nil (((v oh)0)((t rh ohn)0))))
+(lex.add.entry '("travailleron" nil (((t rh a)0)((v a j)0)((rh ohn)0))))
 ; p u rh rh oh g m ahn t e ; vocalic abusif ?
-(lex.add.entry '("pour_nil" nil (((p u rh)0))))
+(lex.add.entry '("pour" nil (((p u rh)0))))
 ; homo via lieavec pause "cinq" "six" "huit" "dix" "tous"; "plus" ? plus encore z ou s ? 
 ;(lex.add.entry '("cinqk_ADJ:num" "ADJ:num" (((s ehn k)0))))
 ;(lex.add.entry '("dixs_ADJ:num" "ADJ:num" (((d i s)0))))
-;(lex.add.entry '("dixs_nil" nil ((("d" "i" "s")0))))
+;(lex.add.entry '("dixs" nil ((("d" "i" "s")0))))
 ;(lex.add.entry '("dixs" "ADJ:num" (((d i s)0))))
 ;(lex.add.entry '("dix_s" "ADJ:num" (((d i s)0))))
 ;(lex.add.entry '("huitt_ADJ:num" "ADJ:num" ((( "hw" "i" "t")0))))
@@ -1614,10 +1617,10 @@
 ; homographes via cart tree
 ; même POS
 ;(lex.add.entry '("fils" "fis" (((f i s)0))))
-(lex.add.entry '("fils_fis_nil" nil (((f i s)0))))
-(lex.add.entry '("fils_fil_nil" nil (((f i l)0))))
+(lex.add.entry '("fils_fis" nil (((f i s)0))))
+(lex.add.entry '("fils_fil" nil (((f i l)0))))
 ; reste des cas non vus dans token
-(lex.add.entry '("fils_nil" nil (((f i s)0))))
+(lex.add.entry '("fils" nil (((f i s)0))))
 ; TODO
 (lex.add.entry '("convient_vie" nil (((k ohn)0)((v j ehn)0))))
 (lex.add.entry '("convie_vie" nil (((k ohn)0)((v i)0))))
@@ -1633,57 +1636,60 @@
 (lex.add.entry '("cinq_cinqq_ADJ:num" "ADJ:num" (((s ehn k)0))))
 ;(lex.add.entry '("cinq_cinqk_ADJ:num" "ADJ:num" (((s ehn k)0))))
 ;(lex.add.entry '("cinq" "cinqk" (((s ehn k)0))))
-(lex.add.entry '("cinq_cinqq_nil" nil (((s ehn k)0))))
+(lex.add.entry '("cinq_cinqq" nil (((s ehn k)0))))
 (lex.add.entry '("cinq_cinqq_PRO:ind" "PRO:ind" (((s ehn k)0)))); neut_book_s04_0352
 (lex.add.entry '("dix_dis_ADJ:num" "ADJ:num" (((d i s)0))))
-(lex.add.entry '("dix_dis_nil" nil (((d i s)0))))
+(lex.add.entry '("dix_dis" nil (((d i s)0))))
 ;(lex.add.entry '("dix" "dis" (((d i s)0))))
 (lex.add.entry '("dix_dis" nil (((d i s)0))))
 (lex.add.entry '("dix_di_ADJ:num" "ADJ:num" (((d i s)0))))
-(lex.add.entry '("dix_di_nil" nil (((d i s)0))))
+(lex.add.entry '("dix_di" nil (((d i s)0))))
 (lex.add.entry '("huit_huitt" "ADJ:num" ((( "hw" "i" "t")0))))
 (lex.add.entry '("huit_huitt" "NOM" ((( "hw" "i" "t")0))))
 ; freeling amendé
 ;(lex.add.entry '("huit_huitt" "CON" ((( "hw" "i" "t")0)))); au cas où ? huit neuf sans ponctuation
 (lex.add.entry '("six_sixs_ADJ:num" "ADJ:num" (((s i s)0))))
-(lex.add.entry '("six_sixs_nil" nil (((s i s)0))))
+(lex.add.entry '("six_sixs" nil (((s i s)0))))
 ; fre_ONO_homo et fre_NAM_homo_tab
-(lex.add.entry '("spa_nil" nil (((s p a)0))))
-; NON acronym(lex.add.entry '("SPA_NAM" "NAM" (((s eh s)0)((p e)0)((a)0))))
-(lex.add.entry '("marc_nil" nil ((("m" a rh)0))))
+(lex.add.entry '("spa_NOM" NOM (((s p a)0))))
+; NON acronym
+(lex.add.entry '("SPA_NAM" "NAM" (((s eh s)0)((p e)0)((a)0))))
+(lex.add.entry '("marc_NOM" NOM ((("m" a rh)0)))); de  café
 ; Duras
 ; par POS
-;(lex.add.entry '("affluent_" nil (((a)0)(("f" "l" "hw" ahn)0))))
-(lex.add.entry '("afflue_nil" nil (((a)0)(("f" "l" "y")0))))
-;(lex.add.entry '("as_nil" nil (((a s)0))))
-(lex.add.entry '("ben_nil" nil (((b ehn)0))))
+(lex.add.entry '("affluent_NOM" NOM (((a)0)(("f" "l" "hw" ahn)0))))
+(lex.add.entry '("afflue" nil (((a)0)(("f" "l" "y")0))))
+;(lex.add.entry '("as_NOM" NOM (((a s)0))))
+(lex.add.entry '("ben_NAM" NAM (((b eh n)0))))
 (lex.add.entry '("bus_VER" VER ((("b" "y")0))))
 (lex.add.entry '("bus_NOM" NOM ((("b" "y" "s")0))))
-(lex.add.entry '("autobus_nil" nil ((( "o") 0) ((t o)0) (("b" "y" "s")0))))
-(lex.add.entry '("conte_nil" nil ((("k" "ohn" "t")0))))
+(lex.add.entry '("autobus_NOM" NOM ((( "o") 0) ((t o)0) (("b" "y" "s")0))))
+(lex.add.entry '("conte" nil ((("k" "ohn" "t")0))))
 (lex.add.entry '("couvent_" nil ((("k" "u")0)(("v" ahn)0)))) ;; !
-(lex.add.entry '("couve_nil" nil ((("k" "u" "v")0))))
-(lex.add.entry '("coïncide_nil" nil (((k o)0)((ehn)0)((s i d)0))))
-(lex.add.entry '("est_nil" nil ((("eh")0))))
-(lex.add.entry '("excelle_nil" nil ((("eh" "k")0)(("s" "eh" "l")0))))
-(lex.add.entry '("fiat_nil" nil ((("f" "j" "a" "t")0))))
+(lex.add.entry '("couvent_NOM" NOM ((("k" "u")0)(("v" ahn)0)))) ;; !
+(lex.add.entry '("couve" nil ((("k" "u" "v")0))))
+(lex.add.entry '("coïncide" nil (((k o)0)((ehn)0)((s i d)0))))
+(lex.add.entry '("est" nil ((("eh")0))))
+(lex.add.entry '("excelle" nil ((("eh" "k")0)(("s" "eh" "l")0))))
+(lex.add.entry '("fiat" nil ((("f" "j" "a" "t")0))))
 ;(lex.add.entry '("fiat_VER" "NOM" ((("f" "j" "a")0)))) ; ?
-(lex.add.entry '("fié_nil" nil ((("f" "j" "e")0))))
-(lex.add.entry '("indiffére_nil" nil ((("ehn")0)(("d" "i")0)(("f" "i")0)(("f" "eh" "rh")0))))
-(lex.add.entry '("interviewé_nil" nil ((("ehn")0)(("t" "eh" "rh")0)(("v" "j" "u")0)(("v" "e")0))))
-(lex.add.entry '("mat_nil" nil ((("m" a)0))))
+(lex.add.entry '("fié" nil ((("f" "j" "e")0))))
+(lex.add.entry '("indiffére" nil ((("ehn")0)(("d" "i")0)(("f" "i")0)(("f" "eh" "rh")0))))
+(lex.add.entry '("interviewé_VER" VER ((("ehn")0)(("t" "eh" "rh")0)(("v" "j" "u")0)(("v" "e")0))))
+(lex.add.entry '("interviewé_NOM" NOM ((("ehn")0)(("t" "eh" "rh")0)(("v" "j" "u")0)(("v" "e")0))))
+(lex.add.entry '("mat_ADJ" ADJ ((("m" a t)0))))
 (lex.add.entry '("parent_" nil (((p a)0)((rh ahn)0))))
-(lex.add.entry '("pare_nil" nil (((p a rh)0))))
+(lex.add.entry '("pare" nil (((p a rh)0))))
 ; particule nobiliaire
 ; token simplifié M. de La fontaine
 ; donne NAM pour de
-(lex.add.entry '("de_nil" nil (((d ae)0)))) 
+(lex.add.entry '("de" nil (((d ae)0)))) 
 ;;typo majuscule
 ; à ce propos
 ; Egalement
 ; E
 ; sigle/acronyme 
-(lex.add.entry '("ANTEN_nil" nil(((ahn)0)((t eh n)0))))
+(lex.add.entry '("ANTEN" nil(((ahn)0)((t eh n)0))))
 ; OAS
 ; AFP
 ; TODO réactualiser liaisons muettes gérées dans postlex ?
@@ -1755,261 +1761,253 @@
 ; chgt pour dollar n'est plus un symbol
 ; TODO etc.
 (lex.add.entry '(clêt_NOM "NOM" (((p u)0))))
-(lex.add.entry '("%_nil" nil (((p u rh)0)((s ahn)0))))
+(lex.add.entry '("%" nil (((p u rh)0)((s ahn)0))))
 ;(lex.add.entry '("M_NAM" "NAM" (((eh m)0)))); homo monsieur
 ;; grammar 
 (lex.add.entry '("afin_de" PRE (((a)0)((f ehn)0)((d ae)0)))) ; si dans liste de locutions /!\ addenda ou revoir règle de liaisons
 (lex.add.entry '("afin_que" CON (((a)0)((f ehn)0)((k ae)0)))); ; si dans liste de locutions /!\ addenda
 ; géré spécial locution dans netlex peut-être à changer
 ;(lex.add.entry '("afin_qu_ici_ADV" CON  (((a)0)((f ehn)0)((k i)0)((s i)0)))
-(lex.add.entry '("a_nil" nil (((a)0))));
-(lex.add.entry '("è_nil" nil (((eh)0))));
-;(lex.add.entry '("c_est_nil" nil (((s eh)0))))
-(lex.add.entry '("c_est" nil (((s a)0))))
-(lex.add.entry '("est" nil (((eh)0))))
-(lex.add.entry '("n_est_pas_VER" "VER" ((("n" "eh")0)(("p" "a")0))))
+(lex.add.entry '("è" nil (((eh)0))));
+
+
+
 (lex.add.entry '("est_AUX" AUX (((eh)0))))
 (lex.add.entry '("est_NOM" NOM (((eh s t)0))))
-(lex.add.entry '("s_est_nil" nil (((s eh)0))))
-(lex.add.entry '("s'est_nil" nil (((s eh)0))))
+(lex.add.entry '("s_est" nil (((s eh)0))))
 (lex.add.entry '("t_es" nil (((t eh)0))))
 (lex.add.entry '("c_étè" nil (((s e)0)((t eh)0))))
 (lex.add.entry '("c_étaient" nil (((s e)0)((t eh)0))))
-(lex.add.entry '("s_était_nil" nil (((s e)0)((t eh)0))))
-(lex.add.entry '("s_étaient_nil" nil (((s e)0)((t eh)0))))
-(lex.add.entry '("s'était_nil" nil (((s e)0)((t eh)0))))
-(lex.add.entry '("s'étaient_nil" nil (((s e)0)((t eh)0))))
+(lex.add.entry '("s_était" nil (((s e)0)((t eh)0))))
+(lex.add.entry '("s_étaient" nil (((s e)0)((t eh)0))))
+
 ; y compris populaire
-(lex.add.entry '("c_nest_nil" nil (((s n eh)0))))
-(lex.add.entry '("c_étè_nil" nil (((s e)0)((t eh)0))));
-(lex.add.entry '("cette_nil" nil (((s eh t)0))))
+(lex.add.entry '("c_nest" nil (((s n eh)0))))
+(lex.add.entry '("c_étè" nil (((s e)0)((t eh)0))));
+(lex.add.entry '("cette" nil (((s eh t)0))))
 (lex.add.entry '("dans_PRE" PRE (((d ahn)0))))
-(lex.add.entry '("de_fait_nil" nil (((d ae)0)((f eh)0))))
-(lex.add.entry '("des_nil" nil (((d e)0))))
-(lex.add.entry '("en_nil" nil (((ahn)0))))
-(lex.add.entry '("n_en_nil" nil (((n ahn)0))))
-(lex.add.entry '("en_nil" nil (((ahn)0)))) ; erreur POS je t'en prie POS VER
-(lex.add.entry '("en_effet_nil" nil (((ahn)0)((n e)0)((f eh)0))))
-(lex.add.entry '("j_ai_nil" nil (((zh eh)0)))) ; important
-(lex.add.entry '("n_ai_nil" nil (((n e)0)))) ; important sinon core dump neut_parl_s01_0266
-(lex.add.entry '("j_aie_nil" nil (((zh eh)0)))) ; important sinon core dump neut_parl_s01_0266
-(lex.add.entry '("j_ai_nil" nil (((zh eh)0)))) ; important sinon pas de zh
-(lex.add.entry '("j_en_nil" nil (((zh ahn)0))))
-(lex.add.entry '("j_irai_nil" nil (((zh i)0)((rh e)0)))) ; important
-(lex.add.entry '("j_irais_nil" nil (((zh i)0)((rh eh)0)))) ; important
-(lex.add.entry '("j_y_nil" nil ((("zh" "i")0)))); à la place de j'y vais = je vais
-(lex.add.entry '("j_y_nil" nil ((("zh" "i")0))))
-(lex.add.entry '("je_nil" nil ((("zh" "ae")0))))
-(lex.add.entry '("jusque_nil" nil  (((zh y s)0)((k ae)0))))
+(lex.add.entry '("de_fait" nil (((d ae)0)((f eh)0))))
+(lex.add.entry '("des" nil (((d e)0))))
+(lex.add.entry '("en" nil (((ahn)0))))
+(lex.add.entry '("n_en" nil (((n ahn)0))))
+(lex.add.entry '("en" nil (((ahn)0)))) ; erreur POS je t'en prie POS VER
+(lex.add.entry '("en_effet" nil (((ahn)0)((n e)0)((f eh)0))))
+(lex.add.entry '("j_ai" nil (((zh eh)0)))) ; important
+(lex.add.entry '("n_ai" nil (((n e)0)))) ; important sinon core dump neut_parl_s01_0266
+(lex.add.entry '("j_aie" nil (((zh eh)0)))) ; important sinon core dump neut_parl_s01_0266
+(lex.add.entry '("j_ai" nil (((zh eh)0)))) ; important sinon pas de zh
+(lex.add.entry '("j_en" nil (((zh ahn)0))))
+(lex.add.entry '("j_irai" nil (((zh i)0)((rh e)0)))) ; important évite pb de dépendre de la LTS
+(lex.add.entry '("j_irais" nil (((zh i)0)((rh eh)0)))) ; important
+(lex.add.entry '("j_y" nil ((("zh" "i")0)))); à la place de j'y vais = je vais
+(lex.add.entry '("j_y" nil ((("zh" "i")0))))
+(lex.add.entry '("je" nil ((("zh" "ae")0))))
+(lex.add.entry '("jusque" nil  (((zh y s)0)((k ae)0))))
 ; refact
-(lex.add.entry '("jusqu_nil" nil (((zh y s k)0))))
-(lex.add.entry '("jusqu_au_nil" nil (((zh y s)0)((k o)0))))
+(lex.add.entry '("jusqu" nil (((zh y s k)0))))
+(lex.add.entry '("jusqu_au" nil (((zh y s)0)((k o)0))))
 ;; BUG àù LTS
 (lex.add.entry '("où_PRO:rel" "PRO:rel" (((u)0))))
 (lex.add.entry '("où_PRO:int" "PRO:rel" (((u)0))))
-(lex.add.entry '("l_ai_nil" nil (((l eh)0)))) ; important
-(lex.add.entry '("l_ai_nil" nil (((l eh)0)))) ; important sinon core dump
-(lex.add.entry '("l_une_nil" nil ((("l" "y" "n")0))))
-(lex.add.entry '("l_un_nil" nil ((("l" "oen")0))))
-(lex.add.entry '("l_on_nil" nil ((("l" "ohn")0))))
+(lex.add.entry '("l_ai" nil (((l eh)0)))) ; important
+(lex.add.entry '("l_ai" nil (((l eh)0)))) ; important sinon core dump
+(lex.add.entry '("l_une" nil ((("l" "y" "n")0))))
+(lex.add.entry '("l_un" nil ((("l" "oen")0))))
+(lex.add.entry '("l_on" nil ((("l" "ohn")0))))
 (lex.add.entry '("d_où_PRO:rel" "PRO:rel" (((d u)0))))
-(lex.add.entry '("le_ART:def" "ART:def" ((("l" "ae")0))))
-; ; bugglet de POSLEX du L' initial
-; doit pouvoir se régler au niveau de norm
-; en attendant modifier les prompts .. 
-; pour POS correct du mot suivant
-; reste le pb de syllabification {(0 l)}{(0 ahn)}
-;(lex.add.entry '("L_ART:def" "ART:def" ((("l")0)))) 
-(lex.add.entry '("le_nil" nil ((("l" "ae")0))))
-(lex.add.entry '("les_nil" nil ((("l" "e")0))))
-(lex.add.entry '("leur_nil" nil ((("l" "oe" "rh")0))))
-(lex.add.entry '("ma_nil" nil ((("m" "a")0))))
-(lex.add.entry '("me_nil" nil (((m "ae")0))))
-(lex.add.entry '("mes_nil" nil ((("m" "e")0))))
-(lex.add.entry '("mon_nil" nil ((("m" "ohn")0))))
+(lex.add.entry '("les_ART:def" "ART:def" ((("l" "e")0))))
+
+
+
+(lex.add.entry '("le" nil ((("l" "ae")0))))
+(lex.add.entry '("les" nil ((("l" "e")0))))
+(lex.add.entry '("leur" nil ((("l" "oe" "rh")0))))
+(lex.add.entry '("ma" nil ((("m" "a")0))))
+(lex.add.entry '("me" nil (((m "ae")0))))
+(lex.add.entry '("mes_ADJ:pos" ADJ:pos ((("m" "e")0))))
+(lex.add.entry '("mon" nil ((("m" "ahn")0))))
 (lex.add.entry '("n_est" nil (((n eh)0))))
-(lex.add.entry '("n_est_ce_pas_nil" nil ((("n" "eh" "s")0)(("p" "a")0))))
-(lex.add.entry '("ne_nil" nil (((n ae)0))))
-(lex.add.entry '("nous_nil" nil (((n u)0))))
+
+(lex.add.entry '("ne" nil (((n ae)0))))
+(lex.add.entry '("nou" nil (((n u)0))))
 (lex.add.entry '("nous_PRO:per" "PRO:per" (((n u)0))))
-(lex.add.entry '("nos_nil" nil ((("n" "o")0))))
-(lex.add.entry '("notre_nil" nil ((("n" "oh" "t" "rh")0))));(lex.add.entry '("notre_ADJ:pos" "ADJ:pos" ((("n" "oh")0)(("t" "rh" ae)0))))
+(lex.add.entry '("nos" nil ((("n" "o")0))))
+(lex.add.entry '("notre" nil ((("n" "oh" "t" "rh")0))));(lex.add.entry '("notre_ADJ:pos" "ADJ:pos" ((("n" "oh")0)(("t" "rh" ae)0))))
 ;(lex.add.entry '("notre_ADJ:pos" "ADJ:pos" ((("n" "oh")0)(("t" "rh" "ae")0))));(lex.add.entry '("notre_ADJ:pos" "ADJ:pos" ((("n" "oh")0)(("t" "rh" ae)0))))
-(lex.add.entry '("puisque_nil" nil  (((p "hw" i s)0)((k ae)0))))
-(lex.add.entry '("parce_que_nil" nil (((p a rh)0)((s ae)0)((k ae)0))))
-(lex.add.entry '("alors_que_nil" nil (((a)0)((l oh rh)0)((k ae)0))))
-(lex.add.entry '("pendant_que_nil" nil  (((p ahn)0)((d ahn)0)((k ae)0))))
-(lex.add.entry '("alors_nil" nil (((a)0)((l oh rh)0))))
-(lex.add.entry '("pointe_nil" nil (((p w ehn t)0))))
-(lex.add.entry '("point_nil" nil (((p w ehn)0))))
-(lex.add.entry '("point_nil" nil((( p w ehn)0))))
+(lex.add.entry '("puisque" nil  (((p "hw" i s)0)((k ae)0))))
+(lex.add.entry '("parce_que" nil (((p a rh)0)((s ae)0)((k ae)0))))
+(lex.add.entry '("alors_que" nil (((a)0)((l oh rh)0)((k ae)0))))
+(lex.add.entry '("pendant_que" nil  (((p ahn)0)((d ahn)0)((k ae)0))))
+(lex.add.entry '("alors" nil (((a)0)((l oh rh)0))))
+(lex.add.entry '("pointe" nil (((p w ehn t)0))))
+(lex.add.entry '("point" nil (((p w ehn)0))))
 ; TODO à re finir !
-(lex.add.entry '("qu_a_nil" nil (((k a)0))))
-(lex.add.entry '("qu_afin_nil" nil (((k a)0)((f ehn)0))))
-(lex.add.entry '("qu_au_nil" nil (((k o)0))))
-(lex.add.entry '("qu_aucune_nil" nil (((k o)0)((k y n)0))))
-(lex.add.entry '("qu_aussi_nil" nil (((k o)0)((s i)0))))
-(lex.add.entry '("qu_aussitôt_nil" nil (((k o)0)((s i)0)((t o)0))))
-(lex.add.entry '("qu_avec_nil" nil (((k a)0)((v eh k)0))))
+(lex.add.entry '("qu_a" nil (((k a)0))))
+(lex.add.entry '("qu_afin" nil (((k a)0)((f ehn)0))))
+(lex.add.entry '("qu_au" nil (((k o)0))))
+(lex.add.entry '("qu_aucune" nil (((k o)0)((k y n)0))))
+(lex.add.entry '("qu_aussi" nil (((k o)0)((s i)0))))
+(lex.add.entry '("qu_aussitôt" nil (((k o)0)((s i)0)((t o)0))))
+(lex.add.entry '("qu_avec" nil (((k a)0)((v eh k)0))))
 (lex.add.entry '("qu_elle"  "PRO:per" (((k eh l)0))))
 (lex.add.entry '("qu_en"  "PRO:per" (((k ahn)0))))
 (lex.add.entry '("qu_une"  "PRO:per" (((k y n)0))))
 (lex.add.entry '("qu_il"  "PRO:per" (((k i l)0))))
 (lex.add.entry '("qu_ils"  "PRO:per" (((k i l)0))))
 (lex.add.entry '("qu_on_PRO:per" "PRO:per"  (((k ohn)0)))); important
-(lex.add.entry '("que_nil" nil (((k ae)0))))
-(lex.add.entry '("quelque_nil" nil (((k eh l)0)((k ae)0))))
-(lex.add.entry '("quelqu_nil" nil ((("k" "eh" "l" "k")0))))
-(lex.add.entry '("quoique_nil" nil (((k w a)0)((k ae)0))))
-(lex.add.entry '("que_nil" nil (((k ae)0)))); quoi que ce soit
-(lex.add.entry '("s_y_nil" nil ((("s" "i")0))))
-(lex.add.entry '("sa_nil" nil ((("s" "a")0))))
+(lex.add.entry '("que" nil (((k ae)0))))
+(lex.add.entry '("quelque" nil (((k eh l)0)((k ae)0))))
+(lex.add.entry '("quelqu" nil ((("k" "eh" "l" "k")0))))
+(lex.add.entry '("quoique" nil (((k w a)0)((k ae)0))))
+(lex.add.entry '("que" nil (((k ae)0)))); quoi que ce soit
+(lex.add.entry '("s_y" nil ((("s" "i")0))))
+(lex.add.entry '("sa" nil ((("s" "a")0))))
 (lex.add.entry '("se"  "PRO:per" ((("s" ae) 0))))
-(lex.add.entry '("se_nil" nil (((s ae)0))))
-(lex.add.entry '("ses_nil" nil (((s e)0))))
-(lex.add.entry '("son_nil" nil ((("s" "ohn")0))))
-(lex.add.entry '("ta_nil" nil ((("t" "a")0))))
-(lex.add.entry '("tandis_qu_nil" nil  (((t ahn)0)((d i)0))))
-(lex.add.entry '("t_y_nil" nil ((("t" "i")0))))
-(lex.add.entry '("te_nil" nil (((t ae)0))))
+(lex.add.entry '("se" nil (((s ae)0))))
+(lex.add.entry '("ses" nil (((s e)0))))
+(lex.add.entry '("son" nil ((("s" "ohn")0))))
+(lex.add.entry '("ta" nil ((("t" "a")0))))
+(lex.add.entry '("tandis_qu" nil  (((t ahn)0)((d i)0))))
+(lex.add.entry '("t_y" nil ((("t" "i")0))))
+(lex.add.entry '("te" nil (((t ae)0))))
 (lex.add.entry '("tes_ADJ:pos" ADJ:pos ((("t" "e") 0))))
 (lex.add.entry '("ses_ADJ:pos" ADJ:pos ((("s" "e") 0))))
-(lex.add.entry '("vos_nil" nil ((("v" "o")0))))
-(lex.add.entry '("votre_nil" nil (((v oh t rh)0))))
-(lex.add.entry '("vous_nil" nil (((v u)0))))
+(lex.add.entry '("vos" nil ((("v" "o")0))))
+(lex.add.entry '("votre" nil (((v oh t rh)0))))
+(lex.add.entry '("vous" nil (((v u)0))))
 ; locution
-(lex.add.entry '("en_fait_nil" nil (((ahn)0)((f eh t)0))))
+(lex.add.entry '("en_fait" nil (((ahn)0)((f eh t)0))))
 ;; signalé dans token_fr PRE versus ADV list_PTE_ADV de pos_fr
-(lex.add.entry '("après_nil" nil ((("a")0)((p rh eh)0))))
-(lex.add.entry '("au_dedans_nil" nil ((("o")0)(("d" "ae")0)(("d" "ahn")0))))
-(lex.add.entry '("hors_nil" nil ((("oh" "rh")0)))) ; toDO
-(lex.add.entry '("au_dehors_nil" nil ((("o")0)(("d" "ae")0)(("oh" "rh")0))))
-(lex.add.entry '("au_dessous_nil" nil ((("o")0)(("d" "ae")0)(("s" "u")0))))
-(lex.add.entry '("au_dessus_nil" nil ((("o")0)(("d" "ae")0)(("s" "y")0))))
-(lex.add.entry '("au_devant_nil" nil ((("o")0)(("d" "ae")0)(("v" "ahn")0))))
-(lex.add.entry '("au_fur_et_à_mesure_nil" nil ((("o")0)((f y rh)0)((e)0)((a)0)((m ae)0)((z y rh)0))))
-(lex.add.entry '("depuis_nil" nil (((d ae)0)((p hw i)0))))
+(lex.add.entry '("après" nil ((("a")0)((p rh eh)0))))
+(lex.add.entry '("au_dedans" nil ((("o")0)(("d" "ae")0)(("d" "ahn")0))))
+(lex.add.entry '("hors" nil ((("oh" "rh")0)))) ; toDO
+(lex.add.entry '("au_dehors" nil ((("o")0)(("d" "ae")0)(("oh" "rh")0))))
+(lex.add.entry '("au_dessous" nil ((("o")0)(("d" "ae")0)(("s" "u")0))))
+(lex.add.entry '("au_dessus" nil ((("o")0)(("d" "ae")0)(("s" "y")0))))
+(lex.add.entry '("au_devant" nil ((("o")0)(("d" "ae")0)(("v" "ahn")0))))
+(lex.add.entry '("au_fur_et_à_mesure" nil ((("o")0)((f y rh)0)((e)0)((a)0)((m ae)0)((z y rh)0))))
+(lex.add.entry '("depuis" nil (((d ae)0)((p hw i)0))))
 ; lez
-(lex.add.entry '("nonobstant_nil" nil (((n ohn)0)((n oh b)0)((s t ahn)0))))
-(lex.add.entry '("par_dessus_nil" nil (((p a rh)0)(("d" "ae")0)(("s" "y")0))))
+(lex.add.entry '("nonobstant" nil (((n ohn)0)((n oh b)0)((s t ahn)0))))
+(lex.add.entry '("par_dessus" nil (((p a rh)0)(("d" "ae")0)(("s" "y")0))))
 ; rez
-(lex.add.entry '("avec_nil" nil ((("a")0)(("v" "eh" "k")0)))); prends ça avec. ??
-(lex.add.entry '("jacque_nil" nil ((("zh" "a" "k")0))))
-(lex.add.entry '("myard_nil" nil ((("m" "j" "a" "rh")0))))
-(lex.add.entry '("louis_nil" nil (((l w i)0))))
+(lex.add.entry '("avec" nil ((("a")0)(("v" "eh" "k")0)))); prends ça avec. ??
+(lex.add.entry '("jacque" nil ((("zh" "a" "k")0))))
+(lex.add.entry '("myard" nil ((("m" "j" "a" "rh")0))))
+(lex.add.entry '("louis" nil (((l w i)0))))
 ;QT apostrophe
 ;(lex.add.entry '("quat_NOM" ((("k" "NOM" ((("k" a t)0)))); quat'z
 ; en cas de mauvaise typo (courant)
-(lex.add.entry '("n_o_nil" nil ((("n" "y")0)((m e)0)((rh o)0))))
+(lex.add.entry '("n_o" nil ((("n" "y")0)((m e)0)((rh o)0))))
 ; QT abbreviations acronyms currency
 ; homo centimes ?
-(lex.add.entry '("cèn_nil" nil (((s eh n t s)0))))
-(lex.add.entry '("cèns_nil" nil (((s eh n t s)0))))
+(lex.add.entry '("cèn" nil (((s eh n t s)0))))
+(lex.add.entry '("cèns" nil (((s eh n t s)0))))
 ; pb du sing/pluriel non résolu ...
-(lex.add.entry '("_cent_nil" nil (((s eh n t s)0))))
+(lex.add.entry '("_cent" nil (((s eh n t s)0))))
 ; yen sen et sens
-(lex.add.entry '("yen_nil" nil (((j eh n)0))))
-(lex.add.entry '("_yen_nil" nil (((j eh n)0))))
-(lex.add.entry '("sèn_nil" nil (((s eh n)0))))
-(lex.add.entry '("sèns_nil" nil (((s eh n)0))))
-(lex.add.entry '("n°_nil" nil (((n y)0)((m e)0)((rh o)0))))
-(lex.add.entry '("C_o_nil" nil (((s eh l)0)((s j y s)0))))
-(lex.add.entry '("C°_nil" nil (((s eh l)0)((s j y s)0)))); tempo :)
-(lex.add.entry '("Hertz_nil" nil (((eh rh t s)0))))
+(lex.add.entry '("yen" nil (((j eh n)0))))
+(lex.add.entry '("_yen" nil (((j eh n)0))))
+(lex.add.entry '("sèn" nil (((s eh n)0))))
+(lex.add.entry '("sèns" nil (((s eh n)0))))
+(lex.add.entry '("n°" nil (((n y)0)((m e)0)((rh o)0))))
+(lex.add.entry '("C_o" nil (((s eh l)0)((s j y s)0))))
+(lex.add.entry '("C°" nil (((s eh l)0)((s j y s)0)))); tempo :)
+(lex.add.entry '("Hertz" nil (((eh rh t s)0))))
 ; acronymes
 ;(lex.add.entry '("confé_VER" ((("k" ohn)0)(("f" "VER" ((("k" ohn)0)(("f" eh rh)0))))
-(lex.add.entry '("adn_nil" nil(((a)0)((d e)0)((eh n)0))))
-(lex.add.entry '("NASA_nil" nil (((n a)0)((z a)0)))) 
-(lex.add.entry '("CAF_nil" nil (((k a f)0))))
-(lex.add.entry '("CGT_nil" nil (((s e)0)((zh e)0)((t e)0))))
-(lex.add.entry '("MM_nil" nil (((m e)0)((s j eu)0)))); normaalement suivi d'un point !
-(lex.add.entry '("MM_nil" nil (((m e)0)((s j eu)0))));
+(lex.add.entry '("adn" nil(((a)0)((d e)0)((eh n)0))))
+(lex.add.entry '("NASA" nil (((n a)0)((z a)0)))) 
+(lex.add.entry '("CAF" nil (((k a f)0))))
+(lex.add.entry '("CGT" nil (((s e)0)((zh e)0)((t e)0))))
+(lex.add.entry '("MM" nil (((m e)0)((s j eu)0)))); normaalement suivi d'un point !
+(lex.add.entry '("MM" nil (((m e)0)((s j eu)0))));
 ; abréviations aveec/sans point final
 ; avec unicode ou non
-(lex.add.entry '("tv_nil" nil (((t e)0)((l e)0))))
-(lex.add.entry '("dvd_nil" nil (((d e)0)((v e)0)((d e)0))))
-(lex.add.entry '("etc_nil" nil (((eh t)0)((s e)0)((t e)0)((rh a)0))))
-(lex.add.entry '("ex_nil" nil (((eh k s)0))))
-(lex.add.entry '("ok_nil" nil (((o)0)((k eh)0))))
-(lex.add.entry '("tva_nil" nil (((t e)0)((v e)0)((a)0))))
-(lex.add.entry '("CEDEX_nil" nil ((("s" "e")0)(("d" "eh" "k" "s")0))))
-(lex.add.entry '("MBROLA_nil" nil ((("eh" "m")0)(("b" "e")0)(("rh" "oh")0)((l a)0))))
-(lex.add.entry '("ANTENJ_nil" nil (((ahn)0)((t eh n)0)((zh i)0))))
-(lex.add.entry '("S.T.P_nil" nil ((("s" "i" "l")0)(("t" "ae")0)(("p" "l" "eh")0))))
+(lex.add.entry '("tv" nil (((t e)0)((l e)0))))
+(lex.add.entry '("dvd" nil (((d e)0)((v e)0)((d e)0))))
+(lex.add.entry '("etc" nil (((eh t)0)((s e)0)((t e)0)((rh a)0))))
+(lex.add.entry '("ex" nil (((eh k s)0))))
+(lex.add.entry '("ok" nil (((o)0)((k eh)0))))
+(lex.add.entry '("tva" nil (((t e)0)((v e)0)((a)0))))
+(lex.add.entry '("CEDEX" nil ((("s" "e")0)(("d" "eh" "k" "s")0))))
+(lex.add.entry '("MBROLA" nil ((("eh" "m")0)(("b" "e")0)(("rh" "oh")0)((l a)0))))
+(lex.add.entry '("ANTENJ" nil (((ahn)0)((t eh n)0)((zh i)0))))
+(lex.add.entry '("S.T.P" nil ((("s" "i" "l")0)(("t" "ae")0)(("p" "l" "eh")0))))
 (lex.add.entry '("r_o" "NOM" ((("rh" "eh")0)(("k" "t_o" "o")0))))
 (lex.add.entry '("f_o" "NOM" ((("f" "oh")0)(("l" "j_o" "o")0))))
 (lex.add.entry '("ft" "NOM" ((("f_oe" j)0)((j "eh" "oe" j)0)((j "eh")0))))
-(lex.add.entry '("POS_nil" nil (((p o s)0))))
+(lex.add.entry '("POS" nil (((p o s)0))))
 ; titres
-(lex.add.entry '("Mr_nil" nil (((m i s)0)((t oe rh)0))))
-(lex.add.entry '("Dr_nil" nil (((d oh k)0)((t oe rh)0))))
+(lex.add.entry '("Mr" nil (((m i s)0)((t oe rh)0))))
+(lex.add.entry '("Dr" nil (((d oh k)0)((t oe rh)0))))
 ;(lex.add.entry '("Me" titre (((m eh t rh)0))))
-(lex.add.entry '("mlles_nil" nil ((("m" "e" "d")0)(("m" "w" a)0)(("z" "eh" "l")0))))
-(lex.add.entry '("mlle_nil" nil ((("m" a "d")0)(("m" "w" a)0)(("z" "eh" "l")0))))
-(lex.add.entry '("S.M_nil" nil ((("s" a)0)(("m" a)0)((zh eh s)0)(("t" "e")0))))
+(lex.add.entry '("mlles" nil ((("m" "e" "d")0)(("m" "w" a)0)(("z" "eh" "l")0))))
+(lex.add.entry '("mlle" nil ((("m" a "d")0)(("m" "w" a)0)(("z" "eh" "l")0))))
+(lex.add.entry '("S.M" nil ((("s" a)0)(("m" a)0)((zh eh s)0)(("t" "e")0))))
 ;; mois
 (lex.add.entry '("Jan_year" "year" (((zh ahn)0)((v j e)0)))) 
 ; ....
 ;QT ncardinal
-(lex.add.entry '("trois_nil" nil (((t rh w a)0))))
+(lex.add.entry '("trois" nil (((t rh w a)0))))
 (lex.add.entry '("cent" nil ((("s" "ahn") 0))))
 (lex.add.entry '("trois" nil (((t rh w a)0))))
 (lex.add.entry '("trois_ADJ:num" "ADJ:num" ((("t" "rh" "w" "a") 0))))
-(lex.add.entry '("vint_nil" nil (((v ehn)0)))) ; INST_LANG_number
+(lex.add.entry '("vint" nil (((v ehn)0)))) ; INST_LANG_number
 ; Prononc. et Orth.: vehn à la pause ou devant cons.: vint fois sauf dans les nombres de 22 à 29: vint-deux [vεtdø].
 ; [vehnt] devant voy.: vint arbres ou h non aspiré: vint hommes (pb de post_lex)
-(lex.add.entry '("vint_deux_nil" nil (((v ehn t)0)((d eu)0)))) ; INST_LANG_number
-(lex.add.entry '("vint_trois_nil" nil (((v ehn t)0)((t rh w a)0)))) ; INST_LANG_number
-(lex.add.entry '("vint_quatre_nil" nil (((v ehn t)0)((k a t rh)0)))) ; INST_LANG_number
-(lex.add.entry '("vint_cinq_nil" nil (((v ehn t)0)((s ehn)0)))) ; INST_LANG_number
-(lex.add.entry '("vint_six_nil" nil (((v ehn t)0)((s i)0)))) ; INST_LANG_number
-(lex.add.entry '("vint_sept_nil" nil (((v ehn t)0)((s eh t)0)))) ; INST_LANG_number
-(lex.add.entry '("vint_huit_nil" nil (((v ehn t)0)((h w i)0)))) ; INST_LANG_number
-(lex.add.entry '("vint_neuf_nil" "nil" (((v ehn t)0)((n oe)0)))) ; INST_LANG_number
-;(lex.add.entry '("dix_neuf_nil" "nil" (((v ehn)0)))) ; INST_LANG_number TODO ?
+(lex.add.entry '("vint_deux" nil (((v ehn t)0)((d eu)0)))) ; INST_LANG_number
+(lex.add.entry '("vint_trois" nil (((v ehn t)0)((t rh w a)0)))) ; INST_LANG_number
+(lex.add.entry '("vint_quatre" nil (((v ehn t)0)((k a t rh)0)))) ; INST_LANG_number
+(lex.add.entry '("vint_cinq" nil (((v ehn t)0)((s ehn)0)))) ; INST_LANG_number
+(lex.add.entry '("vint_six" nil (((v ehn t)0)((s i)0)))) ; INST_LANG_number
+(lex.add.entry '("vint_sept" nil (((v ehn t)0)((s eh t)0)))) ; INST_LANG_number
+(lex.add.entry '("vint_huit" nil (((v ehn t)0)((h w i)0)))) ; INST_LANG_number
+(lex.add.entry '("vint_neuf" "nil" (((v ehn t)0)((n oe)0)))) ; INST_LANG_number
+;(lex.add.entry '("dix_neuf" "nil" (((v ehn)0)))) ; INST_LANG_number TODO ?
 ;(lex.add.entry '("dix_neuf" nil (((v ehn)0)))) ; INST_LANG_number TODO ?
 ; cinq devant consonnes ou voyelles ou "pause"
-;(lex.add.entry '("cinq_nil" nil (((s ehn)0))))
+;(lex.add.entry '("cinq" nil (((s ehn)0))))
 (lex.add.entry '("cinq_ADJ:num" "ADJ:num" (((s ehn k) 0))))
 ;(lex.add.entry '("cinq_sehn" sehn (((s ehn)0))))
 ;(lex.add.entry '("cinq_sehnk" sehnk (((s ehn k)0))))
-(lex.add.entry '("cinquante_nil" nil (((s ehn)0)((k ahn t)0))))
-(lex.add.entry '("deux_nil" nil (((d eu)0))))
+(lex.add.entry '("cinquante" nil (((s ehn)0)((k ahn t)0))))
+(lex.add.entry '("deux" nil (((d eu)0))))
 (lex.add.entry '("deux_" nil (((d eu)0))))
-(lex.add.entry '("douze_nil" nil (((d u z)0))))
-(lex.add.entry '("huit_nil" nil ((("hw" i t)0))))
-(lex.add.entry '("dix_nil" nil (((d i s)0))))
-(lex.add.entry '("sept_nil" nil (((s eh t)0))))
-(lex.add.entry '("six_nil" nil (((s i s)0))))
-(lex.add.entry '("soixante_nil" nil (((s w a)0)((s ahn t)0)))) ; pour french_number
-(lex.add.entry '("soixante-et-onze_nil" nil (((s w a)0)((s ahn t)0)((e)0)((ohn z)0)))) ; pour french_number
-(lex.add.entry '("treize_nil" nil (((t rh eh z)0))))
-(lex.add.entry '("vint-et-un_nil" nil (((v ehn)0)((t e)0)((ehn)0))))
-(lex.add.entry '("vint-et-une_nil" nil (((v ehn)0)((t e)0)((y n)0))))
-(lex.add.entry '("mille_nil" nil (((m i l)0))))
+(lex.add.entry '("douze" nil (((d u z)0))))
+(lex.add.entry '("huit" nil ((("hw" i t)0))))
+(lex.add.entry '("dix" nil (((d i s)0))))
+(lex.add.entry '("sept" nil (((s eh t)0))))
+(lex.add.entry '("six" nil (((s i s)0))))
+(lex.add.entry '("soixante" nil (((s w a)0)((s ahn t)0)))) ; pour french_number
+(lex.add.entry '("soixante-et-onze" nil (((s w a)0)((s ahn t)0)((e)0)((ohn z)0)))) ; pour french_number
+(lex.add.entry '("treize" nil (((t rh eh z)0))))
+(lex.add.entry '("vint-et-un" nil (((v ehn)0)((t e)0)((ehn)0))))
+(lex.add.entry '("vint-et-une" nil (((v ehn)0)((t e)0)((y n)0))))
+(lex.add.entry '("mille" nil (((m i l)0))))
 ;; QT %
-(lex.add.entry '("cent_nil" nil (((s ahn)0))))
-(lex.add.entry '("pourcent_nil" nil (((p u rh)0)((s ahn)0))))
+(lex.add.entry '("cent" nil (((s ahn)0))))
+(lex.add.entry '("pourcent" nil (((p u rh)0)((s ahn)0))))
 ; pour simplifier lecture des nombres ordinaux
-;(lex.add.entry '("premierment_nil" nil (((p rh ae)0)((m j eh rh)0)((m ahn)0))))
+;(lex.add.entry '("premierment" nil (((p rh ae)0)((m j eh rh)0)((m ahn)0))))
 ; bad hack token_to_words roman ordinals to XXIe
-(lex.add.entry '("Ie_nil" nil (((p rh ae)0)((m j e)0))))
-(lex.add.entry '("Ier_nil" nil (((p rh ae)0)((m j e)0))))
+(lex.add.entry '("Ie" nil (((p rh ae)0)((m j e)0))))
+(lex.add.entry '("Ier" nil (((p rh ae)0)((m j e)0))))
 ;; desambiguification 
 ; TODO à reprendre 
 ; homo hetero
 ; hors *tion(s)
 ; certains inutiles vu traitement des verbes 
-(lex.add.entry '("n_est_ce_nil" nil ((("n" "eh" "s")0))))
-(lex.add.entry '("est_ce_nil" nil ((("eh")0)(("s" "ae")0))))
+(lex.add.entry '("n_est_ce" nil ((("n" "eh" "s")0))))
+(lex.add.entry '("est_ce" nil ((("eh")0)(("s" "ae")0))))
 ; ;(lex.add.entry '("interviewer" "NOM" ((("ehn")0)(("t" eh rh)0)(("v" "j" "u")0)(("v_oe" "oe" rh)0))))
 ; ;(lex.add.entry '("interviewers" "NOM" ((("ehn")0)(("t" eh rh)0)(("v" "j" "u")0)(("v_oe" "oe" rh)0))))
 ; ;(lex.add.entry '("lis" "NOM"(("l" "i" "s")0))))
 ; ;(lex.add.entry '("lis" "VER" ((("l_i" "i")0))))
 ;(lex.add.entry '("mat_ADJ" ((("m" a "t")0))))
 ;(lex.add.entry '("mat_NOM" ((("m" "NOM" ((("m" a)0))))
-;(lex.add.entry '("parent_nil" nil (((p a)0)((rh ahn)0))))
-;(lex.add.entry '("pare_nil" nil (((p a rh)0))))
+;(lex.add.entry '("parent" nil (((p a)0)((rh ahn)0))))
+;(lex.add.entry '("pare" nil (((p a rh)0))))
 ; ;(lex.add.entry '("plus" "VER" (((p "l_y" "y")0))))
 ; ;(lex.add.entry '("président" "VER" (((p rh "e")0)(("z" "i_d" "d")0))))
 ; ;(lex.add.entry '("président" "NOM" (((p rh "e")0)(("z_i")0)(("d" "i")0)(("d" ahn)0))))
@@ -2017,10 +2015,10 @@
 ; ;(lex.add.entry '("reporter" "NOM" (((rh ae)0)((p oh rh)0)(("t_eh" "eh" rh)0))))
 ; ;(lex.add.entry '("reporter" "VER" (((rh ae)0)((p oh rh)0)(("t_e" "e")0))))
 ; ;(lex.add.entry '("reporters" "NOM" (((rh ae)0)((p oh rh)0)(("t_eh" "eh" rh)0))))
-(lex.add.entry '("sens_nil" nil ((("s" "ahn" "s")0))))
-(lex.add.entry '("somnole_nil" nil ((("s" oh "m")0)((n oh l)0))))
-(lex.add.entry '("somnolent_nil" nil ((("s" oh "m")0)((n oh l)0))))
-(lex.add.entry '("vis_nil" nil ((("v" "i" "s")0))))
+(lex.add.entry '("sens" nil ((("s" "ahn" "s")0))))
+(lex.add.entry '("somnole" nil ((("s" oh "m")0)((n oh l)0))))
+(lex.add.entry '("somnolent" nil ((("s" oh "m")0)((n oh l)0))))
+(lex.add.entry '("vis" nil ((("v" "i" "s")0))))
 ; ; *tion(s)
 ; ;/!\ commentez le *s" "NOM" que si "VER" est commentés cause QT ..
 ; ;(lex.add.entry '("attention_NOM" (((a)0)(("t" "NOM" (((a)0)(("t" ahn)0)((s j ohn)0))))
@@ -2030,116 +2028,116 @@
 ; verbes trop courts ou dont le radical pose problème ex prenait
 ; certains sont déjà dans le dictionaire *tient, *vient
 ; wordoot étoffé
-;(lex.add.entry '("a_nil" nil (((a)0))))
-;(lex.add.entry '("agit_nil" nil ( ((a)0)((zh i)0)))) ; pas t
-;(lex.add.entry '("dis_nil" nil (((d i)0))))
-;(lex.add.entry '("dis_je_nil" nil (((d i)0)((zh e)))))
-;(lex.add.entry '("dirai_nil" nil (((d i)0)((rh e)0))))
-;(lex.add.entry '("disai_nil" nil (((d i)0)((z e)0))))
-;(lex.add.entry '("disais_nil" nil (((d i)0)((z eh)0))))
-;(lex.add.entry '("dirais_nil" nil (((d i)0)((rh eh)0))))
-;(lex.add.entry '("diraient_nil" nil (((d i)0)((rh eh)0))))
-;(lex.add.entry '("dirait_nil" nil (((d i)0)((rh eh)0))))
-;(lex.add.entry '("dit_nil" nil (((d i)0))))
-;(lex.add.entry '("dût_nil" nil (((d y)0))))
-;(lex.add.entry '("fit_nil" nil (((f i)0))))
-;(lex.add.entry '("lit_nil" nil (((l i)0))))
-;(lex.add.entry '("mis_nil" nil (((m i)0))))
-;(lex.add.entry '("mit_nil" nil (((m i)0))))
-(lex.add.entry '("es_nil" nil (((eh)0))))
-(lex.add.entry '("eu_nil" nil (((y)0))))
+;(lex.add.entry '("a" nil (((a)0))))
+;(lex.add.entry '("agit" nil ( ((a)0)((zh i)0)))) ; pas t
+;(lex.add.entry '("dis" nil (((d i)0))))
+;(lex.add.entry '("dis_je" nil (((d i)0)((zh e)))))
+;(lex.add.entry '("dirai" nil (((d i)0)((rh e)0))))
+;(lex.add.entry '("disai" nil (((d i)0)((z e)0))))
+;(lex.add.entry '("disais" nil (((d i)0)((z eh)0))))
+;(lex.add.entry '("dirais" nil (((d i)0)((rh eh)0))))
+;(lex.add.entry '("diraient" nil (((d i)0)((rh eh)0))))
+;(lex.add.entry '("dirait" nil (((d i)0)((rh eh)0))))
+;(lex.add.entry '("dit" nil (((d i)0))))
+;(lex.add.entry '("dût" nil (((d y)0))))
+;(lex.add.entry '("fit" nil (((f i)0))))
+;(lex.add.entry '("lit" nil (((l i)0))))
+;(lex.add.entry '("mis" nil (((m i)0))))
+;(lex.add.entry '("mit" nil (((m i)0))))
+(lex.add.entry '("es" nil (((eh)0))))
+(lex.add.entry '("eu" nil (((y)0))))
 (lex.add.entry '("eux"  "PRO:per" (((eu)0))))
-(lex.add.entry '("fis_nil" nil (((f i)0))))
-(lex.add.entry '("met_nil" nil (((m eh)0))))
-(lex.add.entry '("mets_nil" nil (((m eh)0))))
-(lex.add.entry '("mené_nil" nil ((("m" "ae")0)(("n" "e")0))))
-(lex.add.entry '("menè_nil" nil ((("m" "ae")0)(("n" "eh")0))))
-(lex.add.entry '("apprenè_nil" nil (((a)0)((p rh ae)0)((n eh)0))))
-(lex.add.entry '("comprenè_nil" nil (((k ohn)0)((p rh ae)0)((n eh)0))))
-(lex.add.entry '("entreprenè_nil" nil (((ahn t rh ae)0)((p rh ae)0)((n eh)0))))
-(lex.add.entry '("méprenè_nil" nil (((m e)0)((p rh ae)0)((n eh)0))))
-(lex.add.entry '("prenè_nil" nil (((p rh ae)0)((n eh)0))))
-(lex.add.entry '("reprenè_nil" nil (((rh ae)0)((p rh ae)0)((n eh)0))))
-(lex.add.entry '("surprenè_nil" nil (((s y rh)0)((p rh ae)0)((n eh)0))))
-(lex.add.entry '("pût_nil" nil (((p y)0))))
-(lex.add.entry '("sers_nil" nil (((s eh rh)0))))
-(lex.add.entry '("sût_nil" nil (((s y)0))))
-(lex.add.entry '("tût_nil" nil (((t y)0))))
-(lex.add.entry '("abstenè_nil" nil (((a p s)0)((t ae)0)((n eh)0))))
-(lex.add.entry '("appartenè_nil" nil (((a)0)((p a rh)0)((t ae)0)((n eh)0))))
-(lex.add.entry '("contenè_nil" nil (((k ohn)0)((t ae)0)((n eh)0))))
-(lex.add.entry '("détenè_nil" nil (((d e)0)((t ae)0)((n eh)0))))
-(lex.add.entry '("entretenè_nil" nil (((ahn)0)((t rh ae)0)((t ae)0)((n eh)0))))
-(lex.add.entry '("maintenè_nil" nil (((m ehn)0)((t ae)0)((n eh)0))))
-(lex.add.entry '("obtenè_nil" nil (((oh b)0)((t ae)0)((n eh)0))))
-(lex.add.entry '("retenè_nil" nil (((rh ae)0)((t ae)0)((n eh)0))))
-(lex.add.entry '("soutenè_nil" nil (((s u)0)((t ae)0)((n eh)0))))
-(lex.add.entry '("tenè_nil" nil (((t ae)0)((n eh)0))))
-(lex.add.entry '("abstenu_nil" nil (((a p s)0)((t ae)0)((n y)0))))
-(lex.add.entry '("appartenu_nil" nil (((a)0)((p a rh)0)((t ae)0)((n y)0))))
-(lex.add.entry '("contenu_nil" nil (((k ohn)0)((t ae)0)((n y)0))))
-(lex.add.entry '("détenu_nil" nil (((d e)0)((t ae)0)((n y)0))))
-(lex.add.entry '("détenue_nil" nil (((d e)0)((t ae)0)((n y)0))))
-(lex.add.entry '("entretenu_nil" nil (((ahn)0)((t rh ae)0)((t ae)0)((n y)0))))
-(lex.add.entry '("maintenu_nil" nil (((m ehn)0)((t ae)0)((n y)0))))
-(lex.add.entry '("obtenu_nil" nil (((oh b)0)((t ae)0)((n y)0)))); ACF b p
-(lex.add.entry '("retenu_nil" nil (((rh ae)0)((t ae)0)((n y)0))))
-(lex.add.entry '("retenue_nil" nil (((rh ae)0)((t ae)0)((n y)0))))
-(lex.add.entry '("soutenu_nil" nil (((s u)0)((t ae)0)((n y)0))))
-(lex.add.entry '("soutenue_nil" nil (((s u)0)((t ae)0)((n y)0))))
-(lex.add.entry '("tenu_nil" nil (((t ae)0)((n y)0))))
-(lex.add.entry '("tenus_nil" nil ((("t" "ae")0) (("n" "y")0))))
-(lex.add.entry '("tenue_nil" nil ((("t" "ae")0) (("n" "y")0))))
-(lex.add.entry '("abstenue_nil" nil (((a p s)0)((t ae)0)((n y)0))))
-(lex.add.entry '("appartenue_nil" nil (((a)0)((p a rh)0)((t ae)0)((n y)0))))
-(lex.add.entry '("contenue_nil" nil (((k ohn)0)((t ae)0)((n y)0))))
-(lex.add.entry '("entretenue_nil" nil (((ahn)0)((t rh ae)0)((t ae)0)((n y)0))))
-(lex.add.entry '("maintenue_nil" nil (((m ehn)0)((t ae)0)((n y)0))))
-(lex.add.entry '("obtenue_nil" nil (((oh b)0)((t ae)0)((n y)0))))
-(lex.add.entry '("tenue_nil" nil (((t ae)0)((n y)0))))
-;(lex.add.entry '("vient_nil" nil (((v j ehn)0))))
-(lex.add.entry '("advenir_nil" nil (((a d)0)((v ae)0)((n i rh)0))))
-(lex.add.entry '("advenu_nil" nil (((a d)0)((v ae)0)((n y)0))))
-(lex.add.entry '("circonvenu_nil" nil (((s i rh)0)((k ohn)0)((v ae)0)((n y)0))))
-(lex.add.entry '("contrevenu_nil" nil (((k ohn)0)((t rh ae)0)((v ae)0)((n y)0))))
-(lex.add.entry '("convenu_nil" nil (((k ohn)0)((v ae)0)((n y)0))))
-(lex.add.entry '("devenu_nil" nil (((d ae)0)((v ae)0)((n y)0))))
-(lex.add.entry '("disconvenu_nil" nil (((d i s)0)((k ohn)0)((v ae)0)((n y)0))))
-(lex.add.entry '("intervenu_nil" nil (((ehn)0)((t eh rh)0)((v ae)0)((n y)0))))
-(lex.add.entry '("mésadvenu_nil" nil (((m e)0)((z a d)0)((v ae)0)((n y)0))))
-(lex.add.entry '("parvenu_nil" nil (((p a rh)0)((v ae)0)((n y)0))))
-(lex.add.entry '("prévenu_nil" nil (((p rh e)0)((v ae)0)((n y)0))))
-(lex.add.entry '("revenu_nil" nil (((rh ae)0)((v ae)0)((n y)0))))
-(lex.add.entry '("venu_nil" nil (((v ae)0)((n y)0))))
-(lex.add.entry '("advenue_nil" nil (((a d)0)((v ae)0)((n y)0))))
-(lex.add.entry '("circonvenue_nil" nil (((s i rh)0)((k ohn)0)((v ae)0)((n y)0))))
-(lex.add.entry '("contrevenue_nil" nil (((k ohn)0)((t rh ae)0)((v ae)0)((n y)0))))
-(lex.add.entry '("convenue_nil" nil (((k ohn)0)((v ae)0)((n y)0))))
-(lex.add.entry '("devenue_nil" nil (((d ae)0)((v ae)0)((n y)0))))
-(lex.add.entry '("disconvenue_nil" nil (((d i s)0)((k ohn)0)((v ae)0)((n y)0))))
-(lex.add.entry '("intervenue_nil" nil (((ehn)0)((t eh rh)0)((v ae)0)((n y)0))))
-(lex.add.entry '("mésadvenue_nil" nil (((m e)0)((z a d)0)((v ae)0)((n y)0))))
-(lex.add.entry '("parvenue_nil" nil (((p a rh)0)((v ae)0)((n y)0))))
-(lex.add.entry '("prévenue_nil" nil (((p rh e)0)((v ae)0)((n y)0))))
-(lex.add.entry '("revenue_nil" nil (((rh ae)0)((v ae)0)((n y)0))))
-(lex.add.entry '("venue_nil" nil (((v ae)0)((n y)0))))
-(lex.add.entry '("advenè_nil" nil (((a d)0)((v ae)0)((n eh)0))))
-(lex.add.entry '("circonvenè_nil" nil (((s i rh)0)((k ohn)0)((v ae)0)((n eh)0))))
-(lex.add.entry '("contrevenè_nil" nil (((k ohn)0)((t rh ae)0)((v ae)0)((n eh)0))))
-(lex.add.entry '("convenè_nil" nil (((k ohn)0)((v ae)0)((n eh)0))))
-(lex.add.entry '("devenè_nil" nil (((d ae)0)((v ae)0)((n eh)0))))
-(lex.add.entry '("disconvenè_nil" nil (((d i s)0)((k ohn)0)((v ae)0)((n eh)0))))
-(lex.add.entry '("intervenè_nil" nil (((ehn)0)((t eh rh)0)((v ae)0)((n eh)0))))
-(lex.add.entry '("mésadvenè_nil" nil (((m e)0)((z a d)0)((v ae)0)((n eh)0))))
-(lex.add.entry '("parvenè_nil" nil (((p a rh)0)((v ae)0)((n eh)0))))
-(lex.add.entry '("prévenè_nil" nil (((p rh e)0)((v ae)0)((n eh)0))))
-(lex.add.entry '("revenè_nil" nil (((rh ae)0)((v ae)0)((n eh)0))))
-(lex.add.entry '("venè_nil" nil (((v ae)0)((n eh)0))))
-(lex.add.entry '("vit_nil" nil (((v i t)0))))
+(lex.add.entry '("fis" nil (((f i)0))))
+(lex.add.entry '("met" nil (((m eh)0))))
+(lex.add.entry '("mets" nil (((m eh)0))))
+(lex.add.entry '("mené" nil ((("m" "ae")0)(("n" "e")0))))
+(lex.add.entry '("menè" nil ((("m" "ae")0)(("n" "eh")0))))
+(lex.add.entry '("apprenè" nil (((a)0)((p rh ae)0)((n eh)0))))
+(lex.add.entry '("comprenè" nil (((k ohn)0)((p rh ae)0)((n eh)0))))
+(lex.add.entry '("entreprenè" nil (((ahn t rh ae)0)((p rh ae)0)((n eh)0))))
+(lex.add.entry '("méprenè" nil (((m e)0)((p rh ae)0)((n eh)0))))
+(lex.add.entry '("prenè" nil (((p rh ae)0)((n eh)0))))
+(lex.add.entry '("reprenè" nil (((rh ae)0)((p rh ae)0)((n eh)0))))
+(lex.add.entry '("surprenè" nil (((s y rh)0)((p rh ae)0)((n eh)0))))
+(lex.add.entry '("pût" nil (((p y)0))))
+(lex.add.entry '("sers" nil (((s eh rh)0))))
+(lex.add.entry '("sût" nil (((s y)0))))
+(lex.add.entry '("tût" nil (((t y)0))))
+(lex.add.entry '("abstenè" nil (((a p s)0)((t ae)0)((n eh)0))))
+(lex.add.entry '("appartenè" nil (((a)0)((p a rh)0)((t ae)0)((n eh)0))))
+(lex.add.entry '("contenè" nil (((k ohn)0)((t ae)0)((n eh)0))))
+(lex.add.entry '("détenè" nil (((d e)0)((t ae)0)((n eh)0))))
+(lex.add.entry '("entretenè" nil (((ahn)0)((t rh ae)0)((t ae)0)((n eh)0))))
+(lex.add.entry '("maintenè" nil (((m ehn)0)((t ae)0)((n eh)0))))
+(lex.add.entry '("obtenè" nil (((oh b)0)((t ae)0)((n eh)0))))
+(lex.add.entry '("retenè" nil (((rh ae)0)((t ae)0)((n eh)0))))
+(lex.add.entry '("soutenè" nil (((s u)0)((t ae)0)((n eh)0))))
+(lex.add.entry '("tenè" nil (((t ae)0)((n eh)0))))
+(lex.add.entry '("abstenu" nil (((a p s)0)((t ae)0)((n y)0))))
+(lex.add.entry '("appartenu" nil (((a)0)((p a rh)0)((t ae)0)((n y)0))))
+(lex.add.entry '("contenu" nil (((k ohn)0)((t ae)0)((n y)0))))
+(lex.add.entry '("détenu" nil (((d e)0)((t ae)0)((n y)0))))
+(lex.add.entry '("détenue" nil (((d e)0)((t ae)0)((n y)0))))
+(lex.add.entry '("entretenu" nil (((ahn)0)((t rh ae)0)((t ae)0)((n y)0))))
+(lex.add.entry '("maintenu" nil (((m ehn)0)((t ae)0)((n y)0))))
+(lex.add.entry '("obtenu" nil (((oh b)0)((t ae)0)((n y)0)))); ACF b p
+(lex.add.entry '("retenu" nil (((rh ae)0)((t ae)0)((n y)0))))
+(lex.add.entry '("retenue" nil (((rh ae)0)((t ae)0)((n y)0))))
+(lex.add.entry '("soutenu" nil (((s u)0)((t ae)0)((n y)0))))
+(lex.add.entry '("soutenue" nil (((s u)0)((t ae)0)((n y)0))))
+(lex.add.entry '("tenu" nil (((t ae)0)((n y)0))))
+(lex.add.entry '("tenus" nil ((("t" "ae")0) (("n" "y")0))))
+(lex.add.entry '("tenue" nil ((("t" "ae")0) (("n" "y")0))))
+(lex.add.entry '("abstenue" nil (((a p s)0)((t ae)0)((n y)0))))
+(lex.add.entry '("appartenue" nil (((a)0)((p a rh)0)((t ae)0)((n y)0))))
+(lex.add.entry '("contenue" nil (((k ohn)0)((t ae)0)((n y)0))))
+(lex.add.entry '("entretenue" nil (((ahn)0)((t rh ae)0)((t ae)0)((n y)0))))
+(lex.add.entry '("maintenue" nil (((m ehn)0)((t ae)0)((n y)0))))
+(lex.add.entry '("obtenue" nil (((oh b)0)((t ae)0)((n y)0))))
+(lex.add.entry '("tenue" nil (((t ae)0)((n y)0))))
+;(lex.add.entry '("vient" nil (((v j ehn)0))))
+(lex.add.entry '("advenir" nil (((a d)0)((v ae)0)((n i rh)0))))
+(lex.add.entry '("advenu" nil (((a d)0)((v ae)0)((n y)0))))
+(lex.add.entry '("circonvenu" nil (((s i rh)0)((k ohn)0)((v ae)0)((n y)0))))
+(lex.add.entry '("contrevenu" nil (((k ohn)0)((t rh ae)0)((v ae)0)((n y)0))))
+(lex.add.entry '("convenu" nil (((k ohn)0)((v ae)0)((n y)0))))
+(lex.add.entry '("devenu" nil (((d ae)0)((v ae)0)((n y)0))))
+(lex.add.entry '("disconvenu" nil (((d i s)0)((k ohn)0)((v ae)0)((n y)0))))
+(lex.add.entry '("intervenu" nil (((ehn)0)((t eh rh)0)((v ae)0)((n y)0))))
+(lex.add.entry '("mésadvenu" nil (((m e)0)((z a d)0)((v ae)0)((n y)0))))
+(lex.add.entry '("parvenu" nil (((p a rh)0)((v ae)0)((n y)0))))
+(lex.add.entry '("prévenu" nil (((p rh e)0)((v ae)0)((n y)0))))
+(lex.add.entry '("revenu" nil (((rh ae)0)((v ae)0)((n y)0))))
+(lex.add.entry '("venu" nil (((v ae)0)((n y)0))))
+(lex.add.entry '("advenue" nil (((a d)0)((v ae)0)((n y)0))))
+(lex.add.entry '("circonvenue" nil (((s i rh)0)((k ohn)0)((v ae)0)((n y)0))))
+(lex.add.entry '("contrevenue" nil (((k ohn)0)((t rh ae)0)((v ae)0)((n y)0))))
+(lex.add.entry '("convenue" nil (((k ohn)0)((v ae)0)((n y)0))))
+(lex.add.entry '("devenue" nil (((d ae)0)((v ae)0)((n y)0))))
+(lex.add.entry '("disconvenue" nil (((d i s)0)((k ohn)0)((v ae)0)((n y)0))))
+(lex.add.entry '("intervenue" nil (((ehn)0)((t eh rh)0)((v ae)0)((n y)0))))
+(lex.add.entry '("mésadvenue" nil (((m e)0)((z a d)0)((v ae)0)((n y)0))))
+(lex.add.entry '("parvenue" nil (((p a rh)0)((v ae)0)((n y)0))))
+(lex.add.entry '("prévenue" nil (((p rh e)0)((v ae)0)((n y)0))))
+(lex.add.entry '("revenue" nil (((rh ae)0)((v ae)0)((n y)0))))
+(lex.add.entry '("venue" nil (((v ae)0)((n y)0))))
+(lex.add.entry '("advenè" nil (((a d)0)((v ae)0)((n eh)0))))
+(lex.add.entry '("circonvenè" nil (((s i rh)0)((k ohn)0)((v ae)0)((n eh)0))))
+(lex.add.entry '("contrevenè" nil (((k ohn)0)((t rh ae)0)((v ae)0)((n eh)0))))
+(lex.add.entry '("convenè" nil (((k ohn)0)((v ae)0)((n eh)0))))
+(lex.add.entry '("devenè" nil (((d ae)0)((v ae)0)((n eh)0))))
+(lex.add.entry '("disconvenè" nil (((d i s)0)((k ohn)0)((v ae)0)((n eh)0))))
+(lex.add.entry '("intervenè" nil (((ehn)0)((t eh rh)0)((v ae)0)((n eh)0))))
+(lex.add.entry '("mésadvenè" nil (((m e)0)((z a d)0)((v ae)0)((n eh)0))))
+(lex.add.entry '("parvenè" nil (((p a rh)0)((v ae)0)((n eh)0))))
+(lex.add.entry '("prévenè" nil (((p rh e)0)((v ae)0)((n eh)0))))
+(lex.add.entry '("revenè" nil (((rh ae)0)((v ae)0)((n eh)0))))
+(lex.add.entry '("venè" nil (((v ae)0)((n eh)0))))
+(lex.add.entry '("vit" nil (((v i t)0))))
 ; ; NON(lex.add.entry '("chef-d" "ADJ" ((("sh" "e_d" "d")0)))); seul chef d'oeuvre
 ; s non muet et assimilé
 ; cactus
-(lex.add.entry '("jadis_nil" nil (((zh a)0)((d i s)0))))
+(lex.add.entry '("jadis" nil (((zh a)0)((d i s)0))))
 ;(lex.add.entry '("l_atlas" nil (((l a t)0)((l a s)0))))
 (lex.add.entry '("atlas" nil (((a t)0)((l a s)0))))
 ; ICI
@@ -2180,91 +2178,91 @@
 (lex.add.entry '("ail_" nil(((a j)0))))
 ; consonne interne muette
 (lex.add.entry '("abrupti_" nil (((a)0)((b rh y)0)((t i)0))))
-(lex.add.entry '("abruptis_nil" nil (((a)0)((b rh y)0)((t i)0))))
-(lex.add.entry '("abruptie_nil" nil (((a)0)((b rh y)0)((t i)0))))
-(lex.add.entry '("monsieur_nil" nil (((m ae)0)((s j eu)0))))
-(lex.add.entry '("messieurs_nil" nil (((m e)0)((s j eu)0))))
-(lex.add.entry '("toutlemonde_nil" nil (((t u)0)((l ae)0)((m ohn d)0))))
-(lex.add.entry '("abc_nil" nil (((a)0)((b e)0)((s e)0))))
-(lex.add.entry '("agenda_nil" nil (((a)0)((zh ehn)0)((d a)0))))
+(lex.add.entry '("abruptis" nil (((a)0)((b rh y)0)((t i)0))))
+(lex.add.entry '("abruptie" nil (((a)0)((b rh y)0)((t i)0))))
+(lex.add.entry '("monsieur" nil (((m ae)0)((s j eu)0))))
+(lex.add.entry '("messieurs" nil (((m e)0)((s j eu)0))))
+(lex.add.entry '("toutlemonde" nil (((t u)0)((l ae)0)((m ohn d)0))))
+(lex.add.entry '("abc" nil (((a)0)((b e)0)((s e)0))))
+(lex.add.entry '("agenda" nil (((a)0)((zh ehn)0)((d a)0))))
 ; ave 
 ; ail*$
 ; chandail?
 ; ch initiaux versus sh versus k ?dépendance lts forte
 ; ch -> sh
-(lex.add.entry '("chiotte_nil" nil (((s h j oh t)0))))
-(lex.add.entry '("chiot_nil" nil (((s h j o)0))))
-(lex.add.entry '("chat_nil" nil (((sh a)0))))
-(lex.add.entry '("choeur_nil" nil (((k oe rh)0))))
-(lex.add.entry '("chose_nil" nil (((sh o z)0))))
-(lex.add.entry '("chère_nil" nil (((sh eh rh)0))))
-(lex.add.entry '("chéri_nil" nil (((sh e)0)((rh i)0))))
-(lex.add.entry '("chérie_nil" nil (((sh e)0)((rh i)0))))
-(lex.add.entry '("kitsh_nil" nil (((k  i t sh)0))))
+(lex.add.entry '("chiotte" nil (((s h j oh t)0))))
+(lex.add.entry '("chiot" nil (((s h j o)0))))
+(lex.add.entry '("chat" nil (((sh a)0))))
+(lex.add.entry '("choeur" nil (((k oe rh)0))))
+(lex.add.entry '("chose" nil (((sh o z)0))))
+(lex.add.entry '("chère" nil (((sh eh rh)0))))
+(lex.add.entry '("chéri" nil (((sh e)0)((rh i)0))))
+(lex.add.entry '("chérie" nil (((sh e)0)((rh i)0))))
+(lex.add.entry '("kitsh" nil (((k  i t sh)0))))
 ; hiatus interne à dégager suivant qualité voix
-(lex.add.entry '("pays_nil" nil (((p e)0)(( i)0)))) 
+(lex.add.entry '("pays" nil (((p e)0)(( i)0)))) 
 ; on table sur des h muets TODO verifier     hs comme simple ?
-;(lex.add.entry '("hamac_nil" nil ((( a)0)((m a k)0))))
-;(lex.add.entry '("ululement_nil" nil ((( y)0)((l y)0)((l e)0)((m ahn)0))))
-;(lex.add.entry '("haut_nil" nil (((o)0)))) ;var
+;(lex.add.entry '("hamac" nil ((( a)0)((m a k)0))))
+;(lex.add.entry '("ululement" nil ((( y)0)((l y)0)((l e)0)((m ahn)0))))
+;(lex.add.entry '("haut" nil (((o)0)))) ;var
 ; héros
 (lex.add.entry '("marshmallow" nil (((m a rh)0) ((sh m a)0) ((l o)0))))
 ; terminaisons
 ; on table sur des terminaisons muettes  avec s 
-(lex.add.entry '("lis_nil" nil (((l i s)0))))
-(lex.add.entry '("tennis_nil" nil (((t e n i s)0))))
-(lex.add.entry '("pénis_nil" nil (((p e n i s)0))))
+(lex.add.entry '("lis" nil (((l i s)0))))
+(lex.add.entry '("tennis" nil (((t e n i s)0))))
+(lex.add.entry '("pénis" nil (((p e n i s)0))))
 ; on table sur des terminaisons muettes  avec x  
-(lex.add.entry '("index_nil" nil (((ehn)0)((d eh k s)0))))
+(lex.add.entry '("index" nil (((ehn)0)((d eh k s)0))))
 ; on table sur des terminaisons muettes  avec t  
-(lex.add.entry '("transit_nil" nil (((t rh ahn)0)((z i t)0))))
-(lex.add.entry '("obit_nil" nil (((oh)0)((b i t)0))))
-(lex.add.entry '("pitpit_nil" nil (((p i t)0)((p i t)0))))
-(lex.add.entry '("transat_nil" nil (((t rh ahn)0)((z a t)0))))
-(lex.add.entry '("dictat_nil" nil (((d i k)0)((t a t)0))))
-(lex.add.entry '("exeat_nil" nil (((eh g)0)((z e)0)((a t)0))))
-(lex.add.entry '("sprat_nil" nil (((s p rh a t)0))))
-(lex.add.entry '("audimat_nil" nil (((oh)0)((d i)0)((m a t)0))))
-(lex.add.entry '("copycat_nil" nil (((k oh )0)((p i)0)((k a t)0))))
-(lex.add.entry '("magnificat_nil" nil (((m a)0)((n i)0)((f i)0)((k a t)0))))
+(lex.add.entry '("transit" nil (((t rh ahn)0)((z i t)0))))
+(lex.add.entry '("obit" nil (((oh)0)((b i t)0))))
+(lex.add.entry '("pitpit" nil (((p i t)0)((p i t)0))))
+(lex.add.entry '("transat" nil (((t rh ahn)0)((z a t)0))))
+(lex.add.entry '("dictat" nil (((d i k)0)((t a t)0))))
+(lex.add.entry '("exeat" nil (((eh g)0)((z e)0)((a t)0))))
+(lex.add.entry '("sprat" nil (((s p rh a t)0))))
+(lex.add.entry '("audimat" nil (((oh)0)((d i)0)((m a t)0))))
+(lex.add.entry '("copycat" nil (((k oh )0)((p i)0)((k a t)0))))
+(lex.add.entry '("magnificat" nil (((m a)0)((n i)0)((f i)0)((k a t)0))))
 (lex.add.entry '("bat" ADJ (((b a t)0))))
 (lex.add.entry '("mat" ADJ (((m a t)0))))
-(lex.add.entry '("pat_nil" nil (((p a t)0))))
+(lex.add.entry '("pat" nil (((p a t)0))))
 (lex.add.entry '("vat" NOM (((v a t)0))))
-(lex.add.entry '("squat_nil" nil (((s k w a t)0))))
-(lex.add.entry '("watt_nil" nil (((w a t)0))))
+(lex.add.entry '("squat" nil (((s k w a t)0))))
+(lex.add.entry '("watt" nil (((w a t)0))))
 (lex.add.entry '("occiput_" nil (((oh k)0)((s i)0)((p y t)0))))
 (lex.add.entry '("court_" nil (((k u rh t)0))))
 ; mais
 (lex.add.entry '("court" nil (((k u rh)0))))
 ; on table sur des terminaisons muettes  avec k  
-; comme(lex.add.entry '("arc_nil" nil (((a rh k)0))))
-(lex.add.entry '("tabac_nil" nil (((t a)0) ((b a)0))))
+; comme(lex.add.entry '("arc" nil (((a rh k)0))))
+(lex.add.entry '("tabac" nil (((t a)0) ((b a)0))))
 ; on table sur des terminaisons muettes  avec g 
 (lex.add.entry '("bang" nil (((b ahn g)0))))
 (lex.add.entry '("bang_ONO" "ONO" (((b ahn g)0))))
 ; terminaison peu courante
 ; erf$
-(lex.add.entry '("parfum_nil" nil (((p a rh)0)((f oen)0)((n j e)0))))
-(lex.add.entry '("almanach_nil" nil (((a l)0)((m a)0)((n a k)0))))
+(lex.add.entry '("parfum" nil (((p a rh)0)((f oen)0)((n j e)0))))
+(lex.add.entry '("almanach" nil (((a l)0)((m a)0)((n a k)0))))
 ; correction provisoire ? de répétition phonèmes et hiatus interne
 ; niveau de langue
 (lex.add.entry '("celle_là_PRO:ind" "PRO:ind" (((s eh)0)((l ae)0)((l a)0))))
-(lex.add.entry '("en_plus_nil" nil (((ahn)0)(("p" "l" "y")0))))
-(lex.add.entry '("de_plus_nil" nil (((d ae)0)(("p" "l" "y" s)0))))
-(lex.add.entry '("plus_ou_moins_nil" nil ((("p" "l" "y")0)((z u)0)((m w ehn)0))))
-(lex.add.entry '("palefrenier_nil" nil ((( p a l)0)((f rh ae)0)((n j e)0))))
-(lex.add.entry '("impôt_nil" nil (((ehn)0)((p o)0))))
-(lex.add.entry '("barmaid_nil" nil (((b a rh)0)((m eh d)0))))
-(lex.add.entry '("raid_nil" nil (((rh eh d)0))))
-(lex.add.entry '("plaid_nil" nil (((p l eh d)0))))
-(lex.add.entry '("poing_nil" nil (((p w ehn)0))))
-(lex.add.entry '("coing_nil" nil (((k w ehn)0))))
-(lex.add.entry '("loing_nil" nil (((l w ehn)0))))
+(lex.add.entry '("en_plus" nil (((ahn)0)(("p" "l" "y")0))))
+(lex.add.entry '("de_plus" nil (((d ae)0)(("p" "l" "y" s)0))))
+(lex.add.entry '("plus_ou_moins" nil ((("p" "l" "y")0)((z u)0)((m w ehn)0))))
+(lex.add.entry '("palefrenier" nil ((( p a l)0)((f rh ae)0)((n j e)0))))
+(lex.add.entry '("impôt" nil (((ehn)0)((p o)0))))
+(lex.add.entry '("barmaid" nil (((b a rh)0)((m eh d)0))))
+(lex.add.entry '("raid" nil (((rh eh d)0))))
+(lex.add.entry '("plaid" nil (((p l eh d)0))))
+(lex.add.entry '("poing" nil (((p w ehn)0))))
+(lex.add.entry '("coing" nil (((k w ehn)0))))
+(lex.add.entry '("loing" nil (((l w ehn)0))))
 (lex.add.entry '("shampoing_" nil (((s h ahn)0) ((p w ehn)0))))
 (lex.add.entry '("après-shampoing_" nil (((a)0) ((p rh eh)0) ((s h ahn)0) ((p w ehn)0))))
 ; après-shampoing
-(lex.add.entry '("tourcoing_nil" nil (((t u rh)0) ((k w ehn)0))))
+(lex.add.entry '("tourcoing" nil (((t u rh)0) ((k w ehn)0))))
 ; *igt*
 ; * [[croque-en-doigts]]
 ; * [[doigt]] {{pron|dwa|fr}}
@@ -2277,72 +2275,72 @@
 ; * [[rince-doigt]] {{pron|ʁɛ̃s.dwa|fr}}
 ; * [[rince-doigts]] {{pron|ʁɛ̃s.dwa|fr}}
 ; * [[six-doigts]] {{pron|si.dwa|fr}}
-(lex.add.entry '("doigt_nil" nil (((d w a)0))))
+(lex.add.entry '("doigt" nil (((d w a)0))))
 (lex.add.entry '("doigt_" nil (((d w a)0)))); strict pour rince_doigt
-(lex.add.entry '("doigté_nil" nil (((d w a)0)((t e)0))))
+(lex.add.entry '("doigté" nil (((d w a)0)((t e)0))))
 ; et leur pluriel strict pour les mots composés
 (lex.add.entry '("doigts_" nil (((d w a)0))))
-(lex.add.entry '("doigtés_nil" nil (((d w a)0) ((t e)0))))
+(lex.add.entry '("doigtés" nil (((d w a)0) ((t e)0))))
 ; reforme 20211018 
-(lex.add.entry '("vintage_nil" nil (((v i n)0)((t eh d zh) 0))))
+(lex.add.entry '("vintage" nil (((v i n)0)((t eh d zh) 0))))
 ; atie si\ versus ti\
-(lex.add.entry '("tatie_nil" nil (((t a)0) ((t i)0))))
-(lex.add.entry '("cacocratie_nil" nil (((k a)0)((k o)0)((k rh a)0)((t i)0))))
-(lex.add.entry '("chrestomatie_nil" nil (((k rh eh s)0)((t oh)0)((m a)0)((t i)0))))
-(lex.add.entry '("monochromatie_nil" nil (((m oh)0)((n oh)0)((k rh oh)0)((m a)0)((t i)0))))
-(lex.add.entry '("diastématie_nil" nil (((d j a s)0)((t e)0)((m a)0)((t i)0))))
+(lex.add.entry '("tatie" nil (((t a)0) ((t i)0))))
+(lex.add.entry '("cacocratie" nil (((k a)0)((k o)0)((k rh a)0)((t i)0))))
+(lex.add.entry '("chrestomatie" nil (((k rh eh s)0)((t oh)0)((m a)0)((t i)0))))
+(lex.add.entry '("monochromatie" nil (((m oh)0)((n oh)0)((k rh oh)0)((m a)0)((t i)0))))
+(lex.add.entry '("diastématie" nil (((d j a s)0)((t e)0)((m a)0)((t i)0))))
 ; reste en VER ADJ en ti\ sans exception 
 ; onc* 
 (lex.add.entry '("Donc" nil ((("d" "ohn" "k") 0))))
 (lex.add.entry '("donc" nil ((("d" "ohn" "k") 0))))
-(lex.add.entry '("tronc_nil" nil ((("t" "rh" "ohn")0))))
-(lex.add.entry '("alitronc_nil" nil (((a)0)(("t" "rh" "ohn")0))))
-(lex.add.entry '("caf'_conc_nil" nil (((k a f)0)(("k" "ohn" "s")0))))
-(lex.add.entry '("ajonc_nil" nil (((a)0)(("zh" "ohn")0))))
-(lex.add.entry '("coudonc_nil" nil (((k u)0)(("d" "ohn")0))))
-(lex.add.entry '("cout'onc_nil" nil (((k u t)0)(("d" "ohn" "k")0))))
-(lex.add.entry '("jonc_nil" nil ((("zh" "ohn")0))))
-; ?(lex.add.entry '("macjonc_nil" nil (((m a)0)(("zh" "ohn")0))))
+(lex.add.entry '("tronc" nil ((("t" "rh" "ohn")0))))
+(lex.add.entry '("alitronc" nil (((a)0)(("t" "rh" "ohn")0))))
+(lex.add.entry '("caf'_conc" nil (((k a f)0)(("k" "ohn" "s")0))))
+(lex.add.entry '("ajonc" nil (((a)0)(("zh" "ohn")0))))
+(lex.add.entry '("coudonc" nil (((k u)0)(("d" "ohn")0))))
+(lex.add.entry '("cout'onc" nil (((k u t)0)(("d" "ohn" "k")0))))
+(lex.add.entry '("jonc" nil ((("zh" "ohn")0))))
+; ?(lex.add.entry '("macjonc" nil (((m a)0)(("zh" "ohn")0))))
 ; tian
 (lex.add.entry '("balbutiant" nil (((b a l)0)((b y)0)((s j ahn)0))))
-(lex.add.entry '("balbutiante_nil" nil (((b a l)0)((b y)0)((s j ahn t)0))))
+(lex.add.entry '("balbutiante" nil (((b a l)0)((b y)0)((s j ahn t)0))))
 (lex.add.entry '("initiant" nil (((i)0)((n i)0)((s j ahn)0))))
                
 ; alli* et .alli*
 ; si n -> l ehn. ou i.ni callinique
 ; si C -> li.C pour t, v, c/s, c/k, g, p
 ; si V -> l j 
-(lex.add.entry '("pool_nil" nil (((p u l)0))))
-(lex.add.entry '("mille_nil" nil (((m i l )0))))
-(lex.add.entry '("cyan_nil" nil (((s j ahn )0))))
-(lex.add.entry '("géopoplitique_nil" nil (((zh e)0)((o)0)((p oh)0)((l i)0)((t i k)0))))
+(lex.add.entry '("pool" nil (((p u l)0))))
+(lex.add.entry '("mille" nil (((m i l )0))))
+(lex.add.entry '("cyan" nil (((s j ahn )0))))
+(lex.add.entry '("géopoplitique" nil (((zh e)0)((o)0)((p oh)0)((l i)0)((t i k)0))))
 ; *gée
-(lex.add.entry '("pingé_nil" nil (((p i n)0)((g e)0))))
-(lex.add.entry '("pingée_nil" nil (((p i n)0)((g e)0))))
-(lex.add.entry '("loggé_nil" nil (((l oh)0)((g e)0))))
-(lex.add.entry '("loggée_nil" nil (((l oh)0)((g e)0))))
+(lex.add.entry '("pingé" nil (((p i n)0)((g e)0))))
+(lex.add.entry '("pingée" nil (((p i n)0)((g e)0))))
+(lex.add.entry '("loggé" nil (((l oh)0)((g e)0))))
+(lex.add.entry '("loggée" nil (((l oh)0)((g e)0))))
 ; 
 (lex.add.entry '("haschich_" nil ((("a") 0) (("sh" "i" "sh") 0))))
 (lex.add.entry '("haschisch" nil ((("a") 0) (("sh" "i" "sh") 0))))
 (lex.add.entry '("backchich_" nil ((("b" "a") 0) (("sh" "i" "sh") 0))))
 ; cho*
-(lex.add.entry '("chow_nil" nil ((( sh o)0))))
+(lex.add.entry '("chow" nil ((( sh o)0))))
 ; xéro* k-s-e  versus g z e
 ; grep -E "^xéro" psychoGLAFF-1.0.csv  | grep -v "kse"
 ; une dizaine d'exceptions
 ; xérographie
 ; xérographique
 ; xérophtalmie
-(lex.add.entry '("circonspect_nil" nil ((( s i rh)0)((k ohn)0) ((s p eh) 0))))
+(lex.add.entry '("circonspect" nil ((( s i rh)0)((k ohn)0) ((s p eh) 0))))
 ; envisager bonh* -> bon_* dans norm ?
 (lex.add.entry '("bonhomme" nil (((b oh)0)((n oh m)0))))
-(lex.add.entry '("bonheur_nil" nil (((b oh)0)((n eu rh)0))))
-(lex.add.entry '("bonhomie_nil" nil (((b oh)0)((n oh)0) ((m i)0)))); ortho traditionnelle
-(lex.add.entry '("bonhommie_nil" nil (((b oh)0)((n oh)0) ((m i)0))))
+(lex.add.entry '("bonheur" nil (((b oh)0)((n eu rh)0))))
+(lex.add.entry '("bonhomie" nil (((b oh)0)((n oh)0) ((m i)0)))); ortho traditionnelle
+(lex.add.entry '("bonhommie" nil (((b oh)0)((n oh)0) ((m i)0))))
 ; *ouc
-(lex.add.entry '("bouc_nil" nil ((( b u k)0))))
-(lex.add.entry '("plouc_nil" nil ((( p l  u k)0))))
-(lex.add.entry '("caoutchouc_nil" nil (((k a)0)((u t)0)((sh u)0))))
+(lex.add.entry '("bouc" nil ((( b u k)0))))
+(lex.add.entry '("plouc" nil ((( p l  u k)0))))
+(lex.add.entry '("caoutchouc" nil (((k a)0)((u t)0)((sh u)0))))
 (lex.add.entry '("faisceau" nil ((("f" "eh") 0) ((s "o") 0))))
 (lex.add.entry '("sceau" nil (((s "o") 0))))
 (lex.add.entry '("caviar" nil (((k a) 0) ((v j a rh) 0))))
@@ -2350,11 +2348,11 @@
 (lex.add.entry '("antiarine" nil (((ahn) 0) ((t j a)0) ((rh i n)))))
 (lex.add.entry '("siar" nil (((s j a rh) 0))))
 ; oe versus eu
-(lex.add.entry '("seul_nil" nil (((s oe l) 0))))
-;(lex.add.entry '("veule_nil" nil (((v eu l) 0)))); par exemple
+(lex.add.entry '("seul" nil (((s oe l) 0))))
+;(lex.add.entry '("veule" nil (((v eu l) 0)))); par exemple
 ;(lex.add.entry '("veule" nil (((v oe l) 0)))); par exemple
 ; oh versus o
-(lex.add.entry '("oh_nil" nil (((o) 0))))
+(lex.add.entry '("oh" nil (((o) 0))))
 ; gérondif t j ahn versus s j ahn
 (lex.add.entry '("chatiant" nil ((("sh" "a") 0) (("t" "j" "ahn") 0))))
 ; ï
@@ -2374,11 +2372,11 @@
 (lex.add.entry '("western" nil (((w eh) 0) ((s t eh rh n)0))))
 (lex.add.entry '("walkman" nil (((w o k) 0) ((m a n)0))))
 (lex.add.entry '("walkie-talkie" nil (((w o k) 0) ((m a n)0))))
-(lex.add.entry '("caveat_nil" nil (((k a )0)((v e)0)((a t)0))))
-(lex.add.entry '("meridiem_nil" nil (((m e )0)((rh i)0)((d j eh m)0))))
-(lex.add.entry '("duffle-coat_nil" nil (((d oe)0)((f ae l)0)((k o t)0))))
+(lex.add.entry '("caveat" nil (((k a )0)((v e)0)((a t)0))))
+(lex.add.entry '("meridiem" nil (((m e )0)((rh i)0)((d j eh m)0))))
+(lex.add.entry '("duffle-coat" nil (((d oe)0)((f ae l)0)((k o t)0))))
 (lex.add.entry '("geyser_" nil ((("zh" "eh") 0) (("z" "eh" "rh") 0))))
-(lex.add.entry '("pound_nil" nil (((p a)0)((ohn d)0))))
+(lex.add.entry '("pound" nil (((p a)0)((ohn d)0))))
 ; six
 (lex.add.entry '("sixième" nil ((("s" "i") 0) (("z" "j" "eh" "m") 0))))
 (lex.add.entry '("alezan" nil ((("a" l) 0) (("z" "ahn") 0))))

@@ -122,7 +122,7 @@
   ;(lex.add.entry '("corn_flakes" ((NOM -5.716) ) () ))
   ;(lex.add.entry '("corpus_delicti" ((NOM -6.260) ) () ))
 (lex.add.entry '("cot_cot_codec" ONO (((k oh t)0)((k oh t)0)((k o)0)((d eh k)0))))
-  ;(lex.add.entry '("d'ores_et_déjà" ((ADV -5.731) ) () ))
+  ;(lex.add.entry '("d_ores_et_déjà" ((ADV -5.731) ) () ))
   ;(lex.add.entry '("d_abord" ((ADV -2.783) ) () ))
   ;(lex.add.entry '("d_autres" ((ADJ:ind -1.348)(PRO:ind -2.008) ) () ))
   ;(lex.add.entry '("d_emblée" ((ADV -4.937) ) () ))
@@ -225,7 +225,7 @@
 (lex.add.entry '("à_tout_hasard" ADV (((a)0)((t u)0)((t a)0)((z a rh)0))))
 (lex.add.entry '("à_tâtons" ADV  (((a) 0) ((t a) 0) ((t ohn) 0))))
 (lex.add.entry '("à_votre_encontre" ADV (((a) 0) ((v oh) 0) ((t rh ahn) 0) ((k ohn t rh) 0))))
-;  ;   925: ("c'est-à-dire" ? (s eh)0)((t a)0)((d i rh)0)))
+
 ;  ; 86001: ("tiers-état" NOM 
 ;  ; 9915:(lex.add.entry '("états-unis_NAM" "NAM" (((e)0)((t a)0)((z y)0)((n i)0))))
 ;  ; pied-à-terre QT_3 ok mais vu comme VER
@@ -429,8 +429,8 @@
 ; ;("made_in" ADV 
 ; ;("près_de" ADV 
 ; ;;; 
-; ;_("n'est-ce_pas" ADV 
-; QT3(lex.add.entry '("chat_en-jambes" nil (((sh a) 0) ((t ahn)0)((zh ahn b) 0))));
+
+; QT3(lex.add.entry '("chat_en_jambes" nil (((sh a) 0) ((t ahn)0)((zh ahn b) 0))));
 ; QT3(lex.add.entry '("peut_être_VER" VER (((p eu) 0) ((t eh t rh) 0))))
 ; à mettre dddansenglish
 ;QT3(lex.add.entry '("saint_yon" NAM (((s ehn) 0) ((t j ohn) 0)))); Saint-Yon

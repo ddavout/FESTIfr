@@ -42,6 +42,8 @@
           (set! text (string-replace text " " " ")) ; "Oh !
           (set! text (string-replace text " " " ")) ; TODO tout blanc non ascii TODO
           (set! text (string-replace text " " " ")) ; (utf8ord " " 160)
+          ;  ajout espace finale pour faciliter remplacement des t'en and alike...
+          (set! text  (string-append text " "))
 
           (set! text (string-replace text "œ" "oe"))
           (set! text (string-replace text "á" "a"))
@@ -134,7 +136,10 @@
             (set! text (string-replace text "t'elle " "t_elle "))
             (set! text (string-replace text "t'elles " "t_elles "))
             (set! text (string-replace text "t'on " "t_on "))            
-            
+            (set! text (string-replace text "m'en " "m_en "))            
+            (set! text (string-replace text "t'en " "t_en "))            
+           ; supression de l'espace rajouté
+           (set! text (string-but-last text))
             (if (and verbose_norm (not (string-equal text texte)))
                  (format t "verbose_norm %s gives %s\n" texte text))
             

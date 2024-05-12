@@ -1062,6 +1062,7 @@
     ;"ci" ;NON
     ;"là" ;NON
     ; "mêmes" ; NON
+    "m_en" ;  donnez-m'en
     "elle" ;; voit-elle ?
     "elles" 
     "en"  
@@ -1644,6 +1645,7 @@
     "tout_à_chacun"; pos
     "tout_à_coup"; pos
     "tout_à_fait"; pos
+    "tout_à_l_heure"; pos
 
     "un_à_un" ; à cause des liaisons
     "urbi_et_orbi"
