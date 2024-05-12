@@ -1,9 +1,6 @@
 (defvar verbose_addendas)
 (if verbose_addendas (format t "INST_LANG_addenda_locutions.scm loaded"))
 
-(lex.add.entry '("chefs_lieu" nil ((("sh" "e" "f") 0) (("l" "j" "eu") 0))))
-(lex.add.entry '("chef_lieu" nil ((("sh" "e" "f") 0) (("l" "j" "eu") 0))))
-
 ; TODO XXX p.e distinguer locutions dont la prise en considération ne change que le POS et pas seulement la prononciation 
 (lex.add.entry '("ad_hoc" nil ((("a") 0) (("d" "oh" "K") 0))))
 (lex.add.entry '("années_homme" nil ((("a") 0) (("n" "e") 0) (("oh" "m") 0))))
@@ -224,7 +221,7 @@
 (lex.add.entry '("à_priori" ADV  (((a) 0) ((p rh i)0) ((j oh) 0) ((rh i) 0))))
 (lex.add.entry '("à_son_encontre" ADV (((a) 0) ((s ohn) 0) ((n ahn) 0) ((k ohn t rh) 0))))
 (lex.add.entry '("à_ton_encontre" ADV (((a) 0) ((t ohn) 0) ((n ahn) 0) ((k ohn t rh) 0))))
-(lex.add.entry '("à_tous_égards" ADV ((((a)0)(t u)0)((z e)0)((g a rh)0))))
+(lex.add.entry '("à_tous_égards" ADV (((a)0)((t u)0)((z e)0)((g a rh)0))))
 (lex.add.entry '("à_tout_hasard" ADV (((a)0)((t u)0)((t a)0)((z a rh)0))))
 (lex.add.entry '("à_tâtons" ADV  (((a) 0) ((t a) 0) ((t ohn) 0))))
 (lex.add.entry '("à_votre_encontre" ADV (((a) 0) ((v oh) 0) ((t rh ahn) 0) ((k ohn t rh) 0))))
