@@ -1,3 +1,4 @@
+ ;INST_LANG_synthesis
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;                                                                       ;;
  ;;                Centre for Speech Technology Research                  ;;
@@ -371,7 +372,8 @@
   "(SayText TEXT)
   TEXT, a string, is rendered as speech."
   (if (boundp 'RU) (set! RU nil))
-  (utt.play (utt.synth (eval (list 'Utterance 'Text text)))))
+  (set! texte (norm text))
+  (utt.play (utt.synth (eval (list 'Utterance 'Text texte)))))
 
 ; quicker en debug time
 (define (say text)

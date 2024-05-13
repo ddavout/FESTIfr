@@ -1,3 +1,46 @@
+; INST_LANG/INST_LANG_freeling_addenda.scm
+
+; ne pas oublier de mettre les membres de list_apres ici ou dans le dico notamment
+; les mots "fabriqués"
+; 0 pas de discussion, certitude
+(lex.add.entry '("m_en" ((PRO:per 0) ) () )); QTpos2
+(lex.add.entry '("z_en" ((PRO:per 0) ) () )); QTpos2
+(lex.add.entry '("en_lui" ((PRO:per 0) ) () )); QTpos2
+(lex.add.entry '("en_moi" ((PRO:per 0) ) () )); QTpos2
+(lex.add.entry '("en_nous" ((PRO:per 0) ) () )); QTpos2
+(lex.add.entry '("en_toi" ((PRO:per 0) ) () )); QTpos2
+(lex.add.entry '("en_vous" ((PRO:per 0) ) () )); QTpos2
+(lex.add.entry '("en_elle" ((PRO:per 0) ) () )); QTpos2
+(lex.add.entry '("t_elle" ((PRO:per 0) ) () )); QTpos2
+(lex.add.entry '("t_il" ((PRO:per 0) ) () )); QTpos2
+(lex.add.entry '("t_on" ((PRO:per 0) ) () )); QTpos2
+(lex.add.entry '("z_y" ((ADV 0) ) () )); QTpos2
+(lex.add.entry '("t_ils" ((PRO:per 0)) ())); QTpos2
+(lex.add.entry '("t_elles" ((PRO:per 0)) ())); QTpos2
+(lex.add.entry '("t_ils" ((PRO:per 0)) ())); QTpos2
+
+; symbols hors ponctuation et (y compris double bits pour voir)
+(lex.add.entry '("+" ((NOM 0)) ()))
+(lex.add.entry '(">" ((NOM 0)) ()))
+(lex.add.entry '("<" ((NOM 0)) ()))
+(lex.add.entry '("/" ((NOM 0)) ()))
+(lex.add.entry '("=" ((NOM 0)) ()))
+(lex.add.entry '("$" ((NOM 0)) ()))
+(lex.add.entry '("¢" ((NOM 0)) ()))
+(lex.add.entry '("%" ((NOM 0)) ()))
+(lex.add.entry '("§" ((NOM 0)) ()))
+(lex.add.entry '("#" ((NOM 0)) ()))
+
+(lex.add.entry '("*" ((NOM 0)) ()))
+(lex.add.entry '("~" ((NOM 0)) ()))
+(lex.add.entry '("^" ((NOM 0)) ()))
+(lex.add.entry '("@" ((NOM 0)) ()))
+(lex.add.entry '("&" ((NOM 0)) ()))
+(lex.add.entry '("|" ((NOM 0)) ()))
+
+
+
+
 ; pourquoi un load /home/yop7/Develop/festival/lib/dicts/INST_LANG_freeling_addenda.scm
 ; est-il nécessaire ?
 ;  ex pour (lex.add.entry '("Êtes-vous_VER" VER ((("eh" t) 0)((v a) 0))))
@@ -47,18 +90,12 @@
 (lex.add.entry '("Arthur" ((NAM 0))()));
 (lex.add.entry '("êtes" ((AUX -1.987)(VER -2.257))())); pour satisfaire is_in_poslex ? erreur
 (lex.add.entry '("fût_ce" ((VER 0))())); 
-(lex.add.entry '("t_ils" ((PRO:per 0)) ())); QTpos2
-(lex.add.entry '("t_elle" ((PRO:per 0)) ())); QTpos2
-(lex.add.entry '("t_elles" ((PRO:per 0)) ())); QTpos2
-(lex.add.entry '("t_il" ((PRO:per 0)) ())); QTpos2
-(lex.add.entry '("t_ils" ((PRO:per 0)) ())); QTpos2
-(lex.add.entry '("t_on" ((PRO:per 0)) ())); QTpos2
+
 (lex.add.entry '("n_importe_qui" ((PRO:ind 0)) ()))
 (lex.add.entry '("n_importe_quoi" ((PRO:ind 0)) ()))
-(lex.add.entry '("est_il" ((AUX -1.535)(VER -2.212))())); encore besoin ??? QTpos2
-(lex.add.entry '("sera_t_il" ((AUX -1.535)(VER -2.212))()));  pour sera-t'il  -> prehook sera_t_il VER
-;et non ?(lex.add.entry '("sera-t_il" ((AUX -1.535)(VER -2.212))())); 
-(lex.add.entry '("sera_t_elle" ((AUX -1.535)(VER -2.212))()));   
+; (lex.add.entry '("est_il" ((AUX -1.535)(VER -2.212))())); encore besoin ??? QTpos2
+; (lex.add.entry '("sera_t_il" ((AUX -1.535)(VER -2.212))()));  pour sera-t'il  -> prehook sera_t_il VER
+; (lex.add.entry '("sera_t_elle" ((AUX -1.535)(VER -2.212))()));   
 ; bug poslex
 (lex.add.entry '("être" ((AUX -1.535)(NOM -3.230)(VER -2.212))())); SIWIS
 (lex.add.entry '("s_être" ((AUX -1.535)(NOM -3.230)(VER -2.212))())); SIWIS

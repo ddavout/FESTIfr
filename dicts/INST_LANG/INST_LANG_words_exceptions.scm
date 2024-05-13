@@ -478,7 +478,7 @@
 (defvar never_exception_list_default) 
 ;(set! never_exception_list_default (list "dans" "très" "Sans" "sans"))
 ; AVOIR(set! never_exception_list_default (list "versus" "avocat" "maintenant" "onze"))
-(set! never_exception_list_default (list "z_y"))
+(set! never_exception_list_default (list "z_y" "m_en" "t_en" "s_en")) ; pour QTpos2 et QTpos22 ex donne_m_en un peu
 (define never_exception_list never_exception_list_default) 
 
 

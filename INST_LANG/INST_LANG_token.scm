@@ -160,7 +160,7 @@
 ; c'est aussi bien pour notre usage dans l'élision
 ; mais peut surprendre dans le cas de blancs insécables par exemple
   
-(defvar token.singlecharsymbols "<>=%"
+(defvar token.singlecharsymbols "<>=%€"
   "token.singlecharsymbols
   Characters which have always to be split as tokens.  This would be
   usual is standard text, but is useful in parsing some types of

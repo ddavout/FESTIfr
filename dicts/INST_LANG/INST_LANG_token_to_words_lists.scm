@@ -153,8 +153,8 @@
   "List of words that imply beginning of french sentences.")
 
 (set! french_sos_default
-  '("À" "Ce" "Que" "Qui" "Pourquoi" "Où" "Parce" "Comment" "C'est" "C'était"
-    "C'étaient" "Je" "J" "Tu" "Vous" "Nous" "Il" "Ils" "Un" "Une" "De" "Du" "Des" "Certain" "Certaine" "Certaines"
+  '("À" "Ce" "Que" "Qui" "Pourquoi" "Où" "Parce" "Comment" "C_est" "C_était"
+    "C_étaient" "Je" "J" "Tu" "Vous" "Nous" "Il" "Ils" "Un" "Une" "De" "Du" "Des" "Certain" "Certaine" "Certaines"
     "Certains" "Elles" "Elle" "Où"
     "Donc" "Ô" "En" "On" "Hein" "Ainsi" "L" "Le" "Les" "Personne" "S" "Si" "Or" "Dans" "Qu" "Quand" "Quant"
     "Quelque" "Quelques" "Oh" "Ah"))
@@ -163,11 +163,11 @@
   "List of words that imply beginning of french sentences.")
 
 
-
+; obsolète ? déclaration dans INST_LANG_freeling_addenda
 ;; ********************
 ;; characters other than letters 
 ;; /!\ pb de recoupement, redondance, mise en oeuvre !
-;;  intérrêt lever des ambiguités, lecture avec ponctuation (voir mode ? TODO)
+;;  intérêt lever des ambiguités, lecture avec ponctuation (voir mode ? TODO)
 (set! fre_symbols_tab_default
   '(
     (" "  . ("espace"))
@@ -178,7 +178,7 @@
     (">"  . ("supérieur" "à"))
     ("<"  . ("inférieur" "à"))
     ("/"  . ("barre" "oblique"))
-    ("?"  . ("point" "d'interrogation"))
+    ("?"  . ("point" "d_interrogation"))
     ("-"  . ("tiret")) ; homo .... /§\
          ;  ("_"  . ("tiret")) NON special character
     ("="  . ("est" "égal" "à"))
@@ -187,7 +187,7 @@
     ("%"  . ("pourcent"))
     ("§"  . ("paragraphe"))
     ("#"  . ("dièse"))
-    ("+"  . ("plus_ﬂ_plu"))
+    ;("+"  . ("plus_ﬂ_plu"))
     ("*"  . ("astérique"))
     ("~"  . ("tilde"))
     ("^"  . ("Dach"))
@@ -204,7 +204,7 @@
     ("["  . ("crochet" "ouvrant"))
     (")"  . ("parenthèse" "fermante"))
     ("("  . ("parenthèse" "ouvrante"))
-    ("!"  . ("point" "d'exclamation"))
+    ("!"  . ("point" "d_exclamation"))
     ("`"  . ("Quote"))
     ("¸"  . ("Quote"))
     ("'"  . ("Backquote"))
@@ -213,7 +213,7 @@
     ("¹"  . ("hoch" "eins"))
     ("²"  . ("hoch" "zwei"))
     ("³"  . ("hoch" "drei"))
-    ("±"  . ("plus_ﬂ_plus" "ou" "moins"))
+    ("±"  . ("plus_ou_moins"))
     ("¼"  . ("un" "quart"))
     ("½"  . ("un" "demi"))
     ("¾"  . ("trois" "quart"))
@@ -453,8 +453,8 @@
     ("MM"       . ("messieurs"))    
     ("Mgr"       . ("monseigneur"))
     ("N.B"      . ("nota_bene")); pas OK TODO
-    ("N.D.A"      . ("note" "de" "l'auteur"))
-    ("N.D.E"      . ("note" "de" "l'éditeur"))
+    ("N.D.A"      . ("note" "de" "l_auteur"))
+    ("N.D.E"      . ("note" "de" "l_éditeur"))
     ("N.D.I.R"      . ("note" "de" "la" "rédaction"))
     ("N.D.T"      . ("note" "du" "traducteur"))
     ("Oeuv"       . ("oeuvres"))
@@ -462,7 +462,7 @@
     ("Rem"       . ("remarque"))
     ("S.Exc"       . ("Son" "Excellence"))       
     ("S.M"       . ("Sa" "Majesté"))    ; pas OK TODO ce qui marche
-    ("S.T.P"       . ("s'il" "te" "plait")) ; pas OK TODO
+    ("S.T.P"       . ("s_il" "te" "plait"))
     ;    ("VOLT"       . ("voltaire"))
     ("volt"       . ("voltaire"))
     ("abstr"       . ("abstrait"))
@@ -604,7 +604,7 @@
       ("i.e"      . ("id" "_est"))
       ("p.ex"      . ("par" "exemple"))    
       ("p.p"      . ("pages"))    ; proscrit
-      ("S.V.P"       . ("s'il" "vous" "plait"))))
+      ("S.V.P"       . ("s_il" "vous" "plait"))))
 
 
 ; TODO avec espace
@@ -1062,7 +1062,7 @@
     ;"ci" ;NON
     ;"là" ;NON
     ; "mêmes" ; NON
-    "m_en" ;  donnez-m'en
+    
     "elle" ;; voit-elle ?
     "elles" 
     "en"  
@@ -1072,7 +1072,7 @@
     "la" 
     "le" 
     "ce" ; fût-ce ...
-    "les" 
+    "les"
     "leur"
     "lui" 
     "lui" 
@@ -1083,6 +1083,7 @@
     "tu" 
     "vous" 
     "y"  
+    "m_en" ;  donnez-m'en ; voir INST_LANG_norm ; à mettre dans poslex
     "z_en"
     "en_lui"
     "en_moi"
@@ -1329,7 +1330,7 @@
     "comic_book"
     "commissaire_adjoint"
     "commissaire_priseur" ; pos
-    "commedia_dell'arte" ; pos hmm: ; TODO check
+    "commedia_dell_arte" ; pos hmm: ; TODO check
     "corn_flakes"
     "corpus_delicti"
     "curriculum_vitae"
@@ -1399,7 +1400,7 @@
     ; tous les ex nécessaires 
     "fait_maison"; pos
     "fast_food"
-    "five_o'clock"
+    "five_o_clock"
     "fret_express" ; pos
     "foreign_office"
     "gengis_khan"
@@ -1534,7 +1535,7 @@
 
     "tous_les"; pos
     "tout_puissant"; pos
-    "traveller's_chèque"
+    "traveller_s_chèque"
     "tutti_frutti"
     "tutti_quanti"
     "un_autre"

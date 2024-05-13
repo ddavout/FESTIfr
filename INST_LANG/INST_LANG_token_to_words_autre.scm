@@ -32,10 +32,10 @@
 
 (defvar QT24 t)
 (defvar QTpos1 t); fre_NAM_homo_tab ex: Marguerite |Duras|
-(defvar QTpos2 t); |recherche|-moi -> recherche VER
+(defvar QTpos2 t); |donne|-moi -> donne VER; |donne|-m'en , grâce à  norm donne|-|m_en  -> donne VER *et* m_en PRO:per
 (defvar QTpos3 t); tentative homo VER NOM par ex après adverbe de quantité, peu de ferment
 (defvar QTpos2_pattern "{[^-]+}-{.*}")
-(defvar QTpos2_suite t)
+
 (defvar QTtim t)
 (defvar QTtim_pattern "{[0-2]?[0-9]}{[.|:]}{[0-5][0-9]}"); (set!  QTtim_pattern "{[0-2]?[0-9]}{[:|.]}{[0-5][0-9]}")
 (defvar QTono t)
@@ -167,7 +167,7 @@
                             (if (not (equal? h3 "00")) (INST_LANG_number_point h3 1)'("zéro" "zéro"))
                             ;(if (member_string (item.feat token "nn.name") '("à" "-") ));
                             )))
-    
+
        ((and 
             QTdelp.p.n
             (string-equal (item.feat token 'p.p.n_delete) "next"))
@@ -250,7 +250,7 @@
                 (set! result (list name)))
      
      ((and (> tokendebuglevel -1)(format t "QTpos1 ?\t |%s|\n" name)  nil)) 
-      ((and ; fre_NAM_homo_tab homo non en tête de phrase avec typographie correcte sinon pas de correction :(
+     ((and ; fre_NAM_homo_tab homo non en tête de phrase avec typographie correcte sinon pas de correction :(
             QTpos1
             (not (null? (item.prev token))); ex: ; ex: M |Cheval|, Marguerite |Duras|
             (not (member_string (item.feat (item.prev token) 'punc ) (list "." "?" "!")))
@@ -261,55 +261,39 @@
                 (set! RU (append RU (list QT )))
                 (item.set_feat token 'pos "NAM")
                 (set! result (list name)))
-                
+
+      ((and (> tokendebuglevel -1)(format t "(lex.add.entry  ?\t |%s|\n" name)  nil)) 
+
+
       ((and (> tokendebuglevel -1)(format t "(lex.add.entry  ?\t |%s|\n" name)  nil)) 
       ((and ; 
-            QTpos2
-            (pattern-matches fdnaw QTpos2_pattern); {[^-]+}-{.*}; ne commence pas par un tiret mais en contient 1
-            ;(set! pvars (list #1 #2)
-            (and (set! h1 #1)(set! h2 #2))
-            (not (equal? h1 ""))
-                        (or ( format t "QTpos2 h1 3 _%s_, h2 _%s_\n" h1 h2) t) ; ex h1 _n_est_, h2 _ce_
-            (member_string h2 list_after_tiret)
-                        (or ( format t "QTpos2 h1 4 _%s_, h2 _%s_\n" h1 h2) t)
-            
-                ) 
+        QTpos2
+        (pattern-matches fdnaw QTpos2_pattern); {[^-]+}-{.*}; ne commence pas par un tiret mais en contient 1
+        ;(set! pvars (list #1 #2)
+        (and (set! h1 #1)(set! h2 #2))
+        (not (equal? h1 ""))
+                    (or ( format t "QTpos2 h1 3 _%s_, h2 _%s_\n" h1 h2) t) ; ex h1 _n_est_, h2 _ce_
+        (member_string h2 list_after_tiret)
+                    (or ( format t "QTpos2 h1 4 _%s_, h2 _%s_\n" h1 h2) t)) 
 
-                (set! QT "QTpos2" )
-                (set! RU (append RU (list QT )))
-                (set! suf1-1 (string-last h1)) 
-               ; (item.set_feat (item.next token) 'token_pos "PRO:per")
-             ;;  (format t "liste %l \n" (item.relation.leafs token 'Token)); (#<item 0x55c329c93bc0>) 
-             ;; (item.first_leaf ITEM)   Returns he left most leaf in the tree dominated by ITEM. ..
-           ;; (format t "leaf %s"  (na (item.first_leaf token))); n_est-ce
-               ;; (format t "liste %l" (item.relations token)); Token
-               (item.set_feat token "token_pos" "QTpos2")
-                (if (and (member_string suf1-1 (list "t" "s" "z"))
-                         (member_string (string-car h2 ) (list "e" "i" "o" "y"))); ex: vous-y reviendrez / elles-même
-                      (begin 
-                        (set! result (append (INST_LANG_token_to_words token h1) 
-                                             (INST_LANG_token_to_words token (if (string-equal suf1-1 "t")(string-append "t_" h2 )(string-append "z_" h2 ))))))
-                      (begin ; ex ; ex h1_n_est_, h2 _ce_
-                        (set! result (append (INST_LANG_token_to_words token h1)(INST_LANG_token_to_words token h2) )))))
-
-
-      ((and (> tokendebuglevel -1)(format t "QTpos2_suite ?\t |%s|\n" name)  nil)) 
-      ((and ; 
-            QTpos2
-            QTpos2_suite
-                   (item.prev token)
-                   (or (format t "QTpos2_suite ok1\n") t)
-                   (string-equal (item.feat token "p.token_pos") "QTpos2")
-                   )
-                   
-                (set! QT "QTpos2_suite" )
-                (set! RU (append RU (list QT )))
-                (if (member_string name (list "le" "la" "les"))
-                    (item.set_feat token 'pos "ART:def")
-                    (if (member_string name (list "de" "des"))
-                        (item.set_feat token 'pos "ART:ind")))
-                (set! result (list name))
-                )  
+        (set! QT "QTpos2" )
+        (set! RU (append RU (list QT )))
+        (set! suf1-1 (string-last h1)) 
+        ; (item.set_feat (item.next token) 'token_pos "PRO:per")
+        ;;  (format t "liste %l \n" (item.relation.leafs token 'Token)); (#<item 0x55c329c93bc0>) 
+        ;; (item.first_leaf ITEM)   Returns he left most leaf in the tree dominated by ITEM. ..
+        ;; (format t "leaf %s"  (na (item.first_leaf token))); n_est-ce
+        ;; (format t "liste %l" (item.relations token)); Token
+        (item.set_feat token "token_pos" "QTpos2")
+        (if (and (member_string suf1-1 (list "t" "s" "z"))
+                 (member_string (string-car h2 ) (list "e" "i" "o" "y"))); ex: vous-y reviendrez / elles-même
+              (begin 
+                (set! result (append (INST_LANG_token_to_words token h1) 
+                                     (INST_LANG_token_to_words token (if (string-equal suf1-1 "t")(string-append "t_" h2 )(string-append "z_" h2 ))))))
+              (begin ; ex ; ex h1_n_est_, h2 _ce_
+                (set! result 
+                    (append (INST_LANG_token_to_words token h1)
+                        (INST_LANG_token_to_words token h2) )))))
                         
        ((and (> tokendebuglevel -1)(format t "QTtrad1 ?\t |%s|\n" name)  nil))
        ((and ; fre_abbr_with_point_tab ex  ("apr" "après")  ("apr._J.-C" "après" "jésus" "christ") ("arch" "archives") ("archéol" "archéologie")
@@ -806,8 +790,7 @@
           (set! fdnaw (french_downcase_string name))
           (is_normal fdnaw))
 
-         (set! QT "QT24")
-         (set! RU (append RU (list QT )))
+
          (set! ponct (item.feat token 'punc ))
          (if (not (null?  (item.prev token)))
               (if verbose_INST_LANG_token_to_word (format t "prev %s\n" (item.feat (item.prev token) 'name))))
@@ -825,7 +808,7 @@
                  QTparentho1
                  ;(string-equal (item.feat token 'prepunctuation) "("))
                  (set! preponc (item.feat token 'prepunctuation))
-                 (or (format t "ok") t)
+                 (or (format t "ok\n") t)
                  (member_string preponc (list "(" "\\\"" "|" )))
                      (set! QT "QTparentho1")
                      (set! RU (append RU (list QT )))
@@ -860,8 +843,13 @@
             (t  
               (tokendebug -1 (format nil "ok5 normal no punc point %s\n" name))
               ; récalcitrant
-              (if (string-equal fdnaw "n_en")
-                  (item.set_feat token 'pos "PRO:per"))
+              (format t "ici %l\n" (string-after name "_"))
+              (if (string-equal (string-last (string-after name "_") "m"))
+                  (begin 
+                    (set! QT "QT24_T" )
+                    (set! RU (append RU (list QT )))
+                   (item.set_feat token 'pos "VER")))
+
               ; (if (and ; aigrefeuille-d'aunis
               ;          nil
               ;          (pattern-matches name "{[^-]+}-{d}")

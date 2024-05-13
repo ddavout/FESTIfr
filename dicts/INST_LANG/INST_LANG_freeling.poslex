@@ -58502,7 +58502,7 @@ MNCL
 ("m_attacherai" ((VER -5.696))()); SIWIS
 ("m_avait" ((AUX -1.859)(VER -2.509))()); C
 ("m_avez" ((AUX -1.859)(VER -2.509))()); SIWIS
-("m_en" ((PRO:per -2.912))()); SIWIS
+("m_en" ((PRO:per 0))()); SIWIS
 ("m_encouragez" ((VER -5.406))()); SIWIS
 ("m_est" ((AUX -0.616)(VER -1.569))()); SIWIS
 ("m_ignorerais" ((VER -6.298))()); C
@@ -89889,7 +89889,7 @@ MNCL
 ("s_aérer" ((VER -5.165))()); C
 ("s_effectuer" ((VER -4.728))()); SIWIS
 ("s_embrouille" ((VER -4.989))()); SIWIS
-("s_en" ((PRO:per -2.912))()); C
+("s_en" ((PRO:per 0))()); C
 ("s_engager" ((VER -3.951))()); SIWIS
 ("s_entremêle" ((VER -6.395))()); neut_parl_s01_0162
 ("s_entremêlent" ((VER -6.395))()); neut_parl_s01_0162
@@ -101161,7 +101161,7 @@ MNCL
 ("t_aérer" ((VER -5.165))()); C
 ("t_aérez" ((VER -5.851))()); C
 ("t_aérons" ((VER -6.696))()); C
-("t_en" ((PRO:per -2.912))()); C
+("t_en" ((PRO:per 0))()); C
 ("t_ignorai" ((VER -6.520))()); C
 ("t_ignoraient" ((VER -5.140))()); C
 ("t_ignorais" ((VER -3.832))()); C

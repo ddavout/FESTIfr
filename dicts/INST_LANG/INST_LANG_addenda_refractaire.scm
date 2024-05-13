@@ -1,6 +1,33 @@
 (defvar verbose_addendas)
 (if verbose_addendas (format t "addenda_refractaire.scm loaded"))
 
+; mots utilisés dans word_list
+
+;;  mots ex fre_symbols_tab_default
+;(lex.add.entry '("
+; TODO avantage ? fre_symbols_tab_default
+; symbols hors ponctuation et (y compris double bits pour voir)
+;(lex.add.entry '("+" nil (((p l y s)0))))
+;(lex.add.entry '(">" nil (((s y)0) ((p e)0) ((r j oe rh)0))))
+;(lex.add.entry '("<" nil (((ehn)0) ((f eh)0) ((r j oe rh)0))))
+;(lex.add.entry '("/" nil (((
+;(lex.add.entry '("=" nil (((
+;(lex.add.entry '("$" nil (((
+;(lex.add.entry '("¢" nil (((
+;(lex.add.entry '("%" nil (((
+;(lex.add.entry '("§" nil (((
+;(lex.add.entry '("#" nil (((
+;
+;(lex.add.entry '("*" nil (((
+;(lex.add.entry '("~" nil (((
+;(lex.add.entry '("^" nil (((
+;(lex.add.entry '("@" nil (((
+;(lex.add.entry '("&" nil (((
+;(lex.add.entry '("|" nil (((
+(lex.add.entry '("€" nil (((eu)0) ((rh a)0))))
+
+; ...
+;
 (lex.add.entry '("des_ART:ind" "ART:ind" (((d e)0))))
 
 (lex.add.entry '("adj" NOM ((("a") 0) (("d" "zh" "eh" "k") 0) (("t" "i" "f") 0))))

@@ -56,14 +56,14 @@
           (set! text (string-replace text "î" "i"))
           (set! text (string-replace text "ò" "o"))
           (set! text (string-replace text "ú" "u"))
-          ;;/ bug utf8 
+          ;;/ bug utf8 token.singlecharsymbols 
           (set! text (string-replace text "°" "_o"));; n° et °C
           (set! text (string-replace text "€" " _Euro")); espace pour séparer 2€
           (set! text (string-replace text "¥" " _yen"))
           (set! text (string-replace text "£" " _pound"))
           (set! text (string-replace text "¢" " _cent"))
           ;; bug utf8 question ponctuation
-          (set! text (string-replace text "–" " ")) ; utf8 vu comme  "€“"
+          (set! text (string-replace text "–" " ")) ; utf8 vu comme  "€“"; où ???
           (set! text (string-replace text "„" "\\\""))
           
           (set! text (string-replace text "…" "...")  )
@@ -99,7 +99,10 @@
           ; on ajuste les ponctuations françaises et anglaises, assez proches pour ne pas tout refaire
           (set! text (string-replace text " ?" "?")); -> english typo
           (set! text (string-replace text " )" ")")); -> english typo
-          (set! text (string-replace text "( " "(")); -> english typo ;  sinon ça complique le token_to_words où,notamment ) serit vu comme un mot
+          (set! text (string-replace text "( " "(")); -> english typo ;  sinon ça complique le token_to_words où,notamment ) serait vu comme un mot(set! text (string-replace text " ?" "?")); -> english typo
+          (set! text (string-replace text " ]" "]")); -> english typo
+          (set! text (string-replace text "[ " "[")); -> english typo ; 
+          (set! text (string-replace text "[" " [")); -> 
           (set! text (string-replace text " :" ":")) 
           (set! text (string-replace text " !" "!"))
           (set! text (string-replace text ";" "; ")) ; ;trop collé
