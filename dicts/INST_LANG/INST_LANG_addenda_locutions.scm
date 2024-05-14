@@ -106,8 +106,7 @@
 (lex.add.entry '("boat_people" nil (((b oh t) 0) ((p i)0) ((p oh l)0))))
   ;(lex.add.entry '("bubble_gum" ((NOM -6.561) ) () ))
 (lex.add.entry '("by_night" nil (((b a j )0)((n a j t)0))))
-  ;(lex.add.entry '("call_girl" ((NOM -6.017) ) () ))
-  ;(lex.add.entry '("call_girls" ((NOM -6.385) ) () ))
+
   ;(lex.add.entry '("casus_belli" ((NOM -6.163) ) () ))
 
 ;(lex.add.entry '("ch_l" NOM (((sh eh f) 0) ((l j eu) 0))))
@@ -122,11 +121,11 @@
   ;(lex.add.entry '("corn_flakes" ((NOM -5.716) ) () ))
   ;(lex.add.entry '("corpus_delicti" ((NOM -6.260) ) () ))
 (lex.add.entry '("cot_cot_codec" ONO (((k oh t)0)((k oh t)0)((k o)0)((d eh k)0))))
-  ;(lex.add.entry '("d_ores_et_déjà" ((ADV -5.731) ) () ))
+(lex.add.entry '( "corps_et_âme" nil ((("k" "oh" "rh") 0) ((e)0) (("a" "m") 0))))
+(lex.add.entry '("d_ores_et_déjà" nil ((("d" "oh")0)((z e)0)(("d" "e")0)(("zh" "a")0))))
   ;(lex.add.entry '("d_abord" ((ADV -2.783) ) () ))
   ;(lex.add.entry '("d_autres" ((ADJ:ind -1.348)(PRO:ind -2.008) ) () ))
   ;(lex.add.entry '("d_emblée" ((ADV -4.937) ) () ))
-  ;(lex.add.entry '("d_ores_et_déjà" ((ADV -5.731) ) () ))
   ;(lex.add.entry '("dare_dare" ((ADV -5.986) ) () ))
   ;(lex.add.entry '("de_bric_et_de_broc" ((ADV -6.083) ) () ))
   ;(lex.add.entry '("de_facto" ((ADV -5.509) ) () ))
@@ -266,8 +265,6 @@
 ;(lex.add.entry '("bric_et_de_broc" NOM 
 ;(lex.add.entry '("bubble_gum" NOM 
 ;(lex.add.entry '("by_night" ADJ 
-;(lex.add.entry '("call_girl" NOM 
-;(lex.add.entry '("call_girls" NOM 
 ;(lex.add.entry '("casus_belli" NOM 
 (lex.add.entry '("check_up" NOM (((sh eh k)0)((oe p)0))))
 (lex.add.entry '("chef_d_oeuvre" "NOM" ((("sh" "e") 0) (("d" "oe" "v" "rh") 0))))

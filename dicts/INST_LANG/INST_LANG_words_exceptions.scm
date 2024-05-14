@@ -515,12 +515,17 @@
    (if (member_string na_word (list "à_jeun" "loin" "z_y" "également")); |loin| avec, |z_y| en courant:  probablement tous serait safe
        nil
        t))
-
+; tant (is_exception_ADV->PRO:per "tant" "il")   t
+; bientôt  (is_exception_ADV->PRO:per "bientôt" "il" nil
 (define (is_exception_ADV->PRO:per na_word na_next_word)
   ; ex tant elle neut_parl_s01_0147
-   (if (member_string na_word never_exception_list)
-       nil
-       t))
+    (if (or (is_exclus*-> na_next_word) (is_exclus->* na_word))
+    nil
+    (begin
+    (if (member_string (french_downcase_string na_word) (list "tant"))
+    t))))
+
+
 
 (define (is_exception_ADV->VER na_word na_next_word)
    (if (member_string na_word never_exception_list)
@@ -632,7 +637,13 @@
         (if (member_string na_word (list "chacun"))) nil)
 
 (define (is_exception_ADJ:dem->ADJ na_word na_next_word)
-        (if (member_string na_word (list "chacun"))) nil)
+    (if (or (is_exclus*-> na_next_word) (is_exclus->* na_word))
+    nil
+    (begin
+    (if (member_string (french_downcase_string na_word) (list "ces"))
+    t))))
+
+
 
 (define (is_exception_PRO:pos->VER na_word na_next_word)
         (if (member_string na_word (list "chacun"))) nil)

@@ -49,6 +49,7 @@
 (defvar QTdelp.p.n t)
 (defvar QTloc3m t) ; avant QTloc2m et donc avant .. QT24; :french_multiple_word_expressions2 2 tirets
 (defvar QTloc2m t); avant QT24; :french_multiple_word_expressions (à renommer! TODO) ex "quelques_uns"; "quoi_que"; "red_river";  "roast_beef"; pe après QTrad1 si abréviation sous forme de locution TODO
+(defvar QTloc3mapo t)
 (defvar QTbefapo t)
 (defvar QTchefd )
 (defvar QTparentho1 t)
@@ -648,6 +649,59 @@
                 (item.set_feat (item.next token) 'delete  "next")
                 
                 )
+
+
+         ((and (> tokendebuglevel -1)(format t "QT16-1?\t locution 3 ? |%s|\n" name)  nil))  
+         (( ; locution pour l'instant 2 ou 3 mots listes dans INST_LANG_token_to_words_lists
+             ; on commence par 3 french_multiple_word_expressions2
+             ; (pour la mise au point de la prononciation (s'entend avant introduction dans LE dico, si possible on utilisera de préférence 
+             ; addenda_locutions.scm et addenda_foreign.scm mias .;. , la prononciation n'est pas le pb ici
+             ; même si on peut introduire une locution pour une raison de prononciation ex nuit et jour
+            and ; locution
+              QTloc3mapo
+              (or (format nil "locution QTloc3mapo: ok00\n") t)
+              (set! n_name (na (item.next token))) ; au pire nil & out
+              (set! n_n_name (na (item.next (item.next token)))) ; au pire nil & out
+              (or (format t "locution QTloc3mapo: ok0\n") t)
+
+              (equal? (item.feat token 'punc) 0); TODO quid des preponctuations ?
+             (equal? (item.feat (item.next token) 'punc) 0); en moins, de 
+             (equal?  (item.feat (item.next token) "prepunctuation") "")
+             
+              
+              
+
+              (or (format t "locution QTloc3mapo: ok1\n") t)
+              (set! name1 (string-append name "_" n_name "_" n_n_name))
+              (or (format t "locution QTloc3mapo: ok2 name1 |%s| \n" name1) t)
+              (member_string (french_downcase_string name1) french_multiple_word_expressions2part)
+
+              )
+
+                (set! QT "QTloc3mapo" )
+                (set! RU (append RU (list QT )))
+                (set! result (list name1))
+                (item.set_feat token 'punc (item.feat (item.next (item.next token)) 'punc ) ); transfert de ponctuation du dernier vers le premier
+                (item.set_feat token 'delete  "next"); marquage pour suppression du suivant: on y cherchera p.delete
+                (item.set_feat (item.next token) 'delete  "next")
+                
+                )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       ((and (> tokendebuglevel -1)(format t "QTloc2m ex QT16-2?\t locution 2 ? |%s|\n" name)  nil))  
       ( ; locution 2 mots 

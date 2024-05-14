@@ -164,22 +164,23 @@
 
 
 ; obsolète ? déclaration dans INST_LANG_freeling_addenda
+; TODO distinguer mode avec ou sans ponctuation
 ;; ********************
 ;; characters other than letters 
 ;; /!\ pb de recoupement, redondance, mise en oeuvre !
 ;;  intérêt lever des ambiguités, lecture avec ponctuation (voir mode ? TODO)
 (set! fre_symbols_tab_default
   '(
-    (" "  . ("espace"))
-    ("."  . ("point"))
-    (","  . ("virgule"))
-    (":"  . ("deux" "points"))
-    (";"  . ("point" "virgule"))
+    ;(" "  . ("espace"))
+    ;("."  . ("point"))
+    ;(","  . ("virgule"))
+    ;(":"  . ("deux" "points"))
+    ;(";"  . ("point" "virgule"))
     (">"  . ("supérieur" "à"))
     ("<"  . ("inférieur" "à"))
     ("/"  . ("barre" "oblique"))
-    ("?"  . ("point" "d_interrogation"))
-    ("-"  . ("tiret")) ; homo .... /§\
+    ;("?"  . ("point" "d_interrogation"))
+    ;("-"  . ("tiret")) ; homo .... /§\
          ;  ("_"  . ("tiret")) NON special character
     ("="  . ("est" "égal" "à"))
     ("$"  . ("dollar"))
@@ -188,7 +189,7 @@
     ("§"  . ("paragraphe"))
     ("#"  . ("dièse"))
     ;("+"  . ("plus_ﬂ_plu"))
-    ("*"  . ("astérique"))
+    ;("*"  . ("astérisque"))
     ("~"  . ("tilde"))
     ("^"  . ("Dach"))
     ("@"  . ("arobase"))
@@ -196,18 +197,18 @@
     ("|"  . ("barre" "verticale"))
     ("\\" . ("backslash"))
     ("\"" . ("guillemet")) ;"
-    ("«"  . ("ouvrer les guillemets")) ; ouvert 
-    ("»"  . ("fermer les guillemets"))
-    ("{"  . ("accolade" "ouvrante"))
-    ("}"  . ("accolade" "fermante"))
-    ("]"  . ("crochet" "fermant"))
-    ("["  . ("crochet" "ouvrant"))
-    (")"  . ("parenthèse" "fermante"))
-    ("("  . ("parenthèse" "ouvrante"))
-    ("!"  . ("point" "d_exclamation"))
-    ("`"  . ("Quote"))
+    ;("«"  . ("ouvrer les guillemets")) ; ouvert 
+    ;("»"  . ("fermer les guillemets"))
+    ;("{"  . ("accolade" "ouvrante"))
+    ;("}"  . ("accolade" "fermante"))
+    ;("]"  . ("crochet" "fermant"))
+    ;("["  . ("crochet" "ouvrant"))
+    ;(")"  . ("parenthèse" "fermante"))
+    ;("("  . ("parenthèse" "ouvrante"))
+    ;("!"  . ("point" "d_exclamation"))
+    ;("`"  . ("Quote"))
     ("¸"  . ("Quote"))
-    ("'"  . ("Backquote"))
+    ;("'"  . ("Backquote"))
     ("£"  . ("Livre" "sterling"))
     ("°"  . ("Degré"))
     ("¹"  . ("hoch" "eins"))
@@ -1251,27 +1252,24 @@
     "n_importe_comment"; pos
     "n_importe_où"; pos
     "n_importe_quand"; pos
-    "n_importe_qui"; pos
-    "n_importe_quoi"; pos
-    "n_y_a" ; pos
-    "n_y_en"; pos
-    "jusqu_au_bout"; pos
-    "tout_d_abord"; pos
-    
-    ; TODO y_a; y_en , y_eut, y_ait rule ?
-    "mieux_être" ; pos
-    ;"est_ce" ; essai pour corriger faute typo
-
+    "n_y_a" ; "QTbefapo" "QTloc2m" "QTdelp
+    "n_y_en"; "QTbefapo" "QTloc2m" "QTdelp
     "ne_plus"
     "ne_plu"
     "en_plus"
-    ; "y_a"  
     ; "y_eut"
     ; "y_ait"
-    "z_en" ;; important car (norm "z_en") -> "z en" GLOUPS
+    "Y_a"
+    "y_a" ; permet prononc il y a différente niveau de langage ?
+    "y_avait" ; pos
+    "z_en" ;; important car (norm "z_en") -> "z en" GLOUPS ?? TODO
     "m_en"
     "t_en"
     "s_en"
+    ;;
+    "jusqu_au_bout"; pos
+    "tout_d_abord"; pos TODO
+    "mieux_être" ; pos    
     "a_fortiori"; pos
     "ab_initio"; pos
     "ab_irato"; pos
@@ -1535,7 +1533,6 @@
 
     "tous_les"; pos
     "tout_puissant"; pos
-    "traveller_s_chèque"
     "tutti_frutti"
     "tutti_quanti"
     "un_autre"
@@ -1556,14 +1553,6 @@
     "wall_street"
     "week_end"
     "world_music"
-    ; {(0 s  i  l )}{(0 i )}{(0 j  a )
-    ; {(0 s  i  l )}{(0 j  a )}
-    "Y_a"
-    "y_a" ; permet prononc il y a différente niveau de langage ?
-    ;;;"y_a-t_il" ; ("y_a-t-il" "VER" (((j a) 0) ((t i l)0))) à mettre dans le dico ; VER sans sujet apparent ça existe cf impératif
-    "y_avait" ; pos
-    ;;; "y_avait-t-il" ; ;; usage erroné
-    ; NON "y_en" ; token ; pos
     "yom_kippour"
     "yom_kippur"
     "à_croupetons"; pos
@@ -1596,14 +1585,14 @@
 
 (set! french_multiple_word_expressions2 
   (list 
-     ; le cas chef-d'oeuvre est réglé par QTchefd à l'instar des va-t'on; TODO d'actualité ?
-     "chef_d_oeuvre"
-     "chefs_d_oeuvre"; name_ref chefs_d_oeuvre
-    "n_est_ce_pas"; pos 
 
-    
-    "corps_et_ame"; "corps_et_äme" ne marche pas à cause de "â" ? ; TODO
-    "corps_et_ames"; essai subtilité 1 corps ou plusieurs 
+     "tout_d_abord"; 
+     ; le cas chef-d'oeuvre est réglé par QTchefd à l'instar des va-t'on; TODO d'actualité ?
+     "chef_d_oeuvre"; ("QTloc3m" "QTdel" "QTdelp") ; apostrophe central compte comme espace
+     "chefs_d_oeuvre"; name_ref chefs_d_oeuvre
+    "n_est_ce_pas"; pos pour n'est ce pas; ("QTbefapo" "QTloc3m" "QTdel" "QTdelp")
+    "traveller_s_chèque"
+    "corps_et_âme"
 
     "alea_jacta_est" ; pos
     "am_stram_gram"; pos
@@ -1620,7 +1609,7 @@
     "deus_ex_machina"; pos
     "face_à_face"; pos
     "faute_de_quoi"
-    "en_moins_de"
+    "en_moins_de"; ("QTloc3m" "QTdel" "QTdelp")
     "in_vino_veritas"
     "il_y_a"; pos
     "il_y_aura"; pos
@@ -1629,7 +1618,7 @@
     "la_plupart_du"
     "madre_de_dios"
     "mobilis_in_mobile"
-    "n_y_en_a"; pos
+    "n_y_en_a"; pos ; ("QTbefapo" "QTloc3m" "QTdel" "QTdelp") le 1er _ est dû à un apostrophe
     "nuit_et_jour"
     "persona_non_grata"
     "peu_ou_prou"; pos
@@ -1646,15 +1635,15 @@
     "tout_à_chacun"; pos
     "tout_à_coup"; pos
     "tout_à_fait"; pos
-    "tout_à_l_heure"; pos
+    "tout_à_l_heure"; pos; TODO
 
-    "un_à_un" ; à cause des liaisons
+    "un_à_un" ; à cause des liaisons ; ("QTloc3m" "QTdel" "QTdelp")
     "urbi_et_orbi"
     "vingt_et_un"
 
     "wait_and_see"
     "way_of_life"
-    "à_la_saint-glinglin"; pos
+    "à_la_saint-glinglin"; pour pos TODO 
     "à_leur_encontre"; pos
     "à_moins_de"; pos
     "à_moins_que"; pos
@@ -1665,7 +1654,7 @@
     "à_tous_égards"
     "à_votre_encontre"; pos
     "à_leurs_encontres"; pos
-    "d_ores_et_déjà"; pos; marche car 2 espaces
+    "d_ores_et_déjà"; ("QTbefapo" "QTloc3m" "QTdel" "QTdelp"); le 1er _ est dû à un apostrophe
     "no_man_s_land"
     "no_man_s_land"
      "n_y_a" ; pos; si manque d'apostrophe (nécessité tempo _erreur addenda_ mais on peut laisser)
@@ -1676,9 +1665,9 @@
 (set! french_multiple_word_expressions3 
   ; pour mémoire ne marche pas 
   (list 
-    "tout_à_l_heure"; pos   
+    "tout_à_l_heure"; pos ; TODO  
     "en_moins_de_rien" ; adv de temps
-    "y_a_t_il"
+    ;; "y_a_t_il"; RU nil ("y_a_t_il" ((VER -1.000)(aux -1.000))()); SIWIS
 
     ))
 (set! french_multiple_word_expressions3plus
@@ -1735,6 +1724,10 @@
 (set! french_multiple_words
   (append french_multiple_word_abbreviations french_multiple_word_expressions))
 
+(defvar french_multiple_word_expressions2part
+   '("tout_à" "tout_à_l"))
+;  (lex.add.entry '( "XXX" nil ((("t" "u") 0) (("t" "a" "l") 0))))
+                         
 
 
 ;; ********************

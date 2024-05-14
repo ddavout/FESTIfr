@@ -20,6 +20,7 @@
 (lex.add.entry '("t_ils" ((PRO:per 0)) ())); QTpos2
 
 ; symbols hors ponctuation et (y compris double bits pour voir)
+; TODO déclaration dans via token.prepunctuation ?
 (lex.add.entry '("+" ((NOM 0)) ()))
 (lex.add.entry '(">" ((NOM 0)) ()))
 (lex.add.entry '("<" ((NOM 0)) ()))
@@ -38,6 +39,14 @@
 (lex.add.entry '("&" ((NOM 0)) ()))
 (lex.add.entry '("|" ((NOM 0)) ()))
 
+(lex.add.entry '("n_importe_quoi" ((ADV 0)) ()))
+(lex.add.entry '("n_importe_qui" ((PRO:ind 0)) ()))
+
+(lex.add.entry '("y_a_t_il" ((VER 0)) ())); sinon segmentation fault
+
+(lex.add.entry '("y_avait" ((AUX -1.000)(VER -1.000))()))
+
+(lex.add.entry '("en_moins_de_rien" ((ADV 0)) ()))
 
 
 
@@ -91,8 +100,8 @@
 (lex.add.entry '("êtes" ((AUX -1.987)(VER -2.257))())); pour satisfaire is_in_poslex ? erreur
 (lex.add.entry '("fût_ce" ((VER 0))())); 
 
-(lex.add.entry '("n_importe_qui" ((PRO:ind 0)) ()))
-(lex.add.entry '("n_importe_quoi" ((PRO:ind 0)) ()))
+
+
 ; (lex.add.entry '("est_il" ((AUX -1.535)(VER -2.212))())); encore besoin ??? QTpos2
 ; (lex.add.entry '("sera_t_il" ((AUX -1.535)(VER -2.212))()));  pour sera-t'il  -> prehook sera_t_il VER
 ; (lex.add.entry '("sera_t_elle" ((AUX -1.535)(VER -2.212))()));   

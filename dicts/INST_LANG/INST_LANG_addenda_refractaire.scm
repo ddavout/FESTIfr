@@ -26,10 +26,29 @@
 ;(lex.add.entry '("|" nil (((
 (lex.add.entry '("€" nil (((eu)0) ((rh a)0))))
 
-; ...
-;
-(lex.add.entry '("des_ART:ind" "ART:ind" (((d e)0))))
+; "locutions" primordiales
+(lex.add.entry '("n_y" nil ((("n" "i") 0))))
+(lex.add.entry '("n_y_a" nil ((("n" "j" "a") 0))))
+(lex.add.entry '("n_y_en" nil ((("n" "j" "ahn") 0))))
+(lex.add.entry '("n_y_en_a" nil ((("n" "j" "ahn") 0)((n a)0))))
 
+(lex.add.entry '("n_importe_comment" nil ((("n" "ehn") 0) (("p" "oh" "rh" "t") 0) (("k" "oh")0) (("m" ahn) 0))))
+(lex.add.entry '("n_importe_quand" nil ((("n" "ehn") 0) (("p" "oh" "rh" "t") 0) (("k" "ahn") 0))))
+(lex.add.entry '("n_importe_quel" nil ((("n" "ehn") 0) (("p" "oh" "rh" "t") 0) (("k" "eh" "l") 0))))
+(lex.add.entry '("n_importe_quelle" nil ((("n" "ehn") 0) (("p" "oh" "rh" "t") 0) (("k" "eh" "l") 0))))
+(lex.add.entry '("n_importe_qui" nil ((("n" "ehn") 0) (("p" "oh" "rh" "t") 0) (("k" "i") 0))))
+(lex.add.entry '("n_importe_où" nil ((("n" "ehn") 0) (("p" "oh" "rh") 0) (("t" "u") 0))))
+(lex.add.entry '("ne_plu" nil ((("n" "ae") 0) (("p" "l" "y") 0))))
+
+(lex.add.entry '("y_avait_il" nil ((("i") 0) (("a") 0) (("v" "eh") 0) (("t" "i" "l") 0))))
+(lex.add.entry '("y_avait_t_il" nil ((("i") 0) (("a") 0) (("v" "eh") 0) (("t" "i" "l") 0)))); incorrect
+
+ (lex.add.entry '( "tout_à_l" nil ((("t" "u") 0) (("t" "a" "l") 0))))
+
+
+(lex.add.entry '("des_ART:ind" "ART:ind" (((d e)0))))
+(lex.add.entry '("ce" nil ((("s" "ae")0))))
+(lex.add.entry '("ces_ADJ:dem" _ADJ:dem ((("s" "e")0))))
 (lex.add.entry '("adj" NOM ((("a") 0) (("d" "zh" "eh" "k") 0) (("t" "i" "f") 0))))
 (lex.add.entry '("fr" nil ((( "eh" "f")0) ((eh "rh") 0))))
 (lex.add.entry '("http" nil (((a sh)0) ((t e)0)((t e)0)((p e)0))))

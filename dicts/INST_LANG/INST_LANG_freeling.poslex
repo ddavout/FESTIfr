@@ -13461,9 +13461,7 @@ MNCL
 ("califourchon" ((ADV -5.305))()); C
 ("calisson" ((NOM -6.385))()); C
 ("call_girl" ((NOM -5.130))()); C
-("call_girl" ((NOM -6.017))()); C
 ("call_girls" ((NOM -5.862))()); C
-("call_girls" ((NOM -6.385))()); C
 ("calla" ((NOM -6.260)(VER -6.696))()); C
 ("calle" ((NAM -4.646)(VER -5.767))()); C
 ("caller" ((NAM -5.014))()); C
@@ -63630,8 +63628,7 @@ MNCL
 ("n_importe_où" ((ADV 0))()); C
 ("n_importe_quel" ((ART:ind 0))()); C
 ("n_importe_quelle" ((ART:ind 0))()); SIWIS
-("n_importe_qui" ((PRO:ind² 0))()); C
-("n_importe_quoi" ((ONO 6.666)(NOM 6.666))()); C
+("n_importe_qui" ((PRO:ind 0))()); C
 ("n_intègrent" ((VER -6.152))()); SIWIS
 ("n_ont" ((AUX -1.401)(VER -2.707))()); SIWIS
 ("n_oubliez" ((VER -3.559))()); SIWIS
@@ -85632,7 +85629,7 @@ MNCL
 ("répondriez" ((VER -5.918))()); C
 ("répondrons" ((VER -5.599))()); C
 ("répondront" ((VER -5.550))()); C
-("réponds" ((NOM -6.260)(VER -3.611))()); C
+("réponds" ((VER -3.611))()); C
 ("répondu" ((VER -3.768))()); C
 ("répondues" ((VER -6.520))()); C
 ("répondîmes" ((VER -6.696))()); C
