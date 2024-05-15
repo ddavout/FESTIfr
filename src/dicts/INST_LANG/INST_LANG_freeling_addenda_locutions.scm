@@ -1,5 +1,5 @@
 ; /dicts/INST_LANG/INST_LANG_freeling_addenda_locutions.scm
-    ;;;;;;;;;;;;; Des locutions adverbiales :
+       ;;;;;;;;;;;;; Des locutions adverbiales :
     ; Tout à fait, d'ores et déjà, de temps en temps, tout de suite, de gré ou de force, ne pas, ne jamais, ne plus, sans doute, on ne peut plus…
 
     ;;;;;;;;;;;; Des locutions pronominales :
@@ -27,7 +27,8 @@
   ; (lex.add.entry '("c_est-à-dire" ((CON 0) ) () )) ;
   ; 
 
-(lex.add.entry '("nor_nor_est" ((ADV -6.083) (NOM -6.083) ) () ))
+  (lex.add.entry '("nor_nor_est" ((ADV -6.083) (NOM -6.083) ) () ))
+
 
 
 
