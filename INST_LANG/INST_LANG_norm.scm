@@ -64,16 +64,16 @@
           (set! text (string-replace text "¢" " _cent"))
           ;; bug utf8 question ponctuation
           (set! text (string-replace text "–" " ")) ; utf8 vu comme  "€“"; où ???
-          (set! text (string-replace text "„" "\\\""))
+          (set! text (string-replace text "„" "\""))
           
           (set! text (string-replace text "…" "...")  )
           (set! text (string-replace text "¸" ","))
 
           ;(set! text (string-replace text "\"" " \""))
-          (set! text (string-replace text "« " "\\\""))
-          (set! text (string-replace text " »" "\\\""))
-          (set! text (string-replace text "«" "\\\""))
-          (set! text (string-replace text "»" "\\\""))
+          (set! text (string-replace text "« " "\""))
+          (set! text (string-replace text " »" "\""))
+          (set! text (string-replace text "«" "\" "))
+          (set! text (string-replace text "»" " \""))
 
 
 
@@ -143,9 +143,9 @@
             (set! text (string-replace text "t'en " "t_en "))            
            ; supression de l'espace rajouté
            (set! text (string-but-last text))
-            (if (and verbose_norm (not (string-equal text texte)))
+           (if (and verbose_norm (not (string-equal text texte)))
                  (format t "verbose_norm %s gives %s\n" texte text))
-            
+
           text))
     ))
 ;; pistes pour V1
