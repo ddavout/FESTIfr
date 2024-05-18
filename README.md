@@ -1,7 +1,7 @@
 # FESTfr
 
 
-(Vous pouvez retrouvez ce readme ainsi que les docs dans le répertoire docs sous le format tiddly)
+(Vous pouvez retrouver ce readme actualisé ainsi que les docs dans le répertoire docs sous le format tiddly https://ddavout.github.io/FESTIfr/ )
 
 FESTifr est une voix française clustergen expérimentale.
 
