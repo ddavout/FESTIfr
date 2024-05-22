@@ -42,7 +42,11 @@
 ;/* Much of this is still too specific and although easy to add to it     */
 ;/* be better if the rules could be specified externally                  */
 ;/*                                                                       */
-;/* Note only English tokenization has any substance at present           */
+;/* Note only English tokenization has any substance at present  (sic)         */
+
+;/* as upc_catalan_tokenizer.scm said
+;/* To share this among voices you need to promote this file (sic)
+
 (defvar verbose_INST_LANG_token)
 (defvar cg::debug)
 
@@ -136,6 +140,18 @@
       (if verbose_INST_LANG_token(begin (format t "is_in_poslex check info: %s\n" name))))
     result))
 ;;;
+
+(define (is_in_poslex2 name)
+  "return the list of cands (candidates) with rprobs, nil if there is no entry  name in poslex"
+  (let (result)
+    (lex.select "INST_LANG_poslex")
+    ; pourquoi seulement le feature nil
+    (set! result (cadr (lex.lookup name) nil))
+    ; back to our lexical, before we forget
+    (lex.select "INST_LANG_lex")
+    (if (null? result)
+      (if verbose_INST_LANG_token(begin (format t "is_in_poslex check info: %s\n" name))))
+    result))
  
 (set! token.punctuation ".,;:?!)}]\"" 
   "A string of characters which are to be treated as punctuation when
@@ -160,7 +176,7 @@
 ; c'est aussi bien pour notre usage dans l'élision
 ; mais peut surprendre dans le cas de blancs insécables par exemple
   
-(defvar token.singlecharsymbols "<>=%€"
+(defvar token.singlecharsymbols "<>=%"
   "token.singlecharsymbols
   Characters which have always to be split as tokens.  This would be
   usual is standard text, but is useful in parsing some types of
@@ -316,44 +332,28 @@
     
   ;;;        
 (set! INST_LANG_homographs
-  ; sort "réglé" "dans LANG_token_pos_cart_trees de tokenpos
+    '("fils" "convient" "fier" "maintenant"))
+  ; sort à "régler" dans LANG_token_pos_cart_trees de tokenpos
+  ; ***using a lisp function instead of C++ (Token_English) for the Token_INST_LANG Module***
+  ; ref ims_german_token.scm
 
-  ; TODO vis: tu confonds clous et vis 
+  ; éventuels candidats si erreurs "sonores" de poslex
+  ; vis: tu confonds clous et vis 
   ; convient et ils convient
   ; cinq six huit dix pour les liaisons sur pause
+  ; tester ; "c'était ridicule de la part d'un garçon de dix ans bientôt accomplis"
   ; -
   ; rendez-vous
-  '("fils" "convient" ))
   ; van marc, jean pos NAM ou NOM "résolu" par fre_NAM_homo_tab 
   ; "chat" 
+  ; vient, revient, survient
+
   ; antre par locutions ...
-  ; "six" "huit" "dix"
-  ; fils hétérophones homographes hétérosèmes
+  ; ft feuillet foot et feet
+  ; un peu de vocabulaire
+  ; "fils" est à la fois hétérophone, homographe et hétérosème
 
-;;;
-(set! INST_LANG_homographs1
-  ; résolution pb changement de POS        
-  ; si pb avec postlex 
-  ; sort "réglé" "partiellement
-  ; dans LANG_token_pos_cart_trees de tokenpos_fr.scm
-  ; du, de, plus , tout 
-  ; pour ne pas oublier 
-  ; "dix""Paris" "maintenant" "en"  "que" "s"   "six" "huit"
-  ;(append list_PRE_ADV (list "rendez-vous" "part" "tombe")))
-  ;  "part" provoque un dump pour "ma part" et non
-  ; "c'était ridicule de la part d'un garçon de dix ans bientôt accomplis"
-  (list "rendez-vous"  "tombe"))
-  ; tombe .. neut_parl_s01_0209  tombe vu comme un NOM not in INST_LANG_homographs1 si non name  tombe_VER avec pos NOM
 
-  ; sort "réglé" "dans LANG_token_pos_cart_trees de tokenpos
-      ; ***using a lisp function instead of C++ for the Token_INST_LANG Module***
-      ; opposite Token_English
-      ; ref ims_german_token.scm
-  ;;;    
-
-(defvar QT "-1")
-(set! QT18_patt "{[^-]+}-{.*}")
-(set! QT17_patt "{[^-]+}-{[^-]+}{.*}")
 ;;;
 (provide 'INST_LANG_token)
 

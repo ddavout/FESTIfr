@@ -1,4 +1,9 @@
 ; INST_LANG/INST_LANG_freeling_addenda.scm
+; poslex à corriger
+(lex.add.entry '("pommes"((NOM -3.971) )()))
+(lex.add.entry '("pomme"((NOM -3.971) (ADJ -5.918))()))
+
+
 
 ; ne pas oublier de mettre les membres de list_apres ici ou dans le dico notamment
 ; les mots "fabriqués"
@@ -135,6 +140,7 @@
 (lex.add.entry '("Alpha" ((NAM 0))()))
 (lex.add.entry '("Alsace" ((NAM 0))()))
 (lex.add.entry '("Altona" ((NAM 0))()))
+(lex.add.entry '("Alzheimer" ((NAM 0))()))
 (lex.add.entry '("Alès" ((NAM 0))()))
 (lex.add.entry '("Amazon" ((NAM 0))()))
 (lex.add.entry '("Ameline" ((NAM 0))())) ; SIWIS

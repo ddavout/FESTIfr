@@ -441,7 +441,7 @@
    ;     name_ref
    ;     (string-but-last name_ref)
    ;  ) 
-   name_ref))
+   (string-replace name_ref "'" "_")))
 
 ; pour cmulex 
 ; (set! lex_syllabification (list cmulex_mosyl_phstress))

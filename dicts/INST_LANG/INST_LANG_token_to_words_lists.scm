@@ -173,7 +173,10 @@
   '(
     ;(" "  . ("espace"))
     ;("."  . ("point"))
+    ("."  . ("_ﬂ" "_ﬂ")); notre caractère silence
     ;(","  . ("virgule"))
+    (","  . ("_ﬂ"))
+
     ;(":"  . ("deux" "points"))
     ;(";"  . ("point" "virgule"))
     (">"  . ("supérieur" "à"))
@@ -188,15 +191,17 @@
     ("%"  . ("pourcent"))
     ("§"  . ("paragraphe"))
     ("#"  . ("dièse"))
-    ;("+"  . ("plus_ﬂ_plu"))
-    ;("*"  . ("astérisque"))
+    ;("+"  . 
+    ;("*"  . ("astérique"))
     ("~"  . ("tilde"))
     ("^"  . ("Dach"))
     ("@"  . ("arobase"))
     ("&"  . ("et" "commercial"))
     ("|"  . ("barre" "verticale"))
     ("\\" . ("backslash"))
-    ("\"" . ("guillemet")) ;"
+    ;("\"" . ("guillemet")) ;"
+    ("«"  . ("_ﬂ"))
+    ("»"  . ("_ﬂ"))
     ;("«"  . ("ouvrer les guillemets")) ; ouvert 
     ;("»"  . ("fermer les guillemets"))
     ;("{"  . ("accolade" "ouvrante"))
@@ -1266,6 +1271,7 @@
     "m_en"
     "t_en"
     "s_en"
+    "s_y"
     ;;
     "jusqu_au_bout"; pos
     "tout_d_abord"; pos TODO
@@ -1726,7 +1732,7 @@
 
 (defvar french_multiple_word_expressions2part
    '("tout_à" "tout_à_l"))
-;  (lex.add.entry '( "XXX" nil ((("t" "u") 0) (("t" "a" "l") 0))))
+; pas oublier d'ajouter (lex.add.entry '( "XXX" nil ((("t" "u") 0) (("t" "a" "l") 0))))
                          
 
 
@@ -1817,7 +1823,8 @@
   (set! list_homo_VER_NOM
   ;  +4000  ; pe exclure forme infinitive ... si seulement utile pour sans *
     
-      (list    
+      (list  
+            "bouge"  
             "cause"
             "cesse"
             "couve"
@@ -1839,6 +1846,7 @@
         
   ; ADV ou PRE, cas possibilité autre POS non traité exemple derrière, plein, vers etc.
   ; non traité dans tokenpos_fr      
+  ; hmm ... au_dessus ADV, au_dessus_de PRE : PRE à mettre en locution 
 (set! list_PRE_ADV 
   (list 
   ; "après" ; BUG core dump neut_parl_s01_0082
@@ -1854,9 +1862,11 @@
     "par_dessus"
     "rez"))
               
-;;   
+;;  ADV pour qui seul poslex se trompe
 
-
+(set! list_macho_ADV 
+  (list 
+    "n_importe_comment"))
 
 
 

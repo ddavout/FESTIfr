@@ -5,6 +5,13 @@
 ; TODO à ranger, renommer
 (defvar verbose_addendas)
 (if verbose_addendas (format t "TODO renommer addenda_fautif.scm loaded"))
+(lex.add.entry '("aix_en_othe" nil ((("eh" "k") 0) (("s" "ahn") 0) (("n" "oh" "t") 0))))
+(lex.add.entry '("aix_en_provence" nil ((("eh" "k") 0) (("s" "ahn" "n") 0) (("p" "rh" "oh") 0) (("v" "ahn" "s") 0))))
+(lex.add.entry '("klammer_NOM" NOM ((("k" "l" "a") 0) (("m" "eh" rh) 0))))
+(lex.add.entry '("klammer_NAM" NAM ((("k" "l" "a") 0) (("m" "e") 0))))
+
+(lex.add.entry '("traveller_NOM" NOM ((("t" "rh" "a") 0) (("v" "eh") 0) (("l" "eh" rh) 0))))
+(lex.add.entry '("traveller_s_cheque" nil ((("t" "rh" "a") 0) (("v" "eh") 0) (("l" "eh" "rh") 0) (("sh" "eh" "k") 0))))
 (lex.add.entry '("Montréal" nil ((("m" "ohn") 0) (("rh" "e") 0) (("a" "l") 0))))
 (lex.add.entry '("auf" nil ((("a")0) (("o" "f") 0))))
 (lex.add.entry '("fast_food" NOM ((("f" "a" "s" "t") 0) (("f" "u" "d") 0))))
@@ -66,6 +73,7 @@
 (lex.add.entry '("bull_dozer" nil (((b y l)0)((d oh z eh rh)0))))
 (lex.add.entry '("bug" nil (((b oe g)0))))
 (lex.add.entry '("call_girl" nil (((k o l) 0)((g oe rh l) 0))))
+(lex.add.entry '("call_girl_NOM" NOM (((k o l) 0)((g oe rh l z) 0))))
 (lex.add.entry '("call_center" nil (((k o l) 0)((s ahn) 0) (t eh rh)0)))
 
 (lex.add.entry '("call" nil (((k o l) 0))))

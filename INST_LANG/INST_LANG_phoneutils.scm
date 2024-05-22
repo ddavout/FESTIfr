@@ -287,7 +287,8 @@
            )
     (set! result (reverse syls))
 
-    (if verbose_phoneutils (format t "\nINST_LANG_lex_syllabify_phstress %l: \n \(lex.add.entry '\( \"XXX\" nil %l\)\)\n" phones result))
+    (if (and verbose_phoneutils (not verbose_supra_lts) )
+     (format t "\nINST_LANG_lex_syllabify_phstress %l: \n \(lex.add.entry '\( \"XXX\" nil %l\)\)\n" phones result))
     result))
 
 

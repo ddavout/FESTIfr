@@ -141,7 +141,7 @@
         "tours"; siwi tours aux ailes    SAFE
         "ailleurs"; sing. ou plur. OBLG
         "alors"
-        ; "fils_ﬂ_fis" ; fils ... TODO
+        "fils_fis" ; fils ... TODO
         "ans" ; les ans ont passé SAFE
         ; "années" ; safe plusieurs années après
         "arts" ; ;les arts américains  SAFE

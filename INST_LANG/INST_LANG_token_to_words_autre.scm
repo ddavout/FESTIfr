@@ -12,7 +12,9 @@
 
 ; pour entre autre INST_LANG_homographs, INST_LANG_homographs1
 ; is_normal
-;(require 'INST_LANG_token); commenté sinon ça boucle TODO
+(require 'INST_LANG_tokenpos);
+;(require 'INST_LANG_token);
+
 (require 'INST_LANG_numbers)
 
 ; for french_numbers_to_words 
@@ -30,10 +32,27 @@
 (set! debugQT t) ; pour débugger une QT en particulier
 (defvar tokendebuglevel -1)
 
+
+
 (defvar QT24 t)
 (defvar QTpos1 t); fre_NAM_homo_tab ex: Marguerite |Duras|
 (defvar QTpos2 t); |donne|-moi -> donne VER; |donne|-m'en , grâce à  norm donne|-|m_en  -> donne VER *et* m_en PRO:per
+
+; changements de pos pour cause d'erreurs de poslex
+; vérifier de temps en temps 
+; les changements de pos affecte l'analyse grammaticale, à faire, en principe, au plus vite
+; NOM -> NAM  ou AUX -> VER , pour l'instant discutable
+; TODO à ranger par fréquence ( en tenant compte de l'ordre d'apparition dans la phrase: voeu pieu)
 (defvar QTpos3 t); tentative homo VER NOM par ex après adverbe de quantité, peu de ferment
+(defvar QTpos4 t); homographe fier ; changement de pos
+(defvar QTpos5 t); homographe maintenant ; changement de pos
+; |bouge|-toi, sors de ce |bouge|
+; sens 
+;  les QThomo_* ne changeant pas l'analyse grammaticale peut se déplacer jusqu'à QT24
+(defvar QThomo_fils t); homographe fils ; accroissement vocabulaire
+(defvar QThomo_convient t); homographe convient ; accroissement vocabulaire
+;(defvar QThomo_maintenant t); homographe mainten ; accroissement vocabulaire
+
 (defvar QTpos2_pattern "{[^-]+}-{.*}")
 
 (defvar QTtim t)
@@ -74,13 +93,15 @@
 (defvar QTacron t)
 (defvar QTcurr t); avant QTletter
 (defvar QTl1 t); lettre isolée non mot (après QTletter) après currency 1 £, après fre_abbr_with_point_tab ?  Rq 10 A après fre_unite_mesure_teststring2 ex 10 A ; après Rest Zahlen
-; nécessite ex QT20? TODO QTcurr	 isoliert currencies ? |_pound sinon  
+; nécessite ex QT20? TODO QTcurr     isoliert currencies ? |_pound sinon  
 (defvar QTtypo1 t) ; bad typo ex 10kg; 10US$ ?
 (defvar QTtypo1_pattern "{[0-9]+}{[A-Za-zÀÁÂÂÄÅÆÇÈÉÊËÌÍÍÎÏÑÒÒÔÖÙÚÜĀŒāàáâäåçeèéêëiìíñîïœòóôöuùúûü$]+}");
 (defvar QTtim_pattern "{[0-2]?[0-9]}{[:|.]}{[0-5][0-9]}") 
 (defvar QTb12 t) ; "QT43?\t épil.l... 
 (defvar QTb12_pattern "{[A-Za-zÀÁÂÂÄÅÆÇÈÉÊËÌÍÍÎÏÑÒÒÔÖÙÚÜĀŒāàáâäåçeèéêëiìíñîïœòóôöuùúûü]+}{[0-9]+}")
 (defvar QTurl t)
+(defvar QThomo t)
+(defvar QThomo_suite )
 (set! QT)
 (defvar RU) ; pas set sinon entre 2 appels successifs on perd la liste RU ? 
 ; à mettre à nil au niveau de notre SayText TODO
@@ -128,7 +149,8 @@
   (tokendebug -1 (format nil "PREVIOUS TOKEN %s\n" (if (not (null? (item.prev token))) (begin (print (item.features (item.prev token) ))))))
   (tokendebug -1 (format nil "\t ACTUAL TOKEN: |%s|\n |%l|\n" name (item.features token)))
   (tokendebug -1 (format nil "<\t ===================\n\n"))
-   (format t "parent %s" (item.feat token 'R:Token.parent.token_pos))
+  (format t "ACTUAL TOKEN is_in_poslex name |%l| \n" (is_in_poslex name))
+  (format t "parent %s\t" (item.feat token 'R:Token.parent.token_pos))
   
   (let 
     
@@ -137,9 +159,56 @@
     (set! ponct (item.feat token 'punc ))
     (set! etat nil); -1 non vu; 0 vu non traité, 1 traité
     (set! cas nil)
+    (set! list_homographs nil)
 
     (cond 
-    
+
+     ((and (> tokendebuglevel -1)(format t "QTpos5 ?\t |%s|\n" name)  nil)) 
+     ((and ; fre_NAM_homo_tab homo non en tête de phrase avec typographie correcte sinon pas de correction :(
+            QTpos5
+            (string-equal name "maintenant")
+            (not (null? (item.prev token)))
+            (not (member_string (item.feat (item.prev token) 'punc ) (list "." "?" "!")))
+             (member_string (item.feat token 'p.name) (list "le" "la" "les" "en")))
+
+                (set! QT "QTpos5" )
+                (set! RU (append RU (list QT )))
+                (item.set_feat token 'pos "VER")
+                (set! result (list name)))
+
+     ; exemple de changement de POS
+     ; erreur de poslex sur des homographes non homosyntaxiques
+     ; sachant que fier VER est intransitif et fier NOM rare
+      ((and (> tokendebuglevel -1)(format t "QTpos4 ?\t |%s|\n" name)  nil)) 
+      ((and ;
+            QTpos4
+            (string-equal name  (french_downcase_string "fier"))
+            (not (null? (item.prev token))); je suis |fier| ; TODO
+            (or (format t "QTpos4: ok1: name %s\n" name) t)
+            (or (format t "QTpos4: ok1_1: (item.feat token 'p.punc)  %l\n" (item.feat token 'p.punc)) t)
+            (or (format t "prepunctuation %l\n" (item.feat token 'prepunctuation)) t);
+            (equal?  (item.feat token 'prepunctuation) "")
+            (or (format t "QTpos4: ok1_2 \n" ) t)
+            (or (set! p.name (item.feat (item.prev token) 'p.name)) t))
+                (set! QT "QTpos4" )
+                (set! RU (append RU (list QT )))
+                (if   (member_string (french_downcase_string (item.feat token 'p.p.name)) (list "je" "tu" "il" "elle" "on"))
+
+                    (begin
+                        (format t "ADJ") 
+                        (item.set_feat token 'pos "ADJ"))
+                    (begin 
+
+                        (if (member_string (item.feat token 'p.name) (list  "y" "se")) ; token pas s_y ! 
+                            (begin
+                                (format t "VER") 
+                                (item.set_feat token 'pos "VER"))
+                             (begin 
+                                (if (member_string  (french_downcase_string(item.feat token 'p.name))  (list "le" "la" "lui"))
+                                     (item.set_feat token 'pos "ADJ")))))); fier intransitif donc pas VER en tout cas
+                
+                (set! result (list name)))
+
      ((and
         QTtim ;  "{[0-2]?[0-9]}{[.|:]}{[0-5][0-9]")
         (pattern-matches name QTtim_pattern)
@@ -344,6 +413,7 @@
                     (format t "FRENCH NUMBERS")
                     (set! result  (append (french_numbers_to_words token h1) (french_parse_charlist h2 1))) )))                   
 
+
                     
         ((and (> tokendebuglevel -1)(format t "QTnotinitblock?\t ?\t %s\n" name)  nil))
         ((and
@@ -491,9 +561,9 @@
               ;(not (equal? (item.feat token 'punc) ",")) ; hyp
               (format t "QTdiglist !!! \t  h1 |%s| h2 |%s| ?\n" h1 h2);  h1 |00| h2 |56| ?; ex h1 "" h2 "3" ou  h1 || h2 |61| ? 61 années
               (set! n_name  (na (item.next token))); 
-              (format t "QTdiglist !! n_name %l" n_name)
+              (format t "QTdiglist !! n_name %l\n" n_name)
               (item.set_feat token "token_pos" "cardinal")
-              (if (and  (string-equal h1 "")(is_quantifiable_fem n_name))(set! fem 1)(set! fem 0))
+              (if (and  (string-equal h1 "") n_name (is_quantifiable_fem n_name))(set! fem 1)(set! fem 0))
               (if (not (string-equal h1 "")); leading zeros
                       (set! result 
                           (append
@@ -618,7 +688,7 @@
          (( ; locution pour l'instant 2 ou 3 mots listes dans INST_LANG_token_to_words_lists
              ; on commence par 3 french_multiple_word_expressions2
              ; (pour la mise au point de la prononciation (s'entend avant introduction dans LE dico, si possible on utilisera de préférence 
-             ; addenda_locutions.scm et addenda_foreign.scm mias .;. , la prononciation n'est pas le pb ici
+             ; addenda_locutions.scm et addenda_foreign.scm mais .;. , la prononciation n'est pas le pb ici
              ; même si on peut introduire une locution pour une raison de prononciation ex nuit et jour
             and ; locution
               QTloc3m
@@ -637,6 +707,7 @@
               (or (format t "locution QTloc3m: ok1\n") t)
               (set! name1 (string-append name "_" n_name "_" n_n_name))
               (or (format t "locution QTloc3m: ok2 name1 |%s| \n" name1) t)
+              (or (format t "locution QTloc3m: ok3 is_in_poslex name1 |%l| \n" (is_in_poslex name1)) t)
               (member_string (french_downcase_string name1) french_multiple_word_expressions2)
 
               )
@@ -836,7 +907,84 @@
                         (url->list_french name))
                     (set! result help_list)))
                     
-                    
+          ; exemple ajout de mots à notre vocabulaire
+      ; pour tenter de désambiguer des homographes homosyntaxiques ??
+      ; tâche impossible les fils (de la couturière) sont /blancs de peur/très blancs mais trop fins
+
+        ; ne règle pas tout les fils de la couturière !
+        ; Mots utilisés à proximité de fil non fils :
+        ; fer ,  tenir ,  épée ,  passer ,  bout ,  lui ,  suivre ,  eau ,  reprendre ,  faire ,  or  NOM,  conducteur ,  blanc ,  perdre ,  vie ,  soie ,
+        ;   temps ,  discours ,  pouvoir 
+        ; retenir fer, or NOM, soie 
+        ; Mots utilisés à proximité de fils :
+        ; père ,  lui ,  petits ,  dit ,  dieu ,  faire ,  roi ,  aîné ,  bien ,  homme ,  mère ,  dire ,  fille ,  femme ,  mort ,  leurs ,  voir ,  jeunes ,
+        ;  vouloir 
+      ((and (> tokendebuglevel -1)(format t "QThomo_fils ?\t |%s|\n" name)  nil)) 
+      ((and ;
+            QThomo_fils
+            (string-equal name "fils")
+            ; pas de boucle
+            (not (string-equal (item.feat token 'homo) "profilage"))
+            (or (format t "QThomo_fils-0: on prépare") t)
+
+             (or 
+                (and 
+                    (and (member_string (item.feat token 'n.name) (list "à" "de"))
+                         (or (member_string (item.feat token 'n.n.name) 
+                                (list "papa" "maman" "putes" "pute" "catin" "catins"))
+                            (member_string (item.feat token 'n.name) (list "aînés" "ainés" "puînés" "chéris"))))
+                    ; info    
+                    (or (format t "fis") t)
+                    (set! name1 "fils_fis"))
+
+                (and
+                    (and (member_string (item.feat token 'n.name) (list "à" "de"))
+                         (member_string (item.feat token 'n.n.name) 
+                                    (list "soie" "cuivre" "laiton" "broder" "coudre" "lin" "chanvre" "coton" "fer" "acier" "rasoir")))
+                    ; info
+                    (or (format t "fil") t)
+                    (set! name1 "fils_fil"))))
+
+             
+             (set! QT "QThomo_fils")
+             (set! RU (append RU (list QT )))
+             ; profilage
+             (item.set_feat token 'n.homo "profilage")
+             (set! result (append (list name1)))
+
+             )
+
+
+      ((and (> tokendebuglevel -1)(format t "QThomo_convient ?\t |%s|\n" name)  nil)) 
+      ((and ;
+            QThomo_convient
+            (string-equal name "convient")
+            ; pas de boucle
+            (not (string-equal (item.feat token 'homo) "profilage"))
+            (or (format t "QThomo_convient-0: on prépare") t)
+
+             (or 
+                (and 
+                    (member_string (item.feat token 'n.name) (list "en"))
+                    ; info    
+                    (or (format t "vient") t)
+                    (set! name1 "convient_vient"))
+
+                (and
+                    (member_string (item.feat token 'p.name) (list "la" "le"))
+                         
+                    ; info
+                    (or (format t "vie") t)
+                    (set! name1 "convient_vie"))))
+
+             
+             (set! QT "QThomo_convient") 
+             (set! RU (append RU (list QT )))
+             ; profilage
+             (item.set_feat token 'n.homo "profilage")
+             (set! result (append (list name1)))
+
+             )                
                                                     
       ((and (> tokendebuglevel -1)(format t "QT24?\t normal ?: |%s|\n" name)  nil) nil); condition jamais remplie 
       ((and 
@@ -895,28 +1043,30 @@
 
             
             (t  
-              (tokendebug -1 (format nil "ok5 normal no punc point %s\n" name))
-              ; récalcitrant
-              (format t "ici %l\n" (string-after name "_"))
-              (if (string-equal (string-last (string-after name "_") "m"))
-                  (begin 
-                    (set! QT "QT24_T" )
-                    (set! RU (append RU (list QT )))
-                   (item.set_feat token 'pos "VER")))
+                (set! QT "QT24_T" )
+                (set! RU (append RU (list QT )))                
+                (tokendebug -1 (format nil "ok5 normal no punc point %s\n" name))
+                ; récalcitrant
+                (format t "ici %l\n" (string-after name "_"))
+                (if (string-equal (string-last (string-after name "_") "m"))
+                    (begin 
 
-              ; (if (and ; aigrefeuille-d'aunis
-              ;          nil
-              ;          (pattern-matches name "{[^-]+}-{d}")
-              ;          (set! nt (item.next token)) ; not nil
-              ;          ;(member_string (item.feat token 'n.pos) (list "NOM"))
-              ;          ;(or (format t "3333 |%s|"(item.feat nt 'whitespace)) t)
-              ;          (equal? (item.feat nt 'whitespace) "'"))
-              ;     (begin 
-              ;       (set! name (string-append name "_" (na nt)))
-              ;       (item.set_feat nt "name" "")
-              ;       ))
-              (set! QT "QT24" )(set! result (list (string-replace name "-" special_slice_char)))) ; hmm
-            ))    ; 20/04
+                        (item.set_feat token 'pos "VER")))
+
+                ; (if (and ; aigrefeuille-d'aunis
+                ;          nil
+                ;          (pattern-matches name "{[^-]+}-{d}")
+                ;          (set! nt (item.next token)) ; not nil
+                ;          ;(member_string (item.feat token 'n.pos) (list "NOM"))
+                ;          ;(or (format t "3333 |%s|"(item.feat nt 'whitespace)) t)
+                ;          (equal? (item.feat nt 'whitespace) "'"))
+                ;     (begin 
+                ;       (set! name (string-append name "_" (na nt)))
+                ;       (item.set_feat nt "name" "")
+                ;       ))
+                (set! result (list (string-replace name "-" special_slice_char)))) ; hmm
+
+                ))    ; 20/04
 
 ; ))))
 
@@ -1009,3 +1159,16 @@
 
 
 (provide 'INST_LANG_token_to_words)
+
+; à voir oui ? ici ou postlex ou liaison
+
+;QT cardinal
+; Prononc. et Orth.: vehn à la pause ou devant cons.: vint fois sauf dans les nombres de 22 à 29: vint-deux [vεtdø].
+; [vehnt] devant voy.: vint arbres ou h non aspiré: vint hommes (pb de post_lex)
+
+; cinq devant consonnes ou voyelles ou "pause"
+; was 
+;(lex.add.entry '("cinq" nil (((s ehn)0))))
+;(lex.add.entry '("cinq_ADJ:num" "ADJ:num" (((s ehn k) 0))))
+;(lex.add.entry '("cinq_sehn" sehn (((s ehn)0))))
+;(lex.add.entry '("cinq_sehnk" sehnk (((s ehn k)0))))

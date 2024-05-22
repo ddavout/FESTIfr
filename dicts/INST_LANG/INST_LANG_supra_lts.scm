@@ -1,5 +1,5 @@
 
-(defvar verbose_supra_lts nil)
+(defvar verbose_supra_lts t)
 (defvar lexdebug 0)
 (defvar correction_lts nil)
 ; (if correction_lts (require 'correction_lts))

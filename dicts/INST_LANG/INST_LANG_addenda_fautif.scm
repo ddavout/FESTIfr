@@ -13,6 +13,8 @@
 ; et ça ne marcherait pas !! TODO
 ; MAIS cela marche pour des mots non composés
 ; voir le cas de "ranger" (SayText "le ranger se mit à ranger")
+
+ (lex.add.entry '( "n_arriveré" nil ((("a") 0) (("rh" "i") 0) (("v" "rh" "e") 0))))
 (lex.add.entry '("en_quoi" nil ((("ahn") 0) (("k" "w" "a") 0)))); et non ahn n 
 
 (lex.add.entry '("idiot" nil ((("i") 0) (("d" "j" "o") 0)))); et non "i" "d" "i" "j" "o"

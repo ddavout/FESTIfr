@@ -35,15 +35,7 @@
 (lex.add.entry '("neuf_heures" nil (((n oe)0)((v oe rh)0))))
 (lex.add.entry '("bons_à_rien" nil ((("b" "ohn") 0) (("a") 0) (("rh" "j" "ehn") 0))))
 ;; AREVOIR
-(lex.add.entry '("de_plu" "ADV" (((d ae)0)((p l y)0))))
-
-
-;;
-(lex.add.entry '("huis_clos" nil  (((hw i)0)((k l o)0))))
-(lex.add.entry '("mieux_être" nil  (((m j eu)0) ((z eh t rh)0))))
-
-
-(lex.add.entry '("cinq_ADJ:num" "ADJ:num"  (((s ehn)0))))
+(lex.add.entry '("cinq_à_sept" nil ((("s" "ehn") 0) (("k" "a")0) (("s" "eh" t) 0))))
 
 (lex.add.entry '("nor_nor_est" ADV ((("n" "oh" "rh") 0) (("n" "oh") 0) (("rh" "eh" "s" "t") 0))))
 
@@ -356,7 +348,8 @@
 ;(lex.add.entry '("pater_noster" NOM 
 ;(lex.add.entry '("pax_americana" NOM 
 ;(lex.add.entry '("persona_grata" NOM 
-;(lex.add.entry '("persona_non_grata" NOM 
+(lex.add.entry '("persona_non_grata" nil ((("p" "eh" "rh") 0) (("s" "oh") 0) (("n" "a") 0) (("n" "ohn") 0) (("g" "rh" "a") 0) (("t" "a") 0))))
+
 ;(lex.add.entry '("peu_ou_prou" ADV 
 (lex.add.entry '("pit_bull" NOM (((p i t)0)((b u l)0)))) 
 ;(lex.add.entry '("play_back" NOM 
