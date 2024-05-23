@@ -1057,9 +1057,13 @@
     result))
 
 ;; apostrophes
-; essai afin_qu
-(defvar list_before_apo (list "c" "d" "j" "l" "m" "n" "s" "t" "qu" "quoiqu" "quelqu" "jusqu" "lorsqu"  "afin_qu" "alors_qu" "bien_qu" "parce_qu" "pendant_qu" "tandis_qu" "tant_qu" "puisqu"
-           "afin_d" "loin_d" "quoi_qu"))
+; ancienne list_before_apo scindée
+
+; pour sûr, suit un VER
+(defvar list_before_apo_VER (list "c"  "j"  "m" "n" "s" "t"))
+           
+(defvar list_before_apo_div (list  "l" "d" "qu" "quoiqu" "quelqu" "jusqu" "lorsqu"  "afin_qu" "alors_qu" "bien_qu" "parce_qu" "pendant_qu" "tandis_qu" "tant_qu" "puisqu"
+           "afin_d" "loin_d" "quoi_qu")) 
 
 ;; tiret grammatical
 (defvar list_after_tiret 

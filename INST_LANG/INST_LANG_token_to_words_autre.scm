@@ -806,23 +806,10 @@
                 (set! result (list name1))) 
 
       ((and (> tokendebuglevel -1)(format t "QTbefapo?\t essai élision à venir ? |%s|\n" name)  nil))  
-      (
-       (and QTbefapo
-          (member_string (french_downcase_string name) list_before_apo )
-          ; (equal? (item.feat token 'punc) 0)
-          (not (null? (item.next token)))
-          (set! n_name (na (item.next token)))
-          (or (format t "QTbefapo n_name %s\n" n_name) t)
-          
-          (string-equal (item.feat token 'n.whitespace) "'"))
+      ((and 
+            QTbefapo
+            (befapo_VER token name))) 
 
-            (set! QT "QTbefapo")   ; le |m| de mintéresse pas à l'as
-            (set! RU (append RU (list QT )))
-            (set! name1 (string-append name "_" n_name))
-            (item.set_feat (item.next token) 'name name1)
-            (if (is_in_poslex n_name)
-              (item.set_feat (item.next token) 'pos (symbol->string (caar (is_in_poslex n_name)))  )); suppose de l'ordre ! 
-            (item.set_feat (item.next token) 'whitespace ""))
 
          ( ; currencies
             (and  
@@ -1156,6 +1143,43 @@
             )
 
         result))
+
+
+(define (befapo token name)
+    (let (pos_sur)
+        ; pour n'importe on cherche à atteindre |n| 
+       (format t "\t\t\t\ŧici QTbefapo succédané pour %s\n" name)
+       (if   
+         (and
+          (not (null? (item.next token)))
+          ; c'est le suivant qui porte le whitespace
+          ; TODO peut-on donner un sens plusieurs whitespace characters commençant par un apostrophe 
+          (string-equal (string-car (item.feat token 'n.whitespace) "'")); 
+          (or (if (member_string (fdnaw name) list_before_apo_VER )(set! pos_sur "VER"))
+               (member_string (fdnaw name) list_before_apo_div))
+          ; (equal? (item.feat token 'punc) 0); on ne sait jamais... hmm on pardonne
+          (set! n_name (na (item.next token))); n'|oublie|
+          (or (format t "QTbefapo n_name %s\n" n_name) t))
+          
+          (begin 
+            (or (format t "ici QTbefapo\n") t)
+            (set! reponse t)
+            (set! QT "QTbefapo")
+            (set! RU (append RU (list QT )))
+            ; action
+            (set! name1 (string-append name "_" n_name))
+            (item.set_name (item.next token) name1)
+            ; si on n'est pas sûr, on se fie à poslex
+            (if pos_sur (item.set_feat (item.next token) 'pos pos_sur)
+            (item.set_feat (item.next token) 'whitespace ""))
+            
+          (begin 
+            ;befapo non concernée
+            (set! reponse nil)))
+       reponse))
+
+
+
 
 
 (provide 'INST_LANG_token_to_words)
