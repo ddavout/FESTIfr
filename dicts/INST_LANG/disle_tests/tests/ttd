@@ -1,3 +1,74 @@
+
+( t9064 "tu as perdu l'avoir")
+( t9064 "L'avoir cru me fait honte.")
+( t9066 "il faut l'avoir vu pour le croire.")
+( t9065 "tu as perdu l'avoir sur ton devis"); l_avoir AUX au lieu de NOM
+( t9067 "tu as perdu l'avoir sur ton achat"); l_avoir AUX au lieu de NOM
+
+( t9063 "quel sens de la répartie !")
+( t9062 "je sens mes sens défaillir")
+( t9061 "au lieu de  femme du fils, on peut dire  belle-fille")
+( t9060 "venons-en maintenant au fait")
+( t9059 "en maintenant les faux-semblants, vous n'arriverez à rien")
+( t9058 "Range ta chambre maintenant et tout de suite !")
+( t9057 "je vais maintenant vous quitter")
+( t9056 "En les maintenant au sol")
+( t9055 "Faut-il se fier aux apparences")
+( t9054 "Il vient faire le fier, ce fier imbécile, il ne faut pas s'y fier.")
+( t9053 "Avec un accès physique à votre PC, n’importe qui peut facilement obtenir les privilèges de l’administrateur et accéder à tous les fichiers de votre PC.")
+( t9052 "le mariage convient aux femmes, disait-on")
+( t9052 "ils la convient à tous les symposiums")
+( t9051 "Je suis fier de ma fille, c'est tout mon portrait")
+( t9050 "c'est du grand n'importe quoi"); ("QTbefapo" "QTbefapo" "QTloc2m" "QTdelp" TODO n_importe_quoi VER et non pas ADV
+( t9049 "c'est autre chose")
+( t9048 "on en est tout à fait sûr maintenant")
+( t9047 "il arrive tout à l'heure")
+( t9046 "elle comptait ses sous un à un")
+( t9045 "n'est pas incroyable ?")
+( t9044 "tandis que le seigneur dormait, l'intrus faisait main basse sur le trésor")
+( t9043 "parce qu'on y voit une issue")
+( t9042 "pendant qu'il mangeait")
+( t9041 "loin d'être bénéfique")
+( t9040 "bien que rien n'a changé")
+( t9039 "alors qu'il s'enfuyait")
+( t9038 "afin d'aboutir à un consensus")
+( t9036 "y_avait-t-il de quoi se fâcher ?");  y_avait_t_il CON
+( t9035 "y avait comme une gêne")
+( t9034 "y-a-t'il un moyen de s'en sortir ?")
+( t9033 "y a qu'à en faire autant");
+( t9032 "il n'y en a que pour toi comme d'habitude"); QTbefapo" "QTloc3m" "QTdel" "QTdelp
+( t9031 "y en faut plus");
+( t9030 "d'ores et déjà, on peut dire que c'est complètement raté");french_multiple_word_expressions
+( t9029 "il n y a pas d'apostrophe");french_multiple_word_expressions
+( t9028 "jusque devant l'autel");french_multiple_word_expressions
+( t9027 "y a-t_il un oiseau dans la cage ?");french_multiple_word_expressions
+( t9026 "jusqu'ici, je te suis");french_multiple_word_expressions
+( t9025 "eh bien, c'est un peu fort");french_multiple_word_expressions
+( t9024 "une call girl par jour, ça lui fait beaucoup de call girls");french_multiple_word_expressions
+( t9023 "ne plus tergiverser");french_multiple_word_expressions
+( t9022 "revenons tout d'abord à l'essentiel");french_multiple_word_expressions TODO
+( t9021 "on ira jusqu'au bout du chemin");french_multiple_word_expressions
+( t9020 "on en trouve n'importe où");french_multiple_word_expressions
+( t9019 "il déboule n'importe quand");french_multiple_word_expressions
+( t9018 "n'importe quel lit m'ira"); TODO n_importe_quel VER lit VER
+( t9017 "n'importe qui fera l'affaire"); french_multiple_word_expressions
+( t9016 "Il n'était pas peu fier de lui")
+( t9015 "il n'y voit que du feu"); "QTbefapo
+( t9015 "c'était le 25 janvier 1951")
+( t9014 "il n'y a que 2 solutions"); french_multiple_word_expressions
+( t9013 "61 années-lumière")
+( t9013 "61 années")
+( t9012 "5,1 année-lumière")
+( t9009 "5,1 années-homme")
+( t9007 "5,1 année")
+( t9005  "ce jeu de cartes a trois cartes manquantes ")
+( t9004 "un jeu de cartes à jouer")
+
+
+
+
+
+
 ( t1787 "3744 rue Jean-Brillant
 bureau 6310
 QC, H3T 1P1 Montréal
@@ -926,10 +997,4 @@ Canada ")
 ( t8004 "le papier d'arménie")
 ( t8005 "un chef d'oeuvre incontestable") ;AC hmm
 ( t8006 "un chef d'industrie contesté")
-( t9004 "un jeu de cartes à jouer")
-( t9005  "ce jeu de cartes a trois cartes manquantes ")
-( t9007 "5,1 année")
-( t9009 "5,1 années-homme")
-( t9012 "5,1 année-lumière")
-( t9013 "61 années")
-( t9013 "61 années-lumière")
+
