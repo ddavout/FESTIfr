@@ -1,111 +1,116 @@
-; TODO heure, "23:54:12 h" 
-; TODO date
-; TODO guillemets crochets
-; TODO perte ponctuation dans une phrase entre parenthèse
-; TODO  1)  2) premièrement ou plus simple  1 pau 
+(if t ; entete
+    ; TODO heure, "23:54:12 h" 
+    ; TODO date
+    ; TODO guillemets crochets
+    ; TODO perte ponctuation dans une phrase entre parenthèse
+    ; TODO  1)  2) premièrement ou plus simple  1 pau 
 
-(set! result t )
-(defvar tokendebuglevel 20000)
-(require 'INST_LANG_patternmatch); for pattern-matches
+    (set! result t )
+    (defvar tokendebuglevel 20000)
+    (require 'INST_LANG_patternmatch); for pattern-matches
 
-(defvar verbose_INST_LANG_token_to_word t)
+    (defvar verbose_INST_LANG_token_to_word t)
 
-; pour entre autre INST_LANG_homographs, INST_LANG_homographs1
-; is_normal
-(require 'INST_LANG_tokenpos);
-;(require 'INST_LANG_token);
+    ; pour entre autre INST_LANG_homographs, INST_LANG_homographs1
+    ; is_normal
+    (require 'INST_LANG_tokenpos);
+    ;(require 'INST_LANG_token);
 
-(require 'INST_LANG_numbers)
+    (require 'INST_LANG_numbers)
 
-; for french_numbers_to_words 
-(require 'INST_LANG_token_numbers_to_words)
+    ; for french_numbers_to_words 
+    (require 'INST_LANG_token_numbers_to_words)
 
-; for french_parse* is_currency, french_parse_ordinal, etc.
-(require 'INST_LANG_token_to_words_tools)
-; for fre_abbr_* ; fre_unit_time_name; 
-(require 'INST_LANG_token_to_words_lists)
-(defvar cg::debug); could be clunits_debug !
+    ; for french_parse* is_currency, french_parse_ordinal, etc.
+    (require 'INST_LANG_token_to_words_tools)
+    ; for fre_abbr_* ; fre_unit_time_name; 
+    (require 'INST_LANG_token_to_words_lists)
+    (defvar cg::debug); could be clunits_debug !
 
-(if cg::debug
-    (defvar tokendebuglevel 1000)
-    (defvar tokendebuglevel 0))
-(set! debugQT t) ; pour débugger une QT en particulier
-(defvar tokendebuglevel -1)
+    (if cg::debug
+        (defvar tokendebuglevel 1000)
+        (defvar tokendebuglevel 0))
+    (set! debugQT t) ; pour débugger une QT en particulier
+    (defvar tokendebuglevel -1)
 
 
 
-(defvar QT24 t)
-(defvar QTpos1 t); fre_NAM_homo_tab ex: Marguerite |Duras|
-(defvar QTpos2 t); |donne|-moi -> donne VER; |donne|-m'en , grâce à  norm donne|-|m_en  -> donne VER *et* m_en PRO:per
+    (defvar QT24 t)
+    (defvar QTpos0_ADV t)
+    (defvar QTpos1 t); fre_NAM_homo_tab ex: Marguerite |Duras|
+    (defvar QTpos2 t); |donne|-moi -> donne VER; |donne|-m'en , grâce à  norm donne|-|m_en  -> donne VER *et* m_en PRO:per
 
-; changements de pos pour cause d'erreurs de poslex
-; vérifier de temps en temps 
-; les changements de pos affecte l'analyse grammaticale, à faire, en principe, au plus vite
-; NOM -> NAM  ou AUX -> VER , pour l'instant discutable
-; TODO à ranger par fréquence ( en tenant compte de l'ordre d'apparition dans la phrase: voeu pieu)
-(defvar QTpos3 t); tentative homo VER NOM par ex après adverbe de quantité, peu de ferment
-(defvar QTpos4 t); homographe fier ; changement de pos
-(defvar QTpos5 t); homographe maintenant ; changement de pos
-; |bouge|-toi, sors de ce |bouge|
-; sens 
-;  les QThomo_* ne changeant pas l'analyse grammaticale peut se déplacer jusqu'à QT24
-(defvar QThomo_fils t); homographe fils ; accroissement vocabulaire
-(defvar QThomo_convient t); homographe convient ; accroissement vocabulaire
-;(defvar QThomo_maintenant t); homographe mainten ; accroissement vocabulaire
+    ; changements de pos pour cause d'erreurs de poslex
+    ; vérifier de temps en temps 
+    ; les changements de pos affecte l'analyse grammaticale, à faire, en principe, au plus vite
+    ; NOM -> NAM  ou AUX -> VER , pour l'instant discutable
+    ; TODO à ranger par fréquence ( en tenant compte de l'ordre d'apparition dans la phrase: voeu pieu)
+    (defvar QTpos3 t); tentative homo VER NOM par ex après adverbe de quantité, peu de ferment
+    (defvar QTpos4 t); homographe fier ; changement de pos
+    (defvar QTpos5 t); homographe maintenant ; changement de pos
+    ; |bouge|-toi, sors de ce |bouge|
+    ; sens 
+    ;  les QThomo_* ne changeant pas l'analyse grammaticale peut se déplacer jusqu'à QT24
+    (defvar QThomo_fils t); homographe fils ; accroissement vocabulaire
+    (defvar QThomo_convient t); homographe convient ; accroissement vocabulaire
+    ;(defvar QThomo_maintenant t); homographe mainten ; accroissement vocabulaire
 
-(defvar QTpos2_pattern "{[^-]+}-{.*}")
+    (defvar QTpos2_pattern "{[^-]+}-{.*}")
 
-(defvar QTtim t)
-(defvar QTtim_pattern "{[0-2]?[0-9]}{[.|:]}{[0-5][0-9]}"); (set!  QTtim_pattern "{[0-2]?[0-9]}{[:|.]}{[0-5][0-9]}")
-(defvar QTono t)
-(defvar QTtrad1 t); avant QT24
-(defvar QTquoi t); sans bcp d'intérêt
-(defvar QTletter t); lié à can_be_single_letter après QTloc3m, QTloc2m (pour éviter les a minuscules dans les locutions !) mais avant QT24
-(defvar QTdel t); attention à l'ordre
-(defvar QTdelp t); nécessaire suppression répétition occasionée par QTloc2m
-(defvar QTdelp.p nil)
-(defvar QTdelp.n t)
-(defvar QTdelp.p.n t)
-(defvar QTloc3m t) ; avant QTloc2m et donc avant .. QT24; :french_multiple_word_expressions2 2 tirets
-(defvar QTloc2m t); avant QT24; :french_multiple_word_expressions (à renommer! TODO) ex "quelques_uns"; "quoi_que"; "red_river";  "roast_beef"; pe après QTrad1 si abréviation sous forme de locution TODO
-(defvar QTloc3mapo t)
-(defvar QTbefapo t)
-(defvar QTchefd )
-(defvar QTparentho1 t)
-(defvar QTparenthf1 t)
-(defvar QTrom t); romains
-(defvar QTrom_pattern "{[IVXLCM]+}")
-(defvar QTromo t); romains ordinaux
-(defvar QTromo_pattern1 "{[IVXLCM]+}{e}")
-(defvar QTromo_pattern2 "{[IVXLCM]+}{ème}") ; TODO combiner
-(defvar QTromo1) ; not QTromo not finished
-(defvar QTdiglist t) ; liste de digits
-(defvar QTdiglist_pattern "{[0]+}{[1-9][0-9]*}")
-(defvar QTsplit t); ex pp.4 -> pp 4 pour pages 4 
-(defvar QTsplit_pattern "{[A-Za-z]+}{\\.}{.*}")
-(defvar QTsplit2 t); 33°
-(defvar QTsplit2_pattern "{[0-9]+}{_o}{.*}")
-(defvar QTnotinitblock t) 
-(defvar QTstruc4 nil); erreur
-(defvar QTstruc4-1 t); "499 121 456 790")
-(defvar QTstruc3 t); first of 3 blocks |121| 456 790 ou 499 |121| 456 790 ?
-(defvar QTstruc2 t)
-(defvar QTacron t)
-(defvar QTcurr t); avant QTletter
-(defvar QTl1 t); lettre isolée non mot (après QTletter) après currency 1 £, après fre_abbr_with_point_tab ?  Rq 10 A après fre_unite_mesure_teststring2 ex 10 A ; après Rest Zahlen
-; nécessite ex QT20? TODO QTcurr     isoliert currencies ? |_pound sinon  
-(defvar QTtypo1 t) ; bad typo ex 10kg; 10US$ ?
-(defvar QTtypo1_pattern "{[0-9]+}{[A-Za-zÀÁÂÂÄÅÆÇÈÉÊËÌÍÍÎÏÑÒÒÔÖÙÚÜĀŒāàáâäåçeèéêëiìíñîïœòóôöuùúûü$]+}");
-(defvar QTtim_pattern "{[0-2]?[0-9]}{[:|.]}{[0-5][0-9]}") 
-(defvar QTb12 t) ; "QT43?\t épil.l... 
-(defvar QTb12_pattern "{[A-Za-zÀÁÂÂÄÅÆÇÈÉÊËÌÍÍÎÏÑÒÒÔÖÙÚÜĀŒāàáâäåçeèéêëiìíñîïœòóôöuùúûü]+}{[0-9]+}")
-(defvar QTurl t)
-(defvar QThomo t)
-(defvar QThomo_suite )
-(set! QT)
-(defvar RU) ; pas set sinon entre 2 appels successifs on perd la liste RU ? 
-; à mettre à nil au niveau de notre SayText TODO
-
+    (defvar QTtim t)
+    (defvar QTtim_pattern "{[0-2]?[0-9]}{[.|:]}{[0-5][0-9]}"); (set!  QTtim_pattern "{[0-2]?[0-9]}{[:|.]}{[0-5][0-9]}")
+    (defvar QTono t)
+    (defvar QTtrad1 t); avant QT24
+    (defvar QTquoi t); sans bcp d'intérêt
+    (defvar QTletter t); lié à can_be_single_letter après QTloc3m, QTloc2m (pour éviter les a minuscules dans les locutions !) mais avant QT24
+    (defvar QTdel t); attention à l'ordre
+    (defvar QTdelp t); nécessaire suppression répétition occasionée par QTloc2m
+    (defvar QTdelp.p nil)
+    (defvar QTdelp.n t)
+    (defvar QTdelp.p.n t)
+    ; les locutions ; vers une simplification de l'analyse
+    (defvar QTloc0 t); list_PRE_ADV ex: au-dessus de est vu comme une PRE
+    (defvar QTloc3m t) ; avant QTloc2m et donc avant .. QT24; :french_multiple_word_expressions2 2 tirets
+    (defvar QTloc2m t); avant QT24; :french_multiple_word_expressions (à renommer! TODO) ex "quelques_uns"; "quoi_que"; "red_river";  "roast_beef"; pe après QTrad1 si abréviation sous forme de locution TODO
+    (defvar QTloc3mapo t)
+    (defvar QTbefapo)
+    (defvar QTbefapo t)
+    (defvar QTchefd )
+    (defvar QTparentho1 t)
+    (defvar QTparenthf1 t)
+    (defvar QTrom t); romains
+    (defvar QTrom_pattern "{[IVXLCM]+}")
+    (defvar QTromo t); romains ordinaux
+    (defvar QTromo_pattern1 "{[IVXLCM]+}{e}")
+    (defvar QTromo_pattern2 "{[IVXLCM]+}{ème}") ; TODO combiner
+    (defvar QTromo1) ; not QTromo not finished
+    (defvar QTdiglist t) ; liste de digits
+    (defvar QTdiglist_pattern "{[0]+}{[1-9][0-9]*}")
+    (defvar QTsplit t); ex pp.4 -> pp 4 pour pages 4 
+    (defvar QTsplit_pattern "{[A-Za-z]+}{\\.}{.*}")
+    (defvar QTsplit2 t); 33°
+    (defvar QTsplit2_pattern "{[0-9]+}{_o}{.*}")
+    (defvar QTnotinitblock t) 
+    (defvar QTstruc4 nil); erreur
+    (defvar QTstruc4-1 t); "499 121 456 790")
+    (defvar QTstruc3 t); first of 3 blocks |121| 456 790 ou 499 |121| 456 790 ?
+    (defvar QTstruc2 t)
+    (defvar QTacron t)
+    (defvar QTcurr t); avant QTletter
+    (defvar QTl1 t); lettre isolée non mot (après QTletter) après currency 1 £, après fre_abbr_with_point_tab ?  Rq 10 A après fre_unite_mesure_teststring2 ex 10 A ; après Rest Zahlen
+    ; nécessite ex QT20? TODO QTcurr     isoliert currencies ? |_pound sinon  
+    (defvar QTtypo1 t) ; bad typo ex 10kg; 10US$ ?
+    (defvar QTtypo1_pattern "{[0-9]+}{[A-Za-zÀÁÂÂÄÅÆÇÈÉÊËÌÍÍÎÏÑÒÒÔÖÙÚÜĀŒāàáâäåçeèéêëiìíñîïœòóôöuùúûü$]+}");
+    (defvar QTtim_pattern "{[0-2]?[0-9]}{[:|.]}{[0-5][0-9]}") 
+    (defvar QTb12 t) ; "QT43?\t épil.l... 
+    (defvar QTb12_pattern "{[A-Za-zÀÁÂÂÄÅÆÇÈÉÊËÌÍÍÎÏÑÒÒÔÖÙÚÜĀŒāàáâäåçeèéêëiìíñîïœòóôöuùúûü]+}{[0-9]+}")
+    (defvar QTurl t)
+    (defvar QThomo t)
+    (defvar QThomo_suite )
+    (set! QT)
+    (defvar RU) ; pas set sinon entre 2 appels successifs on perd la liste RU ? 
+    ; à mettre à nil au niveau de notre SayText TODO
+); // EN TETE
 
 (define (INST_LANG_token_to_words token name)
   "Returns a list of words for NAME from TOKEN.  This allows the
@@ -163,6 +168,15 @@
 
     (cond 
 
+     ((and (> tokendebuglevel -1)(format t "QTloc0 ?\t |%s|\n" name)  nil)) 
+     ((and 
+            QTloc0
+            (member_string fdnaw list_ADV_PRE))
+                (set! QT "QTpos0_ADV" )
+                (set! RU (append RU (list QT )))
+                (item.set_feat token 'pos "ADV")
+                (set! result (list name)))
+
      ((and (> tokendebuglevel -1)(format t "QTpos5 ?\t |%s|\n" name)  nil)) 
      ((and ; fre_NAM_homo_tab homo non en tête de phrase avec typographie correcte sinon pas de correction :(
             QTpos5
@@ -182,7 +196,7 @@
       ((and (> tokendebuglevel -1)(format t "QTpos4 ?\t |%s|\n" name)  nil)) 
       ((and ;
             QTpos4
-            (string-equal name  (french_downcase_string "fier"))
+            (string-equal fdnaw  "fier")
             (not (null? (item.prev token))); je suis |fier| ; TODO
             (or (format t "QTpos4: ok1: name %s\n" name) t)
             (or (format t "QTpos4: ok1_1: (item.feat token 'p.punc)  %l\n" (item.feat token 'p.punc)) t)
@@ -204,7 +218,7 @@
                                 (format t "VER") 
                                 (item.set_feat token 'pos "VER"))
                              (begin 
-                                (if (member_string  (french_downcase_string(item.feat token 'p.name))  (list "le" "la" "lui"))
+                                (if (member_string  (fdnaw(item.feat token 'p.name))  (list "le" "la" "lui"))
                                      (item.set_feat token 'pos "ADJ")))))); fier intransitif donc pas VER en tout cas
                 
                 (set! result (list name)))
@@ -668,7 +682,7 @@
        ((and ; Oust ! Gloups !; TODO doublon blabla blabla ! , ah ah ! un seul point d'exclamation (good typo)
             QTono
             (string-equal ponct "!")
-            (member_string (french_downcase_string name) fre_ONO_homo))
+            (member_string fdnaw fre_ONO_homo))
                 (set! QT "QTono" )
                 (set! RU (append RU (list QT )))
                 (item.set_feat token 'pos "ONO")
@@ -678,7 +692,7 @@
         ((and
             QTquoi  
             (string-equal ponct "?")
-            (member_string fdnaw (list "quoi" "qui" "comment")))
+            (member_string (french_downcase_string (list "quoi" "qui" "comment")))
                 (set! QT "QTquoi" )
                 (set! RU (append RU (list QT )))
                 (item.set_feat token 'pos "PRO:int")
@@ -808,7 +822,8 @@
       ((and (> tokendebuglevel -1)(format t "QTbefapo?\t essai élision à venir ? |%s|\n" name)  nil))  
       ((and 
             QTbefapo
-            (befapo_VER token name))) 
+            (or (format t "ici appel QTbefapo succedane") t)
+                (befapo_VER token name))) 
 
 
          ( ; currencies
@@ -976,7 +991,6 @@
       ((and (> tokendebuglevel -1)(format t "QT24?\t normal ?: |%s|\n" name)  nil) nil); condition jamais remplie 
       ((and 
           QT24
-          (set! fdnaw (french_downcase_string name))
           (is_normal fdnaw))
 
 
@@ -1142,8 +1156,9 @@
             )))
             )
 
-        result))
+        result))) // DEFINE 
 
+; "modules"
 
 (define (befapo token name)
     (let (pos_sur)
@@ -1155,8 +1170,8 @@
           ; c'est le suivant qui porte le whitespace
           ; TODO peut-on donner un sens plusieurs whitespace characters commençant par un apostrophe 
           (string-equal (string-car (item.feat token 'n.whitespace) "'")); 
-          (or (if (member_string (fdnaw name) list_before_apo_VER )(set! pos_sur "VER"))
-               (member_string (fdnaw name) list_before_apo_div))
+          (or (if (member_string (french_downcase_string name) list_before_apo_VER )(set! pos_sur "VER"))
+               (member_string (french_downcase_string name) list_before_apo_div))
           ; (equal? (item.feat token 'punc) 0); on ne sait jamais... hmm on pardonne
           (set! n_name (na (item.next token))); n'|oublie|
           (or (format t "QTbefapo n_name %s\n" n_name) t))
@@ -1171,7 +1186,7 @@
             (item.set_name (item.next token) name1)
             ; si on n'est pas sûr, on se fie à poslex
             (if pos_sur (item.set_feat (item.next token) 'pos pos_sur)
-            (item.set_feat (item.next token) 'whitespace ""))
+            (item.set_feat (item.next token) 'whitespace "")))
             
           (begin 
             ;befapo non concernée
