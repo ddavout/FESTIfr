@@ -1851,7 +1851,7 @@
   ; ADV ou PRE, cas possibilité autre POS non traité exemple derrière, plein, vers etc.
   ; non traité dans tokenpos_fr      
   ; hmm ... au_dessus ADV, au_dessus_de PRE : PRE à mettre en locution 
-(set! list_PRE_ADV 
+(set! list_ADV_PRE 
   (list 
   ; "après" ; BUG core dump neut_parl_s01_0082
     "au_dedans"
@@ -1859,18 +1859,18 @@
     "au_dessous"
     "au_dessus"
     "au_devant"
-    "au_fur_et_à_mesure"
+   ; "au_fur_et_à_mesure" TODO ici ???
     "depuis" ; BUG core dump neut_parl_s01_0216
     "lez"
     "nonobstant"
-    "par_dessus"
+   ; "par_dessus" TODO ici ???
     "rez"))
               
 ;;  ADV pour qui seul poslex se trompe
 
-(set! list_macho_ADV 
+(set! list_macho_NAM
   (list 
-    "n_importe_comment"))
+    "")) ; n_importe_comment non connu au niveau de token
 
 
 
