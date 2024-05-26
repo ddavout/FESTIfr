@@ -1,4 +1,7 @@
 ; dicts/INST_LANG/disle_tests/tests1/ttd
+
+( t9100 "c'est tout")
+( t9101 "tout à coup, il tira")
 ( t9071 "le mot appelet serait à réhabiliter, l'applet des anglophones est d'origine provençal !")
 ( t9072 "on y retrouve le radical \"plet\" que partage le mot \"emplettte\" )
 ( t9073 "Apleit ou aploit désignait  toute espèce d'outil ou, comme on disait, de harnois.")
