@@ -19,61 +19,97 @@
     ; sont condamnés à disparaître name, n_name au tour suivant
     (let  (QT nam1 token1 nam2 token2 n_name n_n_name token1 token2 reponse)
     ; |tout|  
-    (format t "ici module locution_part_1 %s\n" name)
+    (format t "\t\t\t\t\t\tici module locution_part_1 sur %s\n" name)
+
         (if 
-          (and 
-            (set! token1 (item.next token) )
+          (and
+            ;**
             (not (null? (item.next token)))
+            ;** 
+            (set! token1 (item.next token) )
             ; |à|
             (set! n_name (na token1))
             ; au pire nil & out, mais /!\ il pourrait rester un _ final, si on n'est pas jeté : TODO vérif
             (or (format t "locution QTlocution_part_1: ok1 n_name |%s| \n" n_name) t)
-            (set! token2 (item.next token1))
-            ; |fait|
-            (set! n_n_name (na token2)) 
-            (or (format t "locution QTlocution_part_1: ok11 n_n_name |%s| \n" n_n_name) t)
-            ; |tout à|
+            
+            ; aucun ponctuation ou preponctuation  entre tout et à
+            ;**
+            ; NON ! (null? (item.feat token 'punc))
+            (equal? (item.feat token 'punc) 0)
+            (or (format t "locution QTlocution_part_1: ok2\n") t)
+            (string-equal (item.feat token 'n.prepunctuation) "")
+            (or (format t "locution QTlocution_part_1: ok22") t)
+            ;**
+
             (set! nam1 (string-append name "_" n_name))
-            ; |tout_à_fait|; 
-            (set! nam2 (string-append nam1 "_" n_n_name))
-            (or (format t "locution QTlocution_part_1: ok2 nam1 |%s| \n" nam1) t)
+
+            (or (format t "locution QTlocution_part_1: ok3 nam1 |%s| \n" nam1) t)
+
+            ;***
             (member_string (french_downcase_string nam1) list_locution_part_1)
+            ;***
+
             (or (format t "\t\t\t\t\t\tici module locution_part_1: on répond\n") t))
+
           (begin
             (format t "réponse pour QTlocution_part_1\n")
             (set! reponse t); on passera à |à|
             (set! QT "QTlocution_part_1")            
             (set! RU (append RU (list name QT ";")))
             ; action
+          
             ; /tout à coup/ versus /tout à son/ 
-            (format t "tab_lookup nam1 locution_part_2_tab %l" (tab_lookup nam1 locution_part_2_tab) )
-            ;(if (member_string (french_downcase_string nam2) french_multiple_word_expressions2 )
-            (if (member_string n_n_name (tab_lookup nam1 locution_part_2_tab))
+            (format t "tab_lookup nam1 locution_part_2_tab %l\n" (tab_lookup nam1 locution_part_2_tab) )
+            (if (and 
+                  (set! token2 (item.next token1))
+                  (or (format t "locution QTlocution_part_1: ok3\n") t)
+
+                  ; |fait|
+                  (set! n_n_name (na token2)) 
+                  (or (format t "locution QTlocution_part_1: ok11 n_n_name |%s| \n" n_n_name) t)
+                  ; **
+                  (member_string n_n_name (tab_lookup nam1 locution_part_2_tab))
+                  (equal? (item.feat token 'punc) 0)
+                  (or (format t "locution QTlocution_part_1: pas de punc ok4\n") t)
+                  (string-equal (item.feat token 'n.n.prepunctuation) "")
+                  (or (format t "locution QTlocution_part_1: pas de prepunc ok5\n") t)
+                     )
                 (begin 
-                  ; transfert d'une pre TODO ponctuation éventuelle du dernier vers le premier
-                  ; ex tout à fait !
-                  ;; TODO (item.set_feat token 'punc (item.feat token2 'punc ) )
+                  ; |tout_à_fait|; 
+                  (set! nam2 (string-append nam1 "_" n_n_name))
+
                   ; marquage pour suppression 
                   (item.set_feat token 'delete  "next"); ce sera le tour de fait
                   (item.set_feat token1 'delete  "next")
 
-                  ;; (item.set_feat (item.next (item.next token)) 'punc (item.feat token 'punc ) )
+                  ; transfert d'une preponctuation éventuelle du premier vers le dernier
+                  ; mais pour faire un transfert, il faut d'abord une copie
+                  ; ce sera à QTdelp de supprimer les traces de ponctuation et preponctuation
+                  ; pour finaliser le transfert...
+                  ; \"tout
+                  (item.set_feat token2 'prepunctuation (item.feat token 'prepunctuation ))
+                  ; fait\"
+                  (item.set_feat token2 'punc (item.feat token 'n.n.punc ))
                   (item.set_name token2 nam2 )
-                  ;(set! result (list "raté")) )
+                  ; (set! result (list "raté")) )
                   (set! result))
 
                 (begin
+                  ; pas de 3e larron
                   ; transfert d'une ponctuation éventuelle du dernier vers le premier
-                  ;(item.set_feat token1 'punc (item.feat token 'punc ) )
+                  (item.set_feat token1 'prepunctuation (item.feat token 'prepunctuation ))
+                  (item.set_feat token1 'punc (item.feat token 'n.punc ))
                   (format t "pas de part2 après %s" nam1)
                   (item.set_name token1 nam1 )
 
-                  ; marquage pour suppression au tour suivant
+                 ; marquage pour suppression au tour suivant
                   (item.set_feat token 'delete  "next")))
 
            ;(set! result (list "raté"))
            (set! result)))
      (format t "we leave the module locution_part_1\n")
             
-    reponse))    
+    reponse))
+
+
     (provide 'INST_LANG_token_qt_locution_part_1)

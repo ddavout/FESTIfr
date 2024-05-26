@@ -15,6 +15,8 @@
                 (set! RU (append RU (list name QT ";")))
                 ; (set! result (list "effacé" name)) 
                 (set! result) 
+                (item.set_feat token 'prepunctuation "")
+                (item.set_feat token 'punc nil)
             ))
         (format t "we leave the module del\n")
        reponse))

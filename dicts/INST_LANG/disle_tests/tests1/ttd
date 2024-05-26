@@ -1,7 +1,13 @@
 ; dicts/INST_LANG/disle_tests/tests1/ttd
 
-( t9100 "c'est tout")
+( t9107 "c'est tout, à demain")
+( t9106 "c'est tout à \"coup\" qu'il prit la volée.)
+( t9105 "Il surgit \"tout à coup\", on a là un pléonasme !")
+( t9103 "C'est tout à son honneur.")
+( t9102 "Nous verrons cela tout à l'heure")
+( t9102 "Il déboula  à tout allure")
 ( t9101 "tout à coup, il tira")
+( t9100 "c'est tout")
 ( t9071 "le mot appelet serait à réhabiliter, l'applet des anglophones est d'origine provençal !")
 ( t9072 "on y retrouve le radical \"plet\" que partage le mot \"emplettte\" )
 ( t9073 "Apleit ou aploit désignait  toute espèce d'outil ou, comme on disait, de harnois.")

@@ -4,7 +4,7 @@
 (defvar result)
 ; for french_downcase_string
 (require 'INST_LANG_utils)
-bouh
+; bouh
 (define (mis token name)
 
     (let (fdnaw (french_downcase_string name) QT reponse)
@@ -20,6 +20,7 @@ bouh
             ;befapo non concernée
             (set! reponse nil)))
     (format t "we leave the module mis\n")
+   ; hors debug: c'est la dernière chance d'agir, pas besoin de mettre reponse à true 
    reponse))
 (provide 'INST_LANG_token_qt_mis)
 

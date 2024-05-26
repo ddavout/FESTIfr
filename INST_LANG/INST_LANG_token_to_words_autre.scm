@@ -178,7 +178,8 @@
 
 
       (t 
-        (format t "à suivre\n"))  
+        (format t "à suivre\n")
+        bouh)  
 
 
 

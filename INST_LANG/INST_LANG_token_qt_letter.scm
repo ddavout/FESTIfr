@@ -29,7 +29,7 @@
             (set! RU (append RU (list name QT ";")))
             (set! result (list name))))
 
-        (format t "we leave the module letter\n")
+        (format t "we leave the module letter\n\n")
        reponse))
 
 (provide 'INST_LANG_token_qt_letter)
