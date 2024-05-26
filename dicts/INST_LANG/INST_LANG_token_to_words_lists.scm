@@ -893,7 +893,7 @@
     ("usa"  . ("VER"))))
 
 ;; ********************
-;; ONO, interjerction
+;; ONO, interjertion
 
 
 ; plus des interjections que des onomatopées ONO
@@ -1055,15 +1055,6 @@
             (set! result t))
         (t set! result nil))
     result))
-
-;; apostrophes
-; ancienne list_before_apo scindée
-
-; pour sûr, suit un VER
-(defvar list_before_apo_VER (list "c"  "j"  "m" "n" "s" "t"))
-           
-(defvar list_before_apo_div (list  "l" "d" "qu" "quoiqu" "quelqu" "jusqu" "lorsqu"  "afin_qu" "alors_qu" "bien_qu" "parce_qu" "pendant_qu" "tandis_qu" "tant_qu" "puisqu"
-           "afin_d" "loin_d" "quoi_qu")) 
 
 ;; tiret grammatical
 (defvar list_after_tiret 
@@ -1577,21 +1568,57 @@
 
     "C._civ"))
 
-(defvar french_multiple_word_expressions1 nil
-    "List of french locutions1 terminée par une apostrophe")
 
-(set! french_multiple_word_expressions1
- 
-  (list 
-    "afin_d";  ; tous des CON à ficher dans le dico; afin d'être CON + infinitive     "afin_d" ; "liaison" obligatoire -> addenda (("afin_d" PRE (((a) 0) ((f ehn) 0))) sans le d 
-    "afin_qu";  ; tous des CON à ficher dans le dico; afn qu'il soit CON + subord "normale"
-    "alors_qu"
-    "bien_qu"
-    "loin_d"
-    "parce_qu"
-    "pendant_qu"
-    "tandis_qu"
+
+;; apostrophes
+; ancienne list_before_apo scindée
+
+; pour sûr, suit un VER
+(defvar list_before_apo_VER (list "c"  "j"  "m" "n" "s" "t"))
+           
+(defvar list_before_apo_div (list  "l" "d" "qu")) 
+
+
+(defvar list_before_apo_CON
+    (list 
+        "afin_d";  afin d'être CON + infinitive     "afin_d" ; "liaison" obligatoire -> addenda (("afin_d" PRE (((a) 0) ((f ehn) 0))) sans le d 
+        "afin_qu";  ; tous des CON à ficher dans le dico; afn qu'il soit CON + subord "normale"
+        "alors_qu"
+        "bien_qu"
+        "quoiqu"
+        "lorsqu"
+        "parce_qu"
+        "pendant_qu"
+        "tandis_qu"
+        "malgré_qu"
+        "soit_qu"
+        "quoi_qu"
+        "tant_qu"
+        "puisqu"
     ))
+
+(set! list_before_apo_PRE
+   (list
+    "loin_d"
+    "jusqu"
+    "près_d" ; près d'elle = avec elle
+    ))
+(set! list_before_apo_ART_def
+   (list
+    ; hmm "d"; prép si précédé d'un verbe approche-toi d'elle; peur d'elle
+    "assez_d"
+    "trop_d"
+    "quelqu"
+    "peu_d" ; some, des  ART_def
+    ))
+
+
+(defvar french_multiple_word_expressions1 nil
+    "List of french locutions1 terminée (visuellement) par une apostrophe")
+
+; obsolete
+(set! french_multiple_word_expressions1 list_before_apo_CON)
+ 
 
 (set! french_multiple_word_expressions2 
   (list 
@@ -1720,51 +1747,64 @@
     
     ))
 
-(defvar french_multiple_word_abbreviations nil
-    "List of french abbreviations with whitespace")
-
+; List of french abbreviations with whitespace
 (set! french_multiple_word_abbreviations 
       '("C cod. civ"  "C. just. mil"))
+
+; TODO tools !
 (define (is_french_multiple_word_abbreviations name)
   (member_string name french_multiple_word_abbreviations))
 
-(defvar french_multiple_words nil
-  "List of french multiple words abbreviations included")
 
-(set! french_multiple_words
+; "List of french multiple words abbreviations included")
+(defvar french_multiple_words
   (append french_multiple_word_abbreviations french_multiple_word_expressions))
 
-(defvar french_multiple_word_expressions2part
+; changement nom
+; list_locution_part_1 ?
+; intégration des TODO 
+; ?? aller plus loin avec "toute_espèce" -> pour toute_espèce_d ART:ind ??
+; ajout dans poslex, augmentation vocabulaire pour meilleure analyse grammaticale 
+(defvar list_locution_part_1
    '("tout_à" "tout_à_l"))
+
 ; pas oublier d'ajouter (lex.add.entry '( "XXX" nil ((("t" "u") 0) (("t" "a" "l") 0))))
-                         
+; TODO obsolete
+(set! french_multiple_word_expressions2part list_locution_part_1)                         
+
+
+;en liaison avec  list_locution_part_1_
+(set! locution_part_2_tab_default
+  '(
+    ("tout_à" . ("fait" "coup"))
+    ))
+
+; (fre_abbr_lookup "(" fre_symbols_tab_default  )
+(defvar locution_part_2_tab locution_part_2_tab_default
+  "Is an assoc list where the keys are locution_part_1 and the values are possible locution_part2" )
 
 
 ;; ********************
 ; titres
-(defvar french_king_title nil
-  "french_king_title
-   List of words that are german king-like titles.")
+;  "french_king_title
+;   List of words that are german king-like titles
 
-(set! french_king_title
+(defvar french_king_title
   '("roi" "empereur" "baronnet" "baron" "pape" "vicomte" "lord" "comte"
     "prince" "duc"))
 
 
-(defvar french_queen_title nil
-  "french_queen_title
-   List of words that are german queen-like titles.")
+;  "french_queen_title
+;   List of words that are german queen-like titles.
 
-(set! french_queen_title
+(defvar french_queen_title
   '("reine" "impératrice" "duchesse" "baronne" "papesse" "comtesse" "princesse"
     "vicomtesse"))
 
 
-(defvar french_king_name nil
-  "french_king_name
-   List of words that are german king names.")
-
-(set! french_king_name
+;  "french_king_name
+;   List of words that are german king names.
+(defvar french_king_name
   '("louis" "henri"  "henry" "charles" "philippe" "george" "georg" "edward" "eduard" "françois"
     "pius" "william" "wilhelm" "richard" "Ptolémée" "john" "Paul" "peter" "Nicolas"
     "jean-paul" "nicholas" "nikolaus" "Alexandre" "frederick" "james" "Jean"
@@ -1773,11 +1813,9 @@
 
 
 
-(defvar french_queen_name nil
-  "french_queen_name
-   List of words that are german queen names.")
-
-(set! french_queen_name
+;  "french_queen_name
+;   List of words that are german queen names
+(defvar french_queen_name
   '("Catherine" "katharina" "alexandria" "Elizabeth" "mary" "maria" "anne" "Marie-Antoinette"
     "elisabeth" "Cléopatre"))
 
@@ -1785,12 +1823,11 @@
 
 ;; phrase
 
-(defvar fre_abbr_at_eos_tab nil
-  "fre_abbr_at_eos_tab
-   is an assoc-list of abbreviations that occur almost ever at the end of a
-   sentence. points at after this abbr. are recognized as periods.")
+;  "fre_abbr_at_eos_tab
+;   is an assoc-list of abbreviations that occur almost ever at the end of a
+;  sentence. points at after this abbr. are recognized as periods.")
 
-(set! fre_abbr_at_eos_tab 
+(defvar abbr_at_eos_tab 
   '(
     ("etc" . ("et_caetera"))))
 
@@ -1823,11 +1860,28 @@
     "outre"
     "à"))
 
+  ; en fait y a que ça des homograohes ...
+  ; le plus souvent homophones, ça peut passer inaperçu .. hors analyse grammaticale..
+  ; TODO ? restreindre à la forme infinif, pour utilisation dans une règle précise
+  ; comme après |sans|, par exemple
+  ; loucher, boucher, etc..  
+  ; éventuellement rajouter les homo composé comme rendez-vous
 
   (set! list_homo_VER_NOM
-  ;  +4000  ; pe exclure forme infinitive ... si seulement utile pour sans *
+
     
       (list  
+            "bus"
+            "part"
+            "parti"
+            "beurre"
+            "tartine"
+            "trompe"
+            "louche"
+            "viole"
+            "bouche"
+            "confit"
+            "étrille"
             "bouge"  
             "cause"
             "cesse"
@@ -1838,10 +1892,23 @@
             "ferme"
             "ferment"
             "frimas" ; le frimas
+            "marche"
+            "marches"
+            "mouche"
+            "mouches"
             "offense"
+            "offenses"
+            "part"
             "relâche"
             "relâches"
             "réserve"
+            "réserves"
+            "tare"
+            "tares"
+            "serre"
+            "serres"
+            "terre"
+            "terres"
             "rendez_vous" ; vu comme VER 
             ))
   

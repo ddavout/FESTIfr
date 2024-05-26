@@ -1,5 +1,7 @@
 
 (defvar verbose_supra_lts t)
+(defvar suivi)
+(if suivi (set! verbose_supra_lts t))
 (defvar lexdebug 0)
 (defvar correction_lts nil)
 ; (if correction_lts (require 'correction_lts))
@@ -29,12 +31,19 @@
           ; assuming there is -1 is never in the pos field...
           (set! syls (slice_word word features))
           (set! results (list word features syls))
+
+
           ; ("devi" NOM ((("d" "eh") 0) (("v" "i") 0)))
           ; (lex.add.entry '("n_arriveré" nil (((n "a") 0) (("rh" "i") 0) (("v" "rh" "e") 0))))
-          (if verbose_supra_lts (format t "supra_lts: no strict result, nous proposerons quelque chose comme\n (lex.add.entry '%l)\n" results))
-          (if t ;(probe_file "stats")
-              (write2-file "stats_tests" (format nil "%l\n" results))
-          )
+          (if verbose_supra_lts 
+            (begin
+              (set! results1 (list (wordroot word features) features syls))
+              (format t "supra_lts: no strict result\n, nous vous proposerons quelque chose comme\n (lex.add.entry '%l)\n" results1))
+              (if suivi (write2-file "stats_tests" (format nil "(lex.add.entry '%l)\n" results1)))
+            )
+
+
+          
           ))
     results))
 

@@ -26,7 +26,7 @@
   ; c'est-à-dire
   ; (lex.add.entry '("c_est-à-dire" ((CON 0) ) () )) ;
   ; 
-
+(lex.add.entry '("n_importe_comment" ((ADV  0) ) () ))
 (lex.add.entry '("nor_nor_est" ((ADV -6.083) (NOM -6.083) ) () ))
 
 

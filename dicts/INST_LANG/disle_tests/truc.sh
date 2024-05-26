@@ -24,5 +24,5 @@ echo working with "$(wc -l <"${tests_dir}"/tests/ttd)" texts
 fi
 # exit 0
 "$FESTIVALDIR"/bin/festival '(begin  (set_backtrace t)(voice_INST_LANG_VOX_cg)'
-"$FESTIVALDIR"/bin/festival -b "${tests_dir}"/check.scm '(begin  (set_backtrace t)(check "'"${tests_dir}/tests/ttd"'"))' > log_tests
+"$FESTIVALDIR"/bin/festival -b "${tests_dir}"/check.scm '(begin  (set_backtrace t)(set! suivi t)(check "'"${tests_dir}/tests/ttd"'"))' > log_tests
 echo the last completed test is to be compared to tests-$(( "${#myarr[@]}" + 1 ))

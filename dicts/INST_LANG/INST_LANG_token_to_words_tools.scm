@@ -74,34 +74,18 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;
-; the following functions have all to do with abbreviations annd .. TODO !
+; the following functions have all to do with tabs
 ;
 
+; tab_lookup
+; obsolete: nom trop restrictif; renommer et dépalcer dans INST_LANG_utils
+(set! fre_abbr_lookup tab_lookup)
+(set! fre_abbr_getkeys tab_getkeys)
+(set! fre_abbr_getvals tab_getvals)
 
-(define (fre_abbr_lookup abbr tab)
-  "(fre_abbr_lookup ABBR TAB)
-   Looks up an ABBR in a assoc-list TAB.
-   For bigger tabs we should use hash-tables!"
 
-  (cdr (assoc abbr tab)))
 
-; TODO renommer trop restrictif mettre dans utils.fr
-; cons_getkeys ?
-(define (fre_abbr_getkeys tab)
-  "(fre_abbr_getkeys TAB)
-   Returns a list of all keys in the assoc-list TAB."
 
-  (if (eq tab nil)
-    nil
-    (cons (caar tab) (fre_abbr_getkeys (cdr tab)))))
-
-; TODO renommer trop restrictif mettre dans utils.fr
-(define (fre_abbr_getvals tab)
-  "(fre_abbr_getvals TAB)
-   Returns a list of all values in the assoc-list TAB."
-  (if (eq tab nil)
-    nil
-    (append (cdar tab) (fre_abbr_getvals (cdr tab)))))
 
 
 ; TODO franciser ! et ...simplifier renommer

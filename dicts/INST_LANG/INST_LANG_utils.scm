@@ -1,5 +1,10 @@
 ; INST_LANG_utils
+; utilitaires utilisés (ou non: TODO ) dans INST_LANG
+; mais non spécifiques à LANG (TODO check)
+
+
 (require "INST_LANG_patternmatch")
+
 (defvar debugfrom "")
 ; à écrémer tout ne sert pas !!! mais pourrait 
 ; et tout n'a pas été testé !
@@ -135,11 +140,42 @@
    token
  )
 
-(define (french_table_lookup abbr lst)
- ; (assoc_string key alist)
-; Look up key in alist using string-equal.  This allow indexing by
-; string rather than just symbols.
-(assoc_string abbr lst))
+; it is assoc_string ! nothing new
+; obsolete
+(set! french_table_lookup assoc_string)
+
+
+
+(define (tab_lookup abbr tab)
+  "(tab_lookup ABBR TAB)
+   Looks up an ABBR in a assoc-list TAB.
+   For bigger tabs we should use hash-tables!"
+
+  (cdr (assoc abbr tab)))
+
+(define (tab_getkeys tab)
+  "(tab_getkeys TAB)
+   Returns a list of all keys in the assoc-list TAB."
+
+  (if (eq tab nil)
+    nil
+    (cons (caar tab) (tab_getkeys (cdr tab)))))
+
+(define (tab_getvals tab)
+  "(tab_getvals TAB)
+   Returns a list of all values in the assoc-list TAB."
+  (if (eq tab nil)
+    nil
+    (append (cdar tab) (tab_getvals (cdr tab)))))
+
+
+
+
+
+
+
+
+
 
 (defvar french_no_of_days_in_month
   '( (1 31) (2 29)(3 31) (4 30)
@@ -472,7 +508,7 @@
 ; ---------------------------------
 ; GNU 'sed''s substitute command ('s') supports upper/lower case
 ; conversions using '\U','\L' codes.  These conversions support multibyte
-; characters:
+; characters, nevermind I stick to 
 (define (french_downcase_string name)
   "(french_downcase_string name)
     Downcase a word and output it as a string"

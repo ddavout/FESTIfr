@@ -315,10 +315,16 @@
   units are excluded... entre autres
   "
   (and 
+    
     (not (string-equal (string-last name) "-")); le mot ne se termine pas par un tiret
-    (or (is_made_with (string-car name) letter_list) (equal? (string-car name) "_")) ; initiale, on rajoute qqs mots construits dans norm comme _pounds, _yen
 
-        ; 2 letters otherwhise   (string-cdr name) is nil and is_made_with is not t
+    ; on complète par les mots constitués avec notre alphabet par les mots rajoutés dans INST_LANG_norm
+    ; dont l'initiale commence par "_"
+    ; par exemple  _pounds, _yen
+    ; TODO doc le pourquoi 
+    (or (is_made_with (string-car name) letter_list) (equal? (string-car name) "_")) ; 
+
+    ; 2 letters otherwhise   (string-cdr name) is nil and is_made_with is not t
     (or (is_made_with (string-cdr name) (append minuscule_with_accent_letter_list (list "a-z" "_" "\-")))
         (and 
           (let (name1)

@@ -90,7 +90,7 @@
 
 (require 'INST_LANG_VOX_statenames)
 ;; ... and others as required
-
+(require 'INST_LANG_norm)
 ;;;
 ;;;  Code specific to the clustergen waveform synthesis method
 ;;;
