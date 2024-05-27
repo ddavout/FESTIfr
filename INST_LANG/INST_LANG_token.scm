@@ -47,6 +47,10 @@
 ;/* as upc_catalan_tokenizer.scm said
 ;/* To share this among voices you need to promote this file (sic)
 
+; TODO déplacer is_in_poslex_all et is_in_poslex
+; dans word_tools, car à ne pas utilisé  directement
+; juste pour la constructions de list ou alist déstinées à word_lists
+
 (defvar verbose_INST_LANG_token)
 (defvar cg::debug)
 
@@ -128,18 +132,37 @@
   ; ref: http://festvox.org/festvox-1.2/festvox_13.html
   ;;;
 
-(define (is_in_poslex name)
-  "return the list of cands (candidates) with rprobs, nil if there is no entry  name in poslex"
-  (let (result)
+; TODO signaler transfert possible dans le dico (absences de majuscules, caractères multibits)
+; hors addenda sur options sigles, prénoms, noms propres, foreign, etc ...
+; ou mieux script de transfert
+; pas de script pour les doublons, les valeurs des entrées peuvent être différentes de par leur pos, casse et/ou rpos
+(define (is_in_poslex_all name)
+  "return the list of cands (candidates) with rprobs, nil if there is no entry  name in poslex
+  nor in the freeling addenda"
+  (let (len result)
     (lex.select "INST_LANG_poslex")
     ; pourquoi seulement le feature nil
     (set! result (lex.lookup_all name) nil)
     ; back to our lexical, before we forget
     (lex.select "INST_LANG_lex")
-    (if (null? result)
-      (if verbose_INST_LANG_token(begin (format t "is_in_poslex check info: %s\n" name))))
+    (set! len (length result))
+    (if (<= 2 len) 
+      (format t "trop d'entrées pour: %s\n" name)
+      (if (<= 0 len)(format t "pas d'entrée pour: %s\n" name)))
     result))
 ;;;
+
+(define (is_in_poslex name)
+  "return the list of cands (candidates) with rprobs, nil if there is no entry  name in poslex"
+  (let (result)
+    (lex.select "INST_LANG_poslex")
+    ; pourquoi seulement le feature nil
+    (set! result (lex.lookup name) nil)
+    ; back to our lexical, before we forget
+    (lex.select "INST_LANG_lex")
+    result))
+
+
 
 (set! token.punctuation ".,;:?!)}]\"" 
   "A string of characters which are to be treated as punctuation when
@@ -269,21 +292,6 @@
       )
       (LANG_fill_tokenrelation utt token (cdr wordlist))
     )
-    ; (t 
-    ;   (format t "gloups1\n")
-    ;   (utt.relation.create utt 'Word)
-    ;   (format t "gloups2\n")
-    ;   (utt.relation.append utt 'Word)
-    ;   (format t "gloups3\n")
-    ;   (format t "info content %l\n" (utt.relation.print utt (quote Word))); expect nil
-    ;   (format t "gloups4\n")
-    ;   (format t "info %l wordlist\n" wordlist)
-    ;   (format t "gloups5\n")
-    ;   (format t "typeof %l\n" (typeof wordlist))
-    ;   (format t "gloups6\n")
-      
-    ;   (format t "car %l" (car wordlist))                    
-    ;   )
   )
 )           
       

@@ -1,4 +1,7 @@
 ; /dicts/INST_LANG/INST_LANG_freeling_addenda_locutions.scm
+; tests
+(lex.add.entry '( "aujourd'hui" ( ( ADV -2.481) ( NOM -7.777) )()))
+
     ;;;;;;;;;;;;; Des locutions adverbiales :
     ; Tout à fait, d'ores et déjà, de temps en temps, tout de suite, de gré ou de force, ne pas, ne jamais, ne plus, sans doute, on ne peut plus…
 

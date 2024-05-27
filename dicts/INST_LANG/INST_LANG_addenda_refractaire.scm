@@ -260,7 +260,7 @@
 (lex.add.entry '( "sans_PRE" "PRE" (((s ahn)0)))) 
 (lex.add.entry '( "se" "PRO:per" ((("s" ae) 0))))
 (lex.add.entry '( "se" nil (((s ae)0))))
-;(lex.add.entry '( "ses_ADJ:pos" ADJ:pos ((("s" "e") 0))))
+(lex.add.entry '( "ses_ADJ:pos" ADJ:pos ((("s" "e") 0))))
 (lex.add.entry '( "son" nil ((("s" "ohn")0))))
 (lex.add.entry '( "t_a" nil ((("t" "a") 0))))
 (lex.add.entry '( "t_y" nil ((("t" "i")0))))

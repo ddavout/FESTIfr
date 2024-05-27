@@ -10,6 +10,9 @@
 ; tempo mise au point
 (defvar verbose_INST_LANG_token_to_word t)
 
+(defvar alternative1 nil)
+; changer nécessité new load à cause du provide final
+
 (defvar tokendebuglevel 20000)
 (defvar debugQT t) ; ; pour débugger une QT en particulier lors de mise au point
 (set! QTloc0 t)
@@ -39,7 +42,7 @@
 
 
 ;; requis à distribuer suivant les QT
-; for french_downcase_string
+; for na, french_downcase_string
 (require 'INST_LANG_utils)
 (require 'INST_LANG_patternmatch); for pattern-matches
 ; pour entre autre INST_LANG_homographs, INST_LANG_homographs1
@@ -158,11 +161,32 @@
             (or (require 'INST_LANG_token_qt_letter) t)
             (letter token name)))
 
+
       ((and 
             (boundp 'QTlocution_part_1)
             (or (require 'INST_LANG_token_qt_locution_part_1) t)
             (locution_part_1 token name)))
 
+      ((and 
+            (boundp 'QTloc2m)
+            (or (require 'INST_LANG_token_qt_loc2m) t)
+            (loc2m token name))) 
+
+      ((and 
+            (boundp 'QTbefapo)
+            (or (require 'INST_LANG_token_qt_befapo) t)
+            (befapo token name)))
+
+      ((and 
+            (boundp 'QTletter)
+            (or (require 'INST_LANG_token_qt_letter) t)
+            (letter token name)))
+
+
+      ((and 
+            (boundp 'QTlocution_part_1)
+            (or (require 'INST_LANG_token_qt_locution_part_1) t)
+            (locution_part_1 token name)))
 
       ((and 
             (boundp 'QTnormal)
@@ -184,7 +208,7 @@
 
 
     ); // COND
-
+    ;(set! result (list (string-replace name "-" special_slice_char)))
     result)) ;// DEFINE 
 
 ; "modules"

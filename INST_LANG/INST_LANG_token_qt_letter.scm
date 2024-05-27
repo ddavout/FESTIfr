@@ -22,6 +22,7 @@
 			; on exclut pour cause d'homophonie "M" M. Marguerite, Monsieur
 			; on ne lève pas l'ambiguité...
 			(not (string-equal (item.feat token 'punc ".") "."))
+			(or (format t "\t\t\t\t\t\tici module letter: on répond\n") t)
 			)
     	(begin 
     		(set! reponse t)

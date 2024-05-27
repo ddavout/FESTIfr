@@ -22,12 +22,14 @@
           ; TODO peut-on donner un sens plusieurs whitespace characters commençant par un apostrophe ? tempo : non
           (or (format t "ici module befapo: on vérifie point2 %l\n" (item.feat token 'n.whitespace) ) t)
           (string-equal (string-car (item.feat token 'n.whitespace)) "\'")
-          (or (format t "ici module befapo: on vérifie point3\n") t)
+          (or (format t "\t\t\t\t\t\tici module befapo: on vérifie point3\n") t)
           
           (or (member_string (french_downcase_string name) list_before_apo_div)
                (if (member_string (french_downcase_string name) list_before_apo_VER )(set! pos_sur "VER"))
                (if (member_string (french_downcase_string name) list_before_apo_CON )(set! pos_sur "CON"))
                (if (member_string (french_downcase_string name) list_before_apo_PRE )(set! pos_sur "PRE"))
+               ; (if (member_string (french_downcase_string name) list_before_apo_NOM )(set! pos_sur "NOM"))
+
                (if (member_string (french_downcase_string name) list_before_apo_ART_def )(set! pos_sur "ART_def"))
                )
           ; (equal? (item.feat token 'punc) 0); on ne sait jamais... hmm on pardonne

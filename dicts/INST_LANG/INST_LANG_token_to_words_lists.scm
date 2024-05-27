@@ -8,6 +8,9 @@
 ;/*                                                                       */
 ;/*=======================================================================*/
 
+
+
+
 ; TODO comment est résolu les liaisons du type syndicats_ t muet liaison sur s ??
 ; TODO pour chaque liste construire is_..
 ; et migrer ver INST_LANG_token_to_words_tools data/lists versus function/tool
@@ -1230,15 +1233,15 @@
 ; locutions 
 ;; ********************
 ;; loc ne contient ni ponctuation ni preponctuation 
-(defvar french_multiple_word_expressions nil
-    "List of french locutions avec 1 espace")
-; TODO read from a file
-; TODO nécessité mettre la forme au pluriel ? 
+; quesstion: read from a file pas besoin grâce au defvar,
+
+; question: nécessité mettre la forme au pluriel ? 
 ; TODO vérifier freeling
+
 ; insensible à la casse .... pour simplifier !
 ; une casse conforme est suppposée  
 ; sinon changer INST_LANG_token_to_words...
-(set! french_multiple_word_expressions
+(set! list_locution2_default
   (list 
     ; ;Rq n_importe_quoi est  ici car le premier _ correspond à une apostrophe; faire attention à conserver l'apostrophe dans norm !!
 
@@ -1249,8 +1252,8 @@
     "n_importe_qui"; pos
     "n_importe_quel"; pos
     "n_importe_quelle"; pos
-    "n_importe_comment"; pos
-    "n_importe_où"; pos
+    "n_importe_comment"; pos;
+    "n_importe_où"; pos  pb il s'en va n'importe_où vu comme VER
     "n_importe_quand"; pos
     "n_y_a" ; "QTbefapo" "QTloc2m" "QTdelp
     "n_y_en"; "QTbefapo" "QTloc2m" "QTdelp
@@ -1265,7 +1268,7 @@
     "z_en" ;; important car (norm "z_en") -> "z en" GLOUPS ?? TODO
     "m_en"
     "t_en"
-    "s_en"
+    "s_en"; ok s'en
     "s_y"
     ;;
     "jusqu_au_bout"; pos
@@ -1568,6 +1571,340 @@
 
     "C._civ"))
 
+(defvar list_locution2 list_locution2_default
+    "List of french locutions avec 1 espace")
+
+; TODO tab des locutions 2 avec attribution de pos
+
+
+;en liaison avec  list_locution2
+; question pourquoi une liste pour la valeur
+; tout nos tabs sont comme ça
+; et cela laisse possibilité ex les valeurs successives autres POS aide-mémoire ou usage ultérieur
+; "POS" avec **quasi-certitude** ou chaine "".
+(set! locution2_tab_default
+  '(
+("a_fortiori" . ("ADV"))
+("a_posteriori" . ("ADV"))
+("a_priori" . ("ADV" "NOM"))
+("ab_initio" . ("ADV"))
+("ab_irato" . ("ADV"))
+("ab_ovo" . ("ADV"))
+("ad_hoc" . (""))
+("ad_hominem"  . ("ADV"))
+("ad_honores"  . ("ADV"))
+("ad_infinitum"  . ("ADV"))
+("ad_libitum"  . ("ADV"))
+("ad_patres"  . ("ADV"))
+("ad_rem"  . ("ADV"))
+("ad_usum"  . ("ADV"))
+("ad_valorem"  . ("ADV"))
+("afin_de" . ("ADV"))
+("afin_que" . ("ADV"))
+("after_shave" . ("NOM"))
+("agnus_castus" . ("ADV"))
+("agnus_dei" . ("NOM"))
+("air_bag" . ("NOM"))
+("al_dente" . ("ADV"))
+("all_right" . ("ADV"))
+("alors_que" . ("ADV"))
+("alter_ego" . ("NOM"))
+; ("aujourd_hui" . ("ADV"))
+("auquel_cas" . ("ADV"))
+("aux_aguets" . ("ADV"))
+("avant_hier" . ("ADV"))
+("ayants_droit" . ("NOM"))
+("back_up" . ())
+("beat_generation" . ("NOM"))
+("bel_canto" . ("NOM"))
+("belle_lurette" . ("ADV"))
+("best_of" . ("NOM"))
+("big_band" . ("NOM"))
+("big_bang" . ("NOM"))
+("birth_control" . ("NOM"))
+("bla_bla" . ("ADV"))
+("black_out" . ("NOM"))
+("bloody_mary" . ("NOM"))
+("blue_jean" . ("NOM"))
+("blue_jeans" . ("NOM"))
+("blue_note" . ("ADV"))
+("boat_people" . ("NOM"))
+("box_office" . ("NOM"))
+("bubble_gum" . ("NOM"))
+("by_night" . ("ADV"))
+("C._civ" . ("ADV"))
+("call_girl" . ("NOM"))
+("call_girls" . ("NOM"))
+("casus_belli" . ("NOM"))
+("cep et" . ("ADV"))
+("check_up" . ("ADV"))
+("chop_suey" . ("ADV"))
+("citizen_band" . ("NOM"))
+("coffee_shop" . ("NOM"))
+("comic_book" . ("NOM"))
+("commedia_dell_arte"  . ("NOM"))
+("commissaire_adjoint" . ("NOM"))
+("commissaire_priseur"  . ("NOM"))
+("corn_flakes" . ("NOM"))
+("corpus_delicti" . ("NOM"))
+("curriculum_vitae" . ("NOM"))
+("d_abord" . ("ADV"))
+("d_ailleurs" . ("ADV"))
+("d_arrache_pied" . ("ADV"))
+("d_autres" . ("ADV"))
+("d_emblée" . ("ADV"))
+("d_ici_à" . ("ADV"))
+("dare_dare" . ("ADV"))
+("de_facto" . ("ADV"))
+("de_fait"  . ("ADV"))
+("de_guingois" . ("ADV"))
+("de_plano"  . ("ADV"))
+("de_plus" . ("ADV"))
+("de_profundis" . ("ADV"))
+("de_quoi" . ("ADV"))
+("de_rien"  . ("ADV"))
+("de_santis" . ("ADV"))
+("de_traviole" . ("ADV"))
+("de_visu" . ("ADV"))
+("delirium_tremens" . ("ADV"))
+("della_francesca" . ("ADV"))
+("deo_gratias" . ("ADV"))
+;;("des hululement" . ("ADV"))
+("deutsche_mark" . ("ADV"))
+("dies_irae" . ("ADV"))
+("dix-neuf_ans" . ("ADV"))
+("dix-neuf_heures" . ("ADV"))
+("douce_amère" . ("ADV"))
+("doux_jésus" . ("ADV"))
+("dream_team"  . ("ADV"))
+("drive_in" . ("ADV"))
+("drone_espion" . ("NOM"))
+("dure_mère" . ("NOM"))
+("east_river" . ("ADV"))
+("ecce_homo" . ("ADV"))
+("eh_bien" . ("ADV"))
+("elle_même" . ("ADV"))
+("elles_mêmes" . ("ADV"))
+("en_arrière" . ("ADV"))
+("en_avant" . ("ADV"))
+("en_bas" . ("ADV"))
+("en_cas" . ("ADV"))
+("en_catimini" . ("ADV"))
+("en_cours" . ("ADV"))
+("en_dehors" . ("ADV"))
+("en_delà" . ("ADV"))
+("en_effet" . ("ADV"))
+("en_fait" . ("ADV"))
+("en_haut" . ("ADV"))
+("en_loucedé" . ("ADV"))
+("en_outre" . ("ADV"))
+("en_plus" . ("ADV"))
+("en_quoi" . ("ADV"))
+("en_suspens" . ("ADV"))
+("en_tapinois" . ("ADV"))
+("en_tête" . ("ADV"))
+("en_étant" . ("ADV"))
+("entre_autres" . ("ADV"))
+("est_elle" . ("VER"))
+("et_caetera" . ("ADV"))
+("et_cetera" . ("ADV"))
+("et_hop" . ("ADV"))
+("eux_mêmes" . ("ADV"))
+("fait_maison" . ("ADV"))
+("fast_food" . ("ADV"))
+("five_o_clock" . ("ADV"))
+("foreign_office" . ("ADV"))
+("fret_express"  . ("ADV"))
+("gengis_khan" . ("ADV"))
+("girl_friend" . ("ADV"))
+("gna_gna" . ("ADV"))
+("grosso_modo" . ("ADV"))
+("happy_end" . ("ADV"))
+("happy_ends" . ("ADV"))
+("hard_edge" . ("ADV"))
+("has_been" . ("ADV"))
+("high_life" . ("ADV"))
+("high_tech" . ("ADV"))
+("hold_up" . ("ADV"))
+("homo_erectus" . ("ADV"))
+("hong_kong" . ("ADV"))
+("honoris_causa" . ("ADV"))
+("hot_dog" . ("ADV"))
+("house_music" . ("ADV"))
+("huis_clos" . ("ADV"))
+("ice_cream" . ("ADV"))
+("in_absentia" . ("ADV"))
+("in_extremis" . ("ADV"))
+("in_memoriam" . ("ADV"))
+("in_pace" . ("ADV"))
+("in_utero" . ("ADV"))
+("in_vitro" . ("ADV"))
+("inch_allah" . ("ADV"))
+("intra_muros" . ("ADV"))
+("ipso_facto" . ("ADV"))
+("irish_coffee" . ("ADV"))
+("j._c" . ("ADV"))
+("jusqu_alors" . ("ADV"))
+("jusqu_au_bout" . ("ADV"))
+("jusqu_ici" . ("ADV"))
+("jusqu_où" . ("ADV"))
+("jusqu_à" . ("ADV"))
+("jusque_devant" . ("NOM"))
+("kung_fu" . ("NOM"))
+("LA_FONT"  . ("NAM"))
+("La_Fontaine" . ("NAM"))
+("la_plata" . ("ADV"))
+("la_plupart" . ("ADV"))
+("latitude_O" . ("ADV"))
+("latiude_E" . ("ADV"))
+("loin_d"  . ("ADV"))
+("longitude_N" . ("ADV"))
+("longitude_S" . ("ADV"))
+("lui_même" . ("ADV"))
+("m_en" . ("ADV"))
+("made_in" . ("ADV"))
+("manu_militari" . ("ADV"))
+("mass_media" . ("ADV"))
+("mea_culpa" . ("ADV"))
+("melting_pot" . ("ADV"))
+("messieurs_dames" . ("ADV"))
+("mieux_être"  . ("ADV"))
+("milk_shake" . ("ADV"))
+("mille_feuille" . ("ADV"))
+("mille_pattes" . ("NOM"))
+("modern_style" . ("ADV"))
+("modus_operandi" . ("ADV"))
+("modus_vivendi" . ("NOM"))
+("moi_même" . ("ADV"))
+("music_hall" . ("NOM"))
+("n_importe_comment" . ("ADV"))
+("n_importe_où" . ("ADV"))
+("n_importe_quand" . ("ADV"))
+("n_importe_quel" . ("ADV"))
+("n_importe_quelle" . ("ADV"))
+("n_importe_qui" . ("ADV"))
+("n_importe_quoi" . ("ADV"))
+; test utilité déclaration poslex
+("n_importe_quo" . ("NAM"))
+("n_y_a"  . ("ADV"))
+("n_y_en" . ("ADV"))
+("ne_plu" . ("ADV"))
+("ne_plus" . ("ADV"))
+("negro_spiritual" . ("ADV"))
+("neuf_an" . ("ADV"))
+("neuf_heures" . ("ADV"))
+("night_club" . ("NOM"))
+("no_comment" . ("ADV"))
+("nota_bene" . ("ADV"))
+("nous_mêmes" . ("ADV"))
+("osso_buco" . ("NOM"))
+("par_mégarde" . ("ADV"))
+("parce_que" . ("ADV"))
+("paso_doble" . ("ADV"))
+("pater_familias" . ("ADV"))
+("pater_noster" . ("ADV"))
+("pax_americana" . ("ADV"))
+("pendant_que" . ("ADV"))
+("persona_grata" . ("NOM"))
+("pic_vert" . ("NOM"))
+("pit_bull" . ("NOM"))
+("play_back" . ("ADV"))
+("plein_air" . ("ADV"))
+("pom-pom_girl" . ("NOM"))
+("pom-pom_girls" . ("NOM"))
+("post_it" . ("NOM"))
+("post_mortem" . ("ADV"))
+("post_scriptum" . ("ADV"))
+("presqu_ile" . ("NOM"))
+("prime_time" . ("ADV"))
+("punching_ball" . ("NOM"))
+("quant_au" . ("ADV"))
+("quant_aux" . ("ADV"))
+("quant_à" . ("ADV"))
+("quatre_vingt_un" . ("ADV"))
+("quelqu_un" . ("ADV"))
+("quelqu_une" . ("ADV"))
+("quelque chose" . ("ADV"))
+("quelques_unes" . ("ADV"))
+("quelques_uns" . ("ADV"))
+("quoi_que" . ("ADV"))
+("red_river" . ("ADV"))
+("roast_beef" . ("ADV"))
+("rocking_chair" . ("ADV"))
+("s_en" . ("ADV"))
+("s_y" . ("ADV"))
+("Saint_Esprit" . ("NAM"))
+("saint_esprit"     . ("NOM"))
+("saint_paul" . ("NOM"))
+("sainte_nitouche" . ("NOM"))
+("san_francisco" . ("NAM"))
+("self-made_man" . ("NOM"))
+("sex_appeal" . ("NOM"))
+("sex_shop" . ("NOM"))
+("sex_shops" . ("NOM"))
+("soap_opéra" . ("NOM"))
+("soi_même" . ("ADV"))
+("sri_lankais" . ("NOM"))
+("statu_quo" . ("NOM"))
+("story_board" . ("NOM"))
+("stricto_sensu" . ("ADV"))
+("sui_generis" . ("ADV"))
+("t_en" . ("ADV"))
+("t_shirt" . ("ADV"))
+("T_shirt" . ("ADV"))
+("tandis_que" . ("ADV"))
+("taï_chi" . ("ADV"))
+("tchin_tchin" . ("ONO"))
+("te_deum" . ("ADV"))
+("terra_incognita" . ("ADV"))
+("too_much" . ("ADV"))
+("top_model" . ("NOM"))
+("tous_les" . ("ADV"))
+("tout_autant" . ("ADV"))
+("tout_autre" . ("ADV"))
+("tout_d_abord" . ("ADV"))
+("tout_puissant" . ("ADV"))
+("tutti_frutti" . ("ADV"))
+("tutti_quanti" . ("ADV"))
+("un_autre" . ("ADV"))
+; ("un_hululement" . ("ADV")); inutile phoneme hs
+;("un_hérisson" . ("ADV"))
+;("un_ulhan" . ("ADV"))
+;("un_unau" . ("ADV"))
+("une_autre" . ("ADV"))
+("vade_retro" . ("ADV"))
+("vae_victis" . ("ADV"))
+("vingt_cinq" . ("ADV"))
+("vingt_huit" . ("ADV"))
+("vomito_negro" . ("ADV"))
+("vous_même" . ("ADV"))
+("vous_mêmes" . ("ADV"))
+("vox_populi" . ("ADV"))
+("vulgum_pecus" . ("ADV"))
+("wall_street" . ("NAM"))
+("week_end" . ("NOM"))
+("world_music" . ("NOM"))
+("Y_a" . ("ADV"))
+("y_a"  . ("ADV"))
+("y_avait"  . ("ADV"))
+("yom_kippour" . ("NAM"))
+("yom_kippur" . ("NAM"))
+("z_en"  . ("ADV"))
+("à_croupetons" . ("ADV"))
+("à_demi" . ("ADV"))
+("à_fortiori" . ("ADV"))
+("à_jeun" . ("ADV"))
+("à_posteriori"  . ("ADV"))
+("à_priori" . ("ADV"))
+("à_présent" . ("ADV"))
+("à_tâtons" . ("ADV"))
+("n_est_ce" . ("VER"))
+    ))
+
+; (fre_abbr_lookup "(" fre_symbols_tab_default  )
+(defvar locution2_tab locution2_tab_default
+  "Is an assoc list where the keys are locution_part_1 and the values are possible locution_part2" )
+
 
 
 ;; apostrophes
@@ -1575,8 +1912,12 @@
 
 ; pour sûr, suit un VER
 (defvar list_before_apo_VER (list "c"  "j"  "m" "n" "s" "t"))
-           
-(defvar list_before_apo_div (list  "l" "d" "qu")) 
+ 
+;d: d'abord lui/ d'abord facile/ mange d'abord, etc.
+; qu hors locution qu'il fasse beau / le lapin qu'il a levé/ 
+;l: je l'aime, l'imbécile
+;presque:  presqu'endormi ; presqu'il          
+(defvar list_before_apo_div (list  "l" "d" "qu" "presqu")) 
 
 
 (defvar list_before_apo_CON
@@ -1616,17 +1957,15 @@
 (defvar french_multiple_word_expressions1 nil
     "List of french locutions1 terminée (visuellement) par une apostrophe")
 
-; obsolete
-(set! french_multiple_word_expressions1 list_before_apo_CON)
+
  
 
 (set! french_multiple_word_expressions2 
   (list 
 
-     "tout_d_abord"; 
      ; le cas chef-d'oeuvre est réglé par QTchefd à l'instar des va-t'on; TODO d'actualité ?
-     "chef_d_oeuvre"; ("QTloc3m" "QTdel" "QTdelp") ; apostrophe central compte comme espace
-     "chefs_d_oeuvre"; name_ref chefs_d_oeuvre
+     ;;; "chef_d_oeuvre"; ("QTloc3m" "QTdel" "QTdelp") ; apostrophe central compte comme espace
+     "chefs_d_oeuvre"; name_ref chefs_d_oeuvre; incorrect
     "n_est_ce_pas"; pos pour n'est ce pas; ("QTbefapo" "QTloc3m" "QTdel" "QTdelp")
     "traveller_s_chèque"
     "corps_et_âme"
@@ -1669,11 +2008,6 @@
     "tout_au_plus"; ; pos
     "tout_ou_rien"; pos
     "tout_de_même"; pos
-    "tout_à_chacun"; pos
-    "tout_à_coup"; pos
-    "tout_à_fait"; pos
-    "tout_à_l_heure"; pos; TODO
-
     "un_à_un" ; à cause des liaisons ; ("QTloc3m" "QTdel" "QTdelp")
     "urbi_et_orbi"
     "vingt_et_un"
@@ -1702,7 +2036,6 @@
 (set! french_multiple_word_expressions3 
   ; pour mémoire ne marche pas 
   (list 
-    "tout_à_l_heure"; pos ; TODO  
     "en_moins_de_rien" ; adv de temps
     ;; "y_a_t_il"; RU nil ("y_a_t_il" ((VER -1.000)(aux -1.000))()); SIWIS
 
@@ -1758,25 +2091,34 @@
 
 ; "List of french multiple words abbreviations included")
 (defvar french_multiple_words
-  (append french_multiple_word_abbreviations french_multiple_word_expressions))
+  (append french_multiple_word_abbreviations list_locution2))
 
 ; changement nom
 ; list_locution_part_1 ?
 ; intégration des TODO 
 ; ?? aller plus loin avec "toute_espèce" -> pour toute_espèce_d ART:ind ??
-; ajout dans poslex, augmentation vocabulaire pour meilleure analyse grammaticale 
+; ajout dans poslex, augmentation vocabulaire pour meilleure analyse grammaticale
+
+; tout_à : il donne tout à ses enfants PRE:ok; 
+;  
 (defvar list_locution_part_1
-   '("tout_à" "tout_à_l"))
+   '( "tout_à" "tout_à_l" "tout_d" "chef_d" "aujour_d"))
 
 ; pas oublier d'ajouter (lex.add.entry '( "XXX" nil ((("t" "u") 0) (("t" "a" "l") 0))))
-; TODO obsolete
-(set! french_multiple_word_expressions2part list_locution_part_1)                         
+                      
 
 
-;en liaison avec  list_locution_part_1_
+;en liaison avec  list_locution2
 (set! locution_part_2_tab_default
   '(
-    ("tout_à" . ("fait" "coup"))
+    ("aujourd" . ("hui"))
+    ("chef_d" . ("oeuvre"))
+    ("tout_d" . ("abord"))
+    ("tout_à" . ("fait" "coup" "chacun"))
+    ("tout_à_l" . ("heure"))
+    ; test nécessité enregistremnt poslex
+    ; ("toute_d" . ("abord"))
+
     ))
 
 ; (fre_abbr_lookup "(" fre_symbols_tab_default  )
@@ -2069,5 +2411,10 @@
 ; coll.
 ; éd.
 ; abréviations chrétiennes
+
+; TODO obsolete french
+(set! french_multiple_word_expressions2part list_locution_part_1)   
+(set! french_multiple_word_expressions list_locution2)
+(set! french_multiple_word_expressions1 list_before_apo_CON)
 
 (provide 'INST_LANG_token_to_words_lists)
