@@ -133,7 +133,7 @@
   (let (result)
     (lex.select "INST_LANG_poslex")
     ; pourquoi seulement le feature nil
-    (set! result (cadr (lex.lookup name) nil))
+    (set! result (lex.lookup_all name) nil)
     ; back to our lexical, before we forget
     (lex.select "INST_LANG_lex")
     (if (null? result)
@@ -141,18 +141,6 @@
     result))
 ;;;
 
-(define (is_in_poslex2 name)
-  "return the list of cands (candidates) with rprobs, nil if there is no entry  name in poslex"
-  (let (result)
-    (lex.select "INST_LANG_poslex")
-    ; pourquoi seulement le feature nil
-    (set! result (cadr (lex.lookup name) nil))
-    ; back to our lexical, before we forget
-    (lex.select "INST_LANG_lex")
-    (if (null? result)
-      (if verbose_INST_LANG_token(begin (format t "is_in_poslex check info: %s\n" name))))
-    result))
- 
 (set! token.punctuation ".,;:?!)}]\"" 
   "A string of characters which are to be treated as punctuation when
   tokenizing text.  Punctuation symbols will be removed from the text

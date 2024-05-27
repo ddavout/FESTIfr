@@ -1,4 +1,4 @@
-; list_locution_part_1
+; INST_LANG_token_qt_locution_part_1
 (defvar RU)
 (defvar result)
 ; dans INST_LANG_token_to_word fdnaw  est globale
