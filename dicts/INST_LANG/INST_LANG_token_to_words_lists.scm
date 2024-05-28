@@ -1945,6 +1945,7 @@
         "afin_qu";  ; tous des CON à ficher dans le dico; afn qu'il soit CON + subord "normale"
         "alors_qu"
         "bien_qu"
+        "depuis qu"
         "quoiqu"
         "lorsqu"
         "parce_qu"
