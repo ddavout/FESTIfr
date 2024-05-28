@@ -1,5 +1,38 @@
 ; dicts/INST_LANG/disle_tests/tests1/ttd
 
+( t9140
+( t9139
+( t9138
+( t9137 "cela fait belle lurette.")
+( t9136 "quelques uns rebroussèrent chemin")
+( t9135 " y a-t'il quelque chose à gagner")"
+( t9134 "il aura neuf ans au mois de juin")
+( t9133 "tout près du fond")
+( t9132 "il n'y a pas le feu!")
+( t9131 "il n'y avait plus de riz non plus"
+( t9130 "y avait plus de haricots")
+( t9129 "il alla jusqu'au fond du tunnel" ); POS fond ?
+( t9128 "il n'y en a pas du tout, pas du tout du tout")
+( t9127 "n'est ce pas un monde ?")
+( t9126 "y a pas à avoir peur"
+( t9125 "il dit vraiment n'importe quoi")
+( t9124 "akène ou achène: Nom donné à un fruit monosperme, ordinairement sec, dont le péricarpe est distinct du tégument propre de la graine."
+( t9123 "Avant qu'il fût dompté")
+( t9122 "Ce fut d'abord un café avant de devenir un coffee shop"); erreur fut NOM
+( t9121 "la radio-diffusion française")
+( t9120 "La différence ancienne des gendarmes et des chevau-légers consistait en ce que les premiers étaient armés pesamment, de pied en cap, et les autres légèrement.")
+( t9119 "L'orthographe devrait être chevaux-légers, mais on garde l'orthographe d'époque")
+( t9118 "elle a combien de chevaux-fiscaux ?")
+( t9117 "des chevau-légers")
+( t9116 "vire-moi  ces blue jeans crasseux")
+( t9115 "au jour d'aujourd'hui et non pas avant hier")
+( t9114 "une source de mieux-être")
+( t9113 "tout d'abord, voici Pierre")
+( t9112 "mon blue jean a une bonne coupe)
+( t9111 "cela fait belle lurette".)
+( t9110 "tout d'abord, voici un chef d'oeuvre")
+( t9109 "il donnait tout à ses enfants")
+( t9108 "il était presqu'endormi")
 ( t9107 "c'est tout, à demain")
 ( t9106 "c'est tout à \"coup\" qu'il prit la volée.)
 ( t9105 "Il surgit \"tout à coup\", on a là un pléonasme !")

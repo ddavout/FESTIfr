@@ -1,5 +1,7 @@
 (defvar verbose_addendas)
 (if verbose_addendas (format t "addenda_fautif.scm loaded"))
+
+ (lex.add.entry '("ayants_droit" NOM ((("eh") 0) (("j" "ahn") 0) ((d "rh" "w" "a") 0))))
 ; /!\ bizarrerie de wordroot
 ; (wordroot "États_généraux" nil) -> États_générau
 ; (wordroot "états_généraux" nil) -> états_générau"

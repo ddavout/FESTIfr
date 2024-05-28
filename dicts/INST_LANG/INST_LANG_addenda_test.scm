@@ -5,8 +5,9 @@
 
 ; NON : voir wordroo (lex.add.entry '("n_arriverez" nil (((n "a") 0) (("rh" "i") 0) (("v" "rh" "e") 0))))
 (lex.add.entry '("n_arriveré" nil (((n "a") 0) (("rh" "i") 0) (("v" "rh" "e") 0))))
-
-
+(lex.add.entry '("monosperme" nil ((("m" "oh") 0) (("n" "o") 0) ((s "p" "eh" "rh" "m") 0))))
+(lex.add.entry '("chevau_léger_NOM" NOM ((("sh" "ae") 0) (("v" "o") 0) (("l" "e") 0) (("zh" "e") 0))))
+(lex.add.entry '("achène" nil ((("a") 0) (("k" "eh" "n") 0))))
 ;;;; reste à ranger : attention redondance incohérence avec les autres addendas notamment 
 ;;; locutions foreign
 ;;; mis dans test
@@ -14,7 +15,6 @@
 (lex.add.entry '("messieurs_NOM" NOM (((m e) 0) ((s j oe) 0) ((d a m) 0))))
 
 (lex.add.entry '("chefs_d_oeuvre" nil ((("sh" "eh") 0) (("d" "oe" "v" "rh") 0)))); et non sh" "e" "f" "z
-(lex.add.entry '("chef_d" nil ((("sh" "eh" "f" "d")0)))) ; pour chef-d'oeuvre ? TODO check 
 
 (lex.add.entry '("examen" nil (((eh g)0)((z a)0)((m ehn)0))))
 (lex.add.entry '("lumbago" nil (((l oe m)0)((b a)0)((g o)0))))

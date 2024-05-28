@@ -1,6 +1,11 @@
 ; /dicts/INST_LANG/INST_LANG_freeling_addenda_locutions.scm
 ; tests
-(lex.add.entry '( "aujourd'hui" ( ( ADV -2.481) ( NOM -7.777) )()))
+; tous les 3 trouvés par poslex_all (en cas d'ajout penser à recharger, )
+
+
+(lex.add.entry '( "aujourd'hui" ( ( ADV -4.4444) ( NOM -7.777) )()))
+(lex.add.entry '( "avant_hier" ( ( ADV -2.481)  )()))
+(lex.add.entry '( "avant hier" ( ( ADV -3.333)  )()))
 
     ;;;;;;;;;;;;; Des locutions adverbiales :
     ; Tout à fait, d'ores et déjà, de temps en temps, tout de suite, de gré ou de force, ne pas, ne jamais, ne plus, sans doute, on ne peut plus…
@@ -322,4 +327,6 @@
 ;  ;(lex.add.entry '("c'est-à-dire" nil (((s eh)0)((t a)0)((d i rh)0))))
 ;  ;ex posTlex
 ; ;;;
-; ;;; no (provide 'INST_LANG_freeling_addenda_locutions) to allow reload
+; ;;; no (provide 'INST_LANG_freeling_addenda_locutions) to allow reload; hmm
+; trop facile à oublier de remettre
+(provide 'INST_LANG_freeling_addenda_locutions)

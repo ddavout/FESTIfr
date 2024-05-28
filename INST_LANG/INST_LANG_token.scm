@@ -146,8 +146,9 @@
     ; back to our lexical, before we forget
     (lex.select "INST_LANG_lex")
     (set! len (length result))
-    (if (<= 2 len) 
-      (format t "trop d'entrées pour: %s\n" name)
+    (if (>= 2 len)
+      ; pas seulement sur name, mais aussi avec utilisation d'espace ou de tiret
+      (format t "plusieurs entrées (voir INST_LANG_token) concernent: %s\n" name)
       (if (<= 0 len)(format t "pas d'entrée pour: %s\n" name)))
     result))
 ;;;

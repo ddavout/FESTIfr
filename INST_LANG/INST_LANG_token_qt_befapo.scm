@@ -33,7 +33,7 @@
                (if (member_string (french_downcase_string name) list_before_apo_ART_def )(set! pos_sur "ART_def"))
                )
           ; (equal? (item.feat token 'punc) 0); on ne sait jamais... hmm on pardonne
-          (or (format t "ici module befapo: on répond\n") t)
+          (or (format t "\t\t\t\t\t\tici module befapo: on répond\n") t)
           
           )
           

@@ -99,7 +99,8 @@
   (format t "===================\n")
   (format t "PREVIOUS TOKEN %s\n" (if (not (null? (item.prev token))) (begin (print (item.features (item.prev token) )))))
   (format t "ACTUAL TOKEN: |%s|\n |%l|\n" name (item.features token))
-  (format t "ACTUAL TOKEN is_in_poslex name |%l| \n" (is_in_poslex name))
+  (format t "ACTUAL TOKEN is_in_poslex name |%l| \n" (is_in_poslex_all name))
+  (format t "ACTUAL TOKEN is_in_poslex name |%l| \n" (is_in_poslex_all (string-replace name "-" special_slice_char)))
   (format t "===================\n")
   
   (let 
@@ -161,11 +162,19 @@
             (or (require 'INST_LANG_token_qt_letter) t)
             (letter token name)))
 
+      ((and 
+            (boundp 'QTloc3m)
+            (or (require 'INST_LANG_token_qt_loc3m) t)
+            (loc3m token name))) 
+
 
       ((and 
             (boundp 'QTlocution_part_1)
             (or (require 'INST_LANG_token_qt_locution_part_1) t)
             (locution_part_1 token name)))
+
+
+
 
       ((and 
             (boundp 'QTloc2m)

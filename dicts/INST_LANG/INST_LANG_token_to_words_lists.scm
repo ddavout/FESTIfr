@@ -1245,7 +1245,7 @@
   (list 
     ; ;Rq n_importe_quoi est  ici car le premier _ correspond à une apostrophe; faire attention à conserver l'apostrophe dans norm !!
 
-    "n_est_ce"; pos
+    "n_est_ce"; si pas de tiret ; ("n" "QTbefapo" ";" "n_est" "QTloc2m" ";" "n_est_ce" "QTnormal
    ; "n_est_pas"; TODO pas compris contrarie ( SayText "n'est-ce pas délirant") supprime le "pas" alorque n'importe quoi ne pose pas de pb !  ("QTbefapo" "QTpos2" "QTloc2m" "QTdel" "QTdelp" "QT24")
   
     "n_importe_quoi"; pos
@@ -1260,19 +1260,20 @@
     "ne_plus"
     "ne_plu"
     "en_plus"
-    ; "y_eut"
+    ; "y_eut" ; befapo
     ; "y_ait"
-    "Y_a"
-    "y_a" ; permet prononc il y a différente niveau de langage ?
-    "y_avait" ; pos
+    ;"Y_a"
+    ;"y_a"
+    ; "y_avait"
     "z_en" ;; important car (norm "z_en") -> "z en" GLOUPS ?? TODO
     "m_en"
     "t_en"
     "s_en"; ok s'en
     "s_y"
     ;;
-    "jusqu_au_bout"; pos
-    "tout_d_abord"; pos TODO
+    ;; non "jusqu_au_bout"; pos jusqu'au bout du tunnel |jusqu'au bout| = |jusqu'au fond|  ADV ou PRE 
+
+
     "mieux_être" ; pos    
     "a_fortiori"; pos
     "ab_initio"; pos
@@ -1287,13 +1288,14 @@
     "ad_rem" ; pos
     "ad_usum" ; pos
     "ad_valorem" ; pos
+
     "afin_de"
     "afin_que"
+
     "after_shave"
     "agnus_castus"
     "agnus_dei"
     "a_posteriori"
-    "aujourd_hui"
     "air_bag"
     "al_dente"; pos
     "all_right"
@@ -1301,7 +1303,6 @@
     "alter_ego"
     "auquel_cas"
     "aux_aguets"
-    "avant_hier"
     "ayants_droit"
     "back_up"
     "beat_generation"
@@ -1584,6 +1585,45 @@
 ; "POS" avec **quasi-certitude** ou chaine "".
 (set! locution2_tab_default
   '(
+; intérêt à justifier ou ?    
+("m_en" . ("ADV"))
+("s_en" . ("ADV"))
+("s_y" . ("ADV"))
+("t_en" . ("ADV"))
+("z_en" . ("ADV"))
+
+
+("elle_même" . ("ADV"))
+("elles_mêmes" . ("ADV"))
+("eux_mêmes" . ("ADV"))
+("lui_même" . ("ADV"))
+("moi_même" . ("ADV"))
+("nous_mêmes" . ("ADV"))
+("soi_même" . ("ADV"))
+("vous_même" . ("ADV"))
+("vous_mêmes" . ("ADV"))
+
+;; pb de posTlex pas de tokenizer
+; ("Y_a" . ("ADV"))
+; ("y_a"  . ("ADV"))
+; ("y_avait"  . ("ADV"))
+; ("neuf_an" . ("")) pb de posTlex pas de poslex
+; ("neuf_heures" . (""))
+
+; ?  befapo suffit, non ?
+; ("d_abord" . ("")); ADV ou pas d'abord facile
+; ("d_ailleurs" . ("ADV"))
+; ("d_autres" . ("")); PRO ou pas
+; ("d_emblée" . ("ADV"))
+
+; inutile utilisation d'un phoneme hs
+;("un_hululement" . ("NOM"))
+;("un_hérisson" . ("NOM"))
+;("un_ulhan" . ("NOM"))
+;("un_unau" . ("NOM"))
+
+
+; à réviser
 ("a_fortiori" . ("ADV"))
 ("a_posteriori" . ("ADV"))
 ("a_priori" . ("ADV" "NOM"))
@@ -1599,8 +1639,8 @@
 ("ad_rem"  . ("ADV"))
 ("ad_usum"  . ("ADV"))
 ("ad_valorem"  . ("ADV"))
-("afin_de" . ("ADV"))
-("afin_que" . ("ADV"))
+("afin_de" . ("CON"))
+("afin_que" . ("CON"))
 ("after_shave" . ("NOM"))
 ("agnus_castus" . ("ADV"))
 ("agnus_dei" . ("NOM"))
@@ -1648,8 +1688,6 @@
 ("corn_flakes" . ("NOM"))
 ("corpus_delicti" . ("NOM"))
 ("curriculum_vitae" . ("NOM"))
-("d_abord" . ("ADV"))
-("d_ailleurs" . ("ADV"))
 ("d_arrache_pied" . ("ADV"))
 ("d_autres" . ("ADV"))
 ("d_emblée" . ("ADV"))
@@ -1675,7 +1713,7 @@
 ("dix-neuf_ans" . ("ADV"))
 ("dix-neuf_heures" . ("ADV"))
 ("douce_amère" . ("ADV"))
-("doux_jésus" . ("ADV"))
+("doux_jésus" . ("")); ONO ou pas
 ("dream_team"  . ("ADV"))
 ("drive_in" . ("ADV"))
 ("drone_espion" . ("NOM"))
@@ -1683,8 +1721,7 @@
 ("east_river" . ("ADV"))
 ("ecce_homo" . ("ADV"))
 ("eh_bien" . ("ADV"))
-("elle_même" . ("ADV"))
-("elles_mêmes" . ("ADV"))
+
 ("en_arrière" . ("ADV"))
 ("en_avant" . ("ADV"))
 ("en_bas" . ("ADV"))
@@ -1709,28 +1746,27 @@
 ("et_caetera" . ("ADV"))
 ("et_cetera" . ("ADV"))
 ("et_hop" . ("ADV"))
-("eux_mêmes" . ("ADV"))
 ("fait_maison" . ("ADV"))
 ("fast_food" . ("ADV"))
 ("five_o_clock" . ("ADV"))
 ("foreign_office" . ("ADV"))
-("fret_express"  . ("ADV"))
-("gengis_khan" . ("ADV"))
+("fret_express"  . ("NOM"))
+("gengis_khan" . ("NAM"))
 ("girl_friend" . ("ADV"))
 ("gna_gna" . ("ADV"))
 ("grosso_modo" . ("ADV"))
 ("happy_end" . ("ADV"))
 ("happy_ends" . ("ADV"))
 ("hard_edge" . ("ADV"))
-("has_been" . ("ADV"))
+("has_been" . ("NOM"))
 ("high_life" . ("ADV"))
 ("high_tech" . ("ADV"))
-("hold_up" . ("ADV"))
-("homo_erectus" . ("ADV"))
+("hold_up" . ("NOM"))
+("homo_erectus" . ("NOM"))
 ("hong_kong" . ("ADV"))
-("honoris_causa" . ("ADV"))
-("hot_dog" . ("ADV"))
-("house_music" . ("ADV"))
+("honoris_causa" . (""))
+("hot_dog" . ("NOM"))
+("house_music" . ("NOM"))
 ("huis_clos" . ("ADV"))
 ("ice_cream" . ("ADV"))
 ("in_absentia" . ("ADV"))
@@ -1743,12 +1779,11 @@
 ("intra_muros" . ("ADV"))
 ("ipso_facto" . ("ADV"))
 ("irish_coffee" . ("ADV"))
-("j._c" . ("ADV"))
 ("jusqu_alors" . ("ADV"))
-("jusqu_au_bout" . ("ADV"))
+("jusqu_au_bout" . ("")); ADV  ou PRE
 ("jusqu_ici" . ("ADV"))
 ("jusqu_où" . ("ADV"))
-("jusqu_à" . ("ADV"))
+("jusqu_à" . ("PRE"))
 ("jusque_devant" . ("NOM"))
 ("kung_fu" . ("NOM"))
 ("LA_FONT"  . ("NAM"))
@@ -1757,11 +1792,10 @@
 ("la_plupart" . ("ADV"))
 ("latitude_O" . ("ADV"))
 ("latiude_E" . ("ADV"))
-("loin_d"  . ("ADV"))
+("loin_d"  . ("PRE")) ; loin d'elle, il respirait
 ("longitude_N" . ("ADV"))
 ("longitude_S" . ("ADV"))
-("lui_même" . ("ADV"))
-("m_en" . ("ADV"))
+
 ("made_in" . ("ADV"))
 ("manu_militari" . ("ADV"))
 ("mass_media" . ("ADV"))
@@ -1775,7 +1809,6 @@
 ("modern_style" . ("ADV"))
 ("modus_operandi" . ("ADV"))
 ("modus_vivendi" . ("NOM"))
-("moi_même" . ("ADV"))
 ("music_hall" . ("NOM"))
 ("n_importe_comment" . ("ADV"))
 ("n_importe_où" . ("ADV"))
@@ -1786,23 +1819,22 @@
 ("n_importe_quoi" . ("ADV"))
 ; test utilité déclaration poslex
 ("n_importe_quo" . ("NAM"))
-("n_y_a"  . ("ADV"))
-("n_y_en" . ("ADV"))
+("n_y_a"  . ("VER")) ; "il n'y a pas le feu!")
+("n_y_en" . ("ADV")); "il n'y en a pas du tout")
 ("ne_plu" . ("ADV"))
 ("ne_plus" . ("ADV"))
 ("negro_spiritual" . ("ADV"))
-("neuf_an" . ("ADV"))
-("neuf_heures" . ("ADV"))
+
 ("night_club" . ("NOM"))
 ("no_comment" . ("ADV"))
 ("nota_bene" . ("ADV"))
-("nous_mêmes" . ("ADV"))
 ("osso_buco" . ("NOM"))
 ("par_mégarde" . ("ADV"))
-("parce_que" . ("ADV"))
+("parce_que" . ("CON"))
+("parce_qu" . ("CON"))
 ("paso_doble" . ("ADV"))
-("pater_familias" . ("ADV"))
-("pater_noster" . ("ADV"))
+("pater_familias" . ("NOM"))
+("pater_noster" . ("NOM"))
 ("pax_americana" . ("ADV"))
 ("pendant_que" . ("ADV"))
 ("persona_grata" . ("NOM"))
@@ -1821,18 +1853,16 @@
 ("quant_au" . ("ADV"))
 ("quant_aux" . ("ADV"))
 ("quant_à" . ("ADV"))
-("quatre_vingt_un" . ("ADV"))
-("quelqu_un" . ("ADV"))
-("quelqu_une" . ("ADV"))
-("quelque chose" . ("ADV"))
-("quelques_unes" . ("ADV"))
-("quelques_uns" . ("ADV"))
-("quoi_que" . ("ADV"))
-("red_river" . ("ADV"))
-("roast_beef" . ("ADV"))
-("rocking_chair" . ("ADV"))
-("s_en" . ("ADV"))
-("s_y" . ("ADV"))
+("quatre_vingt_un" . ("")); ADJ:num ou .. PRO:  81 d'entre eux
+("quelqu_un" . ("PRO:ind"))
+("quelqu_une" . ("PRO:ind"))
+("quelque chose" . ("PRO:ind")); il y a quelque chose à gagner ADJ:ind + NOM : ok
+("quelques_unes" . ("PRO:ind"))
+("quelques_uns" . ("PRO:ind"))
+("quoi_que" . ("CON"))
+("red_river" . ("NAM"))
+("roast_beef" . ("NOM"))
+("rocking_chair" . ("NOM"))
 ("Saint_Esprit" . ("NAM"))
 ("saint_esprit"     . ("NOM"))
 ("saint_paul" . ("NOM"))
@@ -1843,53 +1873,42 @@
 ("sex_shop" . ("NOM"))
 ("sex_shops" . ("NOM"))
 ("soap_opéra" . ("NOM"))
-("soi_même" . ("ADV"))
 ("sri_lankais" . ("NOM"))
 ("statu_quo" . ("NOM"))
 ("story_board" . ("NOM"))
 ("stricto_sensu" . ("ADV"))
 ("sui_generis" . ("ADV"))
-("t_en" . ("ADV"))
 ("t_shirt" . ("ADV"))
 ("T_shirt" . ("ADV"))
-("tandis_que" . ("ADV"))
+("tandis_que" . ("CON"))
 ("taï_chi" . ("ADV"))
 ("tchin_tchin" . ("ONO"))
 ("te_deum" . ("ADV"))
 ("terra_incognita" . ("ADV"))
 ("too_much" . ("ADV"))
 ("top_model" . ("NOM"))
-("tous_les" . ("ADV"))
+("tous_les" . ("ART:def"))
 ("tout_autant" . ("ADV"))
 ("tout_autre" . ("ADV"))
 ("tout_d_abord" . ("ADV"))
 ("tout_puissant" . ("ADV"))
 ("tutti_frutti" . ("ADV"))
 ("tutti_quanti" . ("ADV"))
-("un_autre" . ("ADV"))
-; ("un_hululement" . ("ADV")); inutile phoneme hs
-;("un_hérisson" . ("ADV"))
-;("un_ulhan" . ("ADV"))
-;("un_unau" . ("ADV"))
-("une_autre" . ("ADV"))
+("un_autre" . ("PRO:ind"))
+("une_autre" . ("PRO:ind"))
 ("vade_retro" . ("ADV"))
 ("vae_victis" . ("ADV"))
-("vingt_cinq" . ("ADV"))
-("vingt_huit" . ("ADV"))
+("vingt_cinq" . (""))
+("vingt_huit" . (""))
 ("vomito_negro" . ("ADV"))
-("vous_même" . ("ADV"))
-("vous_mêmes" . ("ADV"))
 ("vox_populi" . ("ADV"))
 ("vulgum_pecus" . ("ADV"))
 ("wall_street" . ("NAM"))
 ("week_end" . ("NOM"))
 ("world_music" . ("NOM"))
-("Y_a" . ("ADV"))
-("y_a"  . ("ADV"))
-("y_avait"  . ("ADV"))
+
 ("yom_kippour" . ("NAM"))
 ("yom_kippur" . ("NAM"))
-("z_en"  . ("ADV"))
 ("à_croupetons" . ("ADV"))
 ("à_demi" . ("ADV"))
 ("à_fortiori" . ("ADV"))
@@ -1967,9 +1986,9 @@
      ;;; "chef_d_oeuvre"; ("QTloc3m" "QTdel" "QTdelp") ; apostrophe central compte comme espace
      "chefs_d_oeuvre"; name_ref chefs_d_oeuvre; incorrect
     "n_est_ce_pas"; pos pour n'est ce pas; ("QTbefapo" "QTloc3m" "QTdel" "QTdelp")
-    "traveller_s_chèque"
-    "corps_et_âme"
 
+
+    "n_y_a" ; pos; si manque d'apostrophe (nécessité tempo _erreur addenda_ mais on peut laisser)
     "alea_jacta_est" ; pos
     "am_stram_gram"; pos
     "bon_au_porteur"; pos
@@ -1978,26 +1997,31 @@
     "ceux_et_celles" ; pos
     "cinq_à_sept" ; pos
     "cnquante_et_un"; pos
-    "cot_cot_codec"    ; pos
     "commedia_dell_arte"; pos
-    "de_manière_à"; pos
     "corps_et_bien"; name_ref corps_et_bien
+    "corps_et_âme"
+    "cot_cot_codec"    ; pos
+    "d_ores_et_déjà"; ("QTbefapo" "QTloc3m" "QTdel" "QTdelp"); le 1er _ est dû à un apostrophe
+    "de_manière_à"; pos
     "deus_ex_machina"; pos
+    "en_moins_de"; ("QTloc3m" "QTdel" "QTdelp")
     "face_à_face"; pos
     "faute_de_quoi"
-    "en_moins_de"; ("QTloc3m" "QTdel" "QTdelp")
-    "in_vino_veritas"
     "il_y_a"; pos
     "il_y_aura"; pos
+    "in_vino_veritas"
     "la_plupart_de"
     "la_plupart_des"
     "la_plupart_du"
     "madre_de_dios"
     "mobilis_in_mobile"
     "n_y_en_a"; pos ; ("QTbefapo" "QTloc3m" "QTdel" "QTdelp") le 1er _ est dû à un apostrophe
+    "no_man_s_land"
+    "no_man_s_land"
     "nuit_et_jour"
     "persona_non_grata"
     "peu_ou_prou"; pos
+    "pied_en_cap"
     "plus_et_plus"; pos
     "plus_ou_moins"; pos
     "quarante_et_un"
@@ -2006,16 +2030,17 @@
     "sine_qua_non"
     "temps_en_temps"
     "tout_au_plus"; ; pos
-    "tout_ou_rien"; pos
     "tout_de_même"; pos
+    "tout_ou_rien"; pos
+    "traveller_s_chèque"
     "un_à_un" ; à cause des liaisons ; ("QTloc3m" "QTdel" "QTdelp")
     "urbi_et_orbi"
     "vingt_et_un"
-
     "wait_and_see"
     "way_of_life"
     "à_la_saint-glinglin"; pour pos TODO 
     "à_leur_encontre"; pos
+    "à_leurs_encontres"; pos
     "à_moins_de"; pos
     "à_moins_que"; pos
     "à_mon_encontre"; pos
@@ -2024,11 +2049,6 @@
     "à_ton_encontre"; pos
     "à_tous_égards"
     "à_votre_encontre"; pos
-    "à_leurs_encontres"; pos
-    "d_ores_et_déjà"; ("QTbefapo" "QTloc3m" "QTdel" "QTdelp"); le 1er _ est dû à un apostrophe
-    "no_man_s_land"
-    "no_man_s_land"
-     "n_y_a" ; pos; si manque d'apostrophe (nécessité tempo _erreur addenda_ mais on peut laisser)
      
     
     ))
@@ -2202,56 +2222,55 @@
     "outre"
     "à"))
 
-  ; en fait y a que ça des homograohes ...
+  ; en fait y a que ça des homograohes...
+  ; et encore on ne mets pas les terminaisons en "es" : tu bouches la bouche 
   ; le plus souvent homophones, ça peut passer inaperçu .. hors analyse grammaticale..
   ; TODO ? restreindre à la forme infinif, pour utilisation dans une règle précise
   ; comme après |sans|, par exemple
   ; loucher, boucher, etc..  
   ; éventuellement rajouter les homo composé comme rendez-vous
 
-  (set! list_homo_VER_NOM
 
-    
+  (set! list_homo_VER_NOM
       (list  
-            "bus"
-            "part"
-            "parti"
             "beurre"
-            "tartine"
-            "trompe"
-            "louche"
-            "viole"
             "bouche"
-            "confit"
-            "étrille"
-            "bouge"  
+            "bouge" 
+            "bout"
+            "bouille"
+            "bouillie" 
+            "bus"
             "cause"
             "cesse"
+            "confit"
+            "coupe"
             "couve"
             "couvent"
             "doute"
             "feinte"
             "ferme"
             "ferment"
+            "fond"
+            "fondant"
             "frimas" ; le frimas
+            "louche"
             "marche"
-            "marches"
             "mouche"
-            "mouches"
+            "mousse"
             "offense"
-            "offenses"
             "part"
+            "part"
+            "parti"
             "relâche"
-            "relâches"
-            "réserve"
-            "réserves"
-            "tare"
-            "tares"
-            "serre"
-            "serres"
-            "terre"
-            "terres"
             "rendez_vous" ; vu comme VER 
+            "réserve"
+            "serre"
+            "tare"
+            "tartine"
+            "terre"
+            "trompe"
+            "viole"
+            "étrille"
             ))
   
   ; (set! list_homo_VER_PRE

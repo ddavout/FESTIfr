@@ -24,9 +24,10 @@
     (if 
       (and
         ;**
-        (not (null? (item.next token)))
+        ; inutile (not (null? (item.next token))) car item.next returns nil if there is no next item
+        ; and (set! token nil) returns nil
         ;** 
-        (set! token1 (item.next token) )
+        (set! token1 (item.next token))
         ; |à|
         (set! n_name (na token1))
         ; au pire nil & out, mais /!\ il pourrait rester un _ final, si on n'est pas jeté : TODO vérif
@@ -105,8 +106,7 @@
                 (item.set_feat token 'delete  "next")))
 
          ;(set! result (list "raté"))
-         (set! result)
-         ))
+         (set! result)))
     (format t "we leave the module locution_part_1\n")
     reponse))
 

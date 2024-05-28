@@ -25,7 +25,7 @@
       (begin
         (set! syls (car (cdr (cdr entry))))
         (set! results (list (string-append word "_" features)  features syls))
-        (if verbose_supra_lts (format t "results taken from my_strict_lex.lookup %l" results)))
+        (if verbose_supra_lts (format t "results taken from my_strict_lex.lookup %l\n" results)))
       (begin
           ; lexicon.cc will change features to -1
           ; assuming there is -1 is never in the pos field...
@@ -146,12 +146,13 @@
            (set! flata   (flatten (car (cdr (cdr entry)))))
            (car (cons (remove* 0 flata) '()))))
      
-                        
+; utile ??                        
 (define (fusion r1 r2 features)
   ; collage de syllabes simple sauf quoiqu, quelqu, recomposition des syllabes
   ;(format t "!!!!!!!!!!!!!! r1 %l, r2 %l" r1 r2 )
   (INST_LANG_lex_syllabify_phstress (append (list_phones-1 r1)(list_phones-2 r2 features))))
 
+; TODO non utilisé
 (define (fusion2 r1 r2 features)
   ; s l
   (let (syls s2 result)
