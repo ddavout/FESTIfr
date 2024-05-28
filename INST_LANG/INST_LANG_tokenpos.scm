@@ -107,9 +107,18 @@
         ; hmm les anglais utilise par 
         ;     (t
         ;   '_other_)))
+
+
+      ; This assigns a form of part of speech to tokens.  It is typically use ;
+      ; to assign gross level pos for things before they are converted to     ;
+      ; words, particularly, numbers (ordinals, digitized, years, numbers)    ;
+
         
       ; The module modules/Text/token_pos.cc   assigns token_pos feature to each token based on the
       ; Assoc list of Regex to CART trees in token_pos_cart_trees.
+
+
+
 
 
       ;  Token pos are gross level part of speech tags which help decide ; 
