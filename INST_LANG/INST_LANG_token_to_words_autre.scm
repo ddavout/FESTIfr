@@ -15,7 +15,6 @@
 
 (defvar tokendebuglevel 20000)
 (defvar debugQT t) ; ; pour débugger une QT en particulier lors de mise au point
-(set! QTpos0 t)
 ; TODO prochaine tache
 ; améliorer RU liste de (QT*, name) , puisque le name peut changer !
 
@@ -108,7 +107,7 @@
     ; il y a mieux pour le pire ?! déclarer ici result en local
     ; TODO réduire au strict nécessaire
     ; en cours : sûr fdnaw, 
-    (fdnaw ponct)
+    (h1 h2 h3 fdnaw ponct)
     (set! fdnaw (french_downcase_string name))
     (set! ponct (item.feat token 'punc ))
 
@@ -122,11 +121,65 @@
         ;    (require 'INST_LANG_token_qt_pos0)
         ;    (pos0 token name)))
 
-      ; ((format t "QTdelp.n ?\t élimination programmée ? |%s| si %s\n" name (boundp 'QTdelp.n ))  nil)  
-      ; ((and 
-      ;       (boundp 'QTdelp.n)
-      ;       (or (require 'INST_LANG_token_qt_delp_n) t)
-      ;       (delp.n token name)))
+      ((and 
+        (boundp 'QTpos0)
+        (or (require 'INST_LANG_token_qt_pos0) t)
+        (pos0 token name)))
+
+      ((and 
+        (boundp 'QTpos1)
+        (or (require 'INST_LANG_token_qt_pos1) t)
+        (pos1 token name)))
+    
+      ; ((and
+      ;   (boundp 'QTpos2)
+      ;   (or (require 'INST_LANG_token_qt_pos2) t)
+      ;   (pos2 token name)))
+
+      ((and 
+
+        ;**
+        (or (format t "match ???\n") t)
+        (pattern-matches fdnaw QTpos2_pattern)
+        ;(pattern-matches "Donnez-en" QTpos2_pattern )
+        (or (format t "match") t)
+        (and (set! h1 #1)(set! h2 #2))
+        (not (equal? h1 ""))
+        ;**/
+        
+        ;  h1 3 _donnez_, h2 _en_
+        (or ( format t "QTpos2 h1 3 _%s_, h2 _%s_\n" h1 h2) t)
+        ;**
+        (member_string h2 list_after_tiret)
+        ;**/
+        (or ( format t "QTpos2 h1 4 _%s_, h2 _%s_\n" h1 h2) t)
+        ; nil
+        (or (format t "\t\t\t\t\t\tici module pos2: on répond\n") t))
+
+
+            (begin 
+                (set! QT "QTpos2" )
+                (set! RU (append RU (list name QT ";")))
+                (set! suf1-1 (string-last h1)) 
+                ; (item.set_feat (item.next token) 'token_pos "PRO:per")
+                ;;  (format t "liste %l \n" (item.relation.leafs token 'Token)); (#<item 0x55c329c93bc0>) 
+                ;; (item.first_leaf ITEM)   Returns he left most leaf in the tree dominated by ITEM. ..
+                ;; (format t "leaf %s"  (na (item.first_leaf token))); n_est-ce
+                ;; (format t "liste %l" (item.relations token)); Token
+                (item.set_feat token "token_pos" "QTpos2")
+                ; ex: vous-y reviendrez /  h1 3 _Donnez_, h2 _en_,  elles-même
+                (if (and (member_string suf1-1 (list "t" "s" "z"))
+                         (member_string (string-car h2 ) (list "e" "i" "o" "y")))
+                      (begin 
+                        (set! liste (append (INST_LANG_token_to_words token h1) 
+                                             (INST_LANG_token_to_words token (if (string-equal suf1-1 "t")(string-append "t_" h2 )(string-append "z_" h2 )))))
+                        (format t "liste %l" liste)
+                        (set! result liste))
+                      (begin ; ex ; ex h1_n_est_, h2 _ce_
+                        (set! result 
+                            (append (INST_LANG_token_to_words token h1)
+                                (INST_LANG_token_to_words token h2) ))))))
+
 
 
       ((format t "QTdel ?\t élimination programmée ? |%s| si %s\n" name (boundp 'QTdelp ))  nil)
