@@ -33,7 +33,7 @@
           ; ou même à la fin de INST_LANG_norm ??
           ;(set! result (list (string-replace name "-" special_slice_char))))
           (set! result (list name))
-          (or (format t "\t\t\t\t\t\ici module befapo: on répond\n") t)
+          (or (format t "\t\t\t\t\t\ici module normal: on répond\n") t)
           ) ; hmm
 
           )

@@ -2290,8 +2290,9 @@
     "au_dessus"
     "au_devant"
     "depuis" ;"bien sûr, on rame depuis un an."neut_parl_s01_0216
-    "lez"
+    ; "en_tête"; aussi NOM
     ;"nonobstant" ; aussi ADJ
+    ; outre ; aussi NOM
     ;"par_dessus" ; aussi NOM
     ;"plein";  aussi bien NOM ADJ
     

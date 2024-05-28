@@ -12,12 +12,12 @@
     ; module ramasse-miette
     (if t
         (begin
-            (or (format t "ici module befapo: on répond\n") t)
+            (or (format t "\t\t\t\t\t\tici module mis: on répond\n") t)
             (set! reponse t)
             (set! QT "QTmis" )
             (set! RU (append RU (list name QT ";")))
 
-            (set! result (list name))))
+            (set! result (list "inconnu"))))
 
     (format t "we leave the module mis\n")
    ; hors debug: c'est la dernière chance d'agir, pas besoin de mettre reponse à true 
