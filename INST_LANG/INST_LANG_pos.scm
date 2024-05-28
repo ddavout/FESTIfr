@@ -182,11 +182,40 @@
       (set! pos_p_start_tag "punc")
       (set! pos_pp_start_tag "NOM")  
     
-      ;;
-      ; (lex.add.entry '("." ((SENT 0)) () ))  ; no segmentation fault if SENT is in the vocab list
-      ; (lex.add.entry '("?" ((SENT 0)) () ))
-      ; (lex.add.entry '("'" ((SENT 0)) () ))
-      ; (lex.add.entry '("," ((SENT 0)) () ))          
+      ;; chiffres de wsj.wp39.poslexR dans pos.scm, voir aussi le poslexR, pour les autres punc:
+      ;  preponctuation, ponctuation et symboles
+      ; bemol: notre apostrophe est whitespace
+
+      ; intéressant eux, ont
+      ; ("'" ((pos -2.600) (punc -6.814) ) () )
+      ; autre tag pos pour "'s", leur apostrophe serait une ponctuation, mais aussi un 'pos' 
+      ; dans it's ?
+      ; n v vl b dt v_p y 
+      (lex.add.entry '("," ((punc -0.88488)) () ))
+      (lex.add.entry '("." ((punc -1.1104)) () ))
+      (lex.add.entry '(":" ((punc -4.4236)) () ))
+      (lex.add.entry '("``" ((punc -2.7867)) () ))
+      (lex.add.entry '("`" ((punc -2.7867)) () ))
+      (lex.add.entry '("\"" ((punc -2.7867)) () )) 
+      (lex.add.entry '("!" ((punc -7.515) ) () ))
+      (lex.add.entry '("#" ((punc -6.708) ) () ))
+      (lex.add.entry '("$" ((punc -2.807) ) () ))
+      (lex.add.entry '("(" ((punc -4.539) ) () ))
+      (lex.add.entry '(")" ((punc -4.527) ) () ))
+      (lex.add.entry '("," ((punc -0.884) ) () ))
+      ; a letter for us
+      ;(lex.add.entry '("-" ((punc -7.260) ) () ))
+      ;(lex.add.entry '("--" ((punc -4.020) ) () ))
+      (lex.add.entry '("." ((punc -1.115) ) () ))
+      (lex.add.entry '("..." ((punc -6.428) ) () ))
+      (lex.add.entry '(";" ((punc -4.503) ) () ))
+      (lex.add.entry '("?" ((punc -5.666) ) () ))
+      (lex.add.entry '("`" ((punc -6.942) ) () ))
+      (lex.add.entry '("``" ((punc -2.803) ) () ))
+      (lex.add.entry '("{" ((punc -6.375) ) () ))
+      (lex.add.entry '("}" ((punc -6.354) ) () ))
+
+
 
       ; from pos.cc 
       ; e = lex_lookup_word("_OOV_",NIL); // I *know* there is an entry
