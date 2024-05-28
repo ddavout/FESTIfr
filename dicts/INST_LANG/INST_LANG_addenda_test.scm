@@ -8,6 +8,8 @@
 (lex.add.entry '("monosperme" nil ((("m" "oh") 0) (("n" "o") 0) ((s "p" "eh" "rh" "m") 0))))
 (lex.add.entry '("chevau_léger_NOM" NOM ((("sh" "ae") 0) (("v" "o") 0) (("l" "e") 0) (("zh" "e") 0))))
 (lex.add.entry '("achène" nil ((("a") 0) (("k" "eh" "n") 0))))
+(lex.add.entry '("galimatia" nil ((("g" "a") 0) (("l" "i") 0) (("m" "a") 0) (("t" "j" "a") 0))))
+
 ;;;; reste à ranger : attention redondance incohérence avec les autres addendas notamment 
 ;;; locutions foreign
 ;;; mis dans test

@@ -2282,18 +2282,20 @@
   ; hmm ... au_dessus ADV, au_dessus_de PRE : PRE à mettre en locution 
 (set! list_ADV_PRE 
   (list 
-  ; "après" ; BUG core dump neut_parl_s01_0082
+    "après" ;"après claude goasguen, après christian jacob, je vous repose la question." neut_parl_s01_0082
     "au_dedans"
     "au_dehors"
+    "au_delà"
     "au_dessous"
     "au_dessus"
     "au_devant"
-   ; "au_fur_et_à_mesure" TODO ici ???
-    "depuis" ; BUG core dump neut_parl_s01_0216
+    "depuis" ;"bien sûr, on rame depuis un an."neut_parl_s01_0216
     "lez"
-    "nonobstant"
-   ; "par_dessus" TODO ici ???
-    "rez"))
+    ;"nonobstant" ; aussi ADJ
+    ;"par_dessus" ; aussi NOM
+    ;"plein";  aussi bien NOM ADJ
+    
+    ))
               
 ;;  ADV pour qui seul poslex se trompe
 
