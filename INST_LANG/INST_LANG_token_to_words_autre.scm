@@ -15,7 +15,7 @@
 
 (defvar tokendebuglevel 20000)
 (defvar debugQT t) ; ; pour débugger une QT en particulier lors de mise au point
-(set! QTloc0 t)
+(set! QTpos0 t)
 ; TODO prochaine tache
 ; améliorer RU liste de (QT*, name) , puisque le name peut changer !
 
@@ -116,11 +116,11 @@
         ; laisse comme modele 
         ; ; trace de passage, sans effet pervers: la condition n'est jamais remplie
         ; ; laisser le nil final pour être bien clair   
-        ; ((and (> tokendebuglevel -1)(format t "QTloc0 ?\t |%s|\n si %s\n" name (boundp 'QTloc0 )) nil)) 
+        ; ((and (> tokendebuglevel -1)(format t "QTpos0 ?\t |%s|\n si %s\n" name (boundp 'QTpos0 )) nil)) 
         ; ((and 
-        ;    (boundp 'QTloc0)
-        ;    (require 'INST_LANG_token_qt_loc0)
-        ;    (loc0 token name)))
+        ;    (boundp 'QTpos0)
+        ;    (require 'INST_LANG_token_qt_pos0)
+        ;    (pos0 token name)))
 
       ; ((format t "QTdelp.n ?\t élimination programmée ? |%s| si %s\n" name (boundp 'QTdelp.n ))  nil)  
       ; ((and 

@@ -3,8 +3,8 @@
 
 (defvar QTnormal t)
 (defvar QTmis t)
-(defvar QTpos0_ADV t)
-(defvar QTloc0 t)
+;;; changement de pos si encore erreur de poslex
+(defvar QTpos0 t); pas utile pour l'instant en tout cas?
 (defvar QTpos1 t); fre_NAM_homo_tab ex: Marguerite |Duras|
 (defvar QTpos2 t); |donne|-moi -> donne VER; |donne|-m'en , grâce à  norm donne|-|m_en  -> donne VER *et* m_en PRO:per
 
