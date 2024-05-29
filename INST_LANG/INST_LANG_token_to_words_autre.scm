@@ -184,6 +184,11 @@
         (or (require 'INST_LANG_token_qt_pos3) t)
         (pos3 token name)))
 
+      ((and
+        (boundp 'QTpos4)
+        (or (require 'INST_LANG_token_qt_pos4) t)
+        (pos4 token name)))
+      
       ((format t "QTdel ?\t élimination programmée ? |%s| si %s\n" name (boundp 'QTdelp ))  nil)
       ((and 
             (boundp 'QTdel)
