@@ -6,6 +6,8 @@
 ;;; changement de pos si encore erreur de poslex
 (defvar QTpos0 t); pas utile pour l'instant en tout cas?
 (defvar QTpos1 t); fre_NAM_homo_tab ex: Marguerite |Duras|
+
+; toujours en direct : pb de création de variables pour patternmatch ?
 (defvar QTpos2 t); |donne|-moi -> donne VER; |donne|-m'en , grâce à  norm donne|-|m_en  -> donne VER *et* m_en PRO:per
 
 ; changements de pos pour cause d'erreurs de poslex
@@ -13,12 +15,22 @@
 ; les changements de pos affecte l'analyse grammaticale, à faire, en principe, au plus vite
 ; NOM -> NAM  ou AUX -> VER , pour l'instant discutable
 ; TODO à ranger par fréquence ( en tenant compte de l'ordre d'apparition dans la phrase: voeu pieu)
-(defvar QTpos3 t); tentative homo VER NOM par ex après adverbe de quantité, peu de ferment
-(defvar QTpos4 t); homographe fier ; changement de pos
+
+(defvar QTpos3 t); tentative homo VER NOM par ex après adverbe de quantité,sans ferment
+; liste en defvar dans INST_LANG_token_qt_pos3; pas encore défaut dans word_lists
+
+
+(defvar QTpos4 t); homographe fier ; changement de pos ADJ->VER
+
 (defvar QTpos5 t); homographe maintenant ; changement de pos
-; |bouge|-toi, sors de ce |bouge|
-; sens 
-;  les QThomo_* ne changeant pas l'analyse grammaticale peut se déplacer jusqu'à QTnormal
+; maintenant su sol ADV versus VER (gérondif)
+; |bouge|-toi, sors de ce |bouge|  NOM versus VER
+; sens                             NAM/NOM versus VER 
+
+; ADJ versus VER (particpe passé) ; voeu pieux sans possibilité AUX versus VER entre autres pb
+
+;  les QThomo_* qui ne changent pas l'analyse grammaticale peut se déplacer jusqu'à QTnormal ou ..même n'ont pas leur place ici
+
 (defvar QThomo_fils t); homographe fils ; accroissement vocabulaire
 (defvar QThomo_convient t); homographe convient ; accroissement vocabulaire
 ;(defvar QThomo_maintenant t); homographe mainten ; accroissement vocabulaire

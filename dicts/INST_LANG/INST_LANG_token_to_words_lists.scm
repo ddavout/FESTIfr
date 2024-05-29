@@ -2273,6 +2273,17 @@
             "viole"
             "étrille"
             ))
+
+
+    (set! list_homo_VER_NOM_heterophone_sans
+      (list  
+            "but"
+            "couvent"
+            "ferment"
+            "rendez_vous" ; vu comme VER 
+            
+            ))
+  
   
   ; (set! list_homo_VER_PRE
   ; es sciences
