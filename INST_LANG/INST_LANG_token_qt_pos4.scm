@@ -25,8 +25,8 @@
 
             ; aucune ponctuation ou preponctuation  entre sans et forment
             ;**
-            ;;; (equal? (item.feat token-1 'punc) 0)
-            ;;(string-equal (item.feat token 'n.prepunctuation) "")
+            (equal? (item.feat token-1 'punc) 0)
+            (string-equal (item.feat token 'n.prepunctuation) "")
 
             (or (format t "locution list_qt_pos4: ok2\n") t)
             ;***
