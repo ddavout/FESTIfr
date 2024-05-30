@@ -105,6 +105,7 @@
 (lex.add.entry '("Artaban" ((NAM 0))()));
 (lex.add.entry '("êtes" ((AUX -1.987)(VER -2.257))())); pour satisfaire is_in_poslex ? erreur
 (lex.add.entry '("fût_ce" ((VER 0))())); 
+(lex.add.entry '("pédigree" ((NOM 0))())); 
 
 
 

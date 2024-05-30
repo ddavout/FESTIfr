@@ -1585,23 +1585,59 @@
 ; "POS" avec **quasi-certitude** ou chaine "".
 (set! locution2_tab_default
   '(
-; intérêt à justifier ou ?    
-("m_en" . ("ADV"))
-("s_en" . ("ADV"))
-("s_y" . ("ADV"))
-("t_en" . ("ADV"))
-("z_en" . ("ADV"))
+
+                ("m_en" . ("ADV"))
+                ("s_en" . ("ADV"))
+                ("s_y" . ("ADV"))
+                ("t_en" . ("ADV"))
+                ("z_en" . ("ADV"))
 
 
-("elle_même" . ("ADV"))
-("elles_mêmes" . ("ADV"))
-("eux_mêmes" . ("ADV"))
-("lui_même" . ("ADV"))
-("moi_même" . ("ADV"))
-("nous_mêmes" . ("ADV"))
-("soi_même" . ("ADV"))
-("vous_même" . ("ADV"))
-("vous_mêmes" . ("ADV"))
+                ("elle_même" . ("ADV"))
+                ("elles_mêmes" . ("ADV"))
+                ("eux_mêmes" . ("ADV"))
+                ("lui_même" . ("ADV"))
+                ("moi_même" . ("ADV"))
+                ("nous_mêmes" . ("ADV"))
+                ("soi_même" . ("ADV"))
+                ("vous_même" . ("ADV"))
+                ("vous_mêmes" . ("ADV"))
+
+
+
+                ( "au_dedans" . ("ADV"))
+                ( "au_dehors" . ("ADV"))
+                ( "au_delà" . ("ADV"))
+                ( "au_dessous" . ("ADV"))
+                ( "au_dessus" . ("ADV"))
+                ( "au_devant" . ("ADV"))
+                ( "au_deçà" . ("ADV"))
+              
+                ("en_arrière" . ("ADV"))
+                ("en_avant" . ("ADV"))
+                ("en_bas" . ("ADV"))
+                ("en_cas" . ("ADV"))
+                ("en_catimini" . ("ADV"))
+                ("en_cours" . ("ADV"))
+                ("en_dehors" . ("ADV"))
+                ("en_delà" . ("ADV"))
+                ("en_effet" . ("ADV"))
+                ("en_fait" . ("ADV"))
+                ("en_haut" . ("ADV"))
+                ("en_loucedé" . ("ADV"))
+                ("en_outre" . ("ADV"))
+                ("en_plus" . ("ADV"))
+                ("en_quoi" . ("ADV"))
+                ("en_suspens" . ("ADV"))
+                ("en_tapinois" . ("ADV"))
+                ("en_tête" . ("ADV"))               
+                
+; avant ADV NOM
+; devant ADV NOM VER                 
+
+; à réviser
+
+
 
 ;; pb de posTlex pas de tokenizer
 ; ("Y_a" . ("ADV"))
@@ -1722,24 +1758,6 @@
 ("ecce_homo" . ("ADV"))
 ("eh_bien" . ("ADV"))
 
-("en_arrière" . ("ADV"))
-("en_avant" . ("ADV"))
-("en_bas" . ("ADV"))
-("en_cas" . ("ADV"))
-("en_catimini" . ("ADV"))
-("en_cours" . ("ADV"))
-("en_dehors" . ("ADV"))
-("en_delà" . ("ADV"))
-("en_effet" . ("ADV"))
-("en_fait" . ("ADV"))
-("en_haut" . ("ADV"))
-("en_loucedé" . ("ADV"))
-("en_outre" . ("ADV"))
-("en_plus" . ("ADV"))
-("en_quoi" . ("ADV"))
-("en_suspens" . ("ADV"))
-("en_tapinois" . ("ADV"))
-("en_tête" . ("ADV"))
 ("en_étant" . ("ADV"))
 ("entre_autres" . ("ADV"))
 ("est_elle" . ("VER"))
@@ -2129,7 +2147,7 @@
                       
 
 
-;en liaison avec  list_locution2
+;en liaison avec  list_locution_locution_part_1
 (set! locution_part_2_tab_default
   '(
     ("aujourd" . ("hui"))

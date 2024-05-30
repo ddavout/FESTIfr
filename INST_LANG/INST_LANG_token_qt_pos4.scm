@@ -66,10 +66,14 @@
                                     (format t "ici, dernier cas %s" p_name) 
                                     (if (or (member_string p_name (list "le" "la" "lui"))
                                             (member (string-after p_name "-") list_per_sujet_inv)
-                                            (and (set! token1 (item.next token))(member_string (french_downcase_string (item.name token-2))  (list "pas"))))
-                                            (begin
-                                                (format t "ici, dernier cas\n") 
-                                                (item.set_feat token 'pos "ADJ")))
+                                            (and 
+                                                (set! token-2 (item.prev token))
+                                                (set! p_p_name (french_downcase_string (item.name token-2)))
+                                                (member_string p_p_name  (list "pas"))))
+
+                                        (begin
+                                            (format t "ici, dernier cas  %s\n" p_name ) 
+                                            (item.set_feat token 'pos "ADJ")))
                                             )
                                     )))))
                 

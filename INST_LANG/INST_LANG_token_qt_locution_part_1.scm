@@ -11,6 +11,21 @@
 (defvar fdnaw)
 
 ; for list_locution_part_1
+; pas convaincu pour en 
+(defvar list_locution_part_1
+   '( "en" "tout_à" "tout_à_l" "tout_d" "chef_d" "aujour_d"))
+
+(set! locution_part_2_tab_default
+  '(
+    ("aujourd" . ("hui"))
+    ("chef_d" . ("oeuvre"))
+    ("tout_d" . ("abord"))
+    ("tout_à" . ("fait" "coup" "chacun"))
+    ("en_moins" . ("de" "d"))
+    ; test nécessité enregistremnt poslex
+    ; ("toute_d" . ("abord"))
+
+    ))
 (require 'INST_LANG_token_to_words_lists)
 ; todo CHGT nam1 NAME name2
 (define (locution_part_1 token name)

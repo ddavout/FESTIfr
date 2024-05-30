@@ -256,7 +256,7 @@
 ;   (lex.add.entry '("top_model" ((NOM -5.821) ) () ))
 ;   (lex.add.entry '("traveller's_chèque" ((NOM -6.163) ) () ))
 ;   (lex.add.entry '("tout_au_plus" ((ADV 0) ) () ))
-;   (lex.add.entry '("tout_autant" ((ADV 0) ) () ))
+;   (lex.add.entry '("tout_autant" ((ADV 0) ) () )); POSLEX
    (lex.add.entry '("tout_ou_rien" ((ADV -5.782) ) () ))
 ;   (lex.add.entry '("tout_à_chacun" ((ADV -5.782) ) () ))
 ;   (lex.add.entry '("tout_à_coup" ((ADV -5.782) ) () ))
