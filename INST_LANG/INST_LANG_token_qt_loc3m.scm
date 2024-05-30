@@ -15,7 +15,7 @@
   ; sont condamnés à disparaître name, n_name au tour suivant
   (let  (QT nam2 token1 nam2 token2 n_name n_n_name token1 token2 reponse)
     ; |tout|
-    (format t "\t\t\t\t\t\tici module loc3m sur %s\n" name)
+    ;(format t "\t\t\t\t\t\tici module loc3m sur %s\n" name)
     (if 
       (and
         ;**
@@ -38,7 +38,7 @@
         ;***
         (member_string (french_downcase_string nam2) french_multiple_word_expressions2)
         ;***
-        (or (format t "\t\t\t\t\t\tici module locution3m: on répond\n") t))
+        (or (format t "\t\t\t\t\t\tici module locution3m: on répond sur |%s|\n" name) t))
 
           (begin
             (format t "réponse pour QTlocution3\n")
@@ -56,7 +56,7 @@
                 )
           (set! result))
 
-    (format t "we leave the module loc3m\n")
+    (format t "we leave the module loc3m sur |%s|\n" name)
     reponse))
 
 

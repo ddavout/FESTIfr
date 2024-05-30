@@ -11,7 +11,7 @@
 (define (letter token name)
 
 	(let (QT reponse)
-    (format t "\t\t\t\t\t\tici module letter sur %s\n" name)
+    ;(format t "\t\t\t\t\t\tici module letter sur %s\n" name)
     (if 
     	(and 
 			(can_be_single_letter (french_downcase_string name))
@@ -22,7 +22,7 @@
 			; on exclut pour cause d'homophonie "M" M. Marguerite, Monsieur
 			; on ne lève pas l'ambiguité...
 			(not (string-equal (item.feat token 'punc ".") "."))
-			(or (format t "\t\t\t\t\t\tici module letter: on répond\n") t)
+			(or (format t "\t\t\t\t\t\tici module letter: on répond sur |%s|\n" name) t)
 			)
     	(begin 
     		(set! reponse t)
@@ -30,7 +30,7 @@
             (set! RU (append RU (list name QT ";")))
             (set! result (list name))))
 
-        (format t "we leave the module letter\n\n")
+        (format t "we leave the module letter sur |%s|\n" name)
        reponse))
 
 (provide 'INST_LANG_token_qt_letter)

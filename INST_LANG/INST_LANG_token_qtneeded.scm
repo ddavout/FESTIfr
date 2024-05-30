@@ -9,7 +9,7 @@
 
 ; toujours en direct : pb de création de variables pour patternmatch ?
 (defvar QTpos2 t); |donne|-moi -> donne VER; |donne|-m'en , grâce à  norm donne|-|m_en  -> donne VER *et* m_en PRO:per
-
+; ne traite pas toi-même ??
 ; changements de pos pour cause d'erreurs de poslex
 ; vérifier de temps en temps 
 ; les changements de pos affecte l'analyse grammaticale, à faire, en principe, au plus vite
@@ -20,9 +20,12 @@
 ; liste en defvar dans INST_LANG_token_qt_pos3; pas encore défaut dans word_lists
 
 
-(defvar QTpos4 t); homographe fier ; changement de pos ADJ->VER
+(defvar QTpos4 t); homographe fier non homosyntaxique ; changement de pos ADJ<->VER
+; exemple de changement de pos sur "place"
+
 
 (defvar QTpos5 t); homographe maintenant ; changement de pos
+
 ; maintenant su sol ADV versus VER (gérondif)
 ; |bouge|-toi, sors de ce |bouge|  NOM versus VER
 ; sens                             NAM/NOM versus VER 

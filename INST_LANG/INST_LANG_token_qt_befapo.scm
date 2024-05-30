@@ -12,7 +12,7 @@
 (define (befapo token name)
     (let (pos_sur QT reponse)
         ; pour n'importe on cherche à atteindre |n| 
-       (format t "\t\t\t\t\t\tici module befapo sur %s\n" name)
+       (format t "\t\t\t\t\t\tici module befapo sur |%s|\n" name)
        (if   
          (and
           (or (format t "ici module befapo: on vérifie point1\n") t)
@@ -33,7 +33,7 @@
                (if (member_string (french_downcase_string name) list_before_apo_ART_def )(set! pos_sur "ART_def"))
                )
           ; (equal? (item.feat token 'punc) 0); on ne sait jamais... hmm on pardonne
-          (or (format t "\t\t\t\t\t\tici module befapo: on répond\n") t)
+          (or (format t "\t\t\t\t\t\tici module befapo: on répond sur |%s|\n" name) t)
           
           )
           
@@ -65,7 +65,7 @@
 
             ))
 
-       (format t "we leave the module befapo\n")
+       (format t "we leave the module befapo sur |%s|\n" name)
        reponse))
 
 (provide 'INST_LANG_token_qt_befapo)

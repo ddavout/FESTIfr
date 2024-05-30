@@ -4047,7 +4047,7 @@
 (lex.add.entry '( "mobile" nil ((("m" "oh") 0) (("b" "i" "l") 0))))
 (lex.add.entry '( "mode" nil ((("m" "oh" "d") 0))))
 (lex.add.entry '( "moderne" nil ((("m" "oh") 0) (("d" "eh" "rh" "n") 0))))
-(lex.add.entry '( "moelle" nil ((("m" "eh" "l") 0))))
+(lex.add.entry '( "moelle" nil ((("m" "w" a "l") 0))))
 (lex.add.entry '( "moindre" nil ((("m" "w" "ehn" "d" "rh") 0))))
 (lex.add.entry '( "moire" nil ((("m" "w" "a" "rh") 0))))
 (lex.add.entry '( "moisir" nil ((("m" "w" "a") 0) (("z" "i" "rh") 0))))
@@ -4680,6 +4680,8 @@
 (lex.add.entry '( "regardè" nil ((("rh" "ae") 0) (("g" "a" "rh") 0) (("d" "eh") 0))))
 (lex.add.entry '( "regardé" nil ((("rh" "ae") 0) (("g" "a" "rh") 0) (("d" "e") 0))))
 (lex.add.entry '( "regrettant" nil ((("rh" "ae") 0) (("g" "rh" "e") 0) (("t" "ahn") 0))))
+(lex.add.entry '( "rehausse" nil ((("rh" "e") 0) ((h o s) 0))))
+
 (lex.add.entry '( "rein" nil ((("rh" "ae") 0) (("ehn") 0))))
 (lex.add.entry '( "reine" nil ((("rh" "ae" "n") 0))))
 (lex.add.entry '( "reine" nil ((("rh" "eh" "n") 0))))

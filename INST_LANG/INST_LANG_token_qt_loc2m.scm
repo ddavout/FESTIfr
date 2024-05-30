@@ -20,7 +20,7 @@
   " "
   ;;;
   (let (fdnaw (french_downcase_string name) token1 n_name nam1 pos_sur QT reponse)
-    (format t "\t\t\t\t\t\tici module loc2m sur %s\n" name)
+    (format t "\t\t\t\t\t\tici module loc2m sur |%s|\n" name)
     (if 
       (and
         ; item.next  Return the next ITEM in the **current** relation, or nil if there is none
@@ -43,7 +43,7 @@
         ;**
         ; et non tab_lookup nam1 qui donnerait nil pour des locutions au POS non "certain"
         (member_string nam1 (tab_getkeys locution2_tab))
-        (or (format t "\t\t\t\t\t\tici module loc2m: on répond\n") t)
+        (or (format t "\t\t\t\t\t\tici module loc2m: on répond |%s|\n" name) t)
         
         )
           (begin

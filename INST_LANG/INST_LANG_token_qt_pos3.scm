@@ -13,7 +13,7 @@
 " "
     (let 
         ((fdnaw (french_downcase_string name)) QT reponse)
-        (format t "\t\t\t\t\t\tici module pos3 sur %s\n" name)
+        (format t "\t\t\t\t\t\tici module pos3 sur |%s|\n" name)
         (if 
           (and
             ; |sans| ferment
@@ -34,7 +34,7 @@
             (member_string (french_downcase_string n_name) list_qt_pos3_pre_homo_NOM)
             ;***            
             (or (format t "locution list_qt_pos3: ok3\n") t)
-            (or (format t "\t\t\t\t\t\tici module pos3: on répond\n") t))
+            (or (format t "\t\t\t\t\t\tici module pos3: on répond |%s|\n" name) t))
 
             
                 (begin

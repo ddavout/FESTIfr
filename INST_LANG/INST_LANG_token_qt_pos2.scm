@@ -15,7 +15,7 @@
 (define (pos2 token name)
 " "
     (let ( (fdnaw (french_downcase_string name)) QT reponse)
-    (format t "\t\t\t\t\t\tici module pos2 sur |%s|\n" name)
+    ;(format t "\t\t\t\t\t\tici module pos2 sur |%s|\n" name)
         (if 
             (and 
                 ;**
@@ -34,7 +34,7 @@
                 ;**/
                 (or ( format t "QTpos2 h1 4 _%s_, h2 _%s_\n" h1 h2) t)
                 ; nil
-                (or (format t "\t\t\t\t\t\tici module pos2: on répond\n") t))
+                (or (format t "\t\t\t\t\t\tici module pos2: on répond sur |%s|\n" name) t))
 
 
             (begin 
@@ -62,7 +62,7 @@
  
 
 
-            (format t "we leave the module pos2\n")
+            (format t "we leave the module pos2 sur |%s|\n" name)
            reponse))
 
 (provide 'INST_LANG_token_qt_pos2)

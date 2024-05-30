@@ -1062,10 +1062,10 @@
 ;; tiret grammatical
 (defvar list_after_tiret 
   (list 
-    ;"même" ; NON vus comme ADV 
+    "même" ; NON vus comme ADV 
     ;"ci" ;NON
     ;"là" ;NON
-    ; "mêmes" ; NON
+    "mêmes" ; NON
     
     "elle" ;; voit-elle ?
     "elles" 

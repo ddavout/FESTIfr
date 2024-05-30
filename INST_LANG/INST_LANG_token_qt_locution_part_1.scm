@@ -20,7 +20,7 @@
   ; sont condamnés à disparaître name, n_name au tour suivant
   (let  (QT nam1 token1 nam2 token2 n_name n_n_name token1 token2 reponse)
     ; |tout|
-    (format t "\t\t\t\t\t\tici module locution_part_1 sur %s\n" name)
+    ;(format t "\t\t\t\t\t\tici module locution_part_1 sur %s\n" name)
     (if 
       (and
         ;**
@@ -50,7 +50,7 @@
         (member_string (french_downcase_string nam1) list_locution_part_1)
         ;***
 
-        (or (format t "\t\t\t\t\t\tici module locution_part_1: on répond\n") t))
+        (or (format t "\t\t\t\t\t\tici module locution_part_1: on répond sur |%s|\n" name) t))
 
         (begin
           (format t "réponse pour QTlocution_part_1\n")
@@ -107,7 +107,7 @@
 
          ;(set! result (list "raté"))
          (set! result)))
-    (format t "we leave the module locution_part_1\n")
+    (format t "we leave the module locution_part_1 sur |%s|\n" name)
     reponse))
 
 

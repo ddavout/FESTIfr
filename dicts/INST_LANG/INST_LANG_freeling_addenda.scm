@@ -102,6 +102,7 @@
 (lex.add.entry '("Àverell" ((NAM 0))())); juste pour test de "À"
 (lex.add.entry '("États_généraux" ((NAM 0))())); ; juste pour test
 (lex.add.entry '("Arthur" ((NAM 0))()));
+(lex.add.entry '("Artaban" ((NAM 0))()));
 (lex.add.entry '("êtes" ((AUX -1.987)(VER -2.257))())); pour satisfaire is_in_poslex ? erreur
 (lex.add.entry '("fût_ce" ((VER 0))())); 
 

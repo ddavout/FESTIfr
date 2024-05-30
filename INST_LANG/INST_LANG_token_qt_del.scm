@@ -6,10 +6,10 @@
 (define (del token name)
 "si le token d'avant est marqué, on exécute"
 (let (QT reponse)
-    (format t "\t\t\t\t\t\tici module del sur %s\n" name)
+    (format t "\t\t\t\t\t\tici module del sur |%s|\n" name)
         (if (and 
                 (string-equal (item.feat token 'delete) "next")
-                (or (format t "\t\t\t\t\t\tici module del: on répond\n") t))
+                (or (format t "\t\t\t\t\t\tici module del: on répond |%s|\n" name) t))
             (begin
                 (set! reponse t)
                 (set! QT "del" )

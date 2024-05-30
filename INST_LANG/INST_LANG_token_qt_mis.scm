@@ -8,18 +8,18 @@
 (define (mis token name)
 
     (let (fdnaw (french_downcase_string name) QT reponse)
-    (format t "\t\t\t\t\t\tici module mis sur %s" name)
+    ; (format t "\t\t\t\t\t\tici module mis sur %s" name)
     ; module ramasse-miette
     (if t
         (begin
-            (or (format t "\t\t\t\t\t\tici module mis: on répond\n") t)
+            (or (format t "\t\t\t\t\t\tici module mis: on répond sur |%s|\n" name) t)
             (set! reponse t)
             (set! QT "QTmis" )
             (set! RU (append RU (list name QT ";")))
 
             (set! result (list "inconnu"))))
 
-    (format t "we leave the module mis\n")
+    (format t "we leave the module mis sur |%s|\n" name)
    ; hors debug: c'est la dernière chance d'agir, pas besoin de mettre reponse à true 
    reponse))
 (provide 'INST_LANG_token_qt_mis)

@@ -12,7 +12,7 @@
 ; for is_normal
 (require 'INST_LANG_token)
 (define (normal token name)
-  (format t "\t\t\t\t\t\tici module normal sur %s\n" name)
+  ;(format t "\t\t\t\t\t\tici module normal sur %s\n" name)
   (let ( (fdnaw (french_downcase_string name)) QT reponse)
     (set! reponse nil); (to be clear ! hidden in the let ... par défaut nil
     (format t "ici module normal\n")
@@ -33,13 +33,13 @@
           ; ou même à la fin de INST_LANG_norm ??
           ;(set! result (list (string-replace name "-" special_slice_char))))
           (set! result (list name))
-          (or (format t "\t\t\t\t\t\ici module normal: on répond\n") t)
+          (or (format t "\t\t\t\t\t\ici module normal: on répond sur |%s|\n" name) t)
           ) ; hmm
 
           )
       ))
 
-     (format t "we leave the module normal\n")
+     (format t "we leave the module normal sur |%s|\n" name)
             
     reponse))
 

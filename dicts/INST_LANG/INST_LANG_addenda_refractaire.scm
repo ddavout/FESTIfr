@@ -473,7 +473,8 @@
 
 
 (lex.add.entry '( "fier_ADJ" "ADJ" ((("f" "j" "eh" "rh")0))))
-(lex.add.entry '( "fier_VER" "VER" ((("f" "j" "e")0)))); au cas où
+(lex.add.entry '( "fiers_ADJ" "ADJ" ((("f" "j" "eh" "rh")0))))
+(lex.add.entry '( "fiers_VER" "VER" ((("f" "j" "e")0)))); au cas où
 
 
 (lex.add.entry '( "convient" nil (((k ohn)0)((v j ehn)0)))); pb homographes ;(
