@@ -25,6 +25,7 @@
 
 
 (defvar QTpos5 t); homographe maintenant ; changement de pos
+; non fini donc non mis en oeuvre car pas d'exemple contrariant maintenant, tenat
 
 ; maintenant su sol ADV versus VER (gérondif)
 ; |bouge|-toi, sors de ce |bouge|  NOM versus VER

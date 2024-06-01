@@ -1233,7 +1233,7 @@
 (lex.add.entry '("tempérament" nil ((("t" "ahn") 0) (("p" "e") 0) (("rh" "a") 0) (("m" "ahn") 0))))
 (lex.add.entry '("tenu" nil ((("t" "ae") 0) (("n" "y") 0))))
 (lex.add.entry '("terminé" nil ((("t" "eh" "rh") 0) (("m" "i") 0) (("n" "e") 0))))
-(lex.add.entry '("terre" nil ((("t" "e" "rh") 0))))
+(lex.add.entry '("terre" nil ((("t" "eh" "rh") 0))))
 (lex.add.entry '("terrestre" nil ((("t" "e") 0) (("rh" "eh" "s" "t" "rh") 0))))
 (lex.add.entry '("terreur" nil ((("t" "e") 0) (("rh" "oe" "rh") 0))))
 (lex.add.entry '("terroriste" nil ((("t" "e") 0) (("rh" "oh") 0) (("rh" "i" "s" "t") 0))))

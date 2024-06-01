@@ -1,6 +1,38 @@
 (defvar verbose_addendas)
 (if verbose_addendas (format t "addenda_refractaire.scm loaded"))
 (lex.add.entry '( "" nil nil))
+;; à ranger ici avant migration possible vers poslex ou éliminaion...
+; ( "m_en" ( ( PRO:per 0) )()) ; SIWIS                   
+; ( "m_y" ( ( PRO:per -2.912) )()) ; SIWIS
+; ( "t_en" ( ( PRO:per 0) )())
+; ( "t_à" ( ( PRE -0.804) )()) ; addenda neut_parl_s06_0669       
+; ( "n_en" (( ADV -2.384))()) ; SIWIS                   
+; ( "n_es" (( VER -2.384))()) ; neut_book_s01_0006                   
+; ( "n_est" (( VER -2.384))()) 
+; ( "n_est_pas" (( VER -2.384))()) ; SIWIS                   
+; ( "n_importe_comment" (( ADV 0))()) 
+; ( "n_importe_où" (( ADV 0))()) 
+; ( "n_importe_quel" (( ART:ind 0))()) 
+; ( "n_importe_quelle" (( ART:ind 0))()) ; SIWIS                   
+; ( "n_importe_qui" (( PRO:ind 0))()) 
+; ( "n_ont" (( AUX -1.401) ( VER -2.707))()) ; SIWIS                
+; ( "n_y" (( ADV -4.000))()) ;                    
+; ( "n_y_a" (( AUX -1.000) ( VER -1.000))()) ; neut_book_s01_0119                
+; ( "n_y_en" (( ADV -4.000))()) ;                    
+; ( "n_y_en_a" (( AUX -0.616) ( VER -1.569))()) ; neut_book_s01_0119                
+; ( "n_étaient" (( VER -2.384))()) 
+; ( "n_était" (( VER -2.384))()) ; SIWIS 
+
+; ( "et_caetera" ( ( ADV -5.509) )()) 
+; ( "et_cetera" ( ( ADV -4.893) )()) 
+; ( "et_hop" ( ( ONO -0.524) )()) 
+
+
+; ( "_y" ( ( ADV -4.953) ( PRO:per -5.953) )()) ; artifice addenda sans liaison ; TODO compléter; vérifier         
+; ( "a_" ( ( AUX -0.616) ( VER -1.569) )()) ; SIWIS                
+; ( "a_t_elle" ( ( AUX -0.616) ( VER -0.616) )()) ; SIWIS                
+; ( "a_t_il" ( ( AUX -0.516) ( VER -0.516) )()) ; SIWIS    
+
 ;;;;;
 (lex.add.entry '( "pour" nil ((("p" "u" "rh") 0))))
 (lex.add.entry '( "aprè" nil ((("a") 0) (("p" "rh" "eh") 0))))
@@ -84,6 +116,7 @@
 (lex.add.entry '( "as_AUX" AUX ((("a")0))))
 (lex.add.entry '( "ai" nil ((("eh")0))))
 (lex.add.entry '( "auron" nil ((("o") 0) (("rh" "ohn") 0))))
+(lex.add.entry '( "a_t_elle" nil ((("a" )0) (("t" eh "l") 0))))
 (lex.add.entry '( "aura_t_il" nil ((("o") 0) (("rh" "a") 0) (("t" "i" "l") 0))))
 (lex.add.entry '( "es_AUX" AUX ((("eh")0))))
 (lex.add.entry '( "es_VER" VER ((("eh")0))))
@@ -118,6 +151,7 @@
 (lex.add.entry '( "cette" nil (((s eh t)0))))
 (lex.add.entry '( "c_en" nil ((("s" "ahn") 0))))
 (lex.add.entry '( "ce_PRO:dem" PRO:dem ((("s" "ae") 0))))  
+(lex.add.entry '( "ce_ADJ:dem" ADJ:dem ((("s" "ae") 0))))  
 (lex.add.entry '( "ces_ADJ:dem" ADJ:dem ((("s" "e")0))))
 ; ne suffit pas(lex.add.entry '( "ceux-ci" nil ((("s" "eu")0)(("s" "i")0))))
 (lex.add.entry '( "ceux-ci" nil ((("s" "eu")0)(("s" "i")0))))
@@ -480,7 +514,7 @@
 (lex.add.entry '( "convient" nil (((k ohn)0)((v j ehn)0)))); pb homographes ;(
 (lex.add.entry '( "convient_vie" nil ((("k" "ohn") 0)(("v" "i") 0)))); ils la convient
 (lex.add.entry '( "convient_vient" nil ((("k" "ohn") 0)(("v" "i") 0)))); il en convient
-
+; TODO revient, survient
 ;TODO ?
 (lex.add.entry '( "sens_NOM" NOM ((("s" "ahn" "s") 0))))
 (lex.add.entry '( "sens_VER" VER ((("s" "ahn") 0))))
@@ -499,6 +533,7 @@
 (lex.add.entry '( "oeufs_NOM" NOM  ((("eu") 0))))
 (lex.add.entry '( "boeufs_NOM" NOM  (((b "eu") 0))))
 (lex.add.entry '( "neuf_ADJ" "ADJ" ((("n" "oe" f) 0))))
+(lex.add.entry '( "hélas_NOM" "NOM" (((e)0)((l a s)0)))); hélas VER
 (lex.add.entry '( "hélas_ONO" "ONO" (((e)0)((l a s)0)))); hélas VER
 (lex.add.entry '( "faciès_NOM" NOM ((("f" "a") 0) (("s" "j" "eh" "s") 0))))
 
@@ -514,33 +549,33 @@
 
 ; pour cause de wordroot insuffisant (petit "radical" notamment)
 ; à intégrer dans le dico car pas d'homographes
-(lex.add.entry '( "abstient" nil (((a b s)0)((t j ehn)0))))
-(lex.add.entry '( "advient" nil (((a d)0)((v j ehn)0)))); pb homographes ;(
-(lex.add.entry '( "appartient" nil (((a)0)((p a rh)0)((t j ehn)0))))
-(lex.add.entry '( "circonvient" nil (((s i rh)0)((k ohn)0)((v j ehn)0))))
-(lex.add.entry '( "contient" nil (((k ohn)0)((t j ehn)0))))
-(lex.add.entry '( "contrevient" nil (((k ohn)0)((t rh ae)0)((v j ehn)0))))
-(lex.add.entry '( "convient" nil (((k ohn)0)((v j ehn)0))));
-(lex.add.entry '( "devient" nil (((d ae)0)((v j ehn)0))))
-(lex.add.entry '( "détient" nil (((d e)0)((t j ehn)0))))
-(lex.add.entry '( "intervient" nil (((ehn)0)((t eh rh)0)((v j ehn)0))))
-(lex.add.entry '( "maintient" nil (((m ehn)0)((t j ehn)0))))
-(lex.add.entry '( "obtient" nil (((oh b)0)((t j ehn)0))))
-(lex.add.entry '( "parvient" nil (((p a rh)0)((v j ehn)0))))
-(lex.add.entry '( "provient" nil (((p rh o)0)((v j ehn)0))))
-(lex.add.entry '( "prévient" nil (((p rh e)0)((v j ehn)0))))
+(lex.add.entry '( "abstient_VER" VER (((a b s)0)((t j ehn)0))))
+(lex.add.entry '( "advient_VER" VER (((a d)0)((v j ehn)0)))); pb homographes ;(
+(lex.add.entry '( "appartient_VER" VER (((a)0)((p a rh)0)((t j ehn)0))))
+(lex.add.entry '( "circonvient_VER" VER (((s i rh)0)((k ohn)0)((v j ehn)0))))
+(lex.add.entry '( "contient_VER" VER (((k ohn)0)((t j ehn)0))))
+(lex.add.entry '( "contrevient_VER" VER (((k ohn)0)((t rh ae)0)((v j ehn)0))))
+; homo (lex.add.entry '( "convient" nil (((k ohn)0)((v j ehn)0))));
+(lex.add.entry '( "devient_VER" VER (((d ae)0)((v j ehn)0))))
+(lex.add.entry '( "détient_VER" VER (((d e)0)((t j ehn)0))))
+(lex.add.entry '( "intervient_VER" VER (((ehn)0)((t eh rh)0)((v j ehn)0))))
+(lex.add.entry '( "maintient_VER" VER (((m ehn)0)((t j ehn)0))))
+(lex.add.entry '( "obtient_VER" VER (((oh b)0)((t j ehn)0))))
+(lex.add.entry '( "parvient_VER" VER (((p a rh)0)((v j ehn)0))))
+(lex.add.entry '( "provient_VER" VER (((p rh o)0)((v j ehn)0))))
+(lex.add.entry '( "prévient_VER" VER (((p rh e)0)((v j ehn)0))))
 (lex.add.entry '( "qu_obtient_elle" nil (((k oh p)0)((t j ehn)0)((t eh l)0))))
 (lex.add.entry '( "qu_obtient_il" nil (((k oh p)0) ((t j ehn)0) ((t i l)0))))
 (lex.add.entry '( "qu_obtient_on" nil (((k oh p)0)((t j ehn)0)((t ohn)0))))
-(lex.add.entry '( "redevient" nil (((rh ae)0)((d ae)0)((v j ehn)0))))
-(lex.add.entry '( "retient" nil (((rh ae)0)((t j ehn)0))))
-(lex.add.entry '( "revient" nil (((rh ae)0)((v j ehn)0)))); 
-(lex.add.entry '( "soutient" nil (((s u)0)((t j ehn)0))))
-(lex.add.entry '( "souvient" nil (((s u)0)((v j ehn)0))))
-(lex.add.entry '( "subvient" nil (((s y b)0)((v j ehn)0))))
-(lex.add.entry '( "survient" nil (((s y rh)0)((v j ehn)0))));
-(lex.add.entry '( "tient" nil (((t j ehn)0))))
-(lex.add.entry '( "vient" nil (((v j ehn)0)))); 
+(lex.add.entry '( "redevient_VER" VER (((rh ae)0)((d ae)0)((v j ehn)0))))
+(lex.add.entry '( "retient_VER" VER (((rh ae)0)((t j ehn)0))))
+; homo (lex.add.entry '( "revient" nil (((rh ae)0)((v j ehn)0)))); 
+(lex.add.entry '( "soutient_VER" VER (((s u)0)((t j ehn)0))))
+(lex.add.entry '( "souvient_VER" VER (((s u)0)((v j ehn)0))))
+(lex.add.entry '( "subvient_VER" VER (((s y b)0)((v j ehn)0))))
+; homo (lex.add.entry '( "survient" nil (((s y rh)0)((v j ehn)0))));
+(lex.add.entry '( "tient_VER" VER (((t j ehn)0))))
+; homo (lex.add.entry '( "vient" nil (((v j ehn)0)))); 
 
 (lex.add.entry '( "convainc" nil ((("k" "ohn") 0) (("v" "ehn") 0))))
 (lex.add.entry '( "convainc_t_elle" nil ((("k" "ohn") 0) (("v" "ehn") 0) (("t" "eh" "l") 0))))
@@ -567,11 +602,13 @@
 (lex.add.entry '( "di" nil (((d i)0))))
 (lex.add.entry '( "dis_je" nil (((d i zh)0))))
 (lex.add.entry '( "dirai" nil (((d i)0)((rh e)0))))
+(lex.add.entry '( "diré" nil (((d i)0)((rh e)0))))
 (lex.add.entry '( "disai" nil (((d i)0)((z e)0))))
 (lex.add.entry '( "disais" nil (((d i)0)((z eh)0))))
 (lex.add.entry '( "dirais" nil (((d i)0)((rh eh)0))))
 (lex.add.entry '( "diraient" nil (((d i)0)((rh eh)0))))
 (lex.add.entry '( "dirait" nil (((d i)0)((rh eh)0))))
+(lex.add.entry '( "dirè" nil (((d i)0)((rh eh)0))))
 (lex.add.entry '( "dit" nil (((d i)0))))
 (lex.add.entry '( "dût" nil (((d y)0))))
 (lex.add.entry '( "fit" nil (((f i)0))))

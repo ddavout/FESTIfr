@@ -1,4 +1,4 @@
-; INST_LANG_token_qt_pos
+; INST_LANG_token_qt_pos2
 
 (defvar RU)
 (defvar result)

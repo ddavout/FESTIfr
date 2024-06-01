@@ -23,6 +23,8 @@
 (lex.add.entry '("t_ils" ((PRO:per 0)) ())); QTpos2
 (lex.add.entry '("t_elles" ((PRO:per 0)) ())); QTpos2
 (lex.add.entry '("t_ils" ((PRO:per 0)) ())); QTpos2
+(lex.add.entry '("trop_d" ((ART:ind 0)) ())); QTbefapo
+
 
 ; symbols hors ponctuation et (y compris double bits pour voir)
 ; TODO déclaration dans via token.prepunctuation ?
@@ -106,6 +108,77 @@
 (lex.add.entry '("êtes" ((AUX -1.987)(VER -2.257))())); pour satisfaire is_in_poslex ? erreur
 (lex.add.entry '("fût_ce" ((VER 0))())); 
 (lex.add.entry '("pédigree" ((NOM 0))())); 
+
+; à migrer
+
+; ( "avant_coureur" ( ( ADJ -5.862) )()) 
+; ( "avant_coureurs" ( ( ADJ -5.436) ( NOM -6.561) )())               
+; ( "avant_dernier" ( ( ADJ -5.297) ())               
+; ( "avant_dernière" ( ( ADJ -5.225) )())               
+; ( "avant_gardiste" ( ( ADJ -5.260) ( NOM -6.385) )())               
+; ( "avant_gardistes" ( ( ADJ -5.862) ( NOM -6.561) )())               
+; ( "avant_gauche" ( ( ADJ -6.038) ( NOM -6.561)()) 
+; ( "avant_gauches" ( ( ADJ -6.038) ( NOM -6.561)()) 
+; ( "avant_droit" ( ( ADJ -6.038) ( NOM -6.561)()) 
+; ( "avant_droits" ( ( ADJ -6.038) ( NOM -6.561)()) 
+; ( "avant_première" ( ( NOM -5.520) )())               
+; ( "avant_premières" ( ( NOM -5.520) )())               
+; ( "cinquante_et_un" ( ( PRO:ind -5.783) ( ADJ:num -3.256) )())               
+; ( "cinquante_et_une" ( ( PRO:ind -5.783) ( ADJ:num -3.256) )())               
+; ( "court_circuit ( ( NOM -6.385) )())               
+; ( "court_circuits" ( ( NOM -6.385) )())               
+; ( "court_vêtu" ( ( ADJ -6.038) )()) 
+; ( "court_vêtue" ( ( ADJ -6.038) )()) 
+; ( "est_africain" ( ( ADJ -6.038) ( NOM -6.038) )()) 
+; ( "est_africaine" ( ( ADJ -6.038) ( NOM -6.038) )()) 
+; ( "est_africaine" ( ( ADJ -6.038) ( NOM -6.038) )()) 
+; ( "est_africaines" ( ( ADJ -6.038) ( NOM -6.038) )()) 
+; ( "est_africains" ( ( ADJ -6.038) ( NOM -6.038) )()) 
+
+; ( "est_allemand" ( ( ADJ -6.038) ( NOM -6.038) )()) 
+; ( "est_allemande" ( ( ADJ -6.038) ( NOM -6.038) )()) 
+; ( "est_allemande" ( ( ADJ -6.038) ( NOM -6.038) )()) 
+; ( "est_allemandes" ( ( ADJ -6.038) ( NOM -6.038) )()) 
+; ( "est_allemands" ( ( ADJ -6.038) ( NOM -6.038) )()) 
+
+
+; ( "est_ouest" ( ( ADJ -5.260) )()) 
+; ( "fait_maison" ( ( ADJ -6.561) )())
+; ( "fait_tout" ( ( NOM -6.561) )())
+; ( "la_plupart_de" ( ( ADJ:ind -2.730) )()) 
+; ( "la_plupart_des" ( ( ADJ:ind -2.063) )()) 
+; ( "la_plupart_du" ( ( ADJ:ind -2.641) )()) 
+; ( "mort_né" ( ( ADJ -4.795) ( NOM -6.017) )())               
+; ( "mort_née" ( ( ADJ -4.795) ( NOM -6.017) )())               
+; ( "mort_nées" ( ( ADJ -4.795) ( NOM -6.017) )())               
+; ( "mort_nés" ( ( ADJ -4.795) ( NOM -6.017) )())               
+
+
+; ( "mort_vivant" ( ( ADJ -5.640) ( NOM -5.561) )())               
+; ( "mort_vivante" ( ( ADJ -5.640) ( NOM -5.561) )())               
+; ( "mort_vivantes" ( ( ADJ -5.640) ( NOM -5.561) )())               
+; ( "mort_vivants" ( ( ADJ -5.640) ( NOM -5.561) )())               
+
+; ( "nonante_et_un" ( ( PRO:ind -5.783) ( ADJ:num -3.256) )())               
+; ( "nonante_et_une" ( ( PRO:ind -5.783) ( ADJ:num -3.256) )())               
+; ( "octante_et_un" ( ( PRO:ind -5.783) ( ADJ:num -3.256) )())               
+; ( "octante_et_une" ( ( PRO:ind -5.783) ( ADJ:num -3.256) )())  
+; ( "ouest_africain" ( ( ADJ -6.038) ( NOM -6.038) )()) 
+; ( "ouest_africaine" ( ( ADJ -6.038) ( NOM -6.038) )()) 
+; ( "ouest_africaine" ( ( ADJ -6.038) ( NOM -6.038) )()) 
+; ( "ouest_africaines" ( ( ADJ -6.038) ( NOM -6.038) )()) 
+; ( "ouest_africains" ( ( ADJ -6.038) ( NOM -6.038) )()) 
+
+; ( "ouest_allemand" ( ( ADJ -6.038) ( NOM -6.038) )()) 
+; ( "ouest_allemande" ( ( ADJ -6.038) ( NOM -6.038) )()) 
+; ( "ouest_allemande" ( ( ADJ -6.038) ( NOM -6.038) )()) 
+; ( "ouest_allemandes" ( ( ADJ -6.038) ( NOM -6.038) )()) 
+; ( "ouest_allemands" ( ( ADJ -6.038) ( NOM -6.038) )()) 
+
+; ( "petit_bourgeois" ( ( ADJ -5.260) ( NOM -6.017) )())               
+; ( "petite_bourgeoise" ( ( ADJ -5.260) ( NOM -6.017) )())               
+; ( "petites_bourgeoises" ( ( ADJ -5.260) ( NOM -6.017) )())  
+
 
 
 
@@ -375,6 +448,8 @@
 (lex.add.entry '("Georges" ((NAM 0))()))
 (lex.add.entry '("Gers" ((NAM 0))()))
 (lex.add.entry '("Gibraltar" ((NAM 0))()))
+(lex.add.entry '("Gille" ((NAM 0))()))
+(lex.add.entry '("Gillette" ((NAM 0))()))
 (lex.add.entry '("Girardin" ((NAM 0))()))
 (lex.add.entry '("Glenarvan" ((NAM 0))()))
 (lex.add.entry '("Goasguen" ((NAM 0))()))
@@ -396,6 +471,7 @@
 (lex.add.entry '("Greff" ((NAM 0))()))
 (lex.add.entry '("Grenelle" ((NAM 0))()))
 (lex.add.entry '("Griffe" ((NAM 0))()))
+(lex.add.entry '("Grisette" ((NAM 0))()))
 (lex.add.entry '("Grèce" ((NAM 0))()))
 (lex.add.entry '("Guadeloupe" ((NAM 0))()))
 (lex.add.entry '("Guaino" ((NAM 0))()))
@@ -544,6 +620,7 @@
 (lex.add.entry '("Marie_Line" ((NAM 0))())) ; SIWIS
 (lex.add.entry '("Mariton" ((NAM 0))()))
 (lex.add.entry '("Marleix" ((NAM 0))()))
+(lex.add.entry '("Marco" ((NAM 0))()))
 (lex.add.entry '("Maroc" ((NAM 0))()))
 (lex.add.entry '("Marseille" ((NAM 0))()))
 (lex.add.entry '("Martin" ((NAM 0))()))

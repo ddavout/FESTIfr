@@ -21,6 +21,7 @@
     ("chef_d" . ("oeuvre"))
     ("tout_d" . ("abord"))
     ("tout_à" . ("fait" "coup" "chacun"))
+    ("trop_d" . ())
     ("en_moins" . ("de" "d"))
     ; test nécessité enregistremnt poslex
     ; ("toute_d" . ("abord"))

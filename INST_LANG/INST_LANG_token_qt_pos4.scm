@@ -21,7 +21,7 @@
 "ex je suis |fier|, se fier, suis-je "
     (let 
         ((fdnaw (french_downcase_string name)) QT reponse)
-        ;(format t "\t\t\t\t\t\tici module pos4 sur %s\n" name)
+        (format t "\t\t\t\t\t\tici module pos4 sur %s\n" name)
         (if 
           (and
             (set! token-1 (item.prev token))

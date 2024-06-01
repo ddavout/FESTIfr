@@ -6,7 +6,7 @@
 (define (del token name)
 "si le token d'avant est marqué, on exécute"
 (let (QT reponse)
-    (format t "\t\t\t\t\t\tici module del sur |%s|\n" name)
+    (format t "\t\t\t\t\t\tici module del sur |%s| %l\n" name (item.feat token 'delete))
         (if (and 
                 (string-equal (item.feat token 'delete) "next")
                 (or (format t "\t\t\t\t\t\tici module del: on répond |%s|\n" name) t))
@@ -16,6 +16,9 @@
                 (set! RU (append RU (list name QT ";")))
                 ; (set! result (list "effacé" name)) 
                 (set! result) 
+                (format t " (item.feat token 'n.name) %l\n"  (item.feat token 'n.name))
+                ; (if (string-equal (na (item.feat token 'n.name)) "important")
+                ;     (format t "AGIR ciciiiii\n"))
                 ;;(item.set_feat token 'prepunctuation "")
                 ;;(item.set_feat token 'punc nil)
             ))

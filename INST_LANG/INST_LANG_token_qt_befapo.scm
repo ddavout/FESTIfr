@@ -9,10 +9,52 @@
 ; for na, french_downcase_string
 (require 'INST_LANG_utils)
 
+(defvar fdnaw)
+; LITTRE L'e final de quelque ne s'élide que devant un, une : quelqu'un, quelqu'une, hmm
+; populaire; quelque espoir nécessitera posTlex (le pos n'est pas à changer)
+; }{(0 k  eh  l )(0 k  ae )}{(0 eh  s )(0 p  w  a  rh )} -> }{(0 k  eh  l )(0 k  eh  s )(0 p  w  a  rh )}
+
+; LITTRE L'e de quoique ne s'élide que lorsqu'il est suivi de il, ils, elle, elles, on, un, une. 
+; Mais on écrit sans apostrophe : Quoique amis, ils ne se voient pas souvent. -> posTlex
+; conjonction adversative
+(set! list_before_apo_div (list "l" "d"  "qu" "presqu"))
+; pas d Segmentation default
+; "trop_d" géré par QTlocution_part_1
+(set! list_before_apo_ART_ind (list "assez_d" "quelqu" "peu_d")) ; def ou ind
+; pas l Segmentation fault l'important
+(set! list_before_apo_ART_def) ; def ou ind
+(set! list_before_apo_ART (append list_before_apo_ART_ind list_before_apo_ART_def))
 (define (befapo token name)
     (let (pos_sur QT reponse)
         ; pour n'importe on cherche à atteindre |n| 
-       (format t "\t\t\t\t\t\tici module befapo sur |%s|\n" name)
+       (format t "\t\t\t\t\t\tici module befapo sur |%s|\n" fdnaw)
+       (if (member_string fdnaw list_before_apo_VER )
+                (set! pos_sur "VER")
+                (begin 
+                  (if (member_string fdnaw list_before_apo_CON )
+                    (begin 
+                      (set! pos_sur "CON"))
+                    (begin
+                        (if (member_string fdnaw list_before_apo_PRE )
+                          (begin
+                            (set! pos_sur "PRE"))
+                          (begin 
+                            (if (and (member_string fdnaw list_before_apo_ART_def ) t)
+                              (begin
+                                (set! token1 (item.next token))
+                                (if (not (null? token1))
+                                  (begin 
+                                    (set! token2 (item.next token1))
+                                    (if (member_string (item.name token2) (list "serait" "est" "c" "s" "sera" "était" "aurait" "aura" "peut" "pourrait" "pourra"))
+                                      (item.set_feat token2 'pos "NOM")))))))
+
+
+
+                                
+                              (begin
+                                (if (member_string fdnaw list_before_apo_ART_ind )
+                                  (set! pos_sur "ART_ind"))))))))
+             
        (if   
          (and
           (or (format t "ici module befapo: on vérifie point1\n") t)
@@ -24,18 +66,11 @@
           (string-equal (string-car (item.feat token 'n.whitespace)) "\'")
           (or (format t "\t\t\t\t\t\tici module befapo: on vérifie point3\n") t)
           
-          (or (member_string (french_downcase_string name) list_before_apo_div)
-               (if (member_string (french_downcase_string name) list_before_apo_VER )(set! pos_sur "VER"))
-               (if (member_string (french_downcase_string name) list_before_apo_CON )(set! pos_sur "CON"))
-               (if (member_string (french_downcase_string name) list_before_apo_PRE )(set! pos_sur "PRE"))
-               ; (if (member_string (french_downcase_string name) list_before_apo_NOM )(set! pos_sur "NOM"))
 
-               (if (member_string (french_downcase_string name) list_before_apo_ART_def )(set! pos_sur "ART_def"))
-               )
           ; (equal? (item.feat token 'punc) 0); on ne sait jamais... hmm on pardonne
-          (or (format t "\t\t\t\t\t\tici module befapo: on répond sur |%s|\n" name) t)
+          (or (format t "\t\t\t\t\t\tici module befapo: on répond avec pos_sur %l pour |%s|\n" pos_sur name) t))
           
-          )
+          
           
           (begin 
             (format t "réponse pour QTbefapo\n")
@@ -50,11 +85,9 @@
             (item.set_name (item.next token) name1)
             ; si on n'est pas sûr, on se fie à poslex
             (if pos_sur (item.set_feat (item.next token) 'pos pos_sur))
-            
+            (format t "QTbefapo pos_sur %s\n" pos_sur)
             (item.set_feat (item.next token) 'whitespace "")
-            (if pos_sur
-              (or (format t "ici module befapo: on a chercher à imposer le POS:%s à %s\n" pos_sur name1 ) t)
-              (or (format t "ici module befapo: on n'a pas de POS préféré pour %s\n" name1 ) t))
+
             ; on passe le relais ... au suivant, avant d're "delete", le suivant passera le relais !
             ; pas d'echo ...
             ; ce si on une règle de nettoyage..

@@ -5,7 +5,6 @@
   ; 23:54 min 
   ; NON pour 20:30 ou  20:30 à 21 h; 
   ; pb interference fre_abbr_unite_mesure_dim_tab  "23h 34min 52s"
-; demain locution 2
 
 ; tempo mise au point
 (defvar verbose_INST_LANG_token_to_word t)
@@ -29,8 +28,9 @@
 ; pour passage aux modules, ou appel réntrant
 (defvar result)
 
-
-
+(defvar fdnaw)
+(defvar h1)
+(defvar h2)
 
 ; verbose & debug
 (defvar cg::debug); could be clunits_debug !
@@ -107,7 +107,8 @@
     ; il y a mieux pour le pire ?! déclarer ici result en local
     ; TODO réduire au strict nécessaire
     ; en cours : sûr fdnaw, 
-    (h1 h2 h3 fdnaw ponct)
+    (ponct)
+    ; fdnaw non local
     (set! fdnaw (french_downcase_string name))
     (set! ponct (item.feat token 'punc ))
 
@@ -121,6 +122,12 @@
         ;    (require 'INST_LANG_token_qt_pos0)
         ;    (pos0 token name)))
 
+      ((format t "QTdel ?\t élimination programmée ? |%s| si %s\n" name (boundp 'QTdelp ))  nil)
+      ((and 
+            (boundp 'QTdel)
+            (or (require 'INST_LANG_token_qt_del) t)
+            (del token name)))        
+
       ((and 
         (boundp 'QTpos0)
         (or (require 'INST_LANG_token_qt_pos0) t)
@@ -131,10 +138,11 @@
         (or (require 'INST_LANG_token_qt_pos1) t)
         (pos1 token name)))
     
-      ; ((and
-      ;   (boundp 'QTpos2)
-      ;   (or (require 'INST_LANG_token_qt_pos2) t)
-      ;   (pos2 token name)))
+      ((and
+        (set! QTpos2_debug t)
+        (boundp 'QTpos2_debug)
+        (or (require 'INST_LANG_token_qt_pos2_debug) t)
+        (pos2_debug token name)))
 
       ; pis-aller pas de module
       ((and 
@@ -188,11 +196,11 @@
         (or (require 'INST_LANG_token_qt_pos4) t)
         (pos4 token name)))
 
-      ((format t "QTdel ?\t élimination programmée ? |%s| si %s\n" name (boundp 'QTdelp ))  nil)
-      ((and 
-            (boundp 'QTdel)
-            (or (require 'INST_LANG_token_qt_del) t)
-            (del token name)))        
+      ; ((format t "QTdel ?\t élimination programmée ? |%s| si %s\n" name (boundp 'QTdelp ))  nil)
+      ; ((and 
+      ;       (boundp 'QTdel)
+      ;       (or (require 'INST_LANG_token_qt_del) t)
+      ;       (del token name)))        
 
 
       ; ((format t "QTdelp ?\t élimination programmée ? |%s| si %s\n" name (boundp 'QTdelp ))  nil)

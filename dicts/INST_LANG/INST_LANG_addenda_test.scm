@@ -2,7 +2,11 @@
 (defvar verbose_addendas)
 (if verbose_addendas (format t "addenda_test.scm loaded"))
 ;;; addenda
-
+ (lex.add.entry '("talisman" nil ((("t" "a") 0) (("l" "i" "s") 0) (("m" "ahn") 0)))) ; et non  a n
+ (lex.add.entry '("chiasme" nil ((("k" "j" "a" "s" "m") 0))))
+ (lex.add.entry '("chiasma" nil ((("k" "j" "a" "s" "m") 0))))
+ (lex.add.entry '("chi" nil ((("sh" "i") 0))))
+ (lex.add.entry '("chia_NOM" NOM ((("k" "j" "a") 0))))
 ; NON : voir wordroo (lex.add.entry '("n_arriverez" nil (((n "a") 0) (("rh" "i") 0) (("v" "rh" "e") 0))))
 (lex.add.entry '("n_arriveré" nil (((n "a") 0) (("rh" "i") 0) (("v" "rh" "e") 0))))
 (lex.add.entry '("monosperme" nil ((("m" "oh") 0) (("n" "o") 0) ((s "p" "eh" "rh" "m") 0))))

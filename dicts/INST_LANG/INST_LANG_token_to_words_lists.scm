@@ -1802,7 +1802,7 @@
 ("jusqu_ici" . ("ADV"))
 ("jusqu_où" . ("ADV"))
 ("jusqu_à" . ("PRE"))
-("jusque_devant" . ("NOM"))
+("jusque_devant" . ("PRE"))
 ("kung_fu" . ("NOM"))
 ("LA_FONT"  . ("NAM"))
 ("La_Fontaine" . ("NAM"))
@@ -2141,7 +2141,7 @@
 ; tout_à : il donne tout à ses enfants PRE:ok; 
 ;  
 (defvar list_locution_part_1
-   '( "tout_à" "tout_à_l" "tout_d" "chef_d" "aujour_d"))
+   '( "tout_à" "tout_à_l" "tout_d" "chef_d" "aujour_d" "trop_d"))
 
 ; pas oublier d'ajouter (lex.add.entry '( "XXX" nil ((("t" "u") 0) (("t" "a" "l") 0))))
                       
