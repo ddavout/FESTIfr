@@ -22,6 +22,13 @@ MNCL
 ; INST_LANG_lex_syllabify_phstress ("a" "b" "eh" "s" "ahn")              
 ; **important** :
 ; contient des fautes d'orthographe, quelques fois sciemment
+; TODO 
+; révision des "(h faite jusqu'à harangues
+; TODO VER 
+; halluciner, hachurer, haïr homo haie, haler
+; déhancher handicaper
+; hancher
+; préfixe halo
 
 ( "!" ( ( SENT 0.000) )()) 
 ( "," ( ( punc 0.000) )()) 
@@ -31,7 +38,6 @@ MNCL
 ( "a_fortiori" ( ( ADV -6.000) )()) 
 ( "a_posteriori" ( ( ADV -6.000) )()) 
 ( "a_priori" ( ( NOM -5.540) ( ADV -5.819) )())               
-            
 ( "aa" ( ( NAM -3.923) )()) 
 ( "ab_initio" ( ( ADV -5.297) )()) 
 ( "ab_irato" ( ( ADV -5.297) )()) 
@@ -2169,9 +2175,9 @@ MNCL
 ( "affaiblis" ( ( ADJ -5.494) ( VER -5.384) )())               
 ( "affaiblissait" ( ( VER -5.956) )()) 
 ( "affaiblissant" ( ( ADJ -5.862) ( VER -6.094) )())               
+( "affaiblissantS" ( ( ADJ -5.956) )()) 
 ( "affaiblissante" ( ( ADJ -5.956) )()) 
 ( "affaiblissantes" ( ( ADJ -5.956) )()) 
-( "affaiblissantS" ( ( ADJ -5.956) )()) 
 ( "affaiblisse" ( ( VER -6.298) )()) 
 ( "affaiblissement" ( ( NOM -5.821) )()) 
 ( "affaiblissent" ( ( VER -5.718) )()) 
@@ -3222,8 +3228,10 @@ MNCL
 ( "alcoolos" ( ( ADJ -5.384) ( NOM -5.584) )())               
 ( "alcools" ( ( NOM -5.063) )()) 
 ( "alcoolémie" ( ( NOM -5.190) )()) 
+( "alcoolémies" ( ( NOM -5.190) )()) 
 ( "alcootest" ( ( NOM -5.607) )()) 
 ( "alcyon" ( ( NOM -6.163) )()) 
+( "alcyons" ( ( NOM -6.163) )()) 
 ( "alcôve" ( ( NOM -5.607) )()) 
 ( "alcôves" ( ( NOM -6.163) )()) 
 ( "alde" ( ( NAM -3.911) )()) 
@@ -16083,9 +16091,9 @@ MNCL
 ( "chiant" ( ( ADJ -3.815) ( VER -5.506) )())               
 ( "chiante" ( ( ADJ -4.399) )()) 
 ( "chiantes" ( ( ADJ -5.260) )()) 
-( "chiants" ( ( ADJ -5.260) )()) 
 ( "chianti" ( ( NAM -4.261) ( NOM -5.584) )())               
 ( "chiants" ( ( ADJ -4.759) )()) 
+( "chiants" ( ( ADJ -5.260) )()) 
 ( "chiard" ( ( NOM -5.716) )()) 
 ( "chiards" ( ( NOM -5.716) )()) 
 ( "chiasma" ( ( NOM -6.561) )()) 
@@ -17552,8 +17560,8 @@ MNCL
 ( "coaguler" ( ( VER -6.043) )()) 
 ( "coagulera" ( ( VER -6.696) )()) 
 ( "coagulé" ( ( VER -5.918) )()) 
-( "coagulés" ( ( VER -6.696) )()) 
 ( "coagulées" ( ( VER -6.696) )()) 
+( "coagulés" ( ( VER -6.696) )()) 
 ( "coagulés" ( ( VER -6.696) )()) 
 ( "coalition" ( ( NOM -4.959) )()) 
 ( "coalitions" ( ( NOM -6.163) )()) 
@@ -17566,8 +17574,6 @@ MNCL
 ( "coassée" ( ( VER -6.520) )()) 
 ( "coassées" ( ( VER -6.520) )()) 
 ( "coassés ( ( VER -6.520) )()) 
-
-
 ( "coati" ( ( NOM -6.561) )()) 
 ( "coauteur" ( ( NOM -5.959) )()) 
 ( "coauteurs" ( ( NOM -6.163) )()) 
@@ -27391,8 +27397,8 @@ MNCL
 ( "décharnée" ( ( ADJ -5.640) ( VER -6.520) )())               
 ( "décharnées" ( ( ADJ -5.862) ( VER -6.696) )())               
 ( "décharnés" ( ( ADJ -6.038) )()) 
-( "déchausse" ( ( VER -5.956) )()) 
 ( "déchaussant" ( ( VER -5.883) )()) 
+( "déchausse" ( ( VER -5.956) )()) 
 ( "déchausser" ( ( VER -5.883) )()) 
 ( "déchausserais" ( ( VER -6.696) )()) 
 ( "déchaussez" ( ( VER -6.094) )()) 
@@ -41573,6 +41579,7 @@ MNCL
 ( "gifts" ( ( NOM -6.260) )()) 
 ( "gig" ( ( NOM -5.632) )()) 
 ( "giga" ( ( ADJ -5.108) )()) 
+( "giga" ( ( ADJ -5.640) )()) 
 ( "gigabit" ( ( NOM -6.084) )()) 
 ( "gigabits" ( ( NOM -6.084) )()) 
 ( "gigahertz" ( ( NOM -6.017) )()) 
@@ -41580,9 +41587,8 @@ MNCL
 ( "gigantesques" ( ( ADJ -4.715) )()) 
 ( "gigantisme" ( ( NOM -6.017) )()) 
 ( "gigantismes" ( ( NOM -6.017) )()) 
-( "gigaoctets" ( ( NOM -6.561) )()) 
 ( "gigaoctet" ( ( NOM -6.561) )()) 
-( "giga" ( ( ADJ -5.640) )()) 
+( "gigaoctets" ( ( NOM -6.561) )()) 
 ( "gigas" ( ( ADJ -5.640) )()) 
 ( "gigogne" ( ( ADJ -6.038) )()) 
 ( "gigognes" ( ( ADJ -5.862) )()) 
@@ -43681,45 +43687,1798 @@ MNCL
 ( "gîte" ( ( ADJ -5.494) ( NOM -5.114) ( VER -6.520) )())            
 ( "gîtera" ( ( VER -6.520) )()) 
 ( "gîtes" ( ( NOM -6.385) )()) ;
-( "habita" ( ( VER -6.666) )())
+( "habilite" ( (VER -6.395) )())
+( "habilité" ( (ADJ -5.260)(NOM -5.447)(VER -5.520) )())
+( "habilitée" ( (ADJ -5.862)(VER -6.094) )())
+( "habilitées" ( (ADJ -5.862)(VER -6.696) )())
+( "habilités" ( (ADJ -6.038)(NOM -6.017)(VER -5.956) )())
+( "habilla" ( (VER -6.298) )())
+( "habillaient" ( (VER -6.219) )())
+( "habillais" ( (VER -5.599) )())
+( "habillait" ( (VER -5.374) )())
+( "habillant" ( (VER -5.956) )())
+( "habille" ( (NOM -6.163)(VER -4.143) )())
+( "habillent" ( (VER -5.298) )())
+( "habiller" ( (VER -4.059) )())
+( "habillera" ( (VER -5.918) )())
+( "habillerai" ( (VER -5.550) )())
+( "habilleraient" ( (VER -6.696) )())
+( "habillerais" ( (VER -6.152) )())
+( "habillerait" ( (VER -5.918) )())
+( "habilleras" ( (VER -6.395) )())
+( "habillerez" ( (VER -5.956) )())
+( "habillerons" ( (NOM -6.561)(VER -6.395) )())
+( "habilles" ( (VER -5.020) )())
+( "habillez" ( (VER -4.754) )())
+( "habilliez" ( (VER -6.298) )())
+( "habillions" ( (VER -6.696) )())
+( "habillons" ( (VER -5.767) )())
+( "habillé" ( (ADJ -3.936)(VER -4.405) )())
+( "habillée" ( (ADJ -4.076)(VER -4.623) )())
+( "habillées" ( (ADJ -5.017)(VER -5.918) )())
+( "habillés" ( (ADJ -4.546)(VER -5.006) )())
+( "habita" ( (VER -6.520) )())
 ( "habitai" ( ( VER -6.666) )())
-( "habitaient" ( ( VER -6.666) )())
-( "habitais" ( ( VER -6.666) )())
-( "habitait" ( ( VER -6.666) )())
-( "habitant" ( ( VER -6.666) )())
+( "habitaient" ( (VER -5.265) )())
+( "habitais" ( (VER -4.830) )())
+( "habitait" ( (VER -4.461) )())
+( "habitant" ( (NOM -5.084)(VER -5.535) )())
+( "habitante" ( (NOM -5.084) )())
+( "habitantes" ( (NOM -5.084) )())
+( "habitants" ( (NOM -5.084) )())
 ( "habitas" ( ( VER -6.666) )())
 ( "habitasse" ( ( VER -6.666) )())
 ( "habitassent" ( ( VER -6.666) )())
 ( "habitasses" ( ( VER -6.666) )())
 ( "habitassiez" ( ( VER -6.666) )())
 ( "habitassions" ( ( VER -6.666) )())
-( "habite" ( ( VER -6.666) )())
-( "habitent" ( ( VER -6.666) )())
-( "habiter" ( ( VER -6.666) )())
-( "habitera" ( ( VER -6.666) )())
-( "habiterai" ( ( VER -6.666) )())
-( "habiteraient" ( ( VER -6.666) )())
-( "habiterais" ( ( VER -6.666) )())
-( "habiterait" ( ( VER -6.666) )())
-( "habiteras" ( ( VER -6.666) )())
-( "habiterez" ( ( VER -6.666) )())
+( "habite" ( (VER -3.626) )())
+( "habitent" ( (VER -4.545) )())
+( "habiter" ( (VER -4.271) )())
+( "habitera" ( (VER -5.550) )())
+( "habiterai" ( (VER -5.550) )())
+( "habiteraient" ( (VER -6.696) )())
+( "habiterais" ( (VER -5.918) )())
+( "habiterait" ( (VER -5.883) )())
+( "habiteras" ( (VER -5.883) )())
+( "habiterez" ( (VER -5.918) )())
 ( "habiteriez" ( ( VER -6.666) )())
-( "habiterions" ( ( VER -6.666) )())
-( "habiterons" ( ( VER -6.666) )())
-( "habiteront" ( ( VER -6.666) )())
-( "habites" ( ( VER -6.666) )())
-( "habitez" ( ( VER -6.666) )())
-( "habitiez" ( ( VER -6.666) )())
-( "habitions" ( ( VER -6.666) )())
-( "habitons" ( ( VER -6.666) )())
+( "habiterions" ( (VER -6.696) )())
+( "habiterons" ( (VER -6.152) )())
+( "habiteront" ( (VER -6.696) )())
+( "habites" ( (VER -4.395) )())
+( "habitez" ( (VER -4.389) )())
+( "habitiez" ( (VER -5.257) )())
+( "habitions" ( (VER -5.675) )())
+( "habitons" ( (VER -5.257) )())
+( "habitua" ( (VER -6.520) )())
+( "habituai" ( (VER -6.696) )())
+( "habituais" ( (VER -6.395) )())
+( "habituait" ( (VER -6.298) )())
+( "habituant" ( (VER -6.696) )())
+( "habitue" ( (VER -4.657) )())
+( "habituent" ( (VER -5.550) )())
+( "habituer" ( (VER -4.377) )())
+( "habituera" ( (VER -5.918) )())
+( "habituerai" ( (VER -5.582) )())
+( "habituerais" ( (VER -6.094) )())
+( "habituerait" ( (VER -6.395) )())
+( "habitueras" ( (VER -5.374) )())
+( "habituerez" ( (VER -5.696) )())
+( "habitueront" ( (VER -6.094) )())
+( "habitues" ( (VER -5.441) )())
+( "habituez" ( (VER -5.599) )())
+( "habituons" ( (VER -6.520) )())
+( "habituèrent" ( (VER -6.520) )())
+( "habitué" ( (ADJ -4.657)(NOM -5.024)(VER -4.510) )())
+( "habituée" ( (ADJ -4.924)(NOM -5.482)(VER -4.772) )())
+( "habituées" ( (ADJ -6.038)(VER -5.793) )())
+( "habitués" ( (ADJ -5.060)(NOM -5.106)(VER -4.929) )())
 ( "habitâmes" ( ( VER -6.666) )())
 ( "habitât" ( ( VER -6.666) )())
 ( "habitâtes" ( ( VER -6.666) )())
 ( "habitèrent" ( ( VER -6.666) )())
-( "habité" ( ( VER -6.666) )())
-( "habitée" ( ( VER -6.666) )())
+( "habité" ( (ADJ -5.108)(VER -4.744) )())
+( "habitée" ( (VER -5.273) )())
 ( "habitées" ( ( VER -6.666) )())
+( "habitées" ( (ADJ -5.436)(VER -6.298) )())
 ( "habités" ( ( VER -6.666) )())               
+( "habités" ( (ADJ -5.436)(VER -5.997) )())
+( "hacha" ( (VER -6.696) )()); C
+( "hachage" ( (NOM -6.561) )()); C
+( "hachages" ( (NOM -6.561) )()); C
+( "hachait" ( (VER -6.520) )()); C
+( "hachant" ( (VER -6.520) )()); C
+( "hache" ( (NOM -4.234) (VER -5.793) )()); C
+( "hachent" ( (VER -6.395) )()); C
+( "hacher" ( (VER -5.675) )()); C
+( "hacherai" ( (VER -6.395) )()); C
+( "hacherait" ( (VER -6.520) )()); C
+( "haches" ( (NOM -5.130) (VER -6.520) )()); C
+( "hachette" ( (NAM -4.713) (NOM -5.561) )()); C
+( "hachettes" ( (NOM -6.385) )()); C
+( "hacheur" ( (NOM -6.561) )()); C
+( "hacheurs" ( (NOM -6.561) )()); C
+( "hachez" ( (VER -6.043) )()); C
+( "hachis" ( (NOM -5.099) )()); C
+( "hachisch" ( (NOM -6.561) )()); C
+( "hachoir" ( (NOM -5.357) )()); C
+( "hachoirs" ( (NOM -6.385) )()); C
+( "hachure" ( (NOM -6.385) )()); C
+( "hachurer" ( (VER -6.520) )()); C
+( "hachures" ( (NOM -6.385) )()); C
+( "hachuré" ( (VER -6.520) )()); C
+( "hachurés" ( (VER -6.520) )()); C
+( "haché" ( (ADJ -4.705) (VER -5.918) )()); C
+( "hachée" ( (ADJ -4.996) (VER -6.043) )()); C
+( "hachées" ( (ADJ -4.996) (VER -6.696) )()); C
+( "hachés" ( (ADJ -5.297) (VER -6.094) )()); C
+( "hacienda" ( (NOM -5.138) )()); C
+( "haciendas" ( (NOM -6.260) )()); C
+( "hack" ( (NOM -5.431) )()); C
+( "hacker" ( (NOM -5.030) )()); C
+( "hackers" ( (NOM -5.331) )()); C
+( "hacks" ( (NOM -5.431) )()); C
+( "haddock" ( (NOM -5.501) )()); C
+( "hadith" ( (NOM -6.561) )()); ?
+( "hadj" ( (NAM -4.450) (NOM -5.686) )()); C
+( "hadji" ( (NOM -5.250) )()); C
+( "hadjis" ( (NOM -5.250) )()); C
+( "hagard" ( (ADJ -5.260) )()); C
+( "hagarde" ( (ADJ -5.737) )()); C
+( "hagardes" ( (ADJ -5.436) )()); C
+( "hagards" ( (ADJ -5.436) )()); C
+( "haggadah" ( (NOM -6.385) )()); ?
+( "haggis" ( (NOM -5.464) )()); ?
+( "hagiographie" ( (NOM -6.561) )()); C
+( "haha" ( (NOM -6.385) ONO -3.721) )());
+( "haha" ( (ONO -4.079) )()); C
+( "hahas" ( (NOM -6.385) ONO -3.721) )()); L
+( "hai" ( (NOM -6.385) ONO -3.721) )());
+( "haie" ( (NOM -4.954) )()); C
+( "haies" ( (NOM -5.260) )()); C
+( "haillon" ( (NOM -6.561) )()); C
+( "haillons" ( (NOM -5.155) )()); C
+( "haine" ( (NOM -3.784) )()); C
+( "haines" ( (NAM -5.014) (NOM -4.780) )()); C
+( "haineuse" ( (ADJ -5.436) )()); C
+( "haineusement" ( (ADV -6.384) )()); C
+( "haineuses" ( (ADJ -5.494) )()); C
+( "haineux" ( (ADJ -4.606) )()); C
+( "hais" ( (NOM -6.385) (VER -3.795) )()); C
+( "hait" ( (VER -4.390) )()); C
+( "haka" ( (NOM -6.561) )()); ?
+( "hakka" ( (NAM -5.190) (NOM -6.561) )()); ?
+( "hala" ( (VER -5.190) )());
+( "halage" ( (NOM -6.260) )()); C
+( "halages" ( (NOM -6.260) )()); C
+( "halal" ( (ADJ -5.561) )()); C
+( "halcyon" ( (NOM -6.385) )()); L
+( "halcyons" ( (NOM -6.385) )()); L
+( "hale" ( (NOM -3.284) (VER -4.390) )()); C
+( "haleine" ( (NOM -4.312) (VER -6.696) )()); C
+( "haleines" ( (NOM -5.959) )()); C
+( "halent" ( (VER -6.696) )()); C
+( "haler" ( (VER -6.520) )()); C
+( "haleta" ( (VER -6.520) )()); C
+( "haletais" ( (VER -6.395) )()); C
+( "haletant" ( (ADJ -5.494) (VER -6.152) )()); C
+( "haletante" ( (ADJ -5.193) )()); C
+( "haletants" ( (ADJ -6.038) )()); C
+( "haleter" ( (VER -5.918) )()); C
+( "haleté" ( (VER -6.520) )()); C
+( "haleur" ( (NOM -6.561) )()); C
+( "haleurs" ( (NOM -6.561) )()); C
+( "halez" ( (VER -6.520) )()); C
+( "half_track" ( (NOM -6.163) )()); C
+( "half_tracks" ( (NOM -6.561) )()); C
+( "hall" ( (NAM -2.736) (NOM -4.061) )()); C
+( "hallali" ( (NOM -6.385) )()); C
+( "hallalis" ( (NOM -6.385) )()); C
+( "halle" ( (NOM -5.658) )()); C
+( "hallebarde" ( (NOM -6.084) )()); C
+( "hallebardes" ( (NOM -6.561) )()); C
+( "hallebardier" ( (NOM -6.385) )()); C
+( "hallebardiers" ( (NOM -6.561) )()); C
+( "halles" ( (NAM -3.858) (NOM -5.658) )()); C
+( "hallier" ( (NOM -6.561) )()); C
+( "halliers" ( (NOM -6.561) )()); C
+( "halloween" ( (NOM -5.862) )()); C
+( "halls" ( (NOM -5.686) )()); C
+( "hallucinais" ( (VER -6.094) )()); C
+( "hallucinant" ( (ADJ -4.436) (VER -6.152) )()); C
+( "hallucinante" ( (ADJ -5.384) )()); C
+( "hallucinantes" ( (ADJ -5.862) )()); C
+( "hallucinants" ( (ADJ -5.640) )()); C
+( "hallucination" ( (NOM -4.664) )()); C
+( "hallucinations" ( (NOM -4.411) )()); C
+( "hallucinatoire" ( (ADJ -5.225) )()); C
+( "hallucinatoires" ( (ADJ -5.737) )()); C
+( "hallucine" ( (VER -4.940) )()); C
+( "halluciner" ( (VER -5.325) )()); C
+( "halluciner" ( (VER -6.094) )()); C
+( "hallucinez" ( (VER -6.219) )()); C
+( "hallucinogène" ( (ADJ -5.083) (NOM -5.821) )()); C
+( "hallucinogènes" ( (ADJ -5.108) (NOM -5.584) )()); C
+( "hallucinons" ( (VER -6.696) )()); C
+( "halluciné" ( (ADJ -5.737) (NOM -6.561) (VER -5.566) )()); intrans
+( "hallucinée" ( (ADJ -5.862) (NOM -6.561) )()); C
+( "hallucinées" ( (ADJ -6.038) )()); C
+( "hallucinés" ( (NOM -6.561) )()); C
+( "halo" ( (NOM -5.130) )()); C
+( "halogène" ( (ADJ -6.038) (NOM -6.260) )()); C
+( "halogènes" ( (ADJ -6.038) (NOM -5.959) )()); C
+( "halogénure" ( (NOM -6.561) )()); C
+( "halon" ( (NOM -5.959) )()); ?
+( "halopéridol" ( (NOM -5.821) )()); ?
+( "halos" ( (NOM -6.163) )()); C
+( "halothane" ( (NOM -5.783) )()); ?
+( "halte" ( (NOM -4.675) (ONO -2.802) (VER -6.298) )()); L VER vieilli
+( "halte_garderie" ( (NOM -6.385) )()); C
+( "halte_garderies" ( (NOM -6.385) )()); C
+( "halter" ( (VER -6.520) )()); ; L VER vieilli
+( "haltes" ( (NOM -6.260) )()); C
+( "haltère" ( (NOM -6.084) )()); C
+( "haltères" ( (NOM -5.092) )()); C
+( "haltérophile" ( (NOM -6.017) )()); C
+( "haltérophiles" ( (NOM -6.163) )()); C
+( "haltérophilie" ( (NOM -5.908) )()); C
+( "haltérophilies" ( (NOM -5.908) )()); C
+( "halva" ( (NOM -6.561) )()); C
+( "halèrent" ( (VER -6.520) )()); C
+( "halète" ( (VER -5.997) )()); C
+( "halètement" ( (NOM -5.959) )()); C
+( "halètements" ( (NOM -5.959) )()); C
+( "halètent" ( (VER -6.696) )()); C
+( "halètes" ( (VER -6.696) )()); C
+( "hamac" ( (NOM -5.106) )()); C
+( "hamacs" ( (NOM -5.748) )()); C
+( "hamada" ( (NOM -6.084) )()); ?
+( "hamadryade" ( (NOM -6.561) )()); L
+( "hamadryades" ( (NOM -6.561) )()); L
+( "hamadryas" ( (NOM -6.561) )()); ?
+( "hamamélis" ( (NOM -6.561) )()); C
+( "hambourgeois" ( (ADJ -5.862) )()); C
+( "hambourgeoise" ( (ADJ -5.862) )()); C
+( "hambourgeoises" ( (ADJ -5.862) )()); C
+( "hamburger" ( (NAM -3.960) (NOM -4.387) )()); C
+( "hamburgers" ( (NOM -4.441) )()); C
+( "hameau" ( (NOM -5.482) )()); C
+( "hameaux" ( (NOM -6.260) )()); C
+( "hameçon" ( (NOM -4.600) )()); C
+( "hameçons" ( (NOM -5.385) )()); C
+( "hammam" ( (NOM -5.540) )()); C
+( "hammams" ( (NOM -6.385) )()); C
+( "hammerless" ( (NOM -6.385) )()); ?
+( "hampe" ( (NOM -5.584) )()); C
+( "hampes" ( (NOM -5.584) )()); C
+( "hamster" ( (NOM -4.759) )()); C
+( "hamsters" ( (NOM -5.371) )()); C
+( "han" ( (ONO -4.278) (NAM -3.261) (NOM -5.181) )()); C
+( "hanap" ( (NOM -6.561) )()); L
+( "hanaps" ( (NOM -6.561) )()); L
+( "hanche" ( (NOM -4.542) (VER -6.696) )()); L VER déhancher
+( "hanches" ( (NOM -4.475) (VER -6.696) )()); L
+( "hand_ball" ( (NOM -5.908) )()); C
+( "handball" ( (NOM -5.658) )()); C
+( "handicap" ( (NOM -4.575) )()); C
+( "handicapait" ( (VER -6.520) )()); C
+( "handicapant" (  (VER -6.520) (ADJ -5.862) )()); C
+( "handicapante" ( (ADJ -5.862) )()); C
+( "handicapantes" ( (ADJ -5.862) )()); C
+( "handicapants" ( (ADJ -5.862) )()); C
+( "handicape" ( (VER -6.094) )()); C
+( "handicaper" ( (VER -6.219) )()); C
+( "handicapera" ( (VER -6.520) )()); C
+( "handicapeur" ( (NOM -6.084) )()); C
+( "handicaps" ( (NOM -5.607) )()); C
+( "handicapé" ( (ADJ -4.892) (NOM -5.130) (VER -5.128) )()); C
+( "handicapée" ( (NOM -5.862) (VER -5.506) )()); C
+( "handicapées" ( (NOM -6.561) (VER -6.395) )()); C
+( "handicapés" ( (ADJ -4.907) (NOM -4.780) (VER -5.918) )()); C
+( "hane" ( (NOM -6.561) )()); L
+( "hanes" ( (NOM -6.561) )()); L
+( "hanet" ( (NOM -6.561) )()); L
+( "hanets" ( (NOM -6.561) )()); L
+( "hangar" ( (NOM -4.312) )()); C
+( "hangars" ( (NOM -5.561) )()); C
+( "hanneton" ( (NOM -6.084) )()); C
+( "hannetons" ( (NOM -6.084) )()); C
+( "hanoukka" ( (NOM -5.357) )()); C
+( "hanovrien" ( (ADJ -6.385) (NOM -6.385) )()); C
+( "hanovrienne" ( (ADJ -6.385) (NOM -6.385) )()); C
+( "hanovriennes" ( (ADJ -6.385) (NOM -6.385) )()); C
+( "hanovriens" ( (ADJ -6.385) (NOM -6.385) )()); C
+( "hanséatique" ( (ADJ -6.038) )()); C
+( "hanséatiques" ( (ADJ -6.038) )()); C
+( "hanta" ( (VER -6.152) )()); C
+( "hantaient" ( (VER -6.520) )()); C
+( "hantais" ( (VER -6.219) )()); C
+( "hantait" ( (VER -5.696) )()); C
+( "hantant" ( (VER -6.696) )()); C
+( "hantavirus" ( (NOM -6.260) )()); C
+( "hante" ( (VER -4.833) )()); C
+( "hantent" ( (VER -5.281) )()); C
+( "hanter" ( (VER -4.918) )()); C
+( "hantera" ( (VER -5.718) )()); C
+( "hanterai" ( (VER -6.395) )()); C
+( "hanterait" ( (VER -6.094) )()); C
+( "hanteront" ( (VER -6.219) )()); C
+( "hantes" ( (VER -5.851) )()); C
+( "hantez" ( (VER -6.043) )()); C
+( "hantise" ( (NOM -5.959) )()); C
+( "hantises" ( (NOM -6.260) )()); C
+( "hanté" ( (ADJ -4.759) (NOM -6.561) (VER -4.925) )()); C
+( "hantée" ( (ADJ -4.506) (VER -5.024) )()); C
+( "hantées" ( (ADJ -5.108) (VER -6.043) )()); C
+( "hantés" ( (ADJ -5.561) (VER -5.617) )()); C
+( "happe" ( (VER -6.395) )()); C
+( "happening" ( (NAM -5.190) (NOM -5.482) )()); C
+( "happenings" ( (NOM -6.385) )()); C
+( "happent" ( (VER -6.520) )()); C
+( "happer" ( (VER -5.599) )()); C
+( "happy_end" ( (NOM -5.229) )()); C
+( "happy_ends" ( (NOM -6.084) )()); C
+( "happé" ( (VER -5.956) )()); C
+( "happée" ( (VER -5.767) )()); C
+( "happées" ( (VER -6.696) )()); C
+( "happés" ( (VER -6.298) )()); C
+( "haptoglobine" ( (NOM -6.561) )()); C
+( "haque" ( (NOM -6.084) )()); L
+( "haques" ( (NOM -6.084) )()); L
+( "hara_kiri" ( (NOM -5.632) )()); C
+( "harangue" ( (NOM -6.561) )()); C
+( "haranguer" ( (VER -6.219) )()); C
+( "harangues" ( (NOM -6.561) )()); C
+( "haranguez" ( (VER -6.696) )()); C
+( "haranguée" ( (VER -6.696) )()); C
+( "harari" ( (NOM -6.385) )()); C
+( "haras" ( (NOM -5.561) )()); C
+( "harassaient" ( (VER -6.696) )()); C
+( "harassant" ( (ADJ -5.737) )()); C
+( "harassante" ( (ADJ -5.494) )()); C
+( "harassement" ( (NOM -6.385) )()); C
+( "harassent" ( (VER -6.520) )()); C
+( "harassé" ( (ADJ -6.038) (VER -6.696) )()); C
+( "harassée" ( (ADJ -6.038) (VER -6.696) )()); C
+( "harassés" ( (ADJ -6.038) (VER -6.520) )()); C
+( "harcelaient" ( (VER -6.043) )()); C
+( "harcelais" ( (VER -5.997) )()); C
+( "harcelait" ( (VER -5.364) )()); C
+( "harcelant" ( (ADJ -5.862) (VER -5.918) )()); C
+( "harcelantes" ( (ADJ -6.038) )()); C
+( "harceler" ( (NAM -5.014) (VER -4.671) )()); C
+( "harceleur" ( (ADJ -5.862) (NOM -5.748) )()); C
+( "harceleuse" ( (NOM -6.561) )()); C
+( "harcelez" ( (VER -5.234) )()); C
+( "harceliez" ( (VER -6.219) )()); C
+( "harcelé" ( (VER -5.068) )()); C
+( "harcelée" ( (VER -5.384) )()); C
+( "harcelées" ( (VER -6.298) )()); C
+( "harcelés" ( (VER -5.582) )()); C
+( "harcèle" ( (VER -4.785) )()); C
+( "harcèlement" ( (NOM -4.414) )()); C
+( "harcèlements" ( (NOM -6.163) )()); C
+( "harcèlent" ( (VER -5.520) )()); C
+( "harcèlera" ( (VER -6.094) )()); C
+( "harcèlerai" ( (VER -5.956) )()); C
+( "harcèlerez" ( (VER -6.696) )()); C
+( "harcèlerons" ( (VER -6.696) )()); C
+( "harcèleront" ( (VER -6.520) )()); C
+( "hard" ( (ADJ -4.238) (NAM -5.190) (NOM -5.271) )()); C
+( "hard_edge" ( (NOM -6.561) )()); C
+( "hard_top" ( (NOM -6.561) )()); C
+( "hardent" ( (VER -6.696) )()); C
+( "harder" ( (NAM -5.014) (VER -6.298) )()); C
+( "hardes" ( (NOM -6.017) )()); C
+( "hardi" ( (ADJ -4.737) (ONO -5.176) )()); C
+( "hardie" ( (ADJ -5.038) )()); C
+( "hardies" ( (ADJ -5.862) )()); C
+( "hardiesse" ( (NOM -5.862) )()); C
+( "hardiment" ( (ADV -5.430) )()); C
+( "hardis" ( (ADJ -5.297) )()); C
+( "hare" ( (ONO -3.796) )()); C
+( "harem" ( (NOM -5.030) )()); C
+( "harems" ( (NOM -6.084) )()); C
+( "hareng" ( (NOM -4.965) )()); C
+( "harengs" ( (NOM -5.260) )()); C
+( "harenguet" ( (NOM -6.561) )()); C
+( "harenguier" ( (NOM -6.561) )()); C
+( "harengère" ( (NOM -6.561) )()); C
+( "hargne" ( (NOM -5.540) )()); C
+( "hargneuse" ( (ADJ -5.193) )()); C
+( "hargneuses" ( (ADJ -6.038) )()); C
+( "hargneux" ( (ADJ -4.737) )()); C
+( "haricot" ( (NOM -5.056) )()); C
+( "haricots" ( (NOM -4.233) )()); C
+( "haridelle" ( (NOM -6.561) )()); C
+( "harmattan" ( (NOM -6.385) )()); C
+( "harmonica" ( (NOM -4.954) )()); C
+( "harmonicas" ( (NOM -6.260) )()); C
+( "harmoniciste" ( (NOM -6.385) )()); C
+( "harmonie" ( (NAM -4.315) (NOM -4.458) (VER -6.696) )()); C
+( "harmonies" ( (NOM -5.561) )()); C
+( "harmonieuse" ( (ADJ -5.339) )()); C
+( "harmonieusement" ( (ADV -5.840) )()); C
+( "harmonieuses" ( (ADJ -5.561) )()); C
+( "harmonieux" ( (ADJ -4.907) )()); C
+( "harmonique" ( (ADJ -4.996) (NOM -6.260) )()); C
+( "harmoniquement" ( (ADV -6.384) )()); C
+( "harmoniques" ( (ADJ -5.436) (NOM -5.607) )()); C
+( "harmonisait" ( (VER -6.219) )()); C
+( "harmonisant" ( (VER -6.696) )()); C
+( "harmonisation" ( (NOM -6.084) )()); C
+( "harmonise" ( (VER -6.395) )()); C
+( "harmonisent" ( (VER -6.696) )()); C
+( "harmoniser" ( (VER -5.851) )()); C
+( "harmonisera" ( (VER -6.696) )()); C
+( "harmonisez" ( (VER -6.696) )()); C
+( "harmonisé" ( (VER -6.696) )()); C
+( "harmonisés" ( (VER -6.696) )()); C
+( "harmonium" ( (NOM -6.084) )()); C
+( "harnachement" ( (NOM -6.017) )()); C
+( "harnachements" ( (NOM -6.017) )()); C
+( "harnacher" ( (VER -6.298) )()); C
+( "harnaché" ( (VER -6.219) )()); C
+( "harnachés" ( (ADJ -5.862) (VER -6.696) )()); C
+( "harnais" ( (NOM -4.885) )()); C
+( "harnois" ( (NOM -6.561) )()); C
+( "haro" ( (NOM -6.260) )()); C
+( "harpagon" ( (NAM -4.889) (NOM -6.561) )()); C
+( "harpe" ( (NOM -5.063) )()); C
+( "harper" ( (NAM -3.327) (VER -4.306) )()); C
+( "harpes" ( (NOM -5.908) )()); C
+( "harpie" ( (NAM -4.412) (NOM -5.260) )()); C
+( "harpies" ( (NAM -4.792) (NOM -5.908) )()); C
+( "harpiste" ( (NOM -5.959) )()); C
+( "harpon" ( (NOM -5.155) )()); C
+( "harponnage" ( (NOM -6.084) )()); C
+( "harponne" ( (VER -6.520) )()); C
+( "harponner" ( (VER -5.821) )()); C
+( "harponnera" ( (VER -6.696) )()); C
+( "harponneur" ( (NOM -6.260) )()); C
+( "harponneurs" ( (NOM -6.561) )()); C
+( "harponné" ( (VER -6.298) )()); C
+( "harponnée" ( (VER -6.520) )()); C
+( "harponnés" ( (VER -6.696) )()); C
+( "harpons" ( (NOM -5.540) )()); C
+( "hart" ( (NAM -3.186) (NOM -5.959) )()); C
+( "haruspices" ( (NOM -6.561) )()); C
+( "has_been" ( (NOM -5.318) )()); C
+( "hasard" ( (NOM -3.577) )()); C
+( "hasarda" ( (VER -6.696) )()); C
+( "hasarde" ( (VER -6.043) )()); C
+( "hasardent" ( (VER -6.696) )()); C
+( "hasarder" ( (VER -5.793) )()); C
+( "hasarderais" ( (VER -6.395) )()); C
+( "hasardeuse" ( (ADJ -4.996) )()); C
+( "hasardeuses" ( (ADJ -5.737) )()); C
+( "hasardeux" ( (ADJ -5.193) )()); C
+( "hasards" ( (NOM -5.331) )()); C
+( "hasardée" ( (ADJ -6.038) (VER -6.696) )()); C
+( "hasch" ( (NAM -4.889) (NOM -5.036) )()); C
+( "haschich" ( (NOM -5.686) )()); C
+( "haschisch" ( (NOM -5.783) )()); C
+( "hase" ( (NOM -6.385) )()); C
+( "hassidim" ( (NOM -5.862) )()); C
+( "hassidique" ( (ADJ -5.384) )()); C
+( "hauban" ( (NOM -6.385) )()); C
+( "haubans" ( (NOM -5.908) )()); C
+( "haubert" ( (NOM -6.561) )()); C
+( "haussai" ( (VER -6.520) )()); C
+( "haussaient" ( (VER -6.696) )()); C
+( "haussait" ( (VER -6.696) )()); C
+( "haussant" ( (VER -6.395) )()); C
+( "hausse" ( (NOM -4.607) (VER -5.599) )()); SIWIS
+( "hausse_" ( (NOM -4.607) (VER -5.599) )()); SIWIS
+( "haussement" ( (NOM -6.084) )()); C
+( "haussent" ( (VER -6.696) )()); C
+( "hausser" ( (VER -5.997) )()); C
+( "hausserait" ( (VER -6.696) )()); C
+( "hausses" ( (NOM -6.084) (VER -6.219) )()); C
+( "haussez" ( (VER -6.043) )()); C
+( "haussier" ( (ADJ -6.038) )()); C
+( "haussière" ( (ADJ -6.038) (NOM -6.260) )()); C
+( "haussé" ( (VER -5.997) )()); C
+( "haussée" ( (VER -6.696) )()); C
+( "haut" ( (ADJ -3.265) (ADV -3.406) (NOM -3.287) )()); C
+( "haut_commandement" ( (NAM -4.889) )()); C
+( "haut_commissaire" ( (NOM -6.260) )()); C
+( "haut_commissariat" ( (NOM -6.385) )()); C
+( "haut_de_chausse" ( (NOM -6.561) )()); C
+( "haut_de_forme" ( (NOM -5.748) )()); C
+( "haut_fond" ( (NOM -6.385) )()); C
+( "haut_le_coeur" ( (NOM -6.163) )()); C
+( "haut_parleur" ( (NOM -4.695) )()); C
+( "haut_parleurs" ( (NOM -5.099) )()); C
+( "hautain" ( (ADJ -4.862) (NOM -6.260) )()); C
+( "hautaine" ( (ADJ -5.108) )()); C
+( "hautaines" ( (ADJ -5.737) )()); C
+( "hautains" ( (ADJ -5.737) )()); C
+( "hautbois" ( (NOM -5.632) )()); C
+( "haute" ( (ADJ -3.146) (NOM -4.672) )()); C
+( "haute_fidélité" ( (NAM -5.014) (NOM -6.260) )()); C
+( "haute_garonne" ( (NAM -6.561) )()); SIWIS
+( "hautement" ( (ADV -4.400) )()); C
+( "hautes" ( (ADJ -3.927) )()); C
+( "hautes_alpes" ( (NAM -6.561) )()); SIWIS
+( "hauteur" ( (NOM -3.914) )()); C
+( "hauteurs" ( (NOM -4.970) )()); C
+( "hautin" ( (NOM -6.561) )()); C
+( "hautins" ( (NOM -6.561) )()); C
+( "hauts" ( (ADJ -3.912) (NOM -4.729) )()); C
+( "hauts_de_chausses" ( (NOM -6.561) )()); C
+( "hauts_de_forme" ( (NOM -6.084) )()); C
+( "hauts_fonds" ( (NOM -6.017) )()); C
+( "hauts_fourneaux" ( (NOM -6.561) )()); C
+( "havanaise" ( (NOM -6.561) )()); C
+( "havane" ( (ADJ -6.038) (NAM -3.181) (NOM -5.908) )()); C
+( "havanes" ( (NOM -5.783) )()); C
+( "have" ( (NOM -5.821) (VER -4.181) )()); C
+( "haver" ( (VER -6.094) )()); C
+( "havre" ( (NAM -4.000) (NOM -5.181) )()); C
+( "havres" ( (NOM -6.163) )()); C
+( "havresac" ( (NOM -6.260) )()); C
+( "hayon" ( (NOM -6.017) )()); C
+( "haï" ( (ADJ -4.941) (VER -5.384) )()); C
+( "haïe" ( (ADJ -5.737) (VER -5.883) )()); C
+( "haïku" ( (NOM -5.561) )()); C
+( "haïkus" ( (NOM -6.561) )()); C
+( "haïr" ( (VER -4.584) )()); C
+( "haïra" ( (VER -5.997) )()); C
+( "haïrai" ( (VER -5.883) )()); C
+( "haïraient" ( (VER -6.298) )()); C
+( "haïrais" ( (VER -6.219) )()); C
+( "haïrait" ( (VER -6.696) )()); C
+( "haïras" ( (VER -6.094) )()); C
+( "haïrez" ( (VER -6.395) )()); C
+( "haïriez" ( (VER -6.696) )()); C
+( "haïront" ( (VER -6.219) )()); C
+( "haïs" ( (ADJ -5.640) (NOM -6.561) (VER -5.918) )()); C
+( "haïssable" ( (ADJ -5.494) )()); C
+( "haïssables" ( (ADJ -6.038) )()); C
+( "haïssaient" ( (VER -5.767) )()); C
+( "haïssais" ( (VER -5.122) )()); C
+( "haïssait" ( (VER -5.364) )()); C
+( "haïssant" ( (VER -6.298) )()); C
+( "haïsse" ( (VER -5.793) )()); C
+( "haïssent" ( (VER -5.010) )()); C
+( "haïsses" ( (VER -6.043) )()); C
+( "haïssez" ( (VER -5.205) )()); C
+( "haïssiez" ( (VER -5.718) )()); C
+( "haïssons" ( (VER -5.696) )()); C
+( "haït" ( (VER -6.395) )()); C
+( "haïtien" ( (ADJ -5.384) (NOM -6.084) )()); C
+( "haïtienne" ( (ADJ -5.561) )()); C
+( "haïtiens" ( (ADJ -5.862) (NOM -5.632) )()); C
+( "heaume" ( (NOM -5.686) )()); C
+( "heaumes" ( (NOM -6.260) )()); C
+( "hebdo" ( (NAM -4.537) (NOM -5.908) )()); C
+( "hebdomadaire" ( (ADJ -4.469) (NOM -5.658) )()); C
+( "hebdomadaires" ( (ADJ -5.060) (NOM -6.385) )()); C
+( "hebdos" ( (NOM -6.385) )()); C
+( "hectare" ( (NOM -5.607) )()); C
+( "hectares" ( (NOM -4.719) )()); C
+( "hectolitres" ( (NOM -6.561) )()); C
+( "hein" ( (NOM -6.084) (ONO -1.188) )()); C
+( "hello" ( (NAM -4.236) (ONO -2.712) )()); C
+( "hellène" ( (ADJ -5.862) )()); C
+( "hellènes" ( (NOM -6.561) )()); C
+( "hellénique" ( (ADJ -5.737) )()); C
+( "helléniste" ( (NOM -6.561) )()); C
+( "hellénistique" ( (ADJ -5.862) )()); C
+( "hem" ( (NAM -4.537) (ONO -4.523) )()); C
+( "hemlock" ( (NOM -5.482) )()); C
+( "hennir" ( (VER -6.395) )()); C
+( "hennissant" ( (ADJ -6.038) )()); C
+( "hennissement" ( (NOM -6.385) )()); C
+( "hennissements" ( (NOM -6.084) )()); C
+( "hennissent" ( (VER -6.520) )()); C
+( "hennit" ( (VER -6.520) )()); C
+( "henné" ( (NOM -5.632) )()); C
+( "henry" ( (NAM -2.091) (NOM -5.716) )()); C
+( "hep" ( (ONO -3.678) )()); C
+( "heptane" ( (NOM -6.260) )()); C
+( "herba" ( (VER -6.520) )()); C
+( "herbage" ( (NOM -6.385) (VER -6.696) )()); C
+( "herbages" ( (NOM -6.017) )()); C
+( "herbe" ( (NOM -3.737) (VER -6.395) )()); C
+( "herber" ( (VER -6.520) )()); C
+( "herbes" ( (NOM -4.395) (VER -6.696) )()); C
+( "herbeuse" ( (ADJ -6.038) )()); C
+( "herbeuses" ( (ADJ -6.038) )()); C
+( "herbeux" ( (ADJ -6.038) )()); C
+( "herbicide" ( (ADJ -6.038) (NOM -5.959) )()); C
+( "herbicides" ( (ADJ -6.038) (NOM -5.959) )()); C
+( "herbier" ( (NOM -6.163) )()); C
+( "herbiers" ( (NOM -6.163) )()); C
+( "herbivore" ( (ADJ -5.640) (NOM -6.084) )()); C
+( "herbivores" ( (ADJ -5.494) (NOM -6.017) )()); C
+( "herboriste" ( (NOM -5.482) )()); C
+( "herboristerie" ( (NOM -6.163) )()); C
+( "herboristeries" ( (NOM -6.260) )()); C
+( "herboristes" ( (NOM -5.482) )()); C
+( "herboristes" ( (NOM -6.561) )()); C
+( "herbue" ( (ADJ -6.038) )()); C
+( "hercher" ( (VER -6.395) )()); C
+( "hercule" ( (NAM -3.274) (NOM -5.821) )()); C
+( "hercules" ( (NOM -5.716) )()); C
+( "herculéen" ( (ADJ -5.862) )()); C
+( "herculéenne" ( (ADJ -6.038) )()); C
+( "hermaphrodite" ( (ADJ -5.297) (NAM -4.792) (NOM -6.017) )()); C
+( "hermaphrodites" ( (ADJ -5.640) (NOM -5.959) )()); C
+( "hermine" ( (NAM -4.537) (NOM -5.632) )()); C
+( "herminette" ( (NOM -6.561) )()); C
+( "hermès" ( (NAM -3.801) (NOM -5.821) )()); C
+( "herméneutique" ( (ADJ -6.038) )()); C
+( "hermétique" ( (ADJ -4.686) )()); C
+( "hermétiquement" ( (ADV -5.270) )()); C
+( "hermétiques" ( (ADJ -5.737) )()); C
+( "hermétisme" ( (NOM -6.561) )()); C
+( "herniaire" ( (ADJ -5.561) )()); C
+( "hernie" ( (NOM -4.790) )()); C
+( "hernies" ( (NOM -6.084) )()); C
+( "herpès" ( (NOM -5.077) )()); C
+( "herpétique" ( (ADJ -5.862) )()); C
+( "herpétologie" ( (NOM -6.163) )()); C
+( "herpétologiste" ( (NOM -6.561) )()); C
+( "herse" ( (NOM -5.686) )()); C
+( "herses" ( (NOM -6.561) )()); C
+( "hertz" ( (NAM -4.377) (NOM -5.908) )()); C
+( "hertzienne" ( (ADJ -5.862) )()); C
+( "hertziennes" ( (ADJ -5.561) )()); C
+( "hertziens" ( (ADJ -6.038) )()); C
+( "hetman" ( (NOM -5.294) )()); C
+( "heu" ( (ONO -2.295) )()); C
+( "heur" ( (NOM -6.084) )()); C
+( "heure" ( (NOM -2.580) )()); C
+( "heures" ( (NOM -2.700) )()); C
+( "heureuse" ( (ADJ -2.729) (NOM -5.959) )()); C
+( "heureusement" ( (ADV -3.456) )()); C
+( "heureuses" ( (ADJ -4.072) (NOM -5.716) )()); C
+( "heureux" ( (ADJ -2.482) (NOM -4.301) )()); C
+( "heuristique" ( (ADJ -5.862) (NOM -6.561) )()); C
+( "heurs" ( (NOM -6.561) )()); C
+( "heurt" ( (NOM -5.862) )()); C
+( "heurta" ( (NOM -6.561) (VER -6.219) )()); C
+( "heurtai" ( (VER -6.696) )()); C
+( "heurtaient" ( (VER -6.152) )()); C
+( "heurtais" ( (VER -6.298) )()); C
+( "heurtait" ( (VER -6.298) )()); C
+( "heurtant" ( (VER -5.883) )()); C
+( "heurte" ( (VER -5.165) )()); C
+( "heurtent" ( (VER -5.718) )()); C
+( "heurter" ( (NAM -5.190) (VER -4.956) )()); C
+( "heurtera" ( (VER -6.395) )()); C
+( "heurterait" ( (VER -6.298) )()); C
+( "heurtez" ( (VER -6.152) )()); C
+( "heurtoir" ( (NOM -6.260) )()); C
+( "heurts" ( (NOM -5.821) )()); C
+( "heurtèrent" ( (VER -6.696) )()); C
+( "heurté" ( (ADJ -6.038) (VER -4.509) )()); C
+( "heurtée" ( (VER -5.550) )()); C
+( "heurtées" ( (VER -6.219) )()); C
+( "heurtés" ( (ADJ -5.737) (VER -5.883) )()); C
+( "hexagonal" ( (ADJ -6.038) )()); C
+( "hexagonale" ( (ADJ -6.038) )()); C
+( "hexagonales" ( (ADJ -6.038) )()); C
+( "hexagone" ( (NOM -6.385) )()); C
+( "hexamètres" ( (NOM -6.385) )()); C
+( "hi" ( (ONO -3.076) )()); C
+( "hi_fi" ( (NOM -5.138) )()); C
+( "hi_han" ( (NOM -6.260) (ONO -4.632) )()); C
+( "hiatale" ( (ADJ -5.640) )()); C
+( "hiatus" ( (NOM -6.163) )()); C
+( "hibernaient" ( (VER -6.520) )()); C
+( "hibernait" ( (VER -6.395) )()); C
+( "hibernation" ( (NOM -5.138) )()); C
+( "hiberne" ( (VER -5.821) )()); C
+( "hibernent" ( (VER -6.298) )()); C
+( "hiberner" ( (VER -5.696) )()); C
+( "hiberné" ( (VER -6.219) )()); C
+( "hibiscus" ( (NOM -5.748) )()); C
+( "hibou" ( (NOM -4.772) )()); C
+( "hiboux" ( (NOM -5.260) )()); C
+( "hic" ( (NOM -4.713) )()); C
+( "hickory" ( (NOM -5.716) )()); C
+( "hidalgo" ( (NAM -4.261) (NOM -6.017) )()); C
+( "hidalgos" ( (NOM -6.385) )()); C
+( "hideuse" ( (ADJ -4.533) )()); C
+( "hideusement" ( (ADV -6.208) )()); C
+( "hideuses" ( (ADJ -5.038) )()); C
+( "hideux" ( (ADJ -4.245) )()); C
+( "hier" ( (ADV -2.650) (NOM -4.4444) )()); C
+( "high_life" ( (NOM -6.017) )()); C
+( "high_life" ( (NOM -6.385) )()); C
+( "high_tech" ( (ADJ -4.924) (NOM -5.748) )()); C
+( "high_tech" ( (ADJ -5.737) )()); C
+( "highlander" ( (NOM -5.686) )()); C
+( "highlanders" ( (NOM -5.607) )()); C
+( "hilaire" ( (ADJ -5.862) (NAM -5.190) )()); C
+( "hilarant" ( (ADJ -4.177) )()); C
+( "hilarante" ( (ADJ -4.996) )()); C
+( "hilarantes" ( (ADJ -5.436) )()); C
+( "hilarants" ( (ADJ -5.339) )()); C
+( "hilare" ( (ADJ -5.561) )()); C
+( "hilarité" ( (NOM -5.584) )()); C
+( "hile" ( (NOM -5.748) )()); C
+( "himalaya" ( (NAM -3.801) (NOM -6.561) )()); C
+( "himalayenne" ( (ADJ -5.862) )()); C
+( "hindi" ( (NOM -5.716) )()); C
+( "hindou" ( (ADJ -5.017) (NOM -5.540) )()); C
+( "hindoue" ( (ADJ -5.135) (NOM -6.260) )()); C
+( "hindoues" ( (ADJ -5.561) (NOM -6.561) )()); C
+( "hindouisme" ( (NOM -6.017) )()); C
+( "hindous" ( (ADJ -5.260) (NOM -5.371) )()); C
+( "hindoustani" ( (NOM -6.260) )()); C
+( "hip" ( (ONO -3.254) )()); C
+( "hip_hop" ( (NOM -4.729) )()); C
+( "hippie" ( (ADJ -4.546) (NOM -4.833) )()); C
+( "hippies" ( (ADJ -4.924) (NOM -4.713) )()); C
+( "hippique" ( (ADJ -5.083) )()); C
+( "hippiques" ( (ADJ -5.260) )()); C
+( "hippisme" ( (NOM -6.385) )()); C
+( "hippo" ( (NOM -5.239) )()); C
+( "hippocampe" ( (NOM -5.607) )()); C
+( "hippocampes" ( (NOM -6.084) )()); C
+( "hippocratique" ( (ADJ -6.038) )()); C
+( "hippodrome" ( (NOM -5.146) )()); C
+( "hippodromes" ( (NOM -6.561) )()); C
+( "hippogriffe" ( (NOM -5.959) )()); C
+( "hippomobile" ( (ADJ -6.038) )()); C
+( "hippopotame" ( (NOM -5.070) )()); C
+( "hippopotames" ( (NOM -5.658) )()); C
+( "hippy" ( (ADJ -5.862) (NOM -5.658) )()); C
+( "hirondelle" ( (NOM -5.294) )()); C
+( "hirondelles" ( (NOM -5.447) )()); C
+( "hirsute" ( (ADJ -4.907) )()); C
+( "hirsutes" ( (ADJ -5.339) )()); C
+( "hirsutisme" ( (NOM -6.385) )()); C
+( "hirudine" ( (NOM -6.561) )()); C
+( "hispanique" ( (ADJ -4.737) (NOM -5.686) )()); C
+( "hispaniques" ( (ADJ -5.737) (NOM -5.862) )()); C
+( "hispano" ( (ADV -5.840) )()); C
+( "hispano_américain" ( (NOM -6.561) )()); C
+( "hispano_américaine" ( (ADJ -5.737) )()); C
+( "hispanophone" ( (NOM -6.385) )()); C
+( "hissa" ( (VER -6.298) )()); C
+( "hissai" ( (VER -6.696) )()); C
+( "hissaient" ( (VER -6.520) )()); C
+( "hissais" ( (VER -6.520) )()); C
+( "hissait" ( (VER -6.298) )()); C
+( "hissant" ( (VER -6.696) )()); C
+( "hisse" ( (NOM -6.084) (ONO -4.155) (VER -5.068) )()); C
+( "hissent" ( (VER -6.395) )()); C
+( "hisser" ( (VER -5.152) )()); C
+( "hissera" ( (VER -6.298) )()); C
+( "hissez" ( (VER -5.053) )()); C
+( "hissons" ( (VER -6.298) )()); C
+( "hissâmes" ( (VER -6.696) )()); C
+( "hissé" ( (VER -5.492) )()); C
+( "hissée" ( (VER -6.219) )()); C
+( "hissées" ( (VER -6.696) )()); C
+( "hissés" ( (VER -6.094) )()); C
+( "histamine" ( (NOM -5.716) )()); C
+( "histaminique" ( (ADJ -5.862) )()); C
+( "hister" ( (NOM -6.385) )()); C
+( "histocompatibilité" ( (NOM -6.561) )()); C
+( "histoire" ( (NOM -2.690) )()); C
+( "histoires" ( (NAM -4.149) (NOM -3.417) )()); C
+( "histologie" ( (NOM -5.862) )()); C
+( "histologique" ( (ADJ -5.561) )()); C
+( "histopathologie" ( (NOM -6.385) )()); C
+( "histoplasmose" ( (NOM -6.561) )()); C
+( "historien" ( (NOM -4.982) )()); C
+( "historienne" ( (NOM -5.783) )()); C
+( "historiens" ( (NOM -5.239) )()); C
+( "historiographe" ( (NOM -6.561) )()); C
+( "historiographie" ( (NOM -6.385) )()); C
+( "historique" ( (ADJ -3.686) (NOM -4.765) )()); C
+( "historiquement" ( (ADV -5.154) )()); C
+( "historiques" ( (ADJ -4.282) (NOM -5.908) )()); C
+( "histrion" ( (NOM -6.385) )()); C
+( "histrions" ( (NOM -6.561) )()); C
+( "hit" ( (NOM -4.949) )()); C
+( "hit_parade" ( (NOM -5.283) )()); C
+( "hit_parades" ( (NOM -6.163) )()); C
+( "hitchcockien" ( (ADJ -5.737) )()); C
+( "hitlérien" ( (ADJ -5.640) (NOM -6.561))()); C
+( "hitlérienne" ( (ADJ -5.561) (NOM -6.561))()); C
+( "hitlériennes" ( (ADJ -5.260) (NOM -6.561) )()); C
+( "hitlériens" ( (ADJ -5.640) (NOM -6.561))()); C
+( "hitlérisme" ( (NOM -6.561) )()); C
+( "hits" ( (NOM -5.501) )()); C
+( "hittite" ( (ADJ -5.640) (NAM -5.014) )()); C
+( "hittites" ( (NAM -5.014) )()); C
+( "hiver" ( (NOM -3.752) )()); C
+( "hivernal" ( (ADJ -5.384) )()); C
+( "hivernale" ( (ADJ -5.640) )()); C
+( "hivernales" ( (ADJ -5.561) )()); C
+( "hiverner" ( (VER -6.520) )()); C
+( "hivers" ( (NOM -5.181) )()); C
+( "hiérarchie" ( (NOM -4.689) )()); C
+( "hiérarchies" ( (NOM -6.385) )()); C
+( "hiérarchique" ( (ADJ -4.834) )()); C
+( "hiérarchiquement" ( (ADV -6.384) )()); C
+( "hiérarchiques" ( (ADJ -5.862) )()); C
+( "hiérarchise" ( (VER -6.696) )()); C
+( "hiératique" ( (ADJ -6.038) )()); C
+( "hiératiques" ( (ADJ -6.038) )()); C
+( "hiéroglyphe" ( (NOM -5.959) )()); C
+( "hiéroglyphes" ( (NOM -5.114) )()); C
+( "hiéroglyphique" ( (ADJ -6.038) )()); C
+( "hiéroglyphiques" ( (ADJ -5.862) )()); C
+( "ho" ( (NAM -3.446) (NOM -6.561) (ONO -2.543) )()); C
+( "hobbies" ( (NOM -5.331) )()); C
+( "hobby" ( (NOM -4.669) )()); C
+( "hobereau" ( (NOM -6.385) )()); C
+( "hobereaux" ( (NOM -6.561) )()); C
+( "hocha" ( (VER -6.395) )()); C
+( "hochait" ( (VER -6.520) )()); C
+( "hochant" ( (VER -6.152) )()); C
+( "hoche" ( (NAM -4.889) (VER -5.636) )()); C
+( "hochement" ( (NOM -5.908) )()); C
+( "hochements" ( (NOM -6.385) )()); C
+( "hochent" ( (VER -6.696) )()); C
+( "hocher" ( (VER -5.742) )()); C
+( "hoches" ( (VER -6.298) )()); C
+( "hochet" ( (NOM -5.540) )()); C
+( "hochets" ( (NOM -6.084) )()); C
+( "hochez" ( (VER -5.851) )()); C
+( "hoché" ( (VER -5.767) )()); C
+( "hockey" ( (NOM -4.236) )()); C
+( "hockeyeur" ( (NOM -5.658) )()); C
+( "hockeyeurs" ( (NOM -5.959) )()); C
+( "hodgkinien" ( (ADJ -6.038) )()); C
+( "hodja" ( (NAM -3.923) (NOM -5.540) )()); C
+( "hold_up" ( (NOM -4.364) )()); C
+( "hold_up" ( (NOM -5.862) )()); C
+( "holding" ( (NOM -5.260) )()); C
+( "holdings" ( (NOM -5.959) )()); C
+( "holistique" ( (ADJ -5.225) )()); C
+( "holistiques" ( (ADJ -6.038) )()); C
+( "hollandais" ( (ADJ -4.436) (NOM -4.923) )()); C
+( "hollandaise" ( (ADJ -4.657) (NOM -5.862) )()); C
+( "hollandaises" ( (ADJ -5.737) (NOM -6.260) )()); C
+( "hollande" ( (NAM -3.309) (NOM -6.385) )()); C
+( "holocauste" ( (NOM -4.867) )()); C
+( "hologramme" ( (NOM -4.829) )()); C
+( "hologrammes" ( (NOM -5.250) )()); C
+( "holographe" ( (ADJ -5.862) )()); C
+( "holographes" ( (ADJ -5.862) )()); C
+( "holographie" ( (NOM -6.017) )()); C
+( "holographique" ( (ADJ -4.737) )()); C
+( "holographiques" ( (ADJ -5.384) )()); C
+( "holster" ( (NOM -5.959) )()); C
+( "holà" ( (NOM -5.092) (ONO -3.257) )()); C
+( "hom" ( (ONO -4.477) )()); C
+( "homard" ( (NOM -4.425) )()); C
+( "homardiers" ( (NOM -6.561) )()); C
+( "homards" ( (NOM -5.005) )()); C
+( "hombre" ( (NOM -5.084) )()); C
+( "home" ( (NAM -3.324) (NOM -4.444) )()); C
+( "home_trainer" ( (NOM -6.561) )()); C
+( "homeland" ( (NOM -5.748) )()); C
+( "homes" ( (NOM -5.501) )()); C
+( "homicide" ( (ADJ -4.326) (NOM -4.051) )()); C
+( "homicides" ( (ADJ -5.017) (NOM -4.759) )()); C
+( "hommage" ( (NOM -4.224) )()); C
+( "hommages" ( (NOM -4.794) )()); C
+( "hommasse" ( (ADJ -5.561) )()); C
+( "homme" ( (NAM -5.190) (NOM -2.277) )()); C
+( "homme_chien" ( (NOM -5.908) )()); C
+( "homme_clé" ( (NOM -6.163) )()); C
+( "homme_femme" ( (NOM -5.686) )()); C
+( "homme_grenouille" ( (NOM -5.821) )()); C
+( "homme_loup" ( (NOM -6.084) )()); C
+( "homme_machine" ( (NOM -6.163) )()); C
+( "homme_oiseau" ( (NOM -6.084) )()); C
+( "homme_orchestre" ( (NOM -6.260) )()); C
+( "homme_poisson" ( (NAM -5.190) (NOM -6.017) )()); C
+( "homme_robot" ( (NOM -6.084) )()); C
+( "homme_serpent" ( (NOM -6.385) )()); C
+( "hommes" ( (NOM -2.626) )()); C
+( "hommes_grenouilles" ( (NOM -6.260) )()); C
+( "homo" ( (ADJ -3.767) (NAM -4.000) (NOM -4.710) )()); C
+( "homo_erectus" ( (NOM -6.260) )()); C
+( "homogène" ( (ADJ -5.339) )()); C
+( "homogènes" ( (ADJ -5.737) )()); C
+( "homogénéisateur" ( (NOM -6.561) )()); C
+( "homogénéisation" ( (NOM -6.385) )()); C
+( "homogénéisé" ( (ADJ -5.862) (VER -6.696) )()); C
+( "homogénéisée" ( (ADJ -5.862) )()); C
+( "homogénéité" ( (NOM -6.260) )()); C
+( "homologation" ( (NOM -5.862) )()); C
+( "homologue" ( (ADJ -6.038) (NOM -5.607) )()); C
+( "homologuer" ( (VER -6.395) )()); C
+( "homologues" ( (ADJ -6.038) (NOM -5.821) )()); C
+( "homologué" ( (ADJ -6.038) )()); C
+( "homologuée" ( (VER -6.696) )()); C
+( "homologués" ( (VER -6.696) )()); C
+( "homoncule" ( (NOM -6.260) )()); C
+( "homonyme" ( (ADJ -5.737) (NOM -5.561) )()); C
+( "homonymes" ( (NOM -6.163) )()); C
+( "homophile" ( (NOM -6.561) )()); C
+( "homophobe" ( (ADJ -4.649) )()); C
+( "homophobes" ( (ADJ -5.193) )()); C
+( "homophone" ( (NOM -6.561) )()); C
+( "homos" ( (ADJ -4.623) (NOM -4.683) )()); C
+( "homosexualité" ( (NOM -4.769) )()); C
+( "homosexuel" ( (ADJ -4.148) (NOM -4.938) )()); C
+( "homosexuelle" ( (ADJ -4.748) (NOM -5.908) )()); C
+( "homosexuelles" ( (ADJ -5.135) (NOM -6.561) )()); C
+( "homosexuels" ( (ADJ -4.795) (NOM -4.908) )()); C
+( "homozygote" ( (ADJ -6.038) )()); C
+( "homuncule" ( (NOM -6.561) )()); C
+( "homélie" ( (NOM -6.017) )()); C
+( "homélies" ( (NOM -6.385) )()); C
+( "homéopathe" ( (ADJ -5.862) (NOM -6.084) )()); C
+( "homéopathie" ( (NOM -5.821) )()); C
+( "homéopathique" ( (ADJ -5.640) )()); C
+( "homéostatique" ( (ADJ -6.038) )()); C
+( "homéothermie" ( (NOM -6.561) )()); C
+( "homérique" ( (ADJ -5.640) )()); C
+( "homériques" ( (ADJ -6.038) )()); C
+( "hon" ( (ONO -3.986) )()); C
+( "hondurien" ( (ADJ -6.038) (NOM -6.561) )()); C
+( "hong_kong" ( (NAM -3.163) (NOM -6.385) )()); C
+( "hongkongais" ( (NOM -6.561) )()); C
+( "hongre" ( (ADJ -5.384) (NOM -6.561) )()); C
+( "hongres" ( (ADJ -6.038) )()); C
+( "hongrois" ( (ADJ -4.494) (NOM -5.084) )()); C
+( "hongroise" ( (ADJ -4.771) (NOM -5.607) )()); C
+( "hongroises" ( (ADJ -5.640) (NOM -6.561) )()); C
+( "honneur" ( (NOM -3.090) )()); C
+( "honneurs" ( (NOM -4.610) )()); C
+( "honni" ( (ADJ -5.225) (VER -6.219) )()); C
+( "honnie" ( (ADJ -5.862) (VER -6.395) )()); C
+( "honnis" ( (VER -6.696) )()); C
+( "honnit" ( (VER -6.696) )()); C
+( "honnête" ( (ADJ -2.959) )()); C
+( "honnêtement" ( (ADV -3.789) )()); C
+( "honnêtes" ( (ADJ -3.694) )()); C
+( "honnêteté" ( (NAM -5.190) (NOM -4.335) )()); C
+( "honora" ( (VER -6.395) )()); C
+( "honorabilité" ( (NOM -5.908) )()); C
+( "honorable" ( (ADJ -3.704) )()); C
+( "honorablement" ( (ADV -5.208) )()); C
+( "honorables" ( (ADJ -4.430) )()); C
+( "honoraient" ( (VER -6.696) )()); C
+( "honoraire" ( (ADJ -4.759) )()); C
+( "honoraires" ( (ADJ -5.225) (NOM -4.622) )()); C
+( "honorais" ( (VER -6.696) )()); C
+( "honorait" ( (VER -6.043) )()); C
+( "honorant" ( (VER -6.395) )()); C
+( "honore" ( (VER -4.813) )()); C
+( "honorent" ( (VER -5.506) )()); C
+( "honorer" ( (NAM -5.190) (VER -4.457) )()); C
+( "honorera" ( (VER -5.851) )()); C
+( "honorerai" ( (VER -5.617) )()); C
+( "honorerait" ( (VER -6.219) )()); C
+( "honoreras" ( (VER -5.997) )()); C
+( "honorerez" ( (VER -5.997) )()); C
+( "honorerons" ( (VER -6.152) )()); C
+( "honoreront" ( (VER -6.520) )()); C
+( "honores" ( (VER -5.655) )()); C
+( "honorez" ( (VER -5.298) )()); C
+( "honoriez" ( (VER -6.520) )()); C
+( "honorifique" ( (ADJ -4.996) )()); C
+( "honorifiques" ( (ADJ -5.737) )()); C
+( "honoris_causa" ( (ADV -5.782) )()); C
+( "honorons" ( (NOM -6.561) (VER -5.599) )()); C
+( "honorât" ( (VER -7.995) )()); C
+( "honoré" ( (ADJ -4.389) (NAM -3.593) (VER -4.596) )()); C
+( "honorée" ( (ADJ -5.060) (NAM -5.014) (VER -5.257) )()); C
+( "honorées" ( (VER -5.883) )()); C
+( "honorés" ( (ADJ -5.060) (VER -5.241) )()); C
+( "honover" ( (NOM -6.561) )()); C
+( "honte" ( (NOM -3.299) )()); C
+( "hontes" ( (NOM -6.163) )()); C
+( "honteuse" ( (ADJ -4.464) )()); C
+( "honteusement" ( (ADV -5.430) )()); C
+( "honteuses" ( (ADJ -5.260) )()); C
+( "honteux" ( (ADJ -3.835) )()); C
+( "hooligan" ( (NOM -5.862) )()); C
+( "hooligans" ( (NOM -5.464) )()); C
+( "hop" ( (NOM -6.561) (ONO -2.747) )()); C
+( "hopak" ( (NOM -6.561) )()); C
+( "hopi" ( (ADJ -6.038) (NAM -5.190) (NOM -6.561) )()); C
+( "hopis" ( (NAM -5.014) )()); C
+( "hoquet" ( (NOM -4.880) )()); C
+( "hoquetant" ( (VER -6.696) )()); C
+( "hoqueter" ( (VER -6.696) )()); C
+( "hoquets" ( (NOM -6.017) )()); C
+( "hoquette" ( (VER -6.696) )()); C
+( "horaire" ( (ADJ -4.249) (NOM -4.672) )()); C
+( "horaires" ( (ADJ -4.996) (NOM -4.408) )()); C
+( "horde" ( (NOM -4.837) )()); C
+( "hordes" ( (NOM -5.344) )()); C
+( "horizon" ( (NOM -4.328) )()); C
+( "horizons" ( (NOM -4.894) )()); C
+( "horizontal" ( (ADJ -4.657) )()); C
+( "horizontale" ( (ADJ -5.038) (NOM -5.447) )()); C
+( "horizontalement" ( (ADV -5.509) )()); C
+( "horizontales" ( (ADJ -5.384) (NOM -5.344) )()); C
+( "horizontaux" ( (ADJ -5.737) )()); C
+( "horloge" ( (NOM -4.181) )()); C
+( "horloger" ( (ADJ -5.436) (NOM -5.658) )()); C
+( "horlogerie" ( (NOM -5.821) )()); C
+( "horlogers" ( (ADJ -6.038) (NOM -6.163) )()); C
+( "horloges" ( (NOM -5.084) )()); C
+( "hormis" ( (PRE -4.392) )()); C
+( "hormonal" ( (ADJ -4.847) )()); C
+( "hormonale" ( (ADJ -5.260) )()); C
+( "hormonales" ( (ADJ -5.640) )()); C
+( "hormonaux" ( (ADJ -5.862) )()); C
+( "hormone" ( (NOM -5.250) (VER -6.520) )()); C
+( "hormones" ( (NOM -4.420) )()); C
+( "hornblende" ( (NOM -6.561) )()); C
+( "horoscope" ( (NOM -4.976) )()); C
+( "horoscopes" ( (NOM -5.862) )()); C
+( "horreur" ( (NOM -3.632) )()); C
+( "horreurs" ( (NOM -4.367) )()); C
+( "horrible" ( (ADJ -2.876) )()); C
+( "horriblement" ( (ADV -4.476) )()); C
+( "horribles" ( (ADJ -3.607) )()); C
+( "horrifiait" ( (VER -6.520) )()); C
+( "horrifiant" ( (ADJ -5.108) )()); C
+( "horrifiante" ( (ADJ -5.737) )()); C
+( "horrifiants" ( (ADJ -6.038) )()); C
+( "horrifie" ( (VER -6.219) )()); C
+( "horrifier" ( (VER -6.696) )()); C
+( "horrifique" ( (ADJ -5.640) )()); C
+( "horrifié" ( (ADJ -5.561) (VER -5.520) )()); C
+( "horrifiée" ( (ADJ -5.862) (VER -5.655) )()); C
+( "horrifiées" ( (VER -6.520) )()); C
+( "horrifiés" ( (ADJ -5.737) (VER -5.821) )()); C
+( "horripilant" ( (ADJ -5.339) )()); C
+( "horripilante" ( (ADJ -5.494) )()); C
+( "horripilantes" ( (ADJ -5.862) )()); C
+( "horripilation" ( (NOM -6.561) )()); C
+( "horripile" ( (VER -5.883) )()); C
+( "horripilent" ( (VER -6.696) )()); C
+( "horripiler" ( (VER -6.696) )()); C
+( "horripilée" ( (VER -6.696) )()); C
+( "hors" ( (NOM -6.561) (PRE -2.972) )()); C
+( "hors_bord" ( (ADJ -5.640) (NOM -5.482) )()); C
+( "hors_champ" ( (ADV -5.640) (NOM -5.482) )()); C
+( "hors_circuit" ( (ADJ -5.640) )())
+( "hors_cote" ( (ADJ -6.038) )()); C
+( "hors_d'oeuvre" ( (NOM -5.155) )()); C
+( "hors_jeu" ( (ADJ -4.519) (NOM -5.561) )()); C
+( "hors_la_loi" ( (NOM -4.698)) (ADJ -5.640) )()); C
+( "hors_piste" ( (NOM -5.908) )()); C
+( "hors_série" ( (ADJ -6.038) )()); C
+( "horse_guards" ( (NOM -6.385) )()); C
+( "hortensia" ( (NAM -5.014) (NOM -6.084) )()); C
+( "hortensias" ( (NOM -5.716) )()); C
+( "horticulteur" ( (NOM -6.017) )()); C
+( "horticulteurs" ( (NOM -6.561) )()); C
+( "horticultrice" ( (NOM -6.561) )()); C
+( "horticulture" ( (NOM -5.540) )()); C
+( "hosanna" ( (NOM -5.821) )()); C
+( "hosannas" ( (NOM -6.084) )()); C
+( "hospice" ( (NOM -4.783) )()); C
+( "hospices" ( (NOM -6.084) )()); C
+( "hospitalier" ( (ADJ -4.533) )()); C
+( "hospitaliers" ( (ADJ -5.135) (NOM -6.385) )()); C
+( "hospitalisation" ( (NOM -5.482) )()); C
+( "hospitalisations" ( (NOM -6.385) )()); C
+( "hospitaliser" ( (VER -5.212) )()); C
+( "hospitaliserons" ( (VER -6.696) )()); C
+( "hospitalisé" ( (VER -5.146) )()); C
+( "hospitalisée" ( (VER -5.316) )()); C
+( "hospitalisées" ( (VER -6.395) )()); C
+( "hospitalisés" ( (VER -5.956) )()); C
+( "hospitalité" ( (NOM -4.418) )()); C
+( "hospitalière" ( (ADJ -5.260) )()); C
+( "hospitalières" ( (ADJ -5.862) )()); C
+( "hostellerie" ( (NOM -6.561) )()); C
+( "hostie" ( (NOM -5.077) )()); C
+( "hosties" ( (NOM -5.821) )()); C
+( "hostile" ( (ADJ -3.888) (NOM -6.561) )()); C
+( "hostiles" ( (ADJ -4.193) )()); C
+( "hostilité" ( (NOM -4.735) )()); C
+( "hostilités" ( (NOM -5.190) )()); C
+( "hosto" ( (NOM -4.431) )()); C
+( "hostos" ( (NOM -6.084) )()); C
+( "hot" ( (ADJ -4.343) (NOM -5.239) )()); C
+( "hot_dog" ( (NOM -4.495) )()); C
+( "hot_dogs" ( (NOM -4.542) )()); C
+( "hotline" ( (NOM -5.357) )()); C
+( "hotte" ( (NOM -5.658) )()); C
+( "hotter" ( (VER -6.696) )()); C
+( "hottes" ( (NOM -6.084) )()); C
+( "hou" ( (ONO -3.099) )()); C
+( "houa" ( (VER -6.152) )()); C
+( "houblon" ( (NOM -5.607) )()); C
+( "houe" ( (NOM -5.783) (VER -6.696) )()); C
+( "houer" ( (NOM -5.783) (VER -6.696) )()); C
+( "houhou" ( (ONO -3.945) )()); C
+( "houille" ( (NOM 0) )()); C
+( "houillère" ( (ADJ -6.038) (NOM -6.084) )()); C
+( "houka" ( ( NOM -6.561) )()) ; L
+( "houkas" ( ( NOM -6.561) )()) 
+( "houle" ( (NOM -5.520) )()); C
+( "houles" ( (NOM -6.385) )()); C
+( "houlette" ( (NOM -5.357) )()); C
+( "houleuse" ( (ADJ -5.038) )()); C
+( "houleuses" ( (ADJ -6.038) )()); C
+( "houleux" ( (ADJ -5.297) )()); C
+( "houlà" ( (ONO -4.363) )()); C
+( "houp" ( (ONO -4.574) )()); C
+( "houppe" ( (NOM -6.561) )()); C
+( "houppelande" ( (NOM -6.385) )()); C
+( "houppes" ( (NOM -6.561) )()); C
+( "houppette" ( (NOM -6.385) )()); C
+( "houri" ( (NOM -6.561) )()); C
+( "hourra" ( (NOM -4.894) (ONO -3.172) )()); C
+( "hourrah" ( (NOM -5.385) )()); C
+( "hourras" ( (NOM -5.658) )()); C
+( "hourvari" ( (NOM -6.385) )()); C
+( "house" ( (NOM -4.058) )()); C
+( "house_boat" ( (NOM -6.385) )()); C
+( "house_boats" ( (NOM -6.561) )()); C
+( "house_music" ( (NOM -6.561) )()); C
+( "houseaux" ( (NOM -6.561) )()); C
+( "houspillait" ( (VER -6.696) )()); C
+( "houspille" ( (VER -6.395) )()); C
+( "houspiller" ( (VER -5.997) )()); C
+( "houspillé" ( (VER -6.520) )()); C
+( "housse" ( (NOM -5.371) )()); C
+( "housses" ( (NOM -5.447) (VER -6.696) )()); C
+( "houx" ( (NOM -5.959) )()); C
+( "hovercraft" ( (NOM -6.561) )()); C
+( "hua" ( (NAM -4.646) (VER -5.883) )()); C
+( "huaient" ( (VER -6.696) )()); C
+( "huait" ( (VER -6.520) )()); C
+( "huant" ( (VER -6.395) )()); C
+( "huard" ( (NOM -5.114) )()); C
+( "huards" ( (NOM -5.959) )()); C
+( "hub" ( (NOM -4.899) )()); C
+( "hubert" ( (NAM -5.190) (NOM -5.190) )()); C
+( "hublot" ( (NOM -4.899) )()); C
+( "hublots" ( (NOM -5.447) )()); C
+( "huche" ( (NOM -5.908) )()); C
+( "hue" ( (NAM -5.190) (NOM -6.385) (ONO -3.432) (VER -5.566) )()); C
+( "huer" ( (VER -5.582) )()); C
+( "huerta" ( (NOM -5.783) )()); C
+( "huez" ( (VER -6.520) )()); C
+( "hugh" ( (NAM -3.370) (ONO -3.377) )()); C
+( "hughes" ( (NAM -3.370) )()); C
+( "huguenot" ( (ADJ -5.862) (NOM -6.385) )()); C
+( "huguenote" ( (NOM -6.561) )()); C
+( "huguenots" ( (NOM -6.260) )()); C
+( "hui" ( (NAM -4.889) (NOM -4.745) )()); C
+( "huilait" ( (VER -6.696) )()); C
+( "huile" ( (NOM -3.874) (VER -5.997) )()); C
+( "huiler" ( (VER -5.918) )()); C
+( "huilerai" ( (VER -6.520) )()); C
+( "huiles" ( (NOM -4.825) )()); C
+( "huileuse" ( (ADJ -5.384) )()); C
+( "huileuses" ( (ADJ -6.038) )()); C
+( "huileux" ( (ADJ -5.083) )()); C
+( "huilez" ( (VER -6.219) )()); C
+( "huilier" ( (ADJ -6.038) (NOM -6.561) )()); C
+( "huilé" ( (ADJ -5.260) (VER -6.043) )()); C
+( "huilée" ( (ADJ -5.260) (VER -6.219) )()); C
+( "huilées" ( (VER -6.298) )()); C
+( "huilés" ( (ADJ -5.494) (VER -6.696) )()); C
+( "huis" ( (NOM -5.371) )()); C
+( "huisserie" ( (NOM -6.260) )()); C
+( "huissier" ( (NOM -4.833) )()); C
+( "huissiers" ( (NOM -5.283) )()); C
+( "huit" ( (ADJ:num -1.635) (PRO:ind -2) (NOM -6) )()); C
+( "huitaine" ( (NOM -5.959) )()); C
+( "huitième" ( (ADJ -4.533) (NOM -5.172) )()); C
+( "huitièmes" ( (NOM -5.821) )()); C
+( "huitre" ( (NOM -4.918) )()); C
+( "huitres" ( (NOM -4.627) )()); C
+( "huitrier" ( (NOM -6.561) )()); C
+( "hulotte" ( (NOM -6.561) )()); C
+( "hulule" ( (VER -6.520) )()); C
+( "hululement" ( (NOM -6.385) )()); C
+( "hululements" ( (NOM -6.385) )()); C
+( "hululent" ( (VER -6.520) )()); C
+( "hululer" ( (VER -6.696) )()); C
+( "hum" ( (ONO -2.258) )()); C
+( "huma" ( (NAM -4.190) (VER -6.520) )()); C
+( "humain" ( (ADJ -2.912) (NOM -4.041) )()); C
+( "humain_robot" ( (ADJ -5.862) )()); C
+( "humaine" ( (ADJ -3.120) (NOM -5.200) )()); C
+( "humainement" ( (ADV -4.961) )()); C
+( "humaines" ( (ADJ -3.781) (NOM -5.908) )()); C
+( "humains" ( (ADJ -3.353) (NOM -3.763) )()); C
+( "humais" ( (VER -6.696) )()); C
+( "humanisant" ( (VER -6.696) )()); C
+( "humanise" ( (VER -6.395) )()); C
+( "humaniser" ( (VER -6.094) )()); C
+( "humanisme" ( (NOM -5.959) )()); C
+( "humaniste" ( (ADJ -5.297) (NOM -5.584) )()); C
+( "humanistes" ( (NOM -6.561) )()); C
+( "humanisée" ( (VER -6.696) )()); C
+( "humanisés" ( (VER -6.696) )()); C
+( "humanitaire" ( (ADJ -4.500) (NOM -5.501) )()); C
+( "humanitaires" ( (ADJ -5.060) )()); C
+( "humanitarisme" ( (NOM -6.385) )()); C
+( "humanité" ( (NAM -3.900) (NOM -3.809) )()); C
+( "humanités" ( (NOM -5.959) )()); C
+( "humano" ( (ADV -5.782) )()); C
+( "humanoïde" ( (ADJ -5.038) (NOM -5.862) )()); C
+( "humanoïdes" ( (ADJ -5.737) (NOM -5.821) )()); C
+( "humant" ( (VER -6.520) )()); C
+( "humble" ( (ADJ -3.751) )()); C
+( "humblement" ( (ADV -4.717) )()); C
+( "humbles" ( (ADJ -4.425) )()); C
+( "humbug" ( (ADJ -6.038) )()); C
+( "hume" ( (NAM -4.129) (VER -6.298) )()); C
+( "humecta" ( (VER -6.696) )()); C
+( "humectage" ( (NOM -6.561) )()); C
+( "humectant" ( (ADJ -5.640) )()); C
+( "humecter" ( (VER -6.094) )()); C
+( "humectée" ( (VER -6.395) )()); C
+( "humectées" ( (VER -6.696) )()); C
+( "humectés" ( (VER -6.696) )()); C
+( "hument" ( (VER -6.520) )()); C
+( "humer" ( (VER -6.094) )()); C
+( "humeur" ( (NOM -3.718) )()); C
+( "humeurs" ( (NOM -5.030) )()); C
+( "humez" ( (VER -6.298) )()); C
+( "humide" ( (ADJ -3.753) )()); C
+( "humides" ( (ADJ -4.347) )()); C
+( "humidifiant" ( (VER -6.520) )()); C
+( "humidificateur" ( (NOM -5.632) )()); C
+( "humidification" ( (NOM -6.385) )()); C
+( "humidifient" ( (VER -6.395) )()); C
+( "humidifier" ( (VER -6.152) )()); C
+( "humidifié" ( (VER -6.219) )()); C
+( "humidité" ( (NOM -4.605) )()); C
+( "humiliais" ( (VER -6.520) )()); C
+( "humiliait" ( (VER -6.219) )()); C
+( "humiliant" ( (ADJ -4.033) (VER -5.767) )()); C
+( "humiliante" ( (ADJ -4.771) )()); C
+( "humiliantes" ( (ADJ -5.135) )()); C
+( "humiliants" ( (ADJ -5.297) )()); C
+( "humiliation" ( (NOM -4.459) )()); C
+( "humiliations" ( (NOM -5.306) )()); C
+( "humilie" ( (VER -5.307) )()); C
+( "humilient" ( (VER -6.152) )()); C
+( "humilier" ( (VER -4.589) )()); C
+( "humiliera" ( (VER -6.298) )()); C
+( "humilierai" ( (VER -6.395) )()); C
+( "humilierais" ( (VER -6.696) )()); C
+( "humilierait" ( (VER -6.696) )()); C
+( "humilies" ( (VER -5.550) )()); C
+( "humiliez" ( (VER -5.851) )()); C
+( "humilité" ( (NOM -4.752) )()); C
+( "humilié" ( (ADJ -4.771) (VER -4.714) )()); C
+( "humiliée" ( (ADJ -4.782) (VER -4.989) )()); C
+( "humiliées" ( (ADJ -5.640) (VER -6.395) )()); C
+( "humiliés" ( (ADJ -5.436) (VER -5.479) )()); C
+( "humoriste" ( (ADJ -5.384) (NOM -5.908) )()); C
+( "humoristes" ( (NOM -6.385) )()); C
+( "humoristique" ( (ADJ -5.060) )()); C
+( "humoristiques" ( (ADJ -5.384) )()); C
+( "humour" ( (NOM -3.847) )()); C
+( "humus" ( (NOM -6.017) )()); C
+( "humé" ( (VER -6.520) )()); C
+( "humérale" ( (ADJ -5.737) )()); C
+( "humérus" ( (NOM -5.584) )()); C
+( "hun" ( (NAM -4.076) (NOM -5.658) )()); C
+( "hune" ( (NOM -5.908) )()); C
+( "hunier" ( (NOM -6.260) )()); C
+( "huniers" ( (NOM -6.084) )()); C
+( "huns" ( (NAM -3.960) (NOM -6.163) )()); C
+( "hunter" ( (NAM -2.921) (NOM -6.385) )()); C
+( "huppe" ( (NOM -6.017) )()); C
+( "huppé" ( (ADJ -5.135) )()); C
+( "huppée" ( (ADJ -5.339) )()); C
+( "huppées" ( (ADJ -5.561) )()); C
+( "huppés" ( (ADJ -5.193) )()); C
+( "hure" ( (NOM -6.385) )()); C
+( "hurla" ( (VER -5.793) )()); C
+( "hurlaient" ( (VER -5.520) )()); C
+( "hurlais" ( (VER -5.466) )()); C
+( "hurlait" ( (VER -4.956) )()); C
+( "hurlant" ( (ADJ -4.862) (VER -4.824) )()); C
+( "hurlante" ( (ADJ -5.193) )()); C
+( "hurlantes" ( (ADJ -5.384) )()); C
+( "hurlants" ( (ADJ -5.494) (NAM -5.014) )()); C
+( "hurle" ( (NOM -6.561) (VER -4.479) )()); C
+( "hurlement" ( (NOM -4.987) )()); C
+( "hurlements" ( (NOM -4.790) )()); C
+( "hurlent" ( (VER -4.989) )()); C
+( "hurler" ( (NAM -5.190) (VER -4.238) )()); C
+( "hurlera" ( (VER -5.997) )()); C
+( "hurlerai" ( (VER -6.094) )()); C
+( "hurleraient" ( (VER -6.696) )()); C
+( "hurlerais" ( (VER -6.152) )()); C
+( "hurlerait" ( (VER -6.395) )()); C
+( "hurlerez" ( (VER -6.043) )()); C
+( "hurleront" ( (VER -6.219) )()); C
+( "hurles" ( (VER -5.453) )()); C
+( "hurleur" ( (ADJ -5.436) (NOM -5.783) )()); C
+( "hurleurs" ( (ADJ -5.640) (NOM -5.748) )()); C
+( "hurlez" ( (VER -5.146) )()); C
+( "hurlions" ( (VER -6.696) )()); C
+( "hurluberlu" ( (NOM -5.959) )()); C
+( "hurluberlus" ( (NOM -6.163) )()); C
+( "hurlé" ( (VER -4.867) )()); C
+( "huron" ( (ADJ -6.038) (NAM -4.345) (NOM -6.561) )()); C
+( "huronne" ( (ADJ -5.737) (NOM -6.561) )()); C
+( "hurrah" ( (NOM -6.561) (ONO -4.778) )()); C
+( "hurricane" ( (NOM -5.130) )()); C
+( "hurricanes" ( (NOM -6.163) )()); C
+( "huskies" ( (NOM -5.607) )()); C
+( "husky" ( (NAM -5.190) (NOM -5.959) )()); C
+( "hussard" ( (NOM -5.584) )()); C
+( "hussarde" ( (NOM -6.561) )()); C
+( "hussards" ( (NOM -5.686) )()); C
+( "hutte" ( (NOM -4.923) (VER -6.520) )()); C
+( "hutter" ( (VER -5.821) )()); C
+( "huttes" ( (NOM -5.318) )()); C
+( "hué" ( (NAM -4.646) (VER -6.219) )()); C
+( "huée" ( (VER -6.520) )()); C
+( "huées" ( (NOM -5.686) )()); C
+( "hués" ( (VER -6.520) )()); C
+( "huître" ( (NOM -4.918) )()); C
+( "huîtres" ( (NOM -4.627) )()); C
+( "huîtrier" ( (NOM -6.561) )()); C
+( "hyacinthe" ( (NOM -6.260) )()); C
+( "hyades" ( (NOM -6.561) )()); C
+( "hybridation" ( (NOM -6.163) )()); C
+( "hybride" ( (ADJ -4.568) (NOM -5.077) )()); C
+( "hybrides" ( (ADJ -4.847) (NOM -5.114) )()); C
+( "hybridé" ( (VER -6.696) )()); C
+( "hydatique" ( (ADJ -6.038) )()); C
+( "hydratant" ( (ADJ -5.640) (VER -6.520) )()); C
+( "hydratante" ( (ADJ -5.225) )()); C
+( "hydratantes" ( (ADJ -5.561) )()); C
+( "hydratants" ( (ADJ -6.038) )()); C
+( "hydratation" ( (NOM -5.748) )()); C
+( "hydrate" ( (NOM -5.658) (VER -6.219) )()); C
+( "hydrater" ( (VER -5.956) )()); C
+( "hydrates" ( (NOM -5.686) )()); C
+( "hydratez" ( (VER -5.883) )()); C
+( "hydraté" ( (VER -5.851) )()); C
+( "hydratée" ( (VER -6.152) )()); C
+( "hydraulicien" ( (NOM -6.561) )()); C
+( "hydraulique" ( (ADJ -4.464) (NOM -5.540) )()); C
+( "hydrauliques" ( (ADJ -5.193) (NOM -6.561) )()); C
+( "hydravion" ( (NOM -5.318) )()); C
+( "hydravions" ( (NOM -6.163) )()); C
+( "hydre" ( (NOM -5.607) )()); C
+( "hydrique" ( (ADJ -5.561) )()); C
+( "hydro" ( (ADV -5.455) )()); C
+( "hydrocarbure" ( (NOM -5.862) )()); C
+( "hydrocarbures" ( (NOM -5.431) )()); C
+( "hydrochlorique" ( (ADJ -5.436) )()); C
+( "hydrocortisone" ( (NOM -6.260) )()); C
+( "hydrocéphale" ( (ADJ -5.737) )()); C
+( "hydrocéphales" ( (ADJ -6.038) )()); C
+( "hydrocéphalie" ( (NOM -6.561) )()); C
+( "hydrodynamique" ( (ADJ -6.038) )()); C
+( "hydrofoil" ( (NOM -6.561) )()); C
+( "hydroglisseur" ( (NOM -6.084) )()); C
+( "hydrographe" ( (ADJ -6.038) )()); C
+( "hydrographie" ( (NOM -6.561) )()); C
+( "hydrographique" ( (ADJ -5.862) )()); C
+( "hydrogène" ( (NOM -4.809) (VER -6.696) )()); C
+( "hydrogènes" ( (NOM -6.561) )()); C
+( "hydrogéné" ( (ADJ -5.862) )()); C
+( "hydrogénée" ( (ADJ -5.862) )()); C
+( "hydrolase" ( (NOM -5.908) )()); C
+( "hydrologie" ( (NOM -6.385) )()); C
+( "hydrolyse" ( (NOM -6.385) )()); C
+( "hydromel" ( (NOM -5.632) )()); C
+( "hydrophile" ( (ADJ -6.038) )()); C
+( "hydrophobe" ( (ADJ -6.038) )()); C
+( "hydrophobie" ( (NOM -6.260) )()); C
+( "hydrophone" ( (NOM -5.959) )()); C
+( "hydrophyte" ( (NOM -6.561) )()); C
+( "hydropiper" ( (NOM -6.561) )()); C
+( "hydropique" ( (ADJ -6.038) )()); C
+( "hydropisie" ( (NOM -6.561) )()); C
+( "hydropneumatique" ( (ADJ -6.038) )()); C
+( "hydroponique" ( (ADJ -5.108) )()); C
+( "hydroponiques" ( (ADJ -5.436) )()); C
+( "hydroptère" ( (NOM -6.385) )()); C
+( "hydrostatique" ( (ADJ -5.737) (NOM -6.561) )()); C
+( "hydrothérapie" ( (NOM -5.908) )()); C
+( "hydrox" ( (NOM -6.561) )()); C
+( "hydroxyde" ( (NOM -5.783) )()); C
+( "hydroélectricité" ( (NOM -5.339) )()); C
+( "hydroélectrique" ( (ADJ -5.339) )()); C
+( "hygiène" ( (NOM -4.540) )()); C
+( "hygiènes" ( (NOM -6.561) )()); C
+( "hygiénique" ( (ADJ -4.614) )()); C
+( "hygiéniquement" ( (ADV -6.384) )()); C
+( "hygiéniques" ( (ADJ -5.135) )()); C
+( "hygiéniste" ( (NOM -6.017) )()); C
+( "hygiénistes" ( (NOM -6.561) )()); C
+( "hygroma" ( (NOM -6.385) )()); C
+( "hygromètres" ( (NOM -6.561) )()); C
+( "hygrométrie" ( (NOM -6.561) )()); C
+( "hymen" ( (NOM -5.172) )()); C
+( "hymne" ( (NOM -4.566) )()); C
+( "hymnes" ( (NOM -5.385) )()); C
+( "hyménoptères" ( (NOM -6.385) )()); C
+( "hyménée" ( (NOM -6.163) )()); C
+( "hyoïde" ( (ADJ -5.193) (NOM -5.821) )()); C
+( "hyper" ( (ADV -4.082) )()); C
+( "hyperacidité" ( (NOM -6.561) )()); C
+( "hyperactif" ( (ADJ -5.193) )()); C
+( "hyperactive" ( (ADJ -5.436) )()); C
+( "hyperactivité" ( (NOM -5.658) )()); C
+( "hyperbare" ( (ADJ -5.436) )()); C
+( "hyperbole" ( (NOM -5.959) )()); C
+( "hyperboles" ( (NOM -6.260) )()); C
+( "hyperbolique" ( (ADJ -6.038) )()); C
+( "hypercalcémie" ( (NOM -6.084) )()); C
+( "hypercholestérolémie" ( (NOM -6.385) )()); C
+( "hypercoagulabilité" ( (NOM -6.385) )()); C
+( "hyperespace" ( (NOM -4.681) )()); C
+( "hyperkaliémie" ( (NOM -6.385) )()); C
+( "hyperlipémie" ( (NOM -6.561) )()); C
+( "hypermarché" ( (NOM -5.821) )()); C
+( "hypermarchés" ( (NOM -6.260) )()); C
+( "hyperplan" ( (NOM -6.561) )()); C
+( "hyperplasie" ( (NOM -6.260) )()); C
+( "hyperréactivité" ( (NOM -6.561) )()); C
+( "hypersensibilité" ( (NOM -5.908) )()); C
+( "hypersensible" ( (ADJ -5.135) (NOM -6.163) )()); C
+( "hypersensibles" ( (ADJ -5.737) (NOM -6.385) )()); C
+( "hypersomnie" ( (NOM -6.385) )()); C
+( "hypersonique" ( (ADJ -6.038) )()); C
+( "hypersustentateur" ( (ADJ -6.038) (NOM -6.017) )()); C
+( "hypertendu" ( (ADJ -5.436) )()); C
+( "hypertendue" ( (ADJ -5.737) )()); C
+( "hypertendus" ( (NOM -6.561) )()); C
+( "hypertension" ( (NOM -5.077) )()); C
+( "hypertensions" ( (NOM -6.561) )()); C
+( "hyperthermie" ( (NOM -6.017) )()); C
+( "hypertonique" ( (ADJ -5.561) )()); C
+( "hypertrichose" ( (NOM -6.385) )()); C
+( "hypertrophie" ( (NOM -5.607) (VER -6.696) )()); C
+( "hypertrophique" ( (ADJ -5.561) )()); C
+( "hypertrophié" ( (ADJ -5.561) (VER -6.696) )()); C
+( "hypertrophiée" ( (VER -6.696) )()); C
+( "hypertrophiés" ( (ADJ -5.737) )()); C
+( "hyperventilation" ( (NOM -5.540) )()); C
+( "hyperémotive" ( (ADJ -6.038) )()); C
+( "hypnagogique" ( (ADJ -5.737) )()); C
+( "hypnose" ( (NOM -4.650) )()); C
+( "hypnotique" ( (ADJ -4.705) (NOM -5.716) )()); C
+( "hypnotiques" ( (ADJ -5.384) (NOM -6.561) )()); C
+( "hypnotisaient" ( (VER -6.696) )()); C
+( "hypnotisait" ( (VER -6.395) )()); C
+( "hypnotisant" ( (VER -6.094) )()); C
+( "hypnotise" ( (VER -5.535) )()); C
+( "hypnotisent" ( (VER -6.395) )()); C
+( "hypnotiser" ( (VER -5.281) )()); C
+( "hypnotiseur" ( (NOM -5.464) )()); C
+( "hypnotiseurs" ( (NOM -6.385) )()); C
+( "hypnotiseuse" ( (NOM -6.561) )()); C
+( "hypnotisme" ( (NOM -5.584) )()); C
+( "hypnotisé" ( (VER -5.191) )()); C
+( "hypnotisée" ( (VER -5.599) )()); C
+( "hypnotisées" ( (VER -6.696) )()); C
+( "hypnotisés" ( (VER -5.883) )()); C
+( "hypo" ( (ADV -5.644) )()); C
+( "hypoallergénique" ( (ADJ -5.561) )()); C
+( "hypoallergéniques" ( (ADJ -5.862) )()); C
+( "hypocalcémie" ( (NOM -6.385) )()); C
+( "hypocapnie" ( (NOM -6.561) )()); C
+( "hypocauste" ( (NOM -6.561) )()); C
+( "hypocentre" ( (NOM -6.561) )()); C
+( "hypochlorite" ( (NOM -6.561) )()); C
+( "hypochondriaque" ( (ADJ -5.297) (NOM -6.385) )()); C
+( "hypochondriaques" ( (NOM -6.260) )()); C
+( "hypocondriaque" ( (ADJ -5.135) (NOM -5.862) )()); C
+( "hypocondriaques" ( (NOM -6.017) )()); C
+( "hypocondrie" ( (NOM -6.163) )()); C
+( "hypocrisie" ( (NOM -4.742) )()); C
+( "hypocrisies" ( (NOM -5.821) )()); C
+( "hypocrite" ( (ADJ -4.196) (NOM -4.656) )()); C
+( "hypocritement" ( (ADV -5.986) )()); C
+( "hypocrites" ( (ADJ -4.892) (NOM -5.017) )()); C
+( "hypodermique" ( (ADJ -4.996) )()); C
+( "hypodermiques" ( (ADJ -5.737) )()); C
+( "hypoglycémie" ( (NOM -5.306) )()); C
+( "hypoglycémique" ( (ADJ -5.260) )()); C
+( "hypoglycémiques" ( (ADJ -6.038) )()); C
+( "hypogonadisme" ( (NOM -6.385) )()); C
+( "hypomaniaques" ( (NOM -6.561) )()); C
+( "hyponatrémie" ( (NOM -6.163) )()); C
+( "hypophysaire" ( (ADJ -6.038) )()); C
+( "hypophyse" ( (NOM -5.959) )()); C
+( "hypoplasie" ( (NOM -6.561) )()); C
+( "hypospadias" ( (NOM -6.561) )()); C
+( "hypostase" ( (NOM -6.561) )()); C
+( "hypotendu" ( (ADJ -6.038) (NOM -6.385) )()); C
+( "hypotendue" ( (ADJ -6.038) )()); C
+( "hypotensif" ( (ADJ -6.038) )()); C
+( "hypotension" ( (NOM -5.482) )()); C
+( "hypotensive" ( (ADJ -6.038) )()); C
+( "hypothalamus" ( (NOM -5.400) )()); C
+( "hypothermie" ( (NOM -4.999) )()); C
+( "hypothermique" ( (ADJ -5.737) )()); C
+( "hypothyroïdie" ( (NOM -6.260) )()); C
+( "hypothèque" ( (NOM -4.707) (VER -6.043) )()); C
+( "hypothèques" ( (NOM -5.561) (VER -6.520) )()); C
+( "hypothèse" ( (NOM -4.333) )()); C
+( "hypothèses" ( (NOM -4.880) )()); C
+( "hypothécaire" ( (ADJ -5.561) )()); C
+( "hypothécaires" ( (ADJ -5.737) )()); C
+( "hypothéquait" ( (VER -6.696) )()); C
+( "hypothéquant" ( (VER -6.696) )()); C
+( "hypothéquer" ( (VER -5.535) )()); C
+( "hypothéquez" ( (VER -6.696) )()); C
+( "hypothéqué" ( (NAM -5.190) (VER -5.599) )()); C
+( "hypothéquée" ( (VER -6.298) )()); C
+( "hypothétique" ( (ADJ -4.676) )()); C
+( "hypothétiquement" ( (ADV -5.384) )()); C
+( "hypothétiques" ( (ADJ -5.494) )()); C
+( "hypotonie" ( (NOM -6.561) )()); C
+( "hypoténuse" ( (NOM -5.908) )()); C
+( "hypoxie" ( (NOM -5.821) )()); C
+( "hypoxique" ( (ADJ -5.225) )()); C
+( "hysope" ( (NOM -6.561) )()); C
+( "hystérectomie" ( (NOM -5.464) )()); C
+( "hystérie" ( (NOM -4.656) )()); C
+( "hystérique" ( (ADJ -3.998) (NOM -5.209) )()); C
+( "hystériquement" ( (ADV -6.208) )()); C
+( "hystériques" ( (ADJ -4.748) (NOM -5.658) )()); C
+( "hystéro" ( (ADJ -5.862) (NOM -6.561) )()); C
+( "hyène" ( (NOM -5.017) )()); C
+( "hyènes" ( (NOM -5.181) )()); C
+( "hâbleur" ( (NOM -6.017) )()); C
+( "hâbleurs" ( (NOM -6.561) )()); C
+( "hâle" ( (NOM -6.017) )()); C
+( "hâlé" ( (ADJ -5.737) (VER -6.696) )()); C
+( "hâlée" ( (ADJ -5.862) )()); C
+( "hâta" ( (VER -6.696) )()); C
+( "hâtai" ( (VER -6.696) )()); C
+( "hâtaient" ( (VER -6.520) )()); C
+( "hâtais" ( (VER -6.696) )()); C
+( "hâtait" ( (VER -6.520) )()); C
+( "hâtant" ( (VER -6.696) )()); C
+( "hâte" ( (NOM -3.814) (VER -5.158) )()); C
+( "hâtent" ( (VER -6.219) )()); C
+( "hâter" ( (VER -5.364) )()); C
+( "hâtera" ( (VER -6.696) )()); C
+( "hâtes" ( (VER -6.696) )()); C
+( "hâtez" ( (VER -5.506) )()); C
+( "hâtif" ( (ADJ -5.017) )()); C
+( "hâtifs" ( (ADJ -5.862) )()); C
+( "hâtive" ( (ADJ -4.862) )()); C
+( "hâtivement" ( (ADV -5.644) )()); C
+( "hâtives" ( (ADJ -4.409) )()); C
+( "hâtons" ( (VER -5.767) )()); C
+( "hâté" ( (VER -6.043) )()); C
+( "hâtée" ( (VER -6.696) )()); C
+( "hâve" ( (ADJ -6.038) )()); C
+( "hèle" ( (VER -6.219) )()); C
+( "hère" ( (NOM -6.163) )()); C
+( "hères" ( (NOM -6.163) )()); C
+( "hé" ( (NOM -6.561) (ONO -1.231) )()); C
+( "héberge" ( (NOM -6.561) (VER -5.453) )()); C
+( "hébergeaient" ( (VER -6.520) )()); C
+( "hébergeais" ( (VER -6.696) )()); C
+( "hébergeait" ( (VER -6.520) )()); C
+( "hébergeant" ( (VER -6.395) )()); C
+( "hébergement" ( (NOM -5.540) )()); C
+( "hébergent" ( (VER -6.298) )()); C
+( "hébergeons" ( (VER -6.395) )()); C
+( "héberger" ( (VER -5.063) )()); C
+( "hébergera" ( (VER -5.956) )()); C
+( "hébergez" ( (VER -6.152) )()); C
+( "hébergiez" ( (VER -6.520) )()); C
+( "hébergé" ( (VER -5.506) )()); C
+( "hébergée" ( (VER -5.918) )()); C
+( "hébergées" ( (VER -6.696) )()); C
+( "hébergés" ( (VER -5.956) )()); C
+( "hébraïque" ( (ADJ -5.384) )()); C
+( "hébraïques" ( (ADJ -5.862) )()); C
+( "hébreu" ( (ADJ -4.748) (NOM -5.005) )()); C
+( "hébreux" ( (ADJ -5.260) (NAM -4.149) (NOM -6.017) )()); C
+( "hébéphrénique" ( (ADJ -5.862) )()); C
+( "hébétude" ( (NOM -6.084) )()); C
+( "hébété" ( (ADJ -5.436) (NOM -6.260) (VER -6.094) )()); C
+( "hébétée" ( (ADJ -5.561) (NOM -6.561) (VER -6.298) )()); C
+( "hébétés" ( (ADJ -6.038) (VER -6.395) )()); C
+( "hécatombe" ( (NOM -5.540) )()); C
+( "hédonisme" ( (NOM -6.163) )()); C
+( "hédoniste" ( (ADJ -5.260) (NOM -6.260) )()); C
+( "hégire" ( (NOM -6.163) )()); C
+( "hégélienne" ( (ADJ -5.737) )()); C
+( "hégémonie" ( (NOM -6.084) )()); C
+( "héla" ( (VER -6.696) )()); C
+( "hélait" ( (VER -6.696) )()); C
+( "hélas" ( (ONO -2.551) (VER -6.219) )()); C
+( "héler" ( (VER -5.956) )()); C
+( "hélez" ( (VER -6.696) )()); C
+( "hélice" ( (NOM -4.841) )()); C
+( "hélices" ( (NOM -5.172) )()); C
+( "hélico" ( (ADV -6.384) (NAM -3.923) (NOM -4.060) )()); C
+( "hélicoptère" ( (NOM -4.041) )()); C
+( "hélicoptères" ( (NOM -4.622) )()); C
+( "hélicoïdale" ( (ADJ -6.038) )()); C
+( "hélio" ( (NAM -5.190) )()); C
+( "héliographe" ( (NOM -6.561) )()); C
+( "héliotrope" ( (NOM -6.260) )()); C
+( "héliotropes" ( (NOM -6.260) )()); C
+( "héliport" ( (NOM -5.783) )()); C
+( "héliporter" ( (VER -6.696) )()); C
+( "héliporté" ( (ADJ -6.038) (VER -6.298) )()); C
+( "héliportée" ( (ADJ -5.561) (VER -6.696) )()); C
+( "héliportés" ( (VER -6.696) )()); C
+( "hélitreuiller" ( (VER -6.696) )()); C
+( "hélium" ( (NOM -5.077) )()); C
+( "hélix" ( (NOM -6.084) )()); C
+( "hélé" ( (VER -5.956) )()); C
+( "hématies" ( (NOM -6.260) )()); C
+( "hématine" ( (NOM -6.163) )()); C
+( "hématocrite" ( (NOM -5.283) )()); C
+( "hématologie" ( (NOM -5.862) )()); C
+( "hématologique" ( (ADJ -6.038) )()); C
+( "hématologue" ( (NOM -6.084) )()); C
+( "hématome" ( (NOM -4.954) )()); C
+( "hématomes" ( (NOM -5.357) )()); C
+( "hématurie" ( (NOM -6.385) )()); C
+( "hémicycle" ( (NOM -6.385) )()); C
+( "hémiplégie" ( (NOM -6.017) )()); C
+( "hémiplégique" ( (ADJ -6.038) )()); C
+( "hémisphère" ( (NOM -5.077) )()); C
+( "hémisphères" ( (NOM -5.658) )()); C
+( "hémisphérique" ( (ADJ -6.038) )()); C
+( "hémistiches" ( (NOM -6.561) )()); C
+( "hémoculture" ( (NOM -5.959) )()); C
+( "hémocultures" ( (NOM -5.959) )()); C
+( "hémodialyse" ( (NOM -6.260) )()); C
+( "hémodynamique" ( (ADJ -5.862) (NOM -6.163) )()); C
+( "hémoglobine" ( (NOM -5.138) )()); C
+( "hémoglobines" ( (NOM -6.561) )()); C
+( "hémogramme" ( (NOM -5.821) )()); C
+( "hémolyse" ( (NOM -6.084) (VER -6.696) )()); C
+( "hémolytique" ( (ADJ -5.297) )()); C
+( "hémophile" ( (ADJ -5.494) (NOM -6.385) )()); C
+( "hémophiles" ( (ADJ -5.737) (NOM -6.561) )()); C
+( "hémophilie" ( (NOM -5.748) )()); C
+( "hémoptysies" ( (NOM -6.561) )()); C
+( "hémorragie" ( (NOM -4.190) )()); C
+( "hémorragies" ( (NOM -5.181) )()); C
+( "hémorragique" ( (ADJ -5.017) )()); C
+( "hémorroïdaire" ( (ADJ -6.038) )()); C
+( "hémorroïdale" ( (ADJ -6.038) )()); C
+( "hémorroïde" ( (NOM -5.561) )()); C
+( "hémorroïdes" ( (NOM -5.049) )()); C
+( "hémostase" ( (NOM -5.821) )()); C
+( "hémostatique" ( (ADJ -5.561) )()); C
+( "héparine" ( (NOM -5.501) )()); C
+( "hépatique" ( (ADJ -5.038) (NOM -6.561) )()); C
+( "hépatiques" ( (ADJ -5.561) )()); C
+( "hépatite" ( (NOM -4.854) )()); C
+( "hépatites" ( (NOM -5.959) )()); C
+( "hépatomégalie" ( (NOM -6.561) )()); C
+( "héraut" ( (NOM -5.464) )()); C
+( "hérauts" ( (NOM -6.561) )()); C
+( "hérissa" ( (VER -6.696) )()); C
+( "hérissait" ( (VER -6.696) )()); C
+( "hérisse" ( (VER -5.918) )()); C
+( "hérissent" ( (VER -6.395) )()); C
+( "hérisser" ( (VER -6.395) )()); C
+( "hérisses" ( (VER -6.696) )()); C
+( "hérisson" ( (NOM -5.540) )()); C
+( "hérissons" ( (NOM -6.017) )()); C
+( "hérissé" ( (ADJ -5.737) (VER -6.219) )()); C
+( "hérissée" ( (ADJ -5.737) (VER -6.395) )()); C
+( "hérissées" ( (ADJ -6.038) )()); C
+( "hérissés" ( (ADJ -5.737) (VER -6.219) )()); C
+( "hérita" ( (VER -6.152) )()); C
+( "héritage" ( (NOM -4.158) )()); C
+( "héritages" ( (NOM -6.017) )()); C
+( "héritais" ( (VER -6.520) )()); C
+( "héritait" ( (VER -6.395) )()); C
+( "hérite" ( (VER -5.100) )()); C
+( "héritent" ( (VER -5.918) )()); C
+( "hériter" ( (VER -4.997) )()); C
+( "héritera" ( (VER -5.535) )()); C
+( "hériterai" ( (VER -6.219) )()); C
+( "hériteraient" ( (VER -6.520) )()); C
+( "hériterait" ( (VER -6.152) )()); C
+( "hériteras" ( (VER -5.997) )()); C
+( "hériterez" ( (VER -6.094) )()); C
+( "hériteront" ( (VER -5.918) )()); C
+( "hérites" ( (VER -5.883) )()); C
+( "héritez" ( (VER -5.821) )()); C
+( "héritier" ( (NOM -4.357) )()); C
+( "héritiers" ( (NOM -5.043) )()); C
+( "héritière" ( (NOM -4.899) )()); C
+( "héritières" ( (NOM -6.084) )()); C
+( "héritons" ( (VER -6.520) )()); C
+( "hérité" ( (VER -4.550) )()); C
+( "héritée" ( (VER -5.997) )()); C
+( "héritées" ( (VER -6.696) )()); C
+( "hérités" ( (VER -6.520) )()); C
+( "héro" ( (NAM -4.889) (NOM -4.387) )()); C
+( "héron" ( (NAM -4.713) (NOM -5.908) )()); C
+( "hérons" ( (NOM -5.959) )()); C
+( "héros" ( (NOM -3.360) )()); C
+( "héroïne" ( (NOM -4.105) )()); C
+( "héroïnes" ( (NOM -5.862) )()); C
+( "héroïnomane" ( (NOM -6.385) )()); C
+( "héroïque" ( (ADJ -4.186) )()); C
+( "héroïquement" ( (ADV -5.986) )()); C
+( "héroïques" ( (ADJ -4.649) )()); C
+( "héroïsme" ( (NOM -4.970) )()); C
+( "héréditaire" ( (ADJ -4.334) )()); C
+( "héréditaires" ( (ADJ -5.108) )()); C
+( "hérédité" ( (NOM -5.520) )()); C
+( "hérésie" ( (NOM -5.163) )()); C
+( "hérésies" ( (NOM -6.017) )()); C
+( "hérétique" ( (ADJ -5.108) (NOM -5.294) )()); C
+( "hérétiques" ( (ADJ -5.260) (NOM -5.464) )()); C
+( "hésita" ( (VER -6.043) )()); C
+( "hésitai" ( (VER -6.696) )()); C
+( "hésitaient" ( (VER -6.696) )()); C
+( "hésitais" ( (VER -5.506) )()); C
+( "hésitait" ( (VER -5.506) )()); C
+( "hésitant" ( (ADJ -5.297) (VER -5.956) )()); C
+( "hésitante" ( (ADJ -5.297) )()); C
+( "hésitantes" ( (ADJ -5.640) )()); C
+( "hésitants" ( (ADJ -5.384) )()); C
+( "hésitation" ( (NOM -4.798) )()); C
+( "hésitations" ( (NOM -5.607) )()); C
+( "hésite" ( (VER -4.408) )()); C
+( "hésitent" ( (VER -5.550) )()); C
+( "hésiter" ( (VER -4.698) )()); C
+( "hésitera" ( (VER -5.718) )()); C
+( "hésiterai" ( (VER -5.265) )()); C
+( "hésiteraient" ( (VER -6.043) )()); C
+( "hésiterais" ( (VER -5.298) )()); C
+( "hésiterait" ( (VER -5.793) )()); C
+( "hésiteras" ( (VER -6.395) )()); C
+( "hésiterez" ( (VER -6.298) )()); C
+( "hésiteriez" ( (VER -5.997) )()); C
+( "hésiterons" ( (VER -6.298) )()); C
+( "hésiteront" ( (VER -5.696) )()); C
+( "hésites" ( (VER -5.325) )()); C
+( "hésitez" ( (VER -4.524) )()); C
+( "hésitiez" ( (VER -6.219) )()); C
+( "hésitons" ( (VER -5.997) )()); C
+( "hésité" ( (VER -4.747) )()); C
+( "hétéro" ( (ADJ -4.053) (NOM -4.880) )()); C
+( "hétérochromie" ( (NOM -6.385) )()); C
+( "hétéroclite" ( (ADJ -5.862) )()); C
+( "hétéroclites" ( (ADJ -5.737) )()); C
+( "hétérodoxes" ( (NOM -6.561) )()); C
+( "hétérogène" ( (ADJ -5.862) )()); C
+( "hétéros" ( (ADJ -4.667) (NOM -4.889) )()); C
+( "hétérosexualité" ( (NOM -5.959) )()); C
+( "hétérosexuel" ( (ADJ -4.820) )()); C
+( "hétérosexuelle" ( (ADJ -5.260) )()); C
+( "hétérosexuelles" ( (ADJ -5.494) )()); C
+( "hétérosexuels" ( (ADJ -5.108) )()); C
+( "hétérozygote" ( (ADJ -6.038) )()); C
+( "hévéa" ( (NOM -6.561) )()); C
+( "hévéas" ( (NOM -6.163) )()); C
+( "hêtre" ( (NOM -5.862) )()); C
+( "hêtres" ( (NOM -6.163) )()); C
+( "hôpital" ( (NAM -3.222) (NOM -3.060) )()); C
+( "hôpitaux" ( (NOM -4.330) )()); C
+( "hôte" ( (NOM -4.001) )()); C
+( "hôtel" ( (NOM -3.132) )()); C
+( "hôtel_dieu" ( (NOM -6.561) )()); C
+( "hôtelier" ( (ADJ -5.225) (NOM -5.607) )()); C
+( "hôteliers" ( (NOM -6.561) )()); C
+( "hôtelière" ( (ADJ -5.108) )()); C
+( "hôtelières" ( (ADJ -6.038) )()); C
+( "hôtellerie" ( (NOM -5.331) )()); C
+( "hôtels" ( (NOM -4.343) )()); C
+( "hôtes" ( (NOM -4.489) )()); C
+( "hôtesse" ( (NOM -4.337) )()); C
+( "hôtesses" ( (NOM -4.965) )()); C
 ( "i" ( ( NOM -6.241) )()) 
 ( "i.e." ( ( NAM -5.190) ( NOM -6.260) )())               
 ( "iambe" ( ( NOM -6.385) )()) 
@@ -51410,8 +53169,8 @@ MNCL
 ( "magie" ( ( NOM -3.610) )()) 
 ( "magies" ( ( NOM -6.017) )()) 
 ( "magique" ( ( ADJ -3.266)  )())               
-( "magiques" ( ( ADJ -3.266)  )())               
 ( "magiquement" ( ( ADV -5.571) )()) 
+( "magiques" ( ( ADJ -3.266)  )())               
 ( "magiques" ( ( ADJ -3.859) )()) 
 ( "magister" ( ( NOM -5.821) )()) 
 ( "magistral" ( ( ADJ -4.820) ( NOM -6.561) )())               
@@ -56501,7 +58260,10 @@ MNCL
 ( "narcotrafiquants" ( ( NOM -6.017) )()) 
 ( "nard" ( ( NOM -6.561) )()) 
 ( "nards" ( ( NOM -6.561) )()) 
+( "narghileh" ( ( NOM -6.561) )()) 
+( "narghilehs" ( ( NOM -6.561) )()) 
 ( "narghilé" ( ( NOM -6.561) )()) 
+( "narghilés" ( ( NOM -6.561) )()) 
 ( "narguais" ( ( VER -6.520) )()) 
 ( "narguait" ( ( VER -6.520) )()) 
 ( "narguant" ( ( VER -6.298) )()) 
@@ -65852,7 +67614,9 @@ MNCL
 ( "pommier" ( ( NAM -5.190) ( NOM -5.209) )())               
 ( "pommiers" ( ( NOM -5.540) )()) 
 ( "pommé" ( ( VER -6.298) )()) 
-( "pommée" ( ( ADJ -6.038) )()) 
+( "pommée" ( ( VER -6.298) )()) 
+( "pommées" ( ( VER -6.038) )()) 
+( "pommés" ( ( VER -6.038) )()) 
 ( "pompadour" ( ( ADJ -5.862) ( NAM -4.236) )())               
 ( "pompage" ( ( NOM -5.501) )()) 
 ( "pompaient" ( ( VER -6.696) )()) 
@@ -69977,6 +71741,8 @@ MNCL
 ( "quarante_trois" ( ( ADJ:num -3.817) ( NOM -5.732) )())               
 ( "quarantenaire" ( ( ADJ -6.038) )()) 
 ( "quarantenaires" ( ( ADJ -5.737) )()) 
+( "quarantenier" ( (NOM -6.561) )()); L
+( "quaranteniers" ( (NOM -6.561) )()); L
 ( "quarantième" ( ( ADJ -5.737) ( NOM -6.385) )())               
 ( "quarantièmes" ( ( NOM -6.561) )()) 
 ( "quark" ( ( NOM -5.783) )()) 
@@ -80966,6 +82732,7 @@ MNCL
 ( "septum" ( ( NOM -5.959) )()) 
 ( "septuor" ( ( NOM -6.561) )()) 
 ( "septuple" ( ( ADJ -6.038) ( NOM -6.561) ( VER -6.696) )())            
+( "sepuku" ( (NOM -5.632) )()); C
 ( "sequin" ( ( NOM -6.561) )()) 
 ( "sequins" ( ( NOM -5.821) )()) 
 ( "sera" ( ( AUX -2.229) ( NOM -5.146) ( VER -2.614) )())            
@@ -96727,6 +98494,41 @@ MNCL
 ( "ôtée" ( ( ADJ -6.038) ( VER -5.821) )())               
 ( "ôtées" ( ( ADJ -6.038) ( VER -6.395) )())               
 ( "ôtés" ( ( ADJ -6.038) ( VER -6.298) )())               
+("h" ((NOM -3.988))())
+("ha" ((NAM -3.026)(NOM -4.566)(ONO -2.541))())
+("habanera" ((NOM -6.561))())
+("habile" ((ADJ -3.996))())
+("habilement" ((ADV -5.180))())
+("habiles" ((ADJ -4.748))())
+("habileté" ((NOM -4.923))())
+("habiletés" ((NOM -6.385))())
+("habilitation" ((NOM -5.584))())
+("habilitations" ((NOM -6.385))())
+("habillage" ((NOM -5.748))())
+("habillages" ((NOM -5.748))())
+("habillement" ((NOM -5.561))())
+("habillements" ((NOM -5.561))())
+("habilleur" ((NOM -6.017))())
+("habilleurs" ((NOM -6.385))())
+("habilleuse" ((NOM -5.482))())
+("habilleuses" ((NOM -6.385))())
+("habit" ((NOM -4.528))())
+("habitable" ((ADJ -4.862))())
+("habitables" ((ADJ -5.260))())
+("habitacle" ((NOM -5.482))())
+("habitacles" ((NOM -6.561))())
+("habitation" ((NOM -5.250))())
+("habitations" ((NOM -5.122))())
+("habitats" ((NOM -5.024))())
+("habitats" ((NOM -6.084))())
+("habits" ((NOM -3.987))())
+("habitude" ((NOM -3.221))())
+("habitudes" ((NOM -4.227))())
+("habituel" ((ADJ -3.857))())
+("habituelle" ((ADJ -3.890))())
+("habituellement" ((ADV -4.272))())
+("habituelles" ((ADJ -4.286))())
+("habituels" ((ADJ -4.106))())
 ;
 ; co_habitant ?
 ;( "!" ( ( SENT 0.000) )()) 

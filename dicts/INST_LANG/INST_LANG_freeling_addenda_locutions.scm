@@ -244,6 +244,7 @@
 ;   (lex.add.entry '("story_board" ((NOM -6.385) ) () ))
 ;   (lex.add.entry '("stricto_sensu" ((ADV -6.384) ) () ))
 ;   (lex.add.entry '("sui_generis" ((ADJ -5.862) ) () ))
+    (lex.add.entry '("Saint_Sépulcre" ((NAM 0) ) () ))
 ;   (lex.add.entry '("tandis_qu" ((CON -4.048) ) () ))
 ;   (lex.add.entry '("tandis_que" ((CON -3.531) ) () ))
 ;   (lex.add.entry '("taï_chi" ((NOM -6.017) ) () ))

@@ -77,7 +77,7 @@
 ; plus les mots étrangers particulièrement latins
 ; ce n'est pas le cas de x exemple Littré 
 ; Cet x final se lie et prend le son de z : Baux à longues années, bô-z à.... Un choix heureux, choi-z heureux ; une paix inattendue, pê-z inattendue.
-        
+; TODO addenda hh final ? en cas de hiatus possible ? ex plutôt au          
 (defvar list_exclus->*_default 
    (list
         ; si VER ou ADV c'est à cause postlex ex: maintenant au boulot ! maintenant vu comme VER
