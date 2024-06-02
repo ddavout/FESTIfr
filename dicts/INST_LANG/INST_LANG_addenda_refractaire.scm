@@ -217,7 +217,10 @@
 (lex.add.entry '( "n_est" nil ((("n" "eh") 0))))
 (lex.add.entry '( "n_es_AUX" AUX ((("n" "eh") 0))))
 (lex.add.entry '( "n_es_VER" VER ((("n" "eh") 0))))
+
 (lex.add.entry '( "il_y_aura" nil ((("i") 0) (("l" j "oh") 0) (("rh" "a") 0))))
+(lex.add.entry '( "il_y_a" nil ((("i") 0) (("l" j "a") 0))))
+(lex.add.entry '( "il_y_avait" nil ((("i") 0) (("l" j "a") 0)((v eh)0))))
 
 (lex.add.entry '( "t_on" nil (((t ohn)0))))
 (lex.add.entry '( "t_il" nil ((("t" "i" l)0))))

@@ -5919,14 +5919,18 @@
 (lex.add.entry '("B" NOM (((b e)0)))); vitamine B12
 (lex.add.entry '("C_NOM" NOM ((( "s" "e") 0) (("m" "a") 0) (("zh" "y" "s") 0) (("k" "y" "l") 0))))
 (lex.add.entry '("c_NOM" NOM ((( "s" "e") 0) (("m" "i") 0) (("n" "y" "s") 0) (("k" "y" "l") 0))))
+(lex.add.entry '("e_NOM" NOM ((("ae")0))))
 (lex.add.entry '("e" nil ((("ae")0))))
 (lex.add.entry '("i" NOM ((("i") 0))))
 (lex.add.entry '("o" NOM ((("o") 0))))
-(lex.add.entry '("m" NOM ((("eh" m) 0))))
+(lex.add.entry '("p" nil ((("p" e) 0))))
+
+(lex.add.entry '("m_NOM" NOM ((("eh" m) 0))))
 (lex.add.entry '("u" nil ((("y") 0))))
 (lex.add.entry '("x" NOM ((("i" "k" "s") 0))))
 (lex.add.entry '("y" nil ((("i") 0))))
-(lex.add.entry '("y_NOM" NOM ((("i") 0)((g rh eh k)))))
+(lex.add.entry '("y_NOM" NOM ((("i") 0)((g rh eh k)0))))
+(lex.add.entry '("à_NOM" NOM ((("a") 0))))
 (lex.add.entry '("à" nil ((("a") 0))))
 (lex.add.entry '("è" nil ((("eh") 0))))
 (lex.add.entry '("è" nil (((eh)0))));
