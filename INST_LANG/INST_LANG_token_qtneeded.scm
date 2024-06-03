@@ -44,6 +44,9 @@
 (defvar QTpos2_pattern "{[^-]+}-{.*}")
 
 (defvar QTtim t)
+(defvar QTtim1 t)
+;(defvar QTtim1_pattern "{[0-2]?[0-9]}{:}{[0-6][0-9]}{h\\|H}")
+
 (defvar QTtim_pattern "{[0-2]?[0-9]}{[.|:]}{[0-5][0-9]}"); (set!  QTtim_pattern "{[0-2]?[0-9]}{[:|.]}{[0-5][0-9]}")
 (defvar QTono t)
 (defvar QTtrad1 t); avant QTnormal

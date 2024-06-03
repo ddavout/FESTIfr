@@ -1222,6 +1222,7 @@
       "bougie"
       "douzaine"
       "heure"
+      "heures"
       "minute"
       "seconde"
       "poire"      

@@ -122,6 +122,19 @@
         ;    (require 'INST_LANG_token_qt_pos0)
         ;    (pos0 token name)))
 
+
+((and ( member_string fdnaw (list "h" "heure" "heures" "minute" "minutes" "seconde" "secondes")  
+      (string-equal (item.feat token 'p.delete) "next"))
+        (begin
+            (set! QT "QTdeltim" )
+            (set! reponse t)
+            (set! RU (append RU (list name QT ";")))
+            ; action
+        (format t "we leave the module deltim sur |%s|\n" name)
+        reponse)))
+        
+
+
       ((format t "QTdel ?\t élimination programmée ? |%s| si %s\n" name (boundp 'QTdelp ))  nil)
       ((and 
             (boundp 'QTdel)
@@ -275,11 +288,14 @@
             (diglist token name)))
 
       ((and 
+            (boundp 'QTtim1)
+            (or (require 'INST_LANG_token_qt_tim1) t)
+            (tim1 token name)))
+
+      ((and 
             (boundp 'QTtim)
             (or (require 'INST_LANG_token_qt_tim) t)
             (tim token name)))
-
-
 
       ((and 
             (boundp 'QTmis)
