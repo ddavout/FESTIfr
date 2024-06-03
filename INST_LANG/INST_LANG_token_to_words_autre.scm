@@ -98,8 +98,8 @@
   (format t "===================\n")
   (format t "PREVIOUS TOKEN %s\n" (if (not (null? (item.prev token))) (begin (print (item.features (item.prev token) )))))
   (format t "ACTUAL TOKEN: |%s|\n |%l|\n" name (item.features token))
-  (format t "ACTUAL TOKEN is_in_poslex name |%l| \n" (is_in_poslex_all name))
-  (format t "ACTUAL TOKEN is_in_poslex name |%l| \n" (is_in_poslex_all (string-replace name "-" special_slice_char)))
+  ;(format t "ACTUAL TOKEN is_in_poslex name |%l| \n" (is_in_poslex_all name))
+  ;(format t "ACTUAL TOKEN is_in_poslex name |%l| \n" (is_in_poslex_all (string-replace name "-" special_slice_char)))
   (format t "===================\n")
   
   (let 
@@ -268,6 +268,17 @@
             (boundp 'QTnormal)
             (or (require 'INST_LANG_token_qt_normal) t)
             (normal token name)))
+
+      ((and 
+            (boundp 'QTdiglist)
+            (or (require 'INST_LANG_token_qt_diglist) t)
+            (diglist token name)))
+
+      ((and 
+            (boundp 'QTtim)
+            (or (require 'INST_LANG_token_qt_tim) t)
+            (tim token name)))
+
 
 
       ((and 

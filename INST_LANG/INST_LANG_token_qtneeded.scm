@@ -3,7 +3,9 @@
 
 (defvar QTnormal t)
 (defvar QTmis t)
+
 ;;; changement de pos si encore erreur de poslex
+
 (defvar QTpos0 t); pas utile pour l'instant en tout cas?
 (defvar QTpos1 t); fre_NAM_homo_tab ex: Marguerite |Duras|
 
@@ -25,7 +27,7 @@
 
 
 (defvar QTpos5 t); homographe maintenant ; changement de pos
-; non fini donc non mis en oeuvre car pas d'exemple contrariant maintenant, tenat
+; non fini donc non mis en oeuvre car pas d'exemple contrariant maintenant, tenant, bouge
 
 ; maintenant su sol ADV versus VER (gérondif)
 ; |bouge|-toi, sors de ce |bouge|  NOM versus VER

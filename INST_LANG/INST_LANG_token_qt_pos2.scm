@@ -3,8 +3,11 @@
 (defvar RU)
 (defvar result)
 
-; for french_downcase_string
+; for ...
 (require 'INST_LANG_utils)
+
+(defvar fdnaw)
+
 ; for pattern-matches
 (require 'INST_LANG_patternmatch)
 (set! QTpos2_pattern "{[^-]+}-{.*}")
@@ -14,7 +17,7 @@
 
 (define (pos2 token name)
 " "
-    (let ( (fdnaw (french_downcase_string name)) QT reponse)
+    (let ( QT reponse)
     ;(format t "\t\t\t\t\t\tici module pos2 sur |%s|\n" name)
         (if 
             (and 
