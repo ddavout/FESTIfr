@@ -1,3 +1,4 @@
+; 
 ;/* ims_german_token_to_words_tools
 ;/*             Author :  Mark Breitenbuecher  
 ;/*                                                                       */
@@ -38,21 +39,22 @@
   (let (majuscule minuscule  (expansion (fre_abbr_lookup (french_downcase_string char_name) fre_char_tab)))
     (if (equal? typ 1)
       (begin
-        (format t "typ %s\n" typ)
+       ; (format t "typ %s\n" typ)
         (set! majuscule (list "majuscule"))
         (set! minuscule (list "minuscule"))
       ))
-    (if (null expansion) 
-      (set! expansion (list (french_downcase_string char_name))))
+    (if (null expansion) (set! expansion (list (french_downcase_string char_name))))
     (cond  
-      ((or(string-matches char_name "[A-Z]")(member_string char_name majuscule_with_accent_letter_list))
+      ((or (string-matches char_name "[A-Z]")(member_string char_name majuscule_with_accent_letter_list))
        ; [A-Z] not in the fre_char_tab to avoid redondance ..:(
         (set! expansion (append expansion majuscule))) ;
       ((or (string-matches char_name "[a-z]")(member_string char_name minuscule_with_accent_letter_list))
         (set! expansion (append expansion minuscule))) ;
-      ((null? expansion)
-        (set! expansion (list "symbole" "inconnu"))))
-  (append (list ".") expansion (list ".")))) ; TODO check plus de liaison et petite pause
+      ((null? expansion) (set! expansion (list "symbole" "inconnu")))
+      )
+  ;;(append (list ".") expansion (list "."))
+  expansion
+  )) ; TODO check plus de liaison et petite pause
 ; rapport avec speller ?
 
 (define (french_parse_charlist name typ)
@@ -63,9 +65,10 @@
     ((eq? (string-length name) 0)
       (list nil))
     ((eq? (string-length name) 1)
-      (french_parse_1char(string-car name) typ))
+      (french_parse_1char (string-car name) typ))
     (t
-      (append (french_parse_1char(string-car name) typ)
+      (append 
+        (french_parse_1char(string-car name) typ)
         ; cdr all characters from the string besides the first
         (french_parse_charlist(string-cdr name) typ )))))
 

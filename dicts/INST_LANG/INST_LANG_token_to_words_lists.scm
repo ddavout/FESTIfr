@@ -1,3 +1,4 @@
+; INST_LANG_words_lists
 ;/*************************************************************************/
 ;/*       influencé par :  Mark Breitenbuecher                            */
 ;/*-----------------------------------------------------------------------*/
@@ -28,7 +29,7 @@
 
 ;; VER
 ;; NAM
-;; ONO, interjerction
+;; ONO, interjection
 
 ;; composition : prefixe, apostrophe, terminaison s/x
 ;; locution
@@ -671,9 +672,9 @@
     ("m3" . ("mètre" "cube"))
     ("cm3" . ("centimètre" "cube"))))
 
-(defvar fre_unit_time_name nil
-    "list ...")
-(set! fre_unit_time_name 
+; (defvar fre_unit_time_name nil
+    ; "list ...")
+(set! fre_unit_time_name_default 
     (list "h" "heure" "heures" "min" "minute" "minutes" "s" "seconde" "secondes"))
 
 
@@ -1227,7 +1228,9 @@
       ))
 
 (define (is_quantifiable_fem name)
-    (member_string (wordroot name "NOM") list_quantifiable_fem))
+  ""
+  (if (and (not (null name)) (not (string-equal name ""))) 
+    (member_string (wordroot name "NOM") list_quantifiable_fem)))
 
 ;; ********************
 ; locutions 
