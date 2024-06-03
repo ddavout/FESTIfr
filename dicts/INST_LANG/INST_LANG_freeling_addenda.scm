@@ -1,4 +1,62 @@
 ; INST_LANG/INST_LANG_freeling_addenda.scm
+
+;; à ranger ici avant migration possible vers poslex ou éliminaion...
+
+; ( "y" ( ( ADV -4.953) ( PRO:per -5.953) )())               
+; ( "y_" ( ( ADV -4.953) ( PRO:per -5.953) )()) ; artifice addenda sans liaison ; TODO compléter; vérifier         
+; ( "y_a" ( ( AUX -1.000) ( VER -1.000) )()) ; SIWIS                
+; ( "y_a_t_il" ( ( VER -1.000) ( aux -1.000) )()) ; SIWIS                
+; ( "y_avait" ( ( AUX -1.000) ( VER -1.000) )()) ; SIWIS                
+; ( "y_en" ( ( ADV -4.953) ( PRO:per -5.953) )()) ;  
+
+; ( "elle" ( ( PRO:per -1.536) )()) 
+; ( "elle_" ( ( PRO:per -1.536) )()) ; neut                   
+; ( "elle_même" ( ( PRO:per -3.949) )()) 
+; ( "elle_mêmes" ( ( PRO:per -3.949) )()) 
+; ( "elles" ( ( PRO:per -2.570) )()) 
+; ( "elles_mêmes" ( ( PRO:per -4.909) )()) 
+
+; ( "z" ( ( NOM -3.988) )()) 
+; ( "z_a" ( ( VER 0) )()) 
+; ( "z_elle" ( ( PRO:per -6.260) )()) 
+; ( "z_elles" ( ( PRO:per -6.260) )()) 
+; ( "z_en" ( ( PRO:per 0) )()) ;                    
+; ( "z_eu" ( ( VER 0) )()) 
+; ( "z_il" ( ( PRO:per -6.260) )()) ; SIWIS                   
+; ( "z_ils" ( ( PRO:per -6.260) )()) 
+; ( "z_y" ( ( ADV 0) )()) 
+
+; ( "m_en" ( ( PRO:per 0) )()) ; SIWIS                   
+; ( "m_y" ( ( PRO:per -2.912) )()) ; SIWIS
+; ( "t_en" ( ( PRO:per 0) )())
+; ( "t_à" ( ( PRE -0.804) )()) ; addenda neut_parl_s06_0669       
+; ( "n_en" (( ADV -2.384))()) ; SIWIS                   
+; ( "n_es" (( VER -2.384))()) ; neut_book_s01_0006                   
+; ( "n_est" (( VER -2.384))()) 
+; ( "n_est_pas" (( VER -2.384))()) ; SIWIS                   
+; ( "n_importe_comment" (( ADV 0))()) 
+; ( "n_importe_où" (( ADV 0))()) 
+; ( "n_importe_quel" (( ART:ind 0))()) 
+; ( "n_importe_quelle" (( ART:ind 0))()) ; SIWIS                   
+; ( "n_importe_qui" (( PRO:ind 0))()) 
+; ( "n_ont" (( AUX -1.401) ( VER -2.707))()) ; SIWIS                
+; ( "n_y" (( ADV -4.000))()) ;                    
+; ( "n_y_a" (( AUX -1.000) ( VER -1.000))()) ; neut_book_s01_0119                
+; ( "n_y_en" (( ADV -4.000))()) ;                    
+; ( "n_y_en_a" (( AUX -0.616) ( VER -1.569))()) ; neut_book_s01_0119                
+; ( "n_étaient" (( VER -2.384))()) 
+; ( "n_était" (( VER -2.384))()) ; SIWIS 
+
+; ( "et_caetera" ( ( ADV -5.509) )()) 
+; ( "et_cetera" ( ( ADV -4.893) )()) 
+; ( "et_hop" ( ( ONO -0.524) )()) 
+
+
+; ( "_y" ( ( ADV -4.953) ( PRO:per -5.953) )()) ; artifice addenda sans liaison ; TODO compléter; vérifier         
+; ( "a_" ( ( AUX -0.616) ( VER -1.569) )()) ; SIWIS                
+; ( "a_t_elle" ( ( AUX -0.616) ( VER -0.616) )()) ; SIWIS                
+; ( "a_t_il" ( ( AUX -0.516) ( VER -0.516) )()) ; SIWIS    
+
 ; poslex à corriger
 (lex.add.entry '("pommes"((NOM -3.971) )()))
 (lex.add.entry '("pomme"((NOM -3.971) (ADJ -5.918))()))

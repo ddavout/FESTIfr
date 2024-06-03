@@ -335,7 +335,6 @@
 ;(lex.add.entry '("modern_style" NOM 
 ;(lex.add.entry '("modus_operandi" NOM 
 (lex.add.entry '("mobilis_in_mobile" NOM (((m oh)0)((b i)0)((l i s)0)((i n)0)((m o)0)((b i)0)((l e)0))))
-(lex.add.entry '("moi_même" PRO:per (((m w a) 0)((m eh m)0))))
 ;(lex.add.entry '("modus_vivendi" NOM 
 ;(lex.add.entry '("music_hall" NOM 
 ;(lex.add.entry '("negro_spiritual" NOM 

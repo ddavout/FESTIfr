@@ -1,22 +1,4 @@
-(set! verbose_addendas t)
-(defvar verbose_addendas)
-(if verbose_addendas (format t "addenda_test.scm loaded"))
-;;; addenda
- (lex.add.entry '("talisman" nil ((("t" "a") 0) (("l" "i" "s") 0) (("m" "ahn") 0)))) ; et non  a n
- (lex.add.entry '("chiasme" nil ((("k" "j" "a" "s" "m") 0))))
- (lex.add.entry '("chiasma" nil ((("k" "j" "a" "s" "m") 0))))
- (lex.add.entry '("chi" nil ((("sh" "i") 0))))
- (lex.add.entry '("chia_NOM" NOM ((("k" "j" "a") 0))))
-; NON : voir wordroo (lex.add.entry '("n_arriverez" nil (((n "a") 0) (("rh" "i") 0) (("v" "rh" "e") 0))))
-(lex.add.entry '("n_arriveré" nil (((n "a") 0) (("rh" "i") 0) (("v" "rh" "e") 0))))
-(lex.add.entry '("monosperme" nil ((("m" "oh") 0) (("n" "o") 0) ((s "p" "eh" "rh" "m") 0))))
-(lex.add.entry '("chevau_léger_NOM" NOM ((("sh" "ae") 0) (("v" "o") 0) (("l" "e") 0) (("zh" "e") 0))))
-(lex.add.entry '("achène" nil ((("a") 0) (("k" "eh" "n") 0))))
-(lex.add.entry '("galimatia" nil ((("g" "a") 0) (("l" "i") 0) (("m" "a") 0) (("t" "j" "a") 0))))
- (lex.add.entry '("états_uni" NOM ((("e") 0) (("t" "a") 0) ((z "y") 0) (("n" "i") 0))))
-;;;; reste à ranger : attention redondance incohérence avec les autres addendas notamment 
-;;; locutions foreign
-;;; mis dans test
+
 (lex.add.entry '("messieurs_dame" NOM (((m e) 0) ((s j oe) 0) ((d a m) 0))))
 (lex.add.entry '("messieurs_NOM" NOM (((m e) 0) ((s j oe) 0) ((d a m) 0))))
 
@@ -842,7 +824,6 @@
 (lex.add.entry '( "justement" nil ((("zh" "y" "s" "t") 0) (("m" "ahn") 0))))
 (lex.add.entry '( "principau" nil ((("p" "rh" "ehn") 0) (("s" "i") 0) (("p" "o") 0))))
 (lex.add.entry '( "passés" nil ((("p" "a") 0) (("s" "e") 0))))
-(lex.add.entry '( "il_y_aura" nil ((("i") 0) (("l" j "oh") 0) (("rh" "a") 0))))
 (lex.add.entry '( "proposon" nil ((("p" "rh" "oh") 0) (("p" "o") 0) (("z" "ohn") 0))))
 (lex.add.entry '( "arrivés" nil ((("a") 0) (("rh" "i") 0) (("v" "e") 0))))
 (lex.add.entry '( "hésité" nil ((("e") 0) (("z" "i") 0) (("t" "e") 0))))
@@ -5696,20 +5677,6 @@
 ; grammaire
 (lex.add.entry '("ne" nil (((n ae)0))))
 
-(lex.add.entry '("ai" nil ((("eh")0))))
-(lex.add.entry '("c_étè" nil (((s e)0)((t eh)0))))
-(lex.add.entry '("est_AUX" AUX (((eh)0))))
-(lex.add.entry '("est_VER" VER (((eh)0))))
-(lex.add.entry '("eû" nil ((("y") 0))))
-(lex.add.entry '("eut" nil ((("y")0))))
-(lex.add.entry '("fût" nil ((( "f" "y")0))))
-(lex.add.entry '("fut" nil ((( "f" "y")0))))
-(lex.add.entry '("s_est" nil (((s eh)0))))
-(lex.add.entry '("s_étaient" nil (((s e)0)((t eh)0))))
-(lex.add.entry '("s_était" nil (((s e)0)((t eh)0))))
-(lex.add.entry '("t_es_VER" VER (((t eh)0))))
-(lex.add.entry '("êtes_vou" nil ((("eh" "t") 0) (("v" "u") 0)))); et non pas t eh s v u
-
 
 
 
@@ -5912,40 +5879,6 @@
 (lex.add.entry '("Ière" NOM (((p rh ae)0) ((m j eh rh)0))))
 
 
-;; lettre et mots de 1 caractère ; TODO réviser finir
-
-
-
-(lex.add.entry '("B" NOM (((b e)0)))); vitamine B12
-(lex.add.entry '("C_NOM" NOM ((( "s" "e") 0) (("m" "a") 0) (("zh" "y" "s") 0) (("k" "y" "l") 0))))
-(lex.add.entry '("c_NOM" NOM ((( "s" "e") 0) (("m" "i") 0) (("n" "y" "s") 0) (("k" "y" "l") 0))))
-(lex.add.entry '("e_NOM" NOM ((("ae")0))))
-(lex.add.entry '("e" nil ((("ae")0))))
-(lex.add.entry '("i" NOM ((("i") 0))))
-(lex.add.entry '("o" NOM ((("o") 0))))
-(lex.add.entry '("p" nil ((("p" e) 0))))
-
-(lex.add.entry '("m_NOM" NOM ((("eh" m) 0))))
-(lex.add.entry '("u" nil ((("y") 0))))
-(lex.add.entry '("x" NOM ((("i" "k" "s") 0))))
-(lex.add.entry '("y" nil ((("i") 0))))
-(lex.add.entry '("y_NOM" NOM ((("i") 0)((g rh eh k)0))))
-(lex.add.entry '("à_NOM" NOM ((("a") 0))))
-(lex.add.entry '("à" nil ((("a") 0))))
-(lex.add.entry '("è" nil ((("eh") 0))))
-(lex.add.entry '("è" nil (((eh)0))));
-(lex.add.entry '("é" nil ((("e") 0))))
-(lex.add.entry '("s_NOM" "NOM" (((eh s)0))))
-
-;; à voir
-
-(lex.add.entry '("c" "PRO:dem"  nil))
-(lex.add.entry '("d" "PRE" nil))
-(lex.add.entry '("l" "ART:def" nil))
-(lex.add.entry '("s" "PRO:per" nil))
-(lex.add.entry '("j" "PRO:per" nil))
-(lex.add.entry '("m" "PRO:per" nil))
-(lex.add.entry '("t" "PRO:per" nil))
 
 
 
