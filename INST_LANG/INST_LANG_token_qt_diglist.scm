@@ -24,28 +24,28 @@
                 (begin 
                     (set! reponse t)
                     (set! QT "QTdiglist" )
-                    (set! RU (append RU (list QT ";")))
+                    (set! RU (append RU (list name QT ";")))
                     (set! h1 #1)(set! h2 #2); ex 00 56; ex 3
                     ;(not (equal? (item.feat token 'punc) ",")) ; hyp
                     ;  h1 |00| h2 |56| ?; ex h1 "" h2 "3" ou  h1 || h2 |61| ? 61 années
                     (format t "QTdiglist !!! \t  h1 |%s| h2 |%s| ?\n" h1 h2)
-                    (set! n_name  (na (item.next token)))
-                    ;;(format t "QTdiglist !! n_name %l\n" n_name)
+                    (set! n_n_name  (item.feat token 'n.n.name))
+                    (format t "QTdiglist !! n_n_name %l\n" n_n_name)
+
                     ;;(format t "QTdiglist !! charlist %l\n" (french_parse_charlist h1 0))
                     (item.set_feat token "token_pos" "cardinal")
                     (set! fem 0)
-                    (if (is_quantifiable_fem n_name) (set! fem 1))
+                    (if (is_quantifiable_fem (symbol->string n_n_name)) (set! fem 1))
                     (format t "locution QTdiglist: ok1\n")
                     ; leading zeros
                     (if (string-equal h1 "")
                             (set! result 
-                                  (append
-                                     (INST_LANG_number h2 fem)
-                                     (if (string-equal (item.feat token 'punc) ",") (list "virgule"))))
+                                 (INST_LANG_number h2 fem))
                             (set! result
-                                 (append (french_parse_charlist h1 0) 
-                                  (french_parse_cardinal h2 )))
-                                     ;(if (string-equal (item.feat token 'punc) ",") (list "virgule"))))
+                                 (append (french_parse_charlist h1 0)
+                                  (INST_LANG_number h2 fem)  
+                                  (if (string-equal (item.feat token 'punc) ",") (list "virgule"))
+                                  ))
                     )))
 
 
