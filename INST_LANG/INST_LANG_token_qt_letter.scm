@@ -57,7 +57,7 @@
 	            				(ru token name)
 	            				; bon compromis PRO:per ou ADV
 	    						(item.set_feat token 'pos "ADV")
-	    						(set! reponse nil )
+	    						(set! reponse t )
 	    						(set! result (list name)))
 	    	    			(begin
 			    				(if (string-equal fdnaw "à")
@@ -68,7 +68,21 @@
 			            				; bon compromis PRO:per ou ADV
 			    						(item.set_feat token 'pos "PRE")
 			    						(set! reponse t )
-			    						(set! result (list name))))))))))
+			    						(set! result (list name)))
+
+			    					(begin 
+			    						(if (string-equal fdnaw "a")
+			    							(begin 
+							            		(format t "\t\t\t\t\t\tici module letter: on répond sur |%s|\n" name)
+					            				(set! QT "QTletter")
+					            				(ru token name)
+					            				; bon compromis PRO:per ou ADV
+					    						(item.set_feat token 'pos "PRE")
+					    						(set! reponse t )
+					    						(set! result (list name)))))
+
+
+			    					)))))))
 
 
         (format t "we leave the module letter sur |%s|\n" name)
