@@ -22,7 +22,9 @@
 				    	(or (set! lettre_seule 1) t))
 			    		
 					(and 
-						(not (string-matches (item.feat token 'whitespace) "  "))
+						; n 'y
+						;(not (string-matches (item.feat token 'whitespace) " "))
+						(not (string-matches (item.feat token 'n.whitespace) " "))
 							(or (format t "ok0") t)
 							(or (set! lettre_seule 1) t))
 

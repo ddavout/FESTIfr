@@ -1,5 +1,7 @@
 (defvar verbose_addendas)
 (if verbose_addendas (format t "addenda_refractaire.scm loaded"))
+(lex.add.entry '("n_est-ce" nil ((("n" "eh")0) (("s" ae) 0))))
+
 (lex.add.entry '("" nil nil))
 (lex.add.entry '(" " nil nil))
 (lex.add.entry '("elles_même" nil ((("eh" "l" ) 0) (("m" "eh" "m") 0))))
@@ -511,6 +513,8 @@
 (lex.add.entry '("h" NOM (((a sh)0))))
 (lex.add.entry '("i" NOM ((("i") 0))))
 (lex.add.entry '("k" NOM (((k a) 0))))
+
+ (lex.add.entry '("n" NOM ((("eh" n)0))))
 
 (lex.add.entry '("o" NOM (((k a) 0))))
 (lex.add.entry '("p" nil ((("p" e) 0))))

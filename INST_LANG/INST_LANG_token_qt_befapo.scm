@@ -25,9 +25,10 @@
 (set! list_before_apo_ART_def) ; def ou ind
 (set! list_before_apo_ART (append list_before_apo_ART_ind list_before_apo_ART_def))
 (define (befapo token name)
-    (let (pos_sur reponse)
+    (let (pos_sur QT reponse)
         ; pour n'importe on cherche à atteindre |n| 
        (format t "\t\t\t\t\t\tici module befapo sur |%s|\n" fdnaw)
+       (set! QT "QTbefapo")
        (if (member_string fdnaw list_before_apo_VER )
                 (set! pos_sur "VER")
                 (begin 
@@ -59,6 +60,7 @@
          (and
           (or (format t "ici module befapo: on vérifie point1\n") t)
           (not (null? (item.next token)))
+         ; (not (string-matches (item.feat token 'whitespace) "  "))
           (or (format t "ici module befapo: on vérifie point2\n") t)
           ; c'est le suivant qui porte le whitespace
           ; TODO peut-on donner un sens plusieurs whitespace characters commençant par un apostrophe ? tempo : non
@@ -75,7 +77,6 @@
           (begin 
             (format t "réponse pour QTbefapo\n")
             (set! reponse t)
-            (set! QT "QTbefapo")
             (ru token name)
             ; action
             (set! n_name (na (item.next token))); n'|oublie|
