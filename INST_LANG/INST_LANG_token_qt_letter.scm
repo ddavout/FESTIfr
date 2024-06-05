@@ -3,6 +3,7 @@
 (defvar RU)
 (defvar result)
 (defvar fdnaw)
+(defvar apo "apostrophe")
 ; for french_downcase_string, letter_list
 (require 'INST_LANG_utils)
 ; pour can_be_single_letter
@@ -18,22 +19,24 @@
 			    	(and 
 				    	(not (string-equal (item.feat token 'prepunctuation) ""))
 				    	(not (string-equal (item.feat token 'punc) ""))
-				    	(or (format t "ok1") t)
+				    	(or (format t "ok1\n") t)
 				    	(or (set! lettre_seule 1) t))
 			    		
 					(and 
 						; n 'y
 						;(not (string-matches (item.feat token 'whitespace) " "))
 						(not (string-matches (item.feat token 'n.whitespace) " "))
-							(or (format t "ok0") t)
+							(or (format t "ok0\n") t)
 							(or (set! lettre_seule 1) t))
 
 
 
 			    	(and 
 			    		(member_string (french_downcase_string (symbol->string (item.feat token 'p.name))) (list "un" "une" "des" "le" "ce" "cet" "cette" "ces" "lettres" "lettre" "signe" "signes"))
-			    		(or (format t "ok3") t)
+			    		(or (format t "ok3\n") t)
 			    		(or (set! lettre_seule 1) t))))
+
+
 
 	    	(and 
 				(can_be_single_letter (french_downcase_string name))
@@ -56,8 +59,10 @@
 	            		(format t "\t\t\t\t\t\tici module letter: on répond sur |%s|\n" name)
 	            		(set! QT "QTletter")
 	            		(ru token name)
-	            		; sans certitude on laisse poslex
-	                    (set! result (list name)))
+
+	            		(if (string-equal (string-before (item.feat token 'whitespace) "'") " ")
+	            			(set! result (list apo name))
+	                    	(set! result (list name))))
 	    			(begin
 	    				(if (string-equal fdnaw "y")
 	    					(begin 
@@ -88,7 +93,13 @@
 					            				; bon compromis PRO:per ou ADV
 					    						(item.set_feat token 'pos "PRE")
 					    						(set! reponse t )
-					    						(set! result (list name)))))
+					    						(set! result (list name)))
+
+			    							(begin
+			    								(set! result (list "autre")) 
+			    								)
+
+			    							))
 
 
 			    					)))))))
