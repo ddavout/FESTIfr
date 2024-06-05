@@ -20,7 +20,7 @@
 (define (pos4 token name)
 "ex je suis |fier|, se fier, suis-je "
     (let 
-        ((fdnaw (french_downcase_string name)) QT reponse)
+        ((fdnaw (french_downcase_string name)) reponse)
         (format t "\t\t\t\t\t\tici module pos4 sur %s\n" name)
         (if 
           (and
@@ -45,7 +45,7 @@
 
                   (set! reponse t)
                   (set! QT "QTpos4")
-                  (set! RU (append RU (list name QT ";")))
+                  (ru token name)
                   ; action directe suivant contexte token-2
                   (set! token-2 (item.prev token-1))
 

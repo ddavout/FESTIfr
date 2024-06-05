@@ -2,6 +2,7 @@
 (defvar verbose_INST_LANG_token_to_word)
 
 (defvar RU)
+(defvar QT)
 (defvar result)
 
 ; for list_before_apo_VER list_before_apo_div
@@ -13,7 +14,7 @@
 (require 'INST_LANG_token)
 (define (normal token name)
   ;(format t "\t\t\t\t\t\tici module normal sur %s\n" name)
-  (let ( (fdnaw (french_downcase_string name)) QT reponse)
+  (let ( (fdnaw (french_downcase_string name)) reponse)
     (set! reponse nil); (to be clear ! hidden in the let ... par défaut nil
     (format t "ici module normal\n")
     (if (is_normal fdnaw)
@@ -21,8 +22,8 @@
         (format t "réponse pour QTnormal\n")
         (set! reponse t)
         (set! QT "QTnormal")
-        (set! RU (append RU (list name QT ";")))
-
+        ;(set! RU (append RU (list name QT ";")))
+        (ru token name)
 
        ; action
        (cond 

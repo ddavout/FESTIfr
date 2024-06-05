@@ -44,7 +44,7 @@
             (format t "réponse pour QTlocution3: *************************************%s\n" nam2)
             (set! reponse t); on passera à ...
             (set! QT "QTlocution3m")
-            (set! RU (append RU (list name QT ";")))
+            (ru token name)
             ; action
 
                 ;

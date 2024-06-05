@@ -60,7 +60,7 @@
         ; |tout_à|
         (set! nam1 (string-append name "_" n_name))
 
-        (or (format t "locution QTlocution_part_1: ok3 nam1 |%s| \n" nam1) t)
+        (or (format t "locution QTlocution_part_1: ok3 nam1 |%s| \sn" nam1) t)
 
         ;***
         (member_string (french_downcase_string nam1) list_locution_part_1)
@@ -72,7 +72,7 @@
           (format t "réponse pour QTlocution_part_1\n")
           (set! reponse t); on passera à |à|
           (set! QT "QTlocution_part_1")
-          (set! RU (append RU (list name QT ";")))
+          (ru token name)
           ; action
         
           ; /tout à coup/ versus /tout à son/ 

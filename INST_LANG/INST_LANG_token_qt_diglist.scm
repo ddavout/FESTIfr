@@ -5,6 +5,7 @@
 
 ; for ..
 (require 'INST_LANG_utils)
+
 ; for is_quantifiable_fem
 (require 'INST_LANG_token_to_words_lists)
 
@@ -17,14 +18,14 @@
 
 (define (diglist token name)
     "pour lire une liste de chiffres"
-    (let  (QT reponse)
+    (let  (reponse)
         (format t "\t\t\t\t\t\tici module diglist sur %s\n" name)
         (if 
             (pattern-matches name QTdiglist_pattern)
                 (begin 
                     (set! reponse t)
                     (set! QT "QTdiglist" )
-                    (set! RU (append RU (list name QT ";")))
+                    (ru token name)
                     (set! h1 #1)(set! h2 #2); ex 00 56; ex 3
                     ;(not (equal? (item.feat token 'punc) ",")) ; hyp
                     ;  h1 |00| h2 |56| ?; ex h1 "" h2 "3" ou  h1 || h2 |61| ? 61 années

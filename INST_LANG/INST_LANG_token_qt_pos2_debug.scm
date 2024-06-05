@@ -14,7 +14,7 @@
 
 (define (pos2_debug token name)
 " "
-    (let ( (fdnaw (french_downcase_string name)) QT reponse)
+    (let ( (fdnaw (french_downcase_string name)) reponse)
     (format t "\t\t\t\t\t\tici module pos2_debug sur |%s|\n" name)
         (if 
             (and 

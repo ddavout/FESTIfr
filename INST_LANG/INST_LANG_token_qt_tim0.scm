@@ -8,7 +8,7 @@
 
 (define (tim0 token name)    
     ""
-    (let (QT reponse)
+    (let (reponse)
         (format t "\t\t\t\t\t\tici module tim0 sur %s\n" name)
         (if 
            (and  ; volle Stunde  
@@ -56,7 +56,7 @@
                         (begin
                     (set! reponse t)    
                     (set! QT "QTtim0")
-                    (set! RU (append RU (list name QT ";")))
+                    (ru token name)
                     (set! result
                         (list (french_parse_cardinal name)))
                     ))

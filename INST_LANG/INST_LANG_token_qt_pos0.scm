@@ -10,14 +10,14 @@
 
 (define (pos0 token name)
 " "
-    (let  (QT reponse)
+    (let  (reponse)
         (format t "\t\t\t\t\t\tici module pos0 sur %s\n" name)
         (if 
             (member_string fdnaw list_ADV_PRE)
                 (begin
                     (set! reponse t)
                     (set! QT "QTpos0" )
-                    (set! RU (append RU (list name QT ";")))
+                    (ru token name)
                     (item.set_feat token 'pos "ADV")
                     (set! result (list name))
                     (or (format t "ici module pos0: on répond sur |%s|\n" name) t)))

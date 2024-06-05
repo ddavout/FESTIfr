@@ -8,14 +8,14 @@
 
 (define (loc0 token name)
 " "
-    (let (fdnaw (french_downcase_string name) QT reponse)
+    (let (fdnaw (french_downcase_string name) reponse)
     (format t "\t\t\t\t\t\tici module loc0 sur %s" name)
         (if 
             (member_string fdnaw list_ADV_PRE)
                 (begin
                     (set! reponse t)
                     (set! QT "QTloc0" )
-                    (set! RU (append RU (list name QT ";")))
+                    (ru token name)
                     (item.set_feat token 'pos "ADV")
                     (set! result (list name))
                     (or (format t "ici module befapo: on répond\n") t))

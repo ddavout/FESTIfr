@@ -17,7 +17,7 @@
 
 (define (pos2 token name)
 " "
-    (let ( QT reponse)
+    (let ( reponse)
     (format t "\t\t\t\t\t\tici module pos2 sur |%s|\n" name)
         (if 
             (and 
@@ -42,7 +42,7 @@
 
             (begin 
                 (set! QT "QTpos2" )
-                (set! RU (append RU (list name QT ";")))
+                (ru token name)
                 (set! suf1-1 (string-last h1))
                 ; grâce à list_after_tiret
                 (item.set_feat token 'pos "VER")

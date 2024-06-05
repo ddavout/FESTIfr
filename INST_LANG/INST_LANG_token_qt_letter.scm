@@ -10,7 +10,7 @@
 
 (define (letter token name)
 
-	(let (QT reponse lettre_seule)
+	(let (reponse lettre_seule)
     (format t "\t\t\t\t\t\tici module letter sur %s\n" name)
     (if (or 	
     		(and (member_string fdnaw letter_list)
@@ -51,7 +51,7 @@
 	            		(set! reponse t )
 	            		(format t "\t\t\t\t\t\tici module letter: on répond sur |%s|\n" name)
 	            		(set! QT "QTletter")
-	            		(set! RU (append RU (list name QT ";")))
+	            		(ru token name)
 	            		; sans certitude on laisse poslex
 	                    (set! result (list name)))
 	    			(begin
@@ -59,7 +59,7 @@
 	    					(begin 
 			            		(format t "\t\t\t\t\t\tici module letter: on répond sur |%s|\n" name)
 	            				(set! QT "QTletter")
-	            				(set! RU (append RU (list name QT ";")))
+	            				(ru token name)
 	            				; bon compromis PRO:per ou ADV
 	    						(item.set_feat token 'pos "ADV")
 	    						(set! reponse t )
@@ -69,7 +69,7 @@
 			    					(begin 
 					            		(format t "\t\t\t\t\t\tici module letter: on répond sur |%s|\n" name)
 			            				(set! QT "QTletter")
-			            				(set! RU (append RU (list name QT ";")))
+			            				(ru token name)
 			            				; bon compromis PRO:per ou ADV
 			    						(item.set_feat token 'pos "PRE")
 			    						(set! reponse t )

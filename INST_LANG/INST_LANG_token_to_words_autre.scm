@@ -31,7 +31,7 @@
 (defvar fdnaw)
 (defvar h1)
 (defvar h2)
-
+(defvar QT)
 ; verbose & debug
 (defvar cg::debug); could be clunits_debug !
 (if cg::debug
@@ -63,6 +63,14 @@
     "QTname de module modu utilisable ?"
     ; renvoie t, pour usage dans tests
     (and (boundp 'QTname)  (boundp 'modu))t)
+
+
+(define (ru token name)
+    (set! RU (append RU (list name QT ";")))
+    (format t "RU %l\n" RU)
+    (item.set_feat token 'ru  QT))
+
+
 
 
     ; à mettre à nil au niveau de notre SayText TODO

@@ -12,7 +12,7 @@
 (define (pos3 token name)
 " "
     (let 
-        ((fdnaw (french_downcase_string name)) QT reponse)
+        ((fdnaw (french_downcase_string name)) reponse)
         (format t "\t\t\t\t\t\tici module pos3 sur |%s|\n" name)
         (if 
           (and
@@ -42,7 +42,7 @@
 
                   (set! reponse t)
                   (set! QT "QTpos3")
-                  (set! RU (append RU (list name QT ";")))
+                  (ru token name)
                   ; action
                   ; influence le next
                   (item.set_feat token1  'pos "NOM")

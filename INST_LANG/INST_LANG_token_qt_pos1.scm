@@ -9,7 +9,7 @@
 
 (define (pos1 token name)
 " "
-    (let  (QT reponse)
+    (let  (reponse)
     ;(format t "\t\t\t\t\t\tici module pos1 sur %s\n" name)
         (if 
             (and ; fre_NAM_homo_tab homo ***non en tête de phrase avec typographie correcte***
@@ -21,7 +21,7 @@
                     (begin
                         (set! reponse t)
                         (set! QT "QTpos1" )
-                        (set! RU (append RU (list name QT ";")))
+                        (ru token name)
                         (item.set_feat token 'pos "ADV")
                         (set! result (list name))
                         (or (format t "\t\t\t\t\t\tici module pos1: on répond sur |%s|\n" name) t)))

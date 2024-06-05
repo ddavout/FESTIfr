@@ -25,7 +25,7 @@
 (set! list_before_apo_ART_def) ; def ou ind
 (set! list_before_apo_ART (append list_before_apo_ART_ind list_before_apo_ART_def))
 (define (befapo token name)
-    (let (pos_sur QT reponse)
+    (let (pos_sur reponse)
         ; pour n'importe on cherche à atteindre |n| 
        (format t "\t\t\t\t\t\tici module befapo sur |%s|\n" fdnaw)
        (if (member_string fdnaw list_before_apo_VER )
@@ -76,7 +76,7 @@
             (format t "réponse pour QTbefapo\n")
             (set! reponse t)
             (set! QT "QTbefapo")
-            (set! RU (append RU (list name QT ";")))
+            (ru token name)
             ; action
             (set! n_name (na (item.next token))); n'|oublie|
             (format t "QTbefapo n_name %s\n" n_name)

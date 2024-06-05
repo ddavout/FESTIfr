@@ -5,7 +5,7 @@
 
 (define (delp.n token name)
 "si le token d'avant est marqué, on exécute"
-(let (QT reponse)
+(let (reponse)
     (format t "\t\t\t\t\t\tici module delp.n sur %s\n" name)
         (if 
             (string-equal (item.feat token 'p.p.delete) "next")
@@ -15,7 +15,7 @@
                 ; t pour arrêter le flux
                 (set! reponse)
                 (set! QT "delp.n" )
-                (set! RU (append RU (list name QT ";")))
+                (ru token name)
                 (set! result nil) 
 
             )

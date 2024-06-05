@@ -35,7 +35,7 @@
 (define (pos5 token name)
    ""
     (let 
-        ((fdnaw (french_downcase_string name)) pos_gue QT reponse)
+        ((fdnaw (french_downcase_string name)) pos_gue reponse)
         (format t "\t\t\t\t\t\tici module pos5 sur %s\n" name)
         (if 
           (and 
@@ -47,7 +47,7 @@
                   (format t "réponse pour QTpos5\n")
                   (set! reponse t)
                   (set! QT "QTpos5")
-                  (set! RU (append RU (list name QT ";")))
+                  (ru token name)
                   ; action directe
                   (set! token-1 (item.prev token))
                   (if (null? token-1)

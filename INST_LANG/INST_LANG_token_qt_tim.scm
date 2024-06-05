@@ -22,7 +22,7 @@
 
 (define (tim token name)
     "lecture de l'heure 23h 34min 52s ou durée"
-    (let  (n_name units QT reponse)
+    (let  (n_name units reponse)
         (format t "\t\t\t\t\t\tici module tim sur %s\n" name)
         (if 
             (and
@@ -65,7 +65,7 @@
                 (begin
                     (set! reponse t)    
                     (set! QT "QTtim")
-                    (set! RU (append RU (list name QT ";")))
+                    (ru token name)
                     (item.set_feat token "token_pos" "time")
                     (if (member_string n_name fre_unit_time_name)
                             (item.set_feat token "delete" "next"))  ; AS don't say Uhr again

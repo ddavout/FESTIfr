@@ -19,7 +19,7 @@
 (define (loc2m  token name)
   " "
   ;;;
-  (let (fdnaw (french_downcase_string name) token1 n_name nam1 pos_sur QT reponse)
+  (let (fdnaw (french_downcase_string name) token1 n_name nam1 pos_sur reponse)
     (format t "\t\t\t\t\t\tici module loc2m sur |%s|\n" name)
     (if 
       (and
@@ -49,7 +49,7 @@
           (begin
               (set! reponse t)
               (set! QT "QTloc2m" )
-              (set! RU (append RU (list name QT ";")))
+              (ru token name)
               ; je prépare la passation
               ; transfert d'une ponctuation éventuelle du dernier vers le premier
               (item.set_feat token1 'prepunctuation (item.feat token 'prepunctuation ))
