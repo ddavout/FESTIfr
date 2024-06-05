@@ -230,12 +230,6 @@
             (letter token name)))
 
       ((and 
-            (boundp 'QTloc3m)
-            (or (require 'INST_LANG_token_qt_loc3m) t)
-            (loc3m token name))) 
-
-
-      ((and 
             (boundp 'QTlocution_part_1)
             (or (require 'INST_LANG_token_qt_locution_part_1) t)
             (locution_part_1 token name)))

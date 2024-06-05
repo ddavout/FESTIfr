@@ -60,7 +60,7 @@
 (defvar QTdelp.p.n t)
 ; les locutions ; vers une simplification de l'analyse
 (defvar QTloc0 t); list_PRE_ADV ex: au-dessus de est vu comme une PRE
-(defvar QTloc3m t) ; avant QTloc2m et donc avant .. QTnormal; :french_multiple_word_expressions2 2 tirets
+(defvar QTloc3m nil) ; avant QTloc2m et donc avant .. QTnormal; :french_multiple_word_expressions2 2 tirets
 (defvar QTloc2m t); avant QTnormal; liste: list_locution2  ex french_multiple_word_expressions ex "quelques_uns"; "quoi_que"; "red_river";  "roast_beef"; pe après QTrad1 si abréviation sous forme de locution TODO
 ; lien avec  locution_part1 ex tout_à, éviter empiètement, pas de précédence mais mettre qd même locution_part1 en premier :)
 ; ex avec tout à, pour ne pas rater tout à l'heure

@@ -60,11 +60,12 @@
         ; |tout_à|
         (set! nam1 (string-append name "_" n_name))
 
-        (or (format t "locution QTlocution_part_1: ok3 nam1 |%s| \sn" nam1) t)
+        (or (format t "locution QTlocution_part_1: ok3 nam1 |%s| \n" nam1) t)
 
         ;***
         (member_string (french_downcase_string nam1) list_locution_part_1)
         ;***
+        (or (format t "locution QTlocution_part_1: ok4 nam1 |%s| \n" nam1) t)
 
         (or (format t "\t\t\t\t\t\tici module locution_part_1: on répond sur |%s|\n" name) t))
 

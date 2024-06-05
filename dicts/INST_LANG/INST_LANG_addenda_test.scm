@@ -1,6 +1,12 @@
 (lex.add.entry '("donnez-en" nil ((("d" "oh") 0) (("n" "e") 0) (("z" "ahn") 0))))
 (lex.add.entry '("donnes-en" nil ((("d" "oh") 0) (("n" "eh") 0) (("z" "ahn" "n") 0))))
 (lex.add.entry '("donnez-moi" nil ((("d" "oh" "n" "z") 0) (("m" "w" "a") 0))))
+
+ (lex.add.entry '("hic" nil (((hs "i" "k") 0))))
+ (lex.add.entry '("là_dessus" ADV ((("l" "a") 0) (("d" "ae" "s") 0) (("s" "y") 0))))
+ (lex.add.entry '("là_dessu" nil ((("l" "a") 0) (("d" "ae" "s") 0) (("s" "y") 0))))
+
+  (lex.add.entry '("signifie" nil ((("s" "i") 0) (("jg" "i") 0) (("f" "i") 0))))
 ;;;
 
 (lex.add.entry '("messieurs_dame" NOM (((m e) 0) ((s j oe) 0) ((d a m) 0))))

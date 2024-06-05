@@ -13,7 +13,7 @@
 	(let (reponse lettre_seule)
     (format t "\t\t\t\t\t\tici module letter sur %s\n" name)
     (if (or 	
-    		(and (member_string fdnaw letter_list)
+    		(and (member_string name letter_list)
 			     (or 
 			    	(and 
 				    	(not (string-equal (item.feat token 'prepunctuation) ""))
@@ -22,14 +22,9 @@
 				    	(or (set! lettre_seule 1) t))
 			    		
 			    	(and 
-			    		(member_string (french_downcase_string (item.feat token 'p.name)) (list "un" "une" "des" "le" "ce" "cet" "cette" "ces" "lettres" "lettre" "signe" "signes"))
+			    		(member_string (french_downcase_string (symbol->string (item.feat token 'p.name))) (list "un" "une" "des" "le" "ce" "cet" "cette" "ces" "lettres" "lettre" "signe" "signes"))
 			    		(or (format t "ok3") t)
 			    		(or (set! lettre_seule 1) t))))
-
-			    	; (and 
-			    	; 	(member_string (french_downcase_string (symbol->string (item.feat token 'n.n.name))) (list "t" "ils" "il" "elle" "elles" "on"))
-			    	; 	(or (format t "ok4") t)
-			    	; 	(or (set! lettre_seule 0) t))
 
 	    	(and 
 				(can_be_single_letter (french_downcase_string name))
@@ -62,7 +57,7 @@
 	            				(ru token name)
 	            				; bon compromis PRO:per ou ADV
 	    						(item.set_feat token 'pos "ADV")
-	    						(set! reponse t )
+	    						(set! reponse nil )
 	    						(set! result (list name)))
 	    	    			(begin
 			    				(if (string-equal fdnaw "à")
