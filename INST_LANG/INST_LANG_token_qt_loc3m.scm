@@ -41,20 +41,20 @@
         (or (format t "\t\t\t\t\t\tici module locution3m: on répond sur |%s|\n" name) t))
 
           (begin
-            (format t "réponse pour QTlocution3\n")
+            (format t "réponse pour QTlocution3: *************************************%s\n" nam2)
             (set! reponse t); on passera à ...
-            (set! QT "QTlocution2m")
+            (set! QT "QTlocution3m")
             (set! RU (append RU (list name QT ";")))
             ; action
 
                 ;
                 (item.set_feat token 'punc (item.feat (item.next (item.next token)) 'punc ) ); transfert de ponctuation du dernier vers le premier
-                (item.set_feat token 'delete  "next"); marquage pour suppression du suivant: on y cherchera p.delete
-                (item.set_feat token1 'delete  "next")
-                
-                (item.set_name token2 nam2 )
+                ;(item.set_feat token 'delete  "next"); marquage pour suppression du suivant: on y cherchera p.delete
+                 (item.set_feat token2 'delete  "next")
+                (item.set_name token nam2 )
                 )
-          (set! result))
+          (set! result (list nam2))
+          )
 
     (format t "we leave the module loc3m sur |%s|\n" name)
     reponse))
