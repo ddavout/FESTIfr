@@ -21,6 +21,13 @@
 				    	(or (format t "ok1") t)
 				    	(or (set! lettre_seule 1) t))
 			    		
+					(and 
+						(not (string-matches (item.feat token 'whitespace) "  "))
+							(or (format t "ok0") t)
+							(or (set! lettre_seule 1) t))
+
+
+
 			    	(and 
 			    		(member_string (french_downcase_string (symbol->string (item.feat token 'p.name))) (list "un" "une" "des" "le" "ce" "cet" "cette" "ces" "lettres" "lettre" "signe" "signes"))
 			    		(or (format t "ok3") t)
