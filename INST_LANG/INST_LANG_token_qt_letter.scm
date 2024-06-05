@@ -16,20 +16,20 @@
     		(and (member_string fdnaw letter_list)
 			     (or 
 			    	(and 
-				    	(item.feat token 'prepunctuation)
-				    	(item.feat token 'punc)
+				    	(not (string-equal (item.feat token 'prepunctuation) ""))
+				    	(not (string-equal (item.feat token 'punc) ""))
 				    	(or (format t "ok1") t)
-				    	(or (set! lettre_seule t) t))
+				    	(or (set! lettre_seule 1) t))
 			    		
-			    	(and 
-			    		(not (item.prev token))
-			    		(or (format t "ok2") t)
-			    		(or (set! lettre_seule t) t))
-
 			    	(and 
 			    		(member_string (french_downcase_string (item.feat token 'p.name)) (list "un" "une" "des" "le" "ce" "cet" "cette" "ces" "lettres" "lettre" "signe" "signes"))
 			    		(or (format t "ok3") t)
-			    		(or (set! lettre_seule t) t))))
+			    		(or (set! lettre_seule 1) t))))
+
+			    	; (and 
+			    	; 	(member_string (french_downcase_string (symbol->string (item.feat token 'n.n.name))) (list "t" "ils" "il" "elle" "elles" "on"))
+			    	; 	(or (format t "ok4") t)
+			    	; 	(or (set! lettre_seule 0) t))
 
 	    	(and 
 				(can_be_single_letter (french_downcase_string name))
@@ -40,18 +40,41 @@
 				; on exclut pour cause d'homophonie "M" M. Marguerite, Monsieur
 				; on ne lève pas l'ambiguité...
 				(not (string-equal (item.feat token 'punc ".") "."))
-				(or (format t "ok4") t)
+				(or (format t "ok5") t)
 				))
 
 
-    	(begin 
-			(format t "\t\t\t\t\t\tici module letter: on répond sur |%s|\n" name)
+	    	(begin 
+	    		(if (equal? lettre_seule 1) 
+	            	(begin 
+	            		(item.set_feat token 'pos "NOM")
+	            		(set! reponse t )
+	            		(format t "\t\t\t\t\t\tici module letter: on répond sur |%s|\n" name)
+	            		(set! QT "QTletter")
+	            		(set! RU (append RU (list name QT ";")))
+	            		; sans certitude on laisse poslex
+	                    (set! result (list name)))
+	    			(begin
+	    				(if (string-equal fdnaw "y")
+	    					(begin 
+			            		(format t "\t\t\t\t\t\tici module letter: on répond sur |%s|\n" name)
+	            				(set! QT "QTletter")
+	            				(set! RU (append RU (list name QT ";")))
+	            				; bon compromis PRO:per ou ADV
+	    						(item.set_feat token 'pos "ADV")
+	    						(set! reponse t )
+	    						(set! result (list name)))
+	    	    			(begin
+			    				(if (string-equal fdnaw "à")
+			    					(begin 
+					            		(format t "\t\t\t\t\t\tici module letter: on répond sur |%s|\n" name)
+			            				(set! QT "QTletter")
+			            				(set! RU (append RU (list name QT ";")))
+			            				; bon compromis PRO:per ou ADV
+			    						(item.set_feat token 'pos "PRE")
+			    						(set! reponse t )
+			    						(set! result (list name))))))))))
 
-    		(set! reponse t)
-            (set! QT "QTletter")
-            (set! RU (append RU (list name QT ";")))
-            (if lettre_seule (item.set_feat token 'pos "NOM"))
-            (set! result (list name))))
 
         (format t "we leave the module letter sur |%s|\n" name)
        reponse))
