@@ -8,7 +8,7 @@
 
 (defvar QTpos0 t); pas utile pour l'instant en tout cas?
 (defvar QTpos1 t); fre_NAM_homo_tab ex: Marguerite |Duras|
-
+(defvar QTpos2_debug nil)
 ; toujours en direct : pb de création de variables pour patternmatch ?
 (defvar QTpos2 t); |donne|-moi -> donne VER; |donne|-m'en , grâce à  norm donne|-|m_en  -> donne VER *et* m_en PRO:per
 ; ne traite pas toi-même ??
@@ -43,10 +43,11 @@
 
 (defvar QTpos2_pattern "{[^-]+}-{.*}")
 
-(defvar QTtim t)
-(defvar QTtim1 t)
+(defvar QTtim t) ; Uhrzeit und Zeitangaben
+(defvar QTtim0 nil) ; trop complexe /t bénéfices actuelles suite Uhrzeit und Zeitangaben
+(defvar QTtim1 t); 12.30Uhr 12:30h
 ;(defvar QTtim1_pattern "{[0-2]?[0-9]}{:}{[0-6][0-9]}{h\\|H}")
-
+(defvar QTdeltim t)
 (defvar QTtim_pattern "{[0-2]?[0-9]}{[.|:]}{[0-5][0-9]}"); (set!  QTtim_pattern "{[0-2]?[0-9]}{[:|.]}{[0-5][0-9]}")
 (defvar QTono t)
 (defvar QTtrad1 t); avant QTnormal
@@ -54,7 +55,7 @@
 (defvar QTletter t); lié à can_be_single_letter après QTloc3m, QTloc2m (pour éviter les a minuscules dans les locutions !) mais avant QTnormal
 (defvar QTdel t); attention à l'ordre
 (defvar QTdelp t); nécessaire suppression répétition occasionée par QTloc2m
-(defvar QTdelp.p nil)
+(defvar QTdelp.p t)
 (defvar QTdelp.n t)
 (defvar QTdelp.p.n t)
 ; les locutions ; vers une simplification de l'analyse
