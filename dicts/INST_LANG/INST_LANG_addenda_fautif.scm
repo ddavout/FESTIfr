@@ -68,11 +68,10 @@
 (lex.add.entry '("quatre_vingt" nil ((("k" "a" "t" "rh")0) (("v" "ehn")0)))); et non v ehn g
 (lex.add.entry '("vingt_cinq" nil ((("v" "ehn" "t")0)((s ehn k)0))))
 (lex.add.entry '("soixante_et_une" nil ((("s" "w" "a") 0) (("s" "ahn" "t") 0) ((e)0)(("y" "n") 0)))); et non "s" "w" "a" "g" "z" "ahn" "t" "t" "y" "n"
-(lex.add.entry '("un_unau" nil ((("ehn")0) (("y")0) (("n" "o")0)))); et non pas "y" "n" "y" "n" "o"
+; (lex.add.entry '("un_unau" nil ((("ehn")0) (("y")0) (("n" "o")0)))); et non pas "y" "n" "y" "n" "o"
 (lex.add.entry '("y_en" nil (((j ahn)0)))); et non pas "i" "ehn"
 (lex.add.entry '("est_il" nil ((("eh")0) (("t" "i" "l")0))))
 (lex.add.entry '("nuit_et_jour" nil (((n hw i)0) (("t" "e") 0)((zh u rh)0)))); et non pas   n hw  t  t  zh  u  rh 
-(lex.add.entry '("ceux_et_celle" nil (((s eu)0) (( "e")0) (("s" "eh" "l")0)))); et non pas s" "eu" "k" "s" "t" "s" "eh" "l
 (lex.add.entry '("manège" nil ((("m" "a")0)(("n" "eh" "zh")0)))); et non m ahn 
 (lex.add.entry '("en_moins_de" nil ((("ahn") 0) (("m" "w" "ehn") 0) (("d" "ae")0)))); et non ahn n "m" "w" "ehn" "s"..
 

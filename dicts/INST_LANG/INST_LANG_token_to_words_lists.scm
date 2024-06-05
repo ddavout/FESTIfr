@@ -1268,6 +1268,7 @@
     ; "y_ait"
     ;"Y_a"
     ;"y_a"
+    "y_en"
     ; "y_avait"
     "z_en" ;; important car (norm "z_en") -> "z en" GLOUPS ?? TODO
     "m_en"

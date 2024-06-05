@@ -17,7 +17,7 @@
     (list "h" "heure" "heures" "min" "minute" "minutes" "s" "seconde" "secondes"))
 
 (defvar fdnaw)
-
+; Uhrzeit und Zeitangaben
 (defvar QTtim_pattern "{[0-2]?[0-9]}{\\.\\|:}{[0-5][0-9]}")
 
 (define (tim token name)

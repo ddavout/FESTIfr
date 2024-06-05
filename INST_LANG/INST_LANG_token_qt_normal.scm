@@ -28,10 +28,6 @@
        (cond 
 
         (t 
-          ; dans quel but  ? et 
-          ; pourquoi ici, juste pour QTnormal ? et non partout (TODO check à l'issue de INST_LANG_token_to_words )
-          ; ou même à la fin de INST_LANG_norm ??
-          ;(set! result (list (string-replace name "-" special_slice_char))))
           (set! result (list name))
           (or (format t "\t\t\t\t\t\ici module normal: on répond sur |%s|\n" name) t)
           ) ; hmm
