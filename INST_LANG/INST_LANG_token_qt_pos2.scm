@@ -3,7 +3,7 @@
 (defvar RU)
 (defvar result)
 
-; for ...
+; for french_downcase_string
 (require 'INST_LANG_utils)
 
 (defvar fdnaw)
@@ -11,14 +11,14 @@
 ; for pattern-matches
 (require 'INST_LANG_patternmatch)
 (set! QTpos2_pattern "{[^-]+}-{.*}")
-; (defvar h1)
-; (defvar h2)
+(defvar h1)
+(defvar h2)
  ;"ne commence pas par un tiret mais en contient 1")
 
 (define (pos2 token name)
 " "
     (let ( QT reponse)
-    ;(format t "\t\t\t\t\t\tici module pos2 sur |%s|\n" name)
+    (format t "\t\t\t\t\t\tici module pos2 sur |%s|\n" name)
         (if 
             (and 
                 ;**
@@ -43,25 +43,24 @@
             (begin 
                 (set! QT "QTpos2" )
                 (set! RU (append RU (list name QT ";")))
-                (set! suf1-1 (string-last h1)) 
-                ; (item.set_feat (item.next token) 'token_pos "PRO:per")
-                ;;  (format t "liste %l \n" (item.relation.leafs token 'Token)); (#<item 0x55c329c93bc0>) 
-                ;; (item.first_leaf ITEM)   Returns he left most leaf in the tree dominated by ITEM. ..
-                ;; (format t "leaf %s"  (na (item.first_leaf token))); n_est-ce
-                ;; (format t "liste %l" (item.relations token)); Token
-                (item.set_feat token "token_pos" "QTpos2")
+                (set! suf1-1 (string-last h1))
+                ; grâce à list_after_tiret
+                (item.set_feat token 'pos "VER")
+                ; maintenant on s'occupe des liaisons si mauvaises lts
                 ; ex: vous-y reviendrez /  h1 3 _Donnez_, h2 _en_,  elles-même
                 (if (and (member_string suf1-1 (list "t" "s" "z"))
                          (member_string (string-car h2 ) (list "e" "i" "o" "y")))
                       (begin 
                         (set! liste (append (INST_LANG_token_to_words token h1) 
                                              (INST_LANG_token_to_words token (if (string-equal suf1-1 "t")(string-append "t_" h2 )(string-append "z_" h2 )))))
-                        (format t "liste %l" liste)
+                        (format t "liste %l\n" liste)
+
                         (set! result liste))
-                      (begin ; ex ; ex h1_n_est_, h2 _ce_
+                      ; (begin ; ex ; ex h1_n_est_, h2 _ce_
                         (set! result 
                             (append (INST_LANG_token_to_words token h1)
-                                (INST_LANG_token_to_words token h2) ))))))
+                                (INST_LANG_token_to_words token h2) )) 
+                      ))) 
  
 
 

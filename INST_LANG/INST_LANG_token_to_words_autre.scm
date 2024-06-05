@@ -58,6 +58,13 @@
 
 (require 'INST_LANG_token_qtneeded)
 
+
+(define (boundQT QTname modu)
+    "QTname de module modu utilisable ?"
+    ; renvoie t, pour usage dans tests
+    (and (boundp 'QTname)  (boundp 'modu))t)
+
+
     ; à mettre à nil au niveau de notre SayText TODO
 ; // EN TETE
 
@@ -98,8 +105,8 @@
   (format t "===================\n")
   (format t "PREVIOUS TOKEN %s\n" (if (not (null? (item.prev token))) (begin (print (item.features (item.prev token) )))))
   (format t "ACTUAL TOKEN: |%s|\n |%l|\n" name (item.features token))
-  ;(format t "ACTUAL TOKEN is_in_poslex name |%l| \n" (is_in_poslex_all name))
-  ;(format t "ACTUAL TOKEN is_in_poslex name |%l| \n" (is_in_poslex_all (string-replace name "-" special_slice_char)))
+  (format t "ACTUAL TOKEN is_in_poslex name |%l| \n" (is_in_poslex_all name))
+  (format t "ACTUAL TOKEN is_in_poslex name |%l| \n" (is_in_poslex_all (string-replace name "-" special_slice_char)))
   (format t "===================\n")
   
   (let 
@@ -113,91 +120,63 @@
     (set! ponct (item.feat token 'punc ))
 
     (cond 
-        ; laisse comme modele 
-        ; ; trace de passage, sans effet pervers: la condition n'est jamais remplie
-        ; ; laisser le nil final pour être bien clair   
-        ; ((and (> tokendebuglevel -1)(format t "QTpos0 ?\t |%s|\n si %s\n" name (boundp 'QTpos0 )) nil)) 
-        ; ((and 
-        ;    (boundp 'QTpos0)
-        ;    (require 'INST_LANG_token_qt_pos0)
-        ;    (pos0 token name)))
 
-
-((and ( member_string fdnaw (list "h" "heure" "heures" "minute" "minutes" "seconde" "secondes")  
-      (string-equal (item.feat token 'p.delete) "next"))
+    ((and 
+        ; pas de module direct TODO (boundQT 'QTdeltim QTdeltim)
+        QTdeltim
+        ( member_string fdnaw (list "h" "heure" "heures" "minute" "minutes" "seconde" "secondes")  
+        (string-equal (item.feat token 'p.delete) "next"))
         (begin
             (set! QT "QTdeltim" )
             (set! reponse t)
             (set! RU (append RU (list name QT ";")))
             ; action
+            (set! result))
         (format t "we leave the module deltim sur |%s|\n" name)
-        reponse)))
-        
+        reponse))
+  
+
+    
+       ((and 
+            QTdelp.p.n
+            (string-equal (item.feat token 'p.p.n_delete) "next"))
+            
+                (set! QT "QTdelp.p.n" )
+                (set! RU (append RU (list name QT )))
+                (tokendebug -1 "QTdelp.p.n\n")
+                (set! result))
+      ; ((and 
+      ;       QTdelp.n
+      ;       (string-equal (item.feat token 'n.delete) "next"))
+            
+      ;           (set! QT "QTdelp.n" )
+      ;           (set! RU (append RU (list name QT )))
+      ;           (tokendebug -1 "QTdelp.n\n")
+      ;           (set! result)) 
 
 
-      ((format t "QTdel ?\t élimination programmée ? |%s| si %s\n" name (boundp 'QTdelp ))  nil)
+
+
+      ((format t "QTdel ?\t élimination programmée ? |%s| si %s\n" name (boundQT 'QTdel QTdel))  nil)
       ((and 
-            (boundp 'QTdel)
-            (or (require 'INST_LANG_token_qt_del) t)
-            (del token name)))        
+        (boundQT 'QTdel QTdel)
+        (or (require 'INST_LANG_token_qt_del) t)
+        (del token name)))        
 
       ((and 
-        (boundp 'QTpos0)
+        (boundQT 'QTpos0 QTpos0)
         (or (require 'INST_LANG_token_qt_pos0) t)
         (pos0 token name)))
 
       ((and 
-        (boundp 'QTpos1)
+        (boundQT 'QTpos1 QTpos1)
         (or (require 'INST_LANG_token_qt_pos1) t)
         (pos1 token name)))
     
       ((and
-        (set! QTpos2_debug t)
-        (boundp 'QTpos2_debug)
-        (or (require 'INST_LANG_token_qt_pos2_debug) t)
-        (pos2_debug token name)))
-
-      ; pis-aller pas de module
-      ((and 
-
-        ;**
-        (or (format t "\t\t\t\t\t\tici module QTpos2 sur |%s|\n" name) t)
-        (pattern-matches fdnaw QTpos2_pattern)
-        ;(pattern-matches "Donnez-en" QTpos2_pattern )
-        (and (set! h1 #1)(set! h2 #2))
-        (not (equal? h1 ""))
-        ;**/
-        
-        ;  h1 3 _donnez_, h2 _en_ ; "toi" "même"
-        (or ( format t "QTpos2 h1 3 _%s_, h2 _%s_\n" h1 h2) t)
-        ;**
-        (member_string h2 list_after_tiret)
-        ;**/
-        (or ( format t "QTpos2 h1 4 _%s_, h2 _%s_\n" h1 h2) t)
-        ; nil
-        (or (format t "\t\t\t\t\t\tici module pos2: on répond sur |%s|\n" name) t))
-            (begin 
-                (set! QT "QTpos2" )
-                (set! RU (append RU (list name QT ";")))
-                (set! suf1-1 (string-last h1)) 
-                ; (item.set_feat (item.next token) 'token_pos "PRO:per")
-                ;;  (format t "liste %l \n" (item.relation.leafs token 'Token)); (#<item 0x55c329c93bc0>) 
-                ;; (item.first_leaf ITEM)   Returns he left most leaf in the tree dominated by ITEM. ..
-                ;; (format t "leaf %s"  (na (item.first_leaf token))); n_est-ce
-                ;; (format t "liste %l" (item.relations token)); Token
-                (item.set_feat token "token_pos" "QTpos2")
-                ; ex: vous-y reviendrez /  h1 3 _Donnez_, h2 _en_,  elles-même
-                (if (and (member_string suf1-1 (list "t" "s" "z"))
-                         (member_string (string-car h2 ) (list "e" "i" "o" "y")))
-                      (begin 
-                        (set! liste (append (INST_LANG_token_to_words token h1) 
-                                             (INST_LANG_token_to_words token (if (string-equal suf1-1 "t")(string-append "t_" h2 )(string-append "z_" h2 )))))
-                        (format t "liste %l" liste)
-                        (set! result liste))
-                      (begin ; ex ; ex h1_n_est_, h2 _ce_
-                        (set! result 
-                            (append (INST_LANG_token_to_words token h1)
-                                (INST_LANG_token_to_words token h2) ))))))
+        (boundQT 'QTpos2 QTpos2)
+        (or (require 'INST_LANG_token_qt_pos2) t)
+        (pos2 token name)))
 
       ((and
         (boundp 'QTpos3)
@@ -319,7 +298,7 @@
 
 
 
-(provide 'INST_LANG_token_to_words)
+(if (not debugQT )(provide 'INST_LANG_token_to_words))
 
 ; à voir oui ? ici ou postlex ou liaison
 
