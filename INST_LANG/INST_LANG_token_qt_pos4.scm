@@ -54,8 +54,9 @@
                             (format t "ADJ") 
                             (item.set_feat token 'pos "ADJ"))
                         (begin
-                             ; token pas s_y !  
-                            (if (member_string (item.name token-1) (list  "y" "se"))
+                             ;y compris s_y !  
+                            (format t "name token-1 %l"  (item.name token-1)) 
+                            (if (member_string (item.name token-1) (list  "y" "se" "s_y"))
                                 (begin
                                     (format t "VER") 
                                     (item.set_feat token 'pos "VER"))

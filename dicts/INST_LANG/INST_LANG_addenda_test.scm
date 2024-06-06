@@ -5,8 +5,17 @@
  (lex.add.entry '("hic" nil (((hs "i" "k") 0))))
  (lex.add.entry '("là_dessus" ADV ((("l" "a") 0) (("d" "ae" "s") 0) (("s" "y") 0))))
  (lex.add.entry '("là_dessu" nil ((("l" "a") 0) (("d" "ae" "s") 0) (("s" "y") 0))))
-
+ (lex.add.entry '("n_est-ce" nil ((("n" "eh")0) (("s" ae) 0))))
   (lex.add.entry '("signifie" nil ((("s" "i") 0) (("jg" "i") 0) (("f" "i") 0))))
+
+   (lex.add.entry '("celsius_NOM" NOM ((("s" "eh" "l") 0) (("s" "j" "y" s) 0))))
+   (lex.add.entry '("¥" nil (((j eh n)0))))
+   (lex.add.entry '("°" nil (((d ae)0)((g rh e)0))))
+; suspects   en NOM QTbefapo 
+ (lex.add.entry '("n_y_vois_pas_de_mal" nil ((("n" "i") 0) (("v" "w" "a") 0) (("p" "a") 0) (("d" "ae") 0) (("m" "a" "l") 0))))
+ (lex.add.entry '("n_y_vois_aucun_mal" nil ((("n" "i") 0) (("v" "w" "a") 0) (("z" "o") 0) (("k" "ehn") 0) (("m" "a" "l") 0))))
+ (lex.add.entry '("il_n_y_a_pas_d_apostrophe" nil ((("i") 0) (("i" l) 0) ((n j "a") 0) (("p" "a") 0) (("d" "a") 0) (("p" "oh" "s") 0) (("t" "rh" "oh" "f") 0))))
+
 ;;;
 
 (lex.add.entry '("messieurs_dame" NOM (((m e) 0) ((s j oe) 0) ((d a m) 0))))

@@ -9,7 +9,7 @@
 (defvar fdnaw)
 
 (define (pos0 token name)
-" "
+    " "
     (let  (reponse)
         (format t "\t\t\t\t\t\tici module pos0 sur %s\n" name)
         (if 

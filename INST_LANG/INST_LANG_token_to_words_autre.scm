@@ -71,7 +71,8 @@
     (item.set_feat token 'ru  QT))
 
 
-
+; tempo
+(defvar QTsplitl)
 
     ; à mettre à nil au niveau de notre SayText TODO
 ; // EN TETE
@@ -128,6 +129,7 @@
     (set! ponct (item.feat token 'punc ))
 
     (cond 
+ 
 
     ((and 
         ; pas de module direct TODO (boundQT 'QTdeltim QTdeltim)

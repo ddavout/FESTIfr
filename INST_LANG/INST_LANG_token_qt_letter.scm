@@ -3,7 +3,7 @@
 (defvar RU)
 (defvar result)
 (defvar fdnaw)
-(defvar apo "apostrophe")
+; (defvar apo "apostrophe")
 ; for french_downcase_string, letter_list
 (require 'INST_LANG_utils)
 ; pour can_be_single_letter
@@ -23,11 +23,18 @@
 				    	(or (set! lettre_seule 1) t))
 			    		
 					(and 
-						; n 'y
-						;(not (string-matches (item.feat token 'whitespace) " "))
-						(not (string-matches (item.feat token 'n.whitespace) " "))
-							(or (format t "ok0\n") t)
-							(or (set! lettre_seule 1) t))
+						; n 'y :-> n est lettre seule
+						(string-equal (string-car (string-before (item.feat token 'n.whitespace))) " ")
+						(or (format t "ok0\n") t)
+						(or (set! lettre_seule 1) t))
+
+					(and 
+						; pas _ n'y_
+						(string-equal (string-last (item.feat token 'whitespace)) " ")
+						(string-equal (string-car (string-before (item.feat token 'n.whitespace))) "")
+						
+							(or (format t "ok00\n") t)
+							(or (set! lettre_seule 0) t))
 
 
 
@@ -52,7 +59,7 @@
 
 
 	    	(begin 
-	    		(if (equal? lettre_seule 1) 
+	    		(if (and (equal? lettre_seule 1) (not (string-equal (string-before (item.feat token 'whitespace) "'") " ")))
 	            	(begin 
 	            		(item.set_feat token 'pos "NOM")
 	            		(set! reponse t )
@@ -60,13 +67,16 @@
 	            		(set! QT "QTletter")
 	            		(ru token name)
 
-	            		(if (string-equal (string-before (item.feat token 'whitespace) "'") " ")
-	            			(set! result (list apo name))
-	                    	(set! result (list name))))
+	            		; (if (string-equal (string-before (item.feat token 'whitespace) "'") " ")
+	            		; 	(set! result (list apo name))
+	                    ; 	(set! result (list name)))
+	            		)
+
+
 	    			(begin
 	    				(if (string-equal fdnaw "y")
 	    					(begin 
-			            		(format t "\t\t\t\t\t\tici module letter: on répond sur |%s|\n" name)
+			            		(format t "\t\t\t\t\t\tici module letter: 2 on répond sur |%s|\n" name)
 	            				(set! QT "QTletter")
 	            				(ru token name)
 	            				; bon compromis PRO:per ou ADV
@@ -102,7 +112,14 @@
 			    							))
 
 
-			    					)))))))
+			    					)))))
+	    		(begin 
+	    		 (if (string-equal (string-before (item.feat token 'whitespace) "'") " ")
+	    		 	(set! reponse nil))
+
+
+	    		 	)
+	    		))
 
 
         (format t "we leave the module letter sur |%s|\n" name)
