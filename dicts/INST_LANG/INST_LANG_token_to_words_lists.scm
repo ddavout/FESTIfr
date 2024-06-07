@@ -1964,6 +1964,7 @@
 
 (defvar list_before_apo_CON
     (list 
+        "qu"
         "afin_d";  afin d'être CON + infinitive     "afin_d" ; "liaison" obligatoire -> addenda (("afin_d" PRE (((a) 0) ((f ehn) 0))) sans le d 
         "afin_qu";  ; tous des CON à ficher dans le dico; afn qu'il soit CON + subord "normale"
         "alors_qu"

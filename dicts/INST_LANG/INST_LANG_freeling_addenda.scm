@@ -1,4 +1,8 @@
 ; INST_LANG/INST_LANG_freeling_addenda.scm
+; branche
+(lex.add.entry '( "d" ( ( PRE -5.509) ( ART:ind -5.509) )()));
+(lex.add.entry '( "qu" ( ( CON -0.662) ( PRO:int -0.495) ( PRO:rel -0.594) )()))
+(lex.add.entry '( "c" ( ( PRO:dem -1.359) )()))
 
 ;; à ranger ici avant migration possible vers poslex ou élimination...
 
