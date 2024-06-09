@@ -1,6 +1,36 @@
 (defvar verbose_addendas)
 (if verbose_addendas (format t "addenda_refractaire.scm loaded"))
-(lex.add.entry '("n_est-ce" nil ((("n" "eh")0) (("s" ae) 0))))
+
+; branche mots
+ (lex.add.entry '("_apo_l" nil  (((pau)0))))
+ (lex.add.entry '("_apo_r" nil  (((pau)0))))
+ (lex.add.entry '("_ﬂ" "nil" (((pau)0))))
+
+; reverse solidus
+ (lex.add.entry '("_reverse" nil ((("rh" "ae") 0) (("v" "eh" "rh" "s") 0))))
+ (lex.add.entry '("_guillemet" nil ((("g" "i") 0) (("j" "ae") 0) (("m" "eh") 0))))
+
+ ; pourrait dépendre d'un mode
+ ; (lex.add.entry '("«" "nil" (((pau)0))))
+ ; (lex.add.entry '("»" "nil" (((pau)0))))
+
+
+(lex.add.entry '("d_ART:ind" ART:ind (((d)0))))
+(lex.add.entry '("l_ART:def" ART:def (((l)0))))
+(lex.add.entry '("l_PRO:per" PRO:per (((l)0))))
+(lex.add.entry '("d_PRE" PRE (((d)0))))
+(lex.add.entry '("n_ADV" ADV (((n)0))))
+(lex.add.entry '("qu_CON" CON ((("k") 0))))
+(lex.add.entry '("c_PRO:dem" PRO:dem ((("s") 0))))
+(lex.add.entry '("s_PRO:per" PRO:per ((("s") 0))))
+(lex.add.entry '("m_PRO:per" "PRO:per" ((("m") 0))))
+(lex.add.entry '("t_PRO:per" "PRO:per" ((("t") 0))))
+
+(lex.add.entry '("qu_PRO:rel" PRO:rel ((("k") 0))))
+(lex.add.entry '("qu_PRO:int" PRO:int ((("k") 0))))
+(lex.add.entry '("n_est-ce" nil ((("n" "eh" s)0))))
+(lex.add.entry '("est-ce" VER ((("eh" "s") 0))))
+(lex.add.entry '("qu_est-ce" nil ((("k" "eh" "s") 0))))
 
 (lex.add.entry '("" nil nil))
 (lex.add.entry '(" " nil nil))

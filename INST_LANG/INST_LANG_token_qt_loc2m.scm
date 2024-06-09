@@ -37,7 +37,7 @@
         (or (format t "ok1 n_name |%s| \n" n_name) t)
 
         ; collage composition |blue_jean|
-        (set! nam1 (string-append (string-replace name "-" special_slice_char) "_" n_name))
+        (set! nam1 (string-append (string-replace_utf8 name "-" special_slice_char) "_" n_name))
         (or (format t "ok2 nam1 |%s| \n" nam1) t)
 
         ;**

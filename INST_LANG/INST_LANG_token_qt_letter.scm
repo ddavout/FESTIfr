@@ -106,7 +106,13 @@
 					    						(set! result (list name)))
 
 			    							(begin
-			    								(set! result (list "autre")) 
+			    								(item.set_feat token 'pos "NOM")
+			    								(set! result (list name)) 
+
+
+
+
+
 			    								)
 
 			    							))

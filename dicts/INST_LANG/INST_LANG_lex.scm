@@ -165,6 +165,7 @@
     ; 2 caveats
     ; 1. ne regarde pas dans le dictionnaire !!
     ; 2. pour un feature avec : PRO:rel, ART:def, etc. donne nil !!!
+    ; (set! WORD (string-replace_utf8 WORD "_c" "ç"))
      (car (lex.lookup_all (string-append WORD "_" features) features)))
      
 ;; les changements d'addenda sont pris en compte à tout moment en faisant (INST_LANG_addenda_load)
@@ -414,7 +415,7 @@
             ; ça reviendrait à enlever le signe - pour le remplacer par special_slice_char ...
             (set! name_ref (string-append h1 " " h2)))
           (t 
-            (set! name_ref (string-replace name "-" special_slice_char))))
+            (set! name_ref (string-replace_utf8 name "-" special_slice_char))))
         (format t "INST_LANG_lex wordroot: name_ref %s\n" name_ref)
          name_ref)
       
@@ -441,7 +442,7 @@
    ;     name_ref
    ;     (string-but-last name_ref)
    ;  ) 
-   (string-replace name_ref "'" "_")))
+   (string-replace_utf8 name_ref "'" "_")))
 
 ; pour cmulex 
 ; (set! lex_syllabification (list cmulex_mosyl_phstress))

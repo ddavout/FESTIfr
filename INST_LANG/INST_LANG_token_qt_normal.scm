@@ -29,7 +29,9 @@
        (cond 
 
         (t 
-          (set! result (list name))
+         (set! comeb (string-replace_utf8 fdnaw "_c" "ç"))
+         (set! comeb (string-replace_utf8 comeb "œ" "oe")); si not replaced dans norm
+          (set! result (list comeb))
           (or (format t "\t\t\t\t\t\ici module normal: on répond sur |%s|\n" name) t)
           ) ; hmm
 

@@ -25,6 +25,7 @@
 (set! list_before_apo_ART_ind (list "assez_d" "quelqu" "peu_d")) ; def ou ind
 ; pas l Segmentation fault l'important
 (set! list_before_apo_ART_def) ; def ou ind
+(set! list_before_apo_PRO_per (list "s" "t" "m")) 
 (set! list_before_apo_ART (append list_before_apo_ART_ind list_before_apo_ART_def))
 
 (define (befapo token name)
@@ -32,43 +33,64 @@
         ; pour n'importe on cherche à atteindre |n| 
        (format t "\t\t\t\t\t\tici module befapo sur |%s|\n" fdnaw)
        (set! QT "QTbefapo")
-       (if (not (null? (item.next token)))
-           (begin  
-             (if (member_string fdnaw list_before_apo_VER )
-                      (set! pos_sur "VER")
-                      (begin 
-                        (if (member_string fdnaw list_before_apo_CON )
-                          (begin 
-                            (set! pos_sur "CON"))
-                          (begin
-                              (if (member_string fdnaw list_before_apo_PRE )
-                                (begin
-                                  (set! pos_sur "PRE"))
-                                (begin 
-                                  (if (member_string fdnaw list_before_apo_ART_def )
-                                    (begin
-                                      (set! pos_sur "ART:def"))
-                                    (begin
-                                      (set! pos_sur (item.feat token "token_pos")))
-                                    ))))))))
-           (begin 
-            (set! pos_sur "")))
+
+(format t "whitespace |%s|\n" (item.feat token '.whitespace))
+(format t "n.whitespace |%s|\n" (item.feat token 'n.whitespace))
+
+       ; un suivant, avec un apostrophe juste devant : on recale n dans |n 'y|
+       (if (and (not (null? (item.next token))) 
+                (string-equal (item.feat token 'n.whitespace) "'"))
+             (begin  
+               (if (member_string fdnaw list_before_apo_VER )
+                        (set! pos_sur "VER")
+                        (begin 
+                          (if (member_string fdnaw list_before_apo_CON )
+                            (begin 
+                              (set! pos_sur "CON"))
+                            (begin
+                                (if (member_string fdnaw list_before_apo_PRE )
+                                  (begin
+                                    (set! pos_sur "PRE"))
+                                  (begin 
+                                    (if (member_string fdnaw list_before_apo_ART_def )
+                                      (begin
+                                        (set! pos_sur "ART:def"))
+                                      ; (begin
+                                      ;   (set! pos_sur (item.feat token "token_pos")))
+                                      (begin
+                                        (if (member_string fdnaw list_before_apo_PRO_per )
+                                          (begin
+                                             (set! pos_sur "PRO:per"))
+                                           (begin  
+                                             (set! pos_sur (item.feat token "token_pos")))))
+
+
+
+                                      ))))))); 54 44
+                  (set! token1 (item.next token))
+                  (set! n_name (na token1))
+
+               );  43;
+            (begin 
+              (set! pos_sur "")))
 
        (format t "ou-suis-je %s\n" pos_sur)
            
        (if 
           (and 
             (not (string-equal pos_sur "")) 
-            (not (string-equal pos_sur "0"))
+            ; ; (not (string-equal pos_sur "0"))
 
-            (or (format t "ici module befapo: on vérifie point1\n") t)
-            (or (format t "ici module befapo: on regarde le point2\n") t)
-            ; c'est le suivant qui porte le whitespace
-            ; TODO peut-on donner un sens plusieurs whitespace characters commençant par un apostrophe ? tempo : non
-            (or (format t "ici module befapo: on vérifie point2 %l\n" (item.feat token 'n.whitespace) ) t)
-            ; n ' y refusé y a un whitespace de "' "
-            (string-equal (string-last (item.feat token 'whitespace)) "")
-            (or (format t "\t\t\t\t\t\tici module befapo: on vérifie point3\n") t)
+            ; (or (format t "ici module befapo: on vérifie point1\n") t)
+            ; (or (format t "ici module befapo: on regarde le point2\n") t)
+            ; ; c'est le suivant qui porte le whitespace
+            ; ; TODO peut-on donner un sens plusieurs whitespace characters commençant par un apostrophe ? tempo : non
+            ; (or (format t "ici module befapo: on vérifie point2 %l\n" (item.feat token 'n.whitespace) ) t);  " '"
+            ; ; trop loin de l'apostrohe 
+            ; (string-equal (string-before (item.feat token 'n.whitespace) "'") "")
+
+            ; (string-equal (string-last (item.feat token 'whitespace)) "")
+            ; (or (format t "\t\t\t\t\t\tici module befapo: on vérifie point3\n") t)
           
             (or (format t "\t\t\t\t\t\tici module befapo: on répond avec pos_sur |%s| pour |%s|\n" pos_sur name) t))
       
@@ -78,18 +100,33 @@
                 (set! reponse t)
                 (ru token name)
                 ; action
-                (if (not (item.set_feat token 'token_pos "done"))
-                  (begin
-                      (item.set_feat token 'pos pos_sur)
-                      (item.set_feat token 'token_pos "done")
-                      (set! result (INST_LANG_token_to_words token name)))
-                  (set! result (list name)))
+                ;(item.set_feat token 'delete  "next")
+                (set! result (list fdnaw))
 
+                ; NOM ça c'est un pb de liaison donc regarde poslex et non pas token
+                ; (set! name1 (string-append name "_" n_name))
+                ; (item.set_feat token1 'name name1)
+                ; (item.set_feat token1 'pos pos_sur)
+                ; ; suffit pour ne pas boucler
+                ; (item.set_feat token1 'whitespace " ")
+                ; (if (item.feat token 'token_pos "done")
+                ;   ; (begin
+                ;   ;     ;(item.set_feat token 'delete  "next")
+                ;   ;     ;(set! result (list "zut"))
+                ;   ;     (set! result))
+                ;   (begin 
+                ;     ;    (not (string-equal pos_sur "0"))
+                ;     ;(item.set_feat token 'token_pos " OVERdone")
+                ;     (set! result))
+
+
+                ; )
                 )
 
-              (begin
-                (set! reponse nil)
-                (set! result (list "miss"))))
+              ; (begin
+              ;   (set! reponse nil)
+              ;   (set! result (list "miss")))
+              )
 
           
 

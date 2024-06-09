@@ -44,6 +44,7 @@
  ;; Hooks to add to the synthesis process.                                ;;
  ;;                                                                       ;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+ (require 'pos)
 (defvar verbose_INST_LANG_synthesis)
 (require 'INST_LANG_norm)
 
@@ -54,6 +55,7 @@
 ; pour (define (Word utt)
 ; == vanilla now
 (require 'INST_LANG_lexicons)
+
 
 (define (Text_LANG utt)
  "our Text"

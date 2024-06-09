@@ -198,6 +198,12 @@
   ; (set! token.singlecharsymbols "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþ")
   ; pour € utf8 pb   
 
+; pour quels changements ?
+; meaning of have always to be split
+; travail de qui ?
+; incidence des multibytes comme € „ 
+(set! token.singlecharsymbols "$%") ; ¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿")
+
 ;; à revoir
 (set! token.letter_pos "NOM"
   "The part of speech tag (valid for your part of speech tagger) for
@@ -247,7 +253,7 @@
     ; this is necessary because text2wave generates empty utterances
     ; for these, we still need a Word relation so Phrasify will not fail
     ; AS 19.3.2012
-    (if (not (utt.relation.present utt 'Word))
+    (if (not (utt.relation.present utt 'Word))  
         (begin  
           (utt.relation.create utt 'Word)))
     (mapcar

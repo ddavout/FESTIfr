@@ -14,11 +14,48 @@
     (if t
         (begin
             (or (format t "\t\t\t\t\t\tici module mis: on répond sur |%s|\n" name) t)
+            (format t "explode %l\n" (utf8explode  name))
             (set! reponse t)
             (set! QT "QTmis" )
+            if (equal? (string-length_utf8 name) 1)
+                (format t "monstre utf8ord %s\n" (utf8ord name))
             (ru token name)
 
            (cond
+
+            ((equal? (string-length_utf8 name) 1)
+                (if (equal? (utf8ord name)  -1)
+                    ; ù ?
+                    (set! result)
+                    ))            
+            ((equal? (string-length_utf8 name) 1)
+                (if (equal? (utf8ord name)  249)
+                    (set! result (tab_lookup "ù" with_accent_letter_tab))))
+
+            ((equal? (string-length_utf8 name) 1)
+                (if (equal? (utf8ord name)  185)
+                    (set! result)
+                    ))
+            ((equal? (string-length_utf8 name) 1)
+                (if (equal? name  ";")
+                    
+                    ))
+
+            ((equal? (string-length_utf8 name) 1)
+                (if (equal? name "\"") 
+                    (set! result)
+                    ))
+            ((equal? (string-length_utf8 name) 1)
+                (if (equal? name "\\\"") 
+                    (set! result)
+                    ))         
+                        
+                
+            ((> (utf8ord (string-car name)) 255 )
+                (set! result))
+
+; recalé de befapo; 
+; condition non remplie : (string-equal (item.feat token 'n.whitespace) "'")
             ((string-equal (string-before (item.feat token 'whitespace) "'") " ")
                 (set! result (list apo name))
              )
@@ -33,10 +70,13 @@
             ; rejeté de pos4 pb d' PRE ou ART:ind
             ; pis-aller tempo ART:ind
             ; tempo
-          (
-            (and ( string-equal name "d")
-                 (not (string-equal (item.set_feat token 'token_pos) "done")))
-                     (item.set_feat token 'token_pos "ART:ind")
+
+
+
+           (
+            (and ( string-equal name "l")
+                 (not (string-equal (item.feat token 'token_pos) "done")))
+                     (item.set_feat token 'token_pos "dd")
                      (set! result (INST_LANG_token_to_words token name))
 
                      )
@@ -54,7 +94,12 @@
 
 
            (t 
-            (set! result (list "inconnu")))
+                ; recalé befapo
+                ; pour cause d'espace avant apostrophe      
+
+                (set! result (remove_last (french_parse_charlist name 1)))      
+                ; (set! result (list "inconnu"))
+                )
             
            )))
 

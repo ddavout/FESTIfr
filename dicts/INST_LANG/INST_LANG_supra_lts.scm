@@ -100,6 +100,76 @@
         
         syls))))
 
-      
+
+
+
+(define (list_phones-1 r1)
+  ; r1 prefixe dans un sens vraiment large : truc qui se met avant le mot et qui n'en change pas le POS
+  ; quoiqu'* est vu comme quoiqu CON muet suivi de quoiqu_* avec le POS de * 
+  (let (r2  result)
+    (set! r2 (french_downcase_string r1))
+    ;(format t "r2 %s \n" r2)
+  (cond 
+        ; pas les locutions ...     gérées dans token_fr
+        ; voir si on ne peut pas faire plus simple pour les non locutions
+        ; avec une simple entrée dans le dico ! avec la même gestion que les locutions 
+        ; nécessitera soin changt des entrées existantes 
+        ; ;; jusqu__nil avec 2 _  pourrait faire l'affaire
+        
+        ((string-equal r2 "jusqu")  (list "zh" "y" "s" "k") )
+        ((string-equal r2 "lorsqu") (list "l" "oh" "rh" "s" "k"))
+        ((string-equal r2 "puisqu") (list "p" "hw" "i" "s" "k"))
+        ((string-equal r2 "quelqu") (list "k" "eh" "l" "k"))
+        ((string-equal r2 "quoiqu") (list "k" "w" "a" "k"))
+        ((string-equal r2 "qu") (list "k"))
+        ((string-equal r2 "c") (list "s"))
+        ((string-equal r2 "j") (list "zh"))
+        ((string-equal r2 "s") (list "s"))
+        ; ((member_string r2 (list "d" "l" "m" "n" "s" "t")); 
+        ;  (list r2))
+        
+        ; ((string-equal r1 "tout_") (list "t" "u" "t")) ; locutions
+        ; ((string-equal r1 "aéro") (list "a" "e" "rh" "o"))
+        
+        ; ((string-equal r1 "auto") (list "o" "t" "o"))
+        ; liste (hopefully) exhaustive  réduite maintenant à list_before_apo 
+        ; d'où pas de t
+       
+        )) )
+  
+ 
+(define (list_phones-2 r2 features)
+     "liste des phonèmes"
+     ; (set! flata   (flatten (car (cdr (cdr (lex.lookup "albinos" "NOM"))))))
+     (let (entry)
+     (set! entry (or (my_strict_lex.lookup r2 features) (lts_brut r2 features)))
+           (set! flata   (flatten (car (cdr (cdr entry)))))
+           (car (cons (remove* 0 flata) '()))))
+     
+; utile ??                        
+(define (fusion r1 r2 features)
+  ; collage de syllabes simple sauf quoiqu, quelqu, recomposition des syllabes
+  ;(format t "!!!!!!!!!!!!!! r1 %l, r2 %l" r1 r2 )
+  (INST_LANG_lex_syllabify_phstress (append (list_phones-1 r1)(list_phones-2 r2 features))))
+
+; TODO non utilisé
+(define (fusion2 r1 r2 features)
+  ; s l
+  (let (syls s2 result)
+  ;(format t "!!!!!!!!!!!!!! r1 %l, r2 %l" r1 r2 )
+                ; (set! word "s_entretuent")
+              ; (set! features "VER")
+              ; (pattern-matches word "s{[_]+}{.*}")
+              ; (set! word2 #2) ; entretuent
+              ; (format t "\t\t\t word2 _%s_ _%s_\n" #2 features)
+              ;(format t "\t\t\t(netlex_lts :%l\n)" (INST_LANG_lts_function (wordroot word2 features) features))
+  (set! syls (last (INST_LANG_lts_function (wordroot r2 features) features)))
+  ;(format t "syls %l\n" syls)
+  (set! s2 (append (list (append (list r1) (car (car (car syls))))) (list 0)))
+  ;(format t "s2 %l\n" s2)
+  (set! result (append s2 (cdr (car syls))))
+        result)) 
+  
+                    
 
 (provide 'INST_LANG_supra_lts)

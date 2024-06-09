@@ -80,6 +80,11 @@
 ; TODO addenda hh final ? en cas de hiatus possible ? ex plutôt au          
 (defvar list_exclus->*_default 
    (list
+        ; tempo essai bracnch d et l mots; pas de liaison
+        "d"
+        "l"
+        "qu"
+        "lorsqu"
         ; si VER ou ADV c'est à cause postlex ex: maintenant au boulot ! maintenant vu comme VER
         "maintenant"  ; maintenant * au boulot
         ; usage .. et pb d'abréviations ?

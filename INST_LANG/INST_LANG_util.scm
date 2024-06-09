@@ -172,6 +172,7 @@
 
 (define (string-replace string from to)
   (string-replace* string from to ""))
+
 (define (string-replace* string from to result)
   (let ((before (string-before string from)))
     (if (or (equal? before string)
@@ -179,6 +180,23 @@
                  (not (equal? (substring string 0 (length from)) from))))
         (string-append result string)
         (string-replace* (string-after string from) from to (string-append result before to)))))
+
+
+(define (string-replace_utf8 string from to)
+  (string-replace string from to))
+; (define (string-replace_utf8 string from to)
+;   "utf8 compatible"
+;   (string-replace_utf8* string from to ""))
+
+; (define (string-replace_utf8* string from to result)
+;    "utf8 compatible ?"
+;   (let ((before (string-before string from)))
+;     (if (or (equal? before string)
+;             (and (equal? before "")
+;                  (not (equal? (substring string 0 (string-length_utf8 from)) from))))
+;         (string-append result string)
+;         (string-replace_utf8* (string-after string from) from to (string-append result before to)))))
+
 
 ;;; Festival specific utilities
 

@@ -120,7 +120,8 @@
     tag.")
 
 ;;; docu_XXX   
-(defvar pos_pp_start_tag "NOM"
+; nn d'où le set!
+(defvar pos_pp_start_tag "ART:def" 
   "pos_pp_start_tag
   This variable's value is the tag most likely to appear before
   pos_p_start_tag and any position preceding that.  It is typically
@@ -180,7 +181,8 @@
       ; pas vraiment compris catalan :(
       (set! pos_map '((( SENT ) punc))) 
       (set! pos_p_start_tag "punc")
-      (set! pos_pp_start_tag "NOM")  
+      ;(set! pos_pp_start_tag "ART:def");  ne marche pas à cause des : ??
+       (set! pos_pp_start_tag "VER")  ; suffit à faire changer le L' initial en ART:def !
     
       ;; chiffres de wsj.wp39.poslexR dans pos.scm, voir aussi le poslexR, pour les autres punc:
       ;  preponctuation, ponctuation et symboles

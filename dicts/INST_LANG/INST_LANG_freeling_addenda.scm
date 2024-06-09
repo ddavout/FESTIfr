@@ -1,8 +1,22 @@
 ; INST_LANG/INST_LANG_freeling_addenda.scm
+(lex.add.entry '( "_apo_l" ( ( SENT 0) )())); 
+(lex.add.entry '( "_apo_r" ( ( SENT 0) )())); 
+(lex.add.entry '( "«" ( ( SENT 0) )())); 
+(lex.add.entry '( "»" ( ( SENT 0) )())); 
+(lex.add.entry '( "!" ( ( SENT 0) )())); 
+(lex.add.entry '( "." ( ( SENT 0) )())); 
+
+
 ; branche
 (lex.add.entry '( "d" ( ( PRE -5.509) ( ART:ind -5.509) )()));
 (lex.add.entry '( "qu" ( ( CON -0.662) ( PRO:int -0.495) ( PRO:rel -0.594) )()))
 (lex.add.entry '( "c" ( ( PRO:dem -1.359) )()))
+(lex.add.entry '( "n" ( ( ADV -0.873) )()))
+(lex.add.entry '( "s" ( ( PRO:per -1.750) ) )())
+(lex.add.entry '( "m" ( ( PRO:per -1.513) ) )())
+(lex.add.entry '( "t" ( ( PRO:per -1.626) ) )())
+
+
 
 ;; à ranger ici avant migration possible vers poslex ou élimination...
 

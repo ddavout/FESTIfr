@@ -47,8 +47,11 @@
       (path-append libdir "dicts/")))
 
 ;;(require 'pos)        ;; for part of speech mapping 
-
-
+; pour pos_pp_start_tag et autres
+; ne suffit pas
+; (require 'INST_LANG_pos)
+ (load_library "INST_LANG_pos.scm")
+(format t "pos_pp_start_tag : %s \n" pos_pp_start_tag)  
 
 (define (setup_INST_LANG_lex) 
   "setup_INST_LANG_lex"
