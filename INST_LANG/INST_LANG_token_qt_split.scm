@@ -37,6 +37,7 @@
     ""
      (let (reponse)
         (format t "\t\t\t\t\t\tici module split sur %s\n" name)
+        (set! h3 t)
         (if 
             (pattern-matches name QTsplit_pattern)
             (begin
@@ -49,12 +50,14 @@
                  (set! h2 #2)
                  (not (string-equal h2 ""))
                  (or (format t "h1 %s h2 %s\n" h1 h2) t)
+                 (set! h3 #3)
+                 (format t "h3 %s\n" h3)
 
               (item.set_feat token 'name h1)
               (item.set_feat token 'punc ".")
               (set! result (append (INST_LANG_token_to_words token h1) 
                 (append (INST_LANG_token_to_words token (string-cdr h2))) 
-                ; (append (INST_LANG_token_to_words token h3))
+                ;(append (INST_LANG_token_to_words token h3))
                 ))
 
 

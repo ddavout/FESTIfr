@@ -17,12 +17,31 @@
             (format t "explode %l\n" (utf8explode  name))
             (set! reponse t)
             (set! QT "QTmis" )
-            if (equal? (string-length_utf8 name) 1)
-                (format t "monstre utf8ord %s\n" (utf8ord name))
+            (if (equal? (string-length_utf8 name) 1)
+                (format t "monstre utf8ord %s\n" (utf8ord name)))
+            (if (string-equal (string-last name) " ") (begin (format t "en trop") (set! name (string-but-last name))))
             (ru token name)
 
-           (cond
 
+           (cond
+            ((equal? (string-length_utf8 name) 1)
+                (if (equal? (utf8ord name)  44)
+                    (set! result)
+                    ))            
+            ((equal? (string-length_utf8 name) 1)
+                (if (equal? (utf8ord name)  59)
+                    (set! result)
+                    ))
+
+
+           (t
+                ; recalé befapo
+                ; pour cause d'espace avant apostrophe      
+
+                ; (set! result (remove_last (french_parse_charlist name 1)))      
+                (set! result (list "inconnu"))
+                )
+            
             ((equal? (string-length_utf8 name) 1)
                 (if (equal? (utf8ord name)  -1)
                     ; ù ?
@@ -36,6 +55,9 @@
                 (if (equal? (utf8ord name)  185)
                     (set! result)
                     ))
+
+
+
             ((equal? (string-length_utf8 name) 1)
                 (if (equal? name  ";")
                     
@@ -97,8 +119,8 @@
                 ; recalé befapo
                 ; pour cause d'espace avant apostrophe      
 
-                (set! result (remove_last (french_parse_charlist name 1)))      
-                ; (set! result (list "inconnu"))
+                ;(set! result (remove_last (french_parse_charlist name 1)))      
+                (set! result (list "inconnu"))
                 )
             
            )))

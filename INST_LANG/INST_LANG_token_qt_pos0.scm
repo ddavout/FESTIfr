@@ -27,6 +27,7 @@
         (if 
             (member_string name (list "\\"))
                 (begin
+                    (format t "reverse %l" rever )
                     (set! reponse t)
                     (set! QT "QTpos0" )
                     (ru token name)

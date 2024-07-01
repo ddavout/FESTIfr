@@ -179,6 +179,7 @@
         (pos0 token name)))
 
       ((and 
+        nil
         (boundQT 'QTsplit QTsplit)
         (or (require 'INST_LANG_token_qt_split) t)
         (split token name)))

@@ -1,3 +1,6 @@
+ (lex.add.entry '("tout_à_coup" ADV ((("t" "u") 0) (("t" "a") 0) (("k" "u") 0))))
+
+
  (lex.add.entry '("allons-y" VER ((("a") 0) (("l" "ohn") 0) (("z" "i") 0))))
  (lex.add.entry '("dites-moi" VER ((("d" "i" t) 0) (("m" "w" "a") 0))))
 

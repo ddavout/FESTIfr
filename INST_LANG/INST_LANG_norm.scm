@@ -47,7 +47,7 @@
           ;   REVERSE SOLIDUS
           ;;;(set! text (string-replace_utf8 text "\\" "_reverse"))
           (set! text (string-replace_utf8 text " " " ")) ; "Oh !
-          (set! text (string-replace_utf8 text " " " ")) ; TODO tout blanc non ascii TODO
+          ;   TODO tout blanc non ascii TODO
           (set! text (string-replace_utf8 text " " " ")) ; (utf8ord " " 160)
           ;  ajout espace finale pour faciliter remplacement des t'en and alike...
           (set! text  (string-append text " "))
@@ -168,6 +168,7 @@
            (set! text (string-but-last text))
             (if (and verbose_norm (not (string-equal text texte)))
                  (format t "verbose_norm %s gives %s\n" texte text))
+          (set! text (string-replace_utf8 text "  " " ")) ;
             
           text))
     ))

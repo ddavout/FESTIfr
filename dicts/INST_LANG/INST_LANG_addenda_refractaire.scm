@@ -8,7 +8,8 @@
 
 ; reverse solidus
  (lex.add.entry '("_reverse" nil ((("rh" "ae") 0) (("v" "eh" "rh" "s") 0))))
- (lex.add.entry '("_guillemet" nil ((("g" "i") 0) (("j" "ae") 0) (("m" "eh") 0))))
+; (lex.add.entry '("_guillemet" nil ((("g" "i") 0) (("j" "ae") 0) (("m" "eh") 0))))
+ (lex.add.entry '("_guillemet" nil nil))
 
  ; pourrait dépendre d'un mode
  ; (lex.add.entry '("«" "nil" (((pau)0))))
