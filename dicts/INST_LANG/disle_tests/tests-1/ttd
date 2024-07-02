@@ -9,7 +9,7 @@
 ;( t1353 "https://festival.com/CBq/index.html"); AC
 ;( t1354 "https://glosbe.com/de/fr"); AC
 ;( t1355 "http://www.consonne.org"); AC
-; ( t1478 "Joint(e) à la présente.")
+;( t1478 "Joint(e) à la présente.")
 ( t1912 "l'omission d'une telle liaison est obligatoire quel que soit le registre de langue (de la langue soutenue à la langue vulgaire)")
 ( t1913 "entre le nom et l'adjectif qui le précède, comme \"un grand arbre\" ou \"petits enfants\" ")
 ( t1914 "nous avons envie de rire")
@@ -221,8 +221,8 @@
 ( t9101 "tout à coup, il tira")
 ( t9100 "c'est tout")
 ( t9071 "le mot appelet serait à réhabiliter, l'applet des anglophones est d'origine provençal !")
-( t9072 "on y retrouve le radical \"plet\" que partage le mot \"emplettte\" ")
-( t9073 "Apleit ou aploit désignait  toute espèce d'outil ou, comme on disait, de harnois.")
+( t9072 "on y retrouve le radical \"plet\" que partage le mot \"emplette\" ")
+( t9073 "Apleit ou aplait désignait  toute espèce d'outil ou, comme on disait, de harnais.")
 ( t9070 "Il apostrophait")
 ( t9069 "Je n'aime plus les apostrophes")
 ( t9068 "L'avoir cru me fait honte.")
