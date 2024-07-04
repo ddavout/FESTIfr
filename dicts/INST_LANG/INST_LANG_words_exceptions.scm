@@ -483,7 +483,7 @@
 (defvar never_exception_list_default) 
 ;(set! never_exception_list_default (list "dans" "très" "Sans" "sans"))
 ; AVOIR(set! never_exception_list_default (list "versus" "avocat" "maintenant" "onze"))
-(set! never_exception_list_default (list "z_y" "m_en" "t_en" "s_en")) ; pour QTpos2 et QTpos22 ex donne_m_en un peu
+(set! never_exception_list_default (list "z_y" "m_en" "t_en" "s_en" "z_en")) ; pour QTpos2 et QTpos22 ex donne_m_en un peu
 (define never_exception_list never_exception_list_default) 
 
 
@@ -671,10 +671,13 @@
         (if (member_string na_word never_exception_list) nil  t))
 
 ; |profitez| en  on veut (is_exception_VER->PRE "profitez" "en" ) -> t car il arrive que en soit pris pour PRE "bien"
+; allons-y en courant nil
 (define (is_exception_VER->PRE na_word na_next_word)
     (if (member_string na_word never_exception_list)
         nil
-        t))
+        (if (and (member_string na_next_word (list "en")) (string-equal (string-after na_word "-") ""))
+            t
+            nil))) 
 
 
 ; livre |blanc| européen    nil        
@@ -1627,7 +1630,11 @@
 
 (define (is_exception_PRE->ONO na_word na_next_word))
 
-(define (is_exception_PRE->PRE na_word na_next_word))
+; pb y en a : a vu comme PRE
+(define (is_exception_PRE->PRE na_word na_next_word)
+    (if (member_string na_word never_exception_list)
+        nil
+        t))
 
 (define (is_exception_PRE->PRO:dem na_word na_next_word))
 
@@ -1815,11 +1822,14 @@
 (define (is_exception_VER->ART:def na_word na_next_word)
         (if(member_string na_word toujours_exception_list)  nil  t))
 
-; c'est un peu fort ! 
+; c'est un peu fort ! t
+; prends-en un nil
+
 (define (is_exception_VER->ART:ind na_word na_next_word)
       (if (member_string na_word never_exception_list)
         nil
-        (if (member_string na_next_word (list "un"))
+        ;(if (and (member_string na_next_word (list "un")) (not  (string-equal (string-after na_word "-" "en" ) "en")))
+        (if (and (member_string na_next_word (list "un")) (string-equal (string-after na_word "-") ""))
             t
             nil))) 
 

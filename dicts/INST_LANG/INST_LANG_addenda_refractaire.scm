@@ -1,6 +1,9 @@
 (defvar verbose_addendas)
 (if verbose_addendas (format t "addenda_refractaire.scm loaded"))
 
+ (lex.add.entry '("messieurs-dame" nil ((("m" "e") 0) (("s" "j" "oe") 0) (("d" "a" "m") 0))))
+
+
 ; branche mots
  (lex.add.entry '("_apo_l" nil  (((pau)0))))
  (lex.add.entry '("_apo_r" nil  (((pau)0))))
@@ -561,6 +564,7 @@
 (lex.add.entry '("y_NOM" NOM ((("i") 0)((g rh eh k)0))))
 
 (lex.add.entry '("à_NOM" NOM ((("a") 0))))
+ (lex.add.entry '("à_PRE" PRE ((("a") 0))))
 (lex.add.entry '("è" nil ((("eh") 0))))
 (lex.add.entry '("é" nil ((("e") 0))))
 ; et les autres TODO
@@ -664,6 +668,8 @@
 (lex.add.entry '("fils_fil" NOM ((("f" "i" l) 0)))) ; les fils de lin
 (lex.add.entry '("fils_fis_NOM" "NOM" (((f i s)0))))
 
+(lex.add.entry '("beaux_fils_NOM" NOM ((("b" "o") 0) (("f" "i" "s") 0))))
+
 (lex.add.entry '("maintenant" nil ((("m" "ehn" "t") 0) (("n" "ahn") 0))))
 
 
@@ -697,8 +703,7 @@
 (lex.add.entry '("hélas_NOM" "NOM" (((e)0)((l a s)0)))); hélas VER
 (lex.add.entry '("hélas_ONO" "ONO" (((e)0)((l a s)0)))); hélas VER
 (lex.add.entry '("faciès_NOM" NOM ((("f" "a") 0) (("s" "j" "eh" "s") 0))))
-
-
+ (lex.add.entry '("edelweis_NOM" NOM ((("e") 0) (("d" "eh" "l") 0) (("w" "a" "j" "s") 0))))
 
 ; confusion possible dû à l'utilisation hook du lexicon
 (lex.add.entry '("innocent" nil ((("i")0) (("n" "oh")0) (("s" "ahn")0))))
@@ -780,9 +785,6 @@
 (lex.add.entry '("mi" nil (((m i)0))))
 (lex.add.entry '("mit" nil (((m i)0))))
 
-; en dico pour simplification de lts *end: pas sûr
-(lex.add.entry '("prend" nil (((p rh ahn) 0))))
-(lex.add.entry '("comprend" nil (((k ohn)0) (p rh ahn) 0)))
 
 
 ; artifice pour les mots singulier se terminant par us et se prononçant y s

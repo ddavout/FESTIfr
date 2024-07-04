@@ -67,8 +67,8 @@
 
 
                                       ))))))); 54 44
-                  (set! token1 (item.next token))
-                  (set! n_name (na token1))
+              (set! token1 (item.next token))
+              (set! n_name (na token1))
 
                );  43;
             (begin 
@@ -79,19 +79,6 @@
        (if 
           (and 
             (not (string-equal pos_sur "")) 
-            ; ; (not (string-equal pos_sur "0"))
-
-            ; (or (format t "ici module befapo: on vérifie point1\n") t)
-            ; (or (format t "ici module befapo: on regarde le point2\n") t)
-            ; ; c'est le suivant qui porte le whitespace
-            ; ; TODO peut-on donner un sens plusieurs whitespace characters commençant par un apostrophe ? tempo : non
-            ; (or (format t "ici module befapo: on vérifie point2 %l\n" (item.feat token 'n.whitespace) ) t);  " '"
-            ; ; trop loin de l'apostrohe 
-            ; (string-equal (string-before (item.feat token 'n.whitespace) "'") "")
-
-            ; (string-equal (string-last (item.feat token 'whitespace)) "")
-            ; (or (format t "\t\t\t\t\t\tici module befapo: on vérifie point3\n") t)
-          
             (or (format t "\t\t\t\t\t\tici module befapo: on répond avec pos_sur |%s| pour |%s|\n" pos_sur name) t))
       
         
@@ -100,32 +87,17 @@
                 (set! reponse t)
                 (ru token name)
                 ; action
-                ;(item.set_feat token 'delete  "next")
-                (set! result (list fdnaw))
+                (item.set_feat token 'delete  "next")
+                
 
-                ; NOM ça c'est un pb de liaison donc regarde poslex et non pas token
-                ; (set! name1 (string-append name "_" n_name))
-                ; (item.set_feat token1 'name name1)
-                ; (item.set_feat token1 'pos pos_sur)
-                ; ; suffit pour ne pas boucler
-                ; (item.set_feat token1 'whitespace " ")
-                ; (if (item.feat token 'token_pos "done")
-                ;   ; (begin
-                ;   ;     ;(item.set_feat token 'delete  "next")
-                ;   ;     ;(set! result (list "zut"))
-                ;   ;     (set! result))
-                ;   (begin 
-                ;     ;    (not (string-equal pos_sur "0"))
-                ;     ;(item.set_feat token 'token_pos " OVERdone")
-                ;     (set! result))
-
-
-                ; )
+                (set! name1 (string-append name "_" n_name))
+                (format t "name1 %s" name1)
+                (item.set_feat token1 'name name1)
+                (item.set_feat token1 'pos pos_sur)
+                ;; suffit pour ne pas boucler
+                (item.set_feat token1 'whitespace " ")
+                (set! result (list name1))
                 )
-
-              ; (begin
-              ;   (set! reponse nil)
-              ;   (set! result (list "miss")))
               )
 
           

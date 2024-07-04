@@ -1,7 +1,8 @@
+ (lex.add.entry '("affection" NOM ((("a") 0) (("f" "eh" "k") 0) (("s" "j" "ohn") 0))))
+ (lex.add.entry '("articulation" NOM ((("a" "rh") 0) (("t" "i") 0) (("k" "y") 0) (("l" "a") 0) (("s" "j" "ohn") 0))))
  (lex.add.entry '("tout_à_coup" ADV ((("t" "u") 0) (("t" "a") 0) (("k" "u") 0))))
 
 
- (lex.add.entry '("allons-y" VER ((("a") 0) (("l" "ohn") 0) (("z" "i") 0))))
  (lex.add.entry '("dites-moi" VER ((("d" "i" t) 0) (("m" "w" "a") 0))))
 
 (lex.add.entry '("donnez-en" nil ((("d" "oh") 0) (("n" "e") 0) (("z" "ahn") 0))))
@@ -495,8 +496,8 @@
 (lex.add.entry '( "situé" nil ((("s" "i") 0) (("t" "hw" "e") 0))))
 (lex.add.entry '( "arrivion" nil ((("a") 0) (("rh" "i") 0) (("v" "j" "ohn") 0))))
 (lex.add.entry '( "vomissè" nil ((("v" "oh") 0) (("m" "i") 0) (("s" "eh") 0))))
-(lex.add.entry '( "cheminè" nil ((("sh" "ae") 0) (("m" "i") 0) (("n" "e") 0))))
-(lex.add.entry '( "cheminèfumè" nil ((("f" "y") 0) (("m" "e") 0))))
+(lex.add.entry '( "cheminè" nil ((("sh" "ae") 0) (("m" "i") 0) (("n" "eh") 0))))
+(lex.add.entry '( "fumé" nil ((("f" "y") 0) (("m" "e") 0))))
 (lex.add.entry '( "bagage" nil ((("b" "a") 0) (("g" "a" "zh") 0))))
 (lex.add.entry '( "transbordé" nil ((("t" "rh" "ahn" "s") 0) (("b" "oh" "rh") 0) (("d" "e") 0))))
 (lex.add.entry '( "dunette" nil ((("d" "y") 0) (("n" "eh" "t") 0))))
@@ -651,8 +652,6 @@
 (lex.add.entry '( "grand_mère" nil ((("g" "rh" "ahn")0)(("m" "eh" "rh")0))))
 (lex.add.entry '( "concept" nil (((k ohn)0)((s eh p t)0))))
 ;(lex.add.entry '( "nous_mêmes" nil (((n u)0)((m eh m)0))))
-(lex.add.entry '( "comprend" nil (((k ohn)0)(("p" "rh" ahn)0))))
-(lex.add.entry '( "comprends" nil (((k ohn)0)(("p" "rh" ahn)0))))
 (lex.add.entry '( "_cent" nil (((s eh n s)0))))
 ; à trier
 (lex.add.entry '( "papyrus_NOM" NOM ((("p" "a")0)(("p" "i")0)(("rh" "y" "s")0))))
@@ -2488,7 +2487,6 @@
 (lex.add.entry '( "composé" nil ((("k" "ohn") 0) (("p" "o") 0) (("z" "e") 0))))
 (lex.add.entry '( "comprendra" nil ((("k" "ohn") 0) (("p" "rh" "ahn") 0) (("d" "rh" "a") 0))))
 (lex.add.entry '( "comprendre" nil ((("k" "ohn") 0) (("p" "rh" "ahn" "d" "rh") 0))))
-(lex.add.entry '( "comprends" nil ((("k" "ohn") 0) (("p" "rh" "ahn" "d") 0))))
 (lex.add.entry '( "comprime" nil ((("k" "ohn") 0) (("p" "rh" "i" "m") 0))))
 (lex.add.entry '( "compterè" nil ((("k" "ohn") 0) (("t" "eh") 0) (("rh" "eh") 0))))
 (lex.add.entry '( "concert" nil ((("k" "ohn") 0) (("s" "eh" "rh") 0))))
