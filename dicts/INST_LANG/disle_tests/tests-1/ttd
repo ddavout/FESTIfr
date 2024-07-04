@@ -2,7 +2,7 @@
 
 ;( t9105 "Il surgit \"tout à coup\", on a là un pléonasme !"); Erreur de segmentation
 ;( t1019 "23:45:10"); erreur de segmentation
-;( t1028 ";;;;;;;;;;;;;;;;;;;;;;;;;;;10sans espace\" 50)"); AC!! pas de sans; ; Erreur de segmentation
+;( t1028 ";;;;;;;;;;;;;;;;;;;;;;;;;;;10sans espace\" 50"); AC!! pas de sans; ; Erreur de segmentation
 
 ;( t1351 "http://consonne.com/voix/index3.php"); AC
 ;( t1352 "http://~maud.consonne.com/3index.htm"); AC
@@ -13,6 +13,7 @@
 ( t1912 "l'omission d'une telle liaison est obligatoire quel que soit le registre de langue (de la langue soutenue à la langue vulgaire)")
 ( t1913 "entre le nom et l'adjectif qui le précède, comme \"un grand arbre\" ou \"petits enfants\" ")
 ( t1914 "nous avons envie de rire")
+( t1028 ";;;;;;;;;;;;;;;;;;;;;;;;;;;10sans espace\" 50")
 ( t1915 "elles aiment les bonbons acidulés.")
 ( t1916 "on ouvre les hostilités ?")
 ( t1917 "Ont-ils décidé de nous harceler ?")
