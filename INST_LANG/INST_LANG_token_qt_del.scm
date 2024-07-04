@@ -8,13 +8,13 @@
 (let (reponse)
     (format t "\t\t\t\t\t\tici module del sur |%s| %l\n" name (item.feat token 'delete))
         (if (and 
-                (string-equal (item.feat token 'delete) "next")
+                (string-equal (item.feat token 'p.delete) "next")
                 (or (format t "\t\t\t\t\t\tici module del: on répond |%s|\n" name) t))
             (begin
                 (set! reponse t)
                 (set! QT "del" )
                 (ru token name)
-                ; (set! result (list "effacé" name)) 
+                ; (set! result (list "efface" name)) 
                 (set! result) 
                 (format t " (item.feat token 'n.name) %l\n"  (item.feat token 'n.name))
                 ; (if (string-equal (na (item.feat token 'n.name)) "important")

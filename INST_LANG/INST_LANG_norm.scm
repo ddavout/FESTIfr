@@ -39,8 +39,8 @@
         (begin 
           (set! text  texte)
           ; bug si texte commence par ; Segmentation fault !
-          (if (string-equal (string-car text) ";")
-            (set! text (string-cdr text)))
+          ;(if (string-equal (string-car text) ";")
+          ;  (set! text (string-cdr text)))
           ; bug si texte contient |\"|    QUOTATION MARK
           (set! text (string-replace_utf8 text "\"" "\""))
           (set! text (string-replace_utf8 text "\\\"" " \\\" "))

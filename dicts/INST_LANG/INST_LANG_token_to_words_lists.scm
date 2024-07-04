@@ -176,18 +176,18 @@
 (set! fre_symbols_tab_default
   '(
     ;(" "  . ("espace"))
-    ;("."  . ("point"))
-    ("."  . ("_ﬂ" "_ﬂ")); notre caractère silence
-    ;(","  . ("virgule"))
+    ("."  . ("point"))
+    ;("."  . ("_ﬂ" "_ﬂ")); notre caractère silence
+    (","  . ("virgule"))
     (","  . ("_ﬂ"))
 
-    ;(":"  . ("deux" "points"))
-    ;(";"  . ("point" "virgule"))
+    (":"  . ("deux" "points"))
+    (";"  . ("point" "virgule"))
     (">"  . ("supérieur" "à"))
     ("<"  . ("inférieur" "à"))
     ("/"  . ("barre" "oblique"))
-    ;("?"  . ("point" "d_interrogation"))
-    ;("-"  . ("tiret")) ; homo .... /§\
+    ("?"  . ("point" "d_interrogation"))
+    ("-"  . ("tiret")) ; homo .... /§\
          ;  ("_"  . ("tiret")) NON special character
     ("="  . ("est" "égal" "à"))
     ("$"  . ("dollar"))
@@ -195,29 +195,29 @@
     ("%"  . ("pourcent"))
     ("§"  . ("paragraphe"))
     ("#"  . ("dièse"))
-    ;("+"  . 
-    ;("*"  . ("astérique"))
+    ("+"  . ("plus"))
+    ("*"  . ("astérique"))
     ("~"  . ("tilde"))
     ("^"  . ("Dach"))
     ("@"  . ("arobase"))
     ("&"  . ("et" "commercial"))
     ("|"  . ("barre" "verticale"))
     ("\\" . ("backslash"))
-    ;("\"" . ("guillemet")) ;"
-    ("«"  . ("_ﬂ"))
-    ("»"  . ("_ﬂ"))
-    ;("«"  . ("ouvrer les guillemets")) ; ouvert 
-    ;("»"  . ("fermer les guillemets"))
-    ;("{"  . ("accolade" "ouvrante"))
-    ;("}"  . ("accolade" "fermante"))
-    ;("]"  . ("crochet" "fermant"))
-    ;("["  . ("crochet" "ouvrant"))
-    ;(")"  . ("parenthèse" "fermante"))
-    ;("("  . ("parenthèse" "ouvrante"))
-    ;("!"  . ("point" "d_exclamation"))
-    ;("`"  . ("Quote"))
+    ("\"" . ("guillemet")) ;"
+    ;("«"  . ("_ﬂ"))
+    ;("»"  . ("_ﬂ"))
+    ("«"  . ("ouvrer les guillemets")) ; ouvert 
+    ("»"  . ("fermer les guillemets"))
+    ("{"  . ("accolade" "ouvrante"))
+    ("}"  . ("accolade" "fermante"))
+    ("]"  . ("crochet" "fermant"))
+    ("["  . ("crochet" "ouvrant"))
+    (")"  . ("parenthèse" "fermante"))
+    ("("  . ("parenthèse" "ouvrante"))
+    ("!"  . ("point" "d_exclamation"))
+    ("`"  . ("Quote"))
     ("¸"  . ("Quote"))
-    ;("'"  . ("Backquote"))
+    ("'"  . ("Backquote"))
     ("£"  . ("Livre" "sterling"))
     ("°"  . ("Degré"))
     ("¹"  . ("hoch" "eins"))
@@ -228,7 +228,7 @@
     ("½"  . ("un" "demi"))
     ("¾"  . ("trois" "quart"))
     ("©"  . ("Copyright"))
-    ("h"  . ("heure")); pas entièrement convaincu
+    ;("h"  . ("heure")); pas entièrement convaincu
     ("®"  . ("marque" "déposée"))))
 
 

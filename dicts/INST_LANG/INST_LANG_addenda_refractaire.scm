@@ -1,8 +1,9 @@
 (defvar verbose_addendas)
 (if verbose_addendas (format t "addenda_refractaire.scm loaded"))
 
- (lex.add.entry '("messieurs-dame" nil ((("m" "e") 0) (("s" "j" "oe") 0) (("d" "a" "m") 0))))
+(lex.add.entry '("messieurs-dame" nil ((("m" "e") 0) (("s" "j" "oe") 0) (("d" "a" "m") 0))))
 
+(lex.add.entry '("l_émotion" nil ((("l" "e") 0) (("m" "o") 0) (("s" "j" "ohn") 0))))
 
 ; branche mots
  (lex.add.entry '("_apo_l" nil  (((pau)0))))

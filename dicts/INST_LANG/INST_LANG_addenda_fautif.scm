@@ -141,6 +141,7 @@
 (lex.add.entry '("disait-on" nil ((("d" "i") 0) (("z" "eh") 0) (("t" "ohn") 0)))); ok
 (lex.add.entry '("dit-on" nil ((("d" "i") 0) (("t" "ohn") 0)))); ok
 (lex.add.entry '("dites-lui" nil ((("d" "i" t) 0) (("l" "hw" "i") 0))))
+(lex.add.entry '("dites-moi" VER ((("d" "i" t) 0) (("m" "w" "a") 0))))
 (lex.add.entry '("donne-m_en" nil ((("d" "oh" "n") 0) (("m" "ahn") 0))))
 (lex.add.entry '("donne_moi" nil ((("d" "oh" "n") 0) (("m" "w" "a") 0))))
 (lex.add.entry '("elles-même" nil ((("eh" l) 0)(("m" "eh" "m") 0))))
@@ -170,6 +171,7 @@
 (lex.add.entry '("tardez-vou" nil ((("t" "a" "rh") 0) (("d" "e") 0) (("v" "u") 0))))
 (lex.add.entry '("va-t_on" nil ((("v" "a") 0) (("t" "ohn") 0)))); ok
 (lex.add.entry '("venons-en" nil ((("v" "n" "ohn") 0) (("z" "ahn") 0))))
+ (lex.add.entry '("profitez-en" nil ((("p" "rh" "oh") 0) (("f" "i") 0) (("t" "eh") 0) (("z" "ahn") 0))))
 (lex.add.entry '("verron" nil ((("v" "eh") 0) (("rh" "ohn") 0)))); ok
 (lex.add.entry '("vire-moi" nil ((("v" "i" "rh") 0) (("m" "w" "a") 0)))); ok
 (lex.add.entry '("vis-à-vi" nil ((("v" "i") 0) (("z" "a") 0) (("v" "i") 0)))); ok
@@ -183,10 +185,19 @@
 
 (lex.add.entry '("aigres_dou" nil ((("eh" "g" "rh") 0) (("d" "u") 0))))
 
-(lex.add.entry '("beaux_art" NOM ((("b" "o") 0) (("z" "a" "rh") 0))))
-(lex.add.entry '("beaux_enfant" NOM ((("b" "o") 0) (("z" "ahn") 0) (("f" "ahn") 0))))
+(lex.add.entry '("beaux_art" nil ((("b" "o") 0) (("z" "a" "rh") 0))))
+(lex.add.entry '("beaux_enfant" nil ((("b" "o") 0) (("z" "ahn") 0) (("f" "ahn") 0))))
 
 (lex.add.entry '("parce_qu" CON ((("p" "a" "rh") 0) (("s" "ae")0) (("k") 0)))); acf
+
+(lex.add.entry '("états_uni" nil ((("e") 0) (("t" "a") 0) (("z" "y") 0) (("n" "i") 0))))
+
+(lex.add.entry '("entre_deu" nil ((("ahn") 0) (("t" "rh" "ae") 0) (("d" "eu") 0))))
+
+(lex.add.entry '("faux_semblant" nil ((("f" "o") 0) (("s" "ahn") 0) (("b" "l" "ahn") 0))))
+
+
+(lex.add.entry '("guet_apen" nil ((("g" "e") 0) ((t "a") 0) (("p" "ahn") 0))))    
 
 (lex.add.entry '("liaison" nil ((("l" "j" "eh")0) (("z" "ohn")0)))); et non l eh 
 ; indépendamment du pos gu 

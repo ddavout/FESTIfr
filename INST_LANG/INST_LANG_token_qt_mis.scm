@@ -24,6 +24,16 @@
 
 
            (cond
+
+           (t 
+                ; recalé befapo
+                ; pour cause d'espace avant apostrophe      
+
+                (set! result (french_parse_charlist name 1))      
+                ;(set! result (list "inconnu"))
+                )
+
+
             ((equal? (string-length_utf8 name) 1)
                 (if (equal? (utf8ord name)  44)
                     (set! result)

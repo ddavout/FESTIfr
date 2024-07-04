@@ -1,13 +1,123 @@
- (lex.add.entry '("affection" NOM ((("a") 0) (("f" "eh" "k") 0) (("s" "j" "ohn") 0))))
- (lex.add.entry '("articulation" NOM ((("a" "rh") 0) (("t" "i") 0) (("k" "y") 0) (("l" "a") 0) (("s" "j" "ohn") 0))))
- (lex.add.entry '("tout_à_coup" ADV ((("t" "u") 0) (("t" "a") 0) (("k" "u") 0))))
+ (lex.add.entry '("affection_NOM" NOM ((("a") 0) (("f" "eh" "k") 0) (("s" "j" "ohn") 0))))
+ (lex.add.entry '("articulation" nil ((("a" "rh") 0) (("t" "i") 0) (("k" "y") 0) (("l" "a") 0) (("s" "j" "ohn") 0))))
+ (lex.add.entry '("tout_à_coup" nil ((("t" "u") 0) (("t" "a") 0) (("k" "u") 0))))
+ (lex.add.entry '("abeille" nil ((("a") 0) (("b" "eh" "j") 0))))
+ (lex.add.entry '("aboutir" nil ((("a") 0) (("b" "u") 0) (("t" "i" "rh") 0))))
+ (lex.add.entry '("accusé" nil ((("a") 0) (("k" "y") 0) (("z" "e") 0))))
+ (lex.add.entry '("administrateur" nil ((("a" "d") 0) (("m" "i") 0) (("n" "i" "s") 0) (("t" "rh" "a") 0) (("t" "oe" "rh") 0))))
+
+ (lex.add.entry '("affirme" nil ((("a") 0) (("f" "i" "rh" "m") 0))))
+ (lex.add.entry '("aie" AUX ((("eh") 0))))
+
+ (lex.add.entry '("aimerè" nil ((("eh" "m") 0) (("rh" "eh") 0))))
+ (lex.add.entry '("aix_les_bain" nil ((("eh" k s)0) (("l" e)0) (("b" ehn ) 0))))
+ (lex.add.entry '("alambra" nil ((("a") 0) (("l" "ahn") 0) (("b" "rh" "a") 0))))
+ (lex.add.entry '("aplait" nil ((("a") 0) (("p" "l" "eh") 0))))
+ (lex.add.entry '("appauvrir" nil ((("a") 0) (("p" "o") 0) (("v" "rh" "i" "rh") 0))))
+ (lex.add.entry '("applaudir" nil ((("a") 0) (("p" "l" "o") 0) (("d" "i" "rh") 0))))
+ (lex.add.entry '("applet" nil ((("a") 0) (("p" "l" "eh") 0))))
+ (lex.add.entry '("arc_boutant" nil ((("a" "rh" "k") 0) (("b" "u") 0) (("t" "ahn") 0))))
+ (lex.add.entry '("argot" nil ((("a" "rh") 0) (("g" "o") 0))))
+ (lex.add.entry '("arriveré" nil ((("a") 0) (("rh" "i") 0) (("v" "rh" "e") 0))))
+ (lex.add.entry '("arrête" nil ((("a") 0) (("rh" "eh" "t") 0))))
+ (lex.add.entry '("article" nil ((("a" "rh") 0) (("t" "i" "k" "l") 0))))
+
+ (lex.add.entry '("attache" nil ((("a") 0) (("t" "a" "sh") 0))))
+ (lex.add.entry '("attaché" nil ((("a") 0) (("t" "a") 0) (("sh" "e") 0))))
+ (lex.add.entry '("avarice" nil ((("a") 0) (("v" "a") 0) (("rh" "i" "s") 0))))
+
+ (lex.add.entry '("avulsion" nil ((("a") 0) (("v" "y" "l") 0) (("s" "j" "ohn") 0))))
+
+ (lex.add.entry '("cap" nil ((("k" "a" "p") 0))))
+
+ (lex.add.entry '("ceci" nil ((("s" "ae") 0) (("s" "i") 0))))
+ (lex.add.entry '("chevau_léger" nil ((("sh" "ae") 0) (("v" "o") 0) (("l" "e") 0) (("zh" "e") 0))))
+ (lex.add.entry '("chevaux_fiscau" nil ((("sh" "ae") 0) (("v" "o") 0) (("f" "i" "s") 0) (("k" "o") 0))))
+
+ (lex.add.entry '("de_plu" nil ((("d" "ae") 0) (("p" "l" "y") 0)))); acf
+ (lex.add.entry '("disparaître" nil ((("d" "i" "s") 0) (("p" "a") 0) (("rh" "eh" "t" "rh") 0))))
 
 
- (lex.add.entry '("dites-moi" VER ((("d" "i" t) 0) (("m" "w" "a") 0))))
+ (lex.add.entry '("effectue" nil ((("e") 0) (("f" "eh" "k") 0) (("t" "y") 0))))
+ (lex.add.entry '("embarasse" nil ((("ahn") 0) (("b" "a") 0) (("rh" "a" "s") 0))))
+ (lex.add.entry '("endormi" nil ((("ahn") 0) (("d" "oh" "rh") 0) (("m" "i") 0))))
+ (lex.add.entry '("enfui" nil ((("ahn") 0) (("f" "hw" "i") 0))))
+ (lex.add.entry '("enfuyè" nil ((("ahn") 0) (("f" "hw" "i") 0) (("j" "eh") 0))))
+ (lex.add.entry '("enrichissement" nil ((("ahn") 0) (("rh" "i") 0) (("sh" "i" "s") 0) (("m" "ahn") 0))))
+ (lex.add.entry '("enseignant" nil ((("ahn") 0) (("s" "eh") 0) (("jg" "ahn") 0))))
 
-(lex.add.entry '("donnez-en" nil ((("d" "oh") 0) (("n" "e") 0) (("z" "ahn") 0))))
-(lex.add.entry '("donnes-en" nil ((("d" "oh") 0) (("n" "eh") 0) (("z" "ahn" "n") 0))))
-(lex.add.entry '("donnez-moi" nil ((("d" "oh" "n" "z") 0) (("m" "w" "a") 0))))
+ (lex.add.entry '("habille" nil ((("a") 0) (("b" "i" "j") 0))))
+ (lex.add.entry '("harnai" nil ((("a" "rh") 0) (("n" "eh") 0))))
+ (lex.add.entry '("honorè" nil ((("oh") 0) (("n" "oh") 0) (("rh" "eh") 0))))
+ (lex.add.entry '("identifié" nil ((("i") 0) (("d" "ahn") 0) (("t" "i") 0) (("f" "j" "e") 0))))
+ (lex.add.entry '("importe" nil ((("ehn") 0) (("p" "oh" "rh" "t") 0))))
+ (lex.add.entry '("incidence" nil ((("ehn") 0) (("s" "i") 0) (("d" "ahn" "s") 0))))
+ (lex.add.entry '("information" nil ((("ehn") 0) (("f" "oh" "rh") 0) (("m" "a") 0) (("s" "j" "ohn") 0))))
+ (lex.add.entry '("inscrivant" nil ((("ehn" "s") 0) (("k" "rh" "i") 0) (("v" "ahn") 0))))
+ (lex.add.entry '("inverse" nil ((("ehn") 0) (("v" "eh" "rh" "s") 0))))
+ (lex.add.entry '("jusqu" nil ((("zh" "y" "s" "k") 0))))
+ (lex.add.entry '("lorsqu" nil ((("l" "oh" "rh" "s" "k") 0))))
+
+ (lex.add.entry '("mangeè" nil ((("m" "ahn") 0) (("zh" "eh") 0))))
+ (lex.add.entry '("monosperme" nil ((("m" "oh") 0) (("n" "oh" "s") 0) (("p" "eh" "rh" "m") 0))))
+
+ (lex.add.entry '("nourriture" nil ((("n" "u") 0) (("rh" "i") 0) (("t" "y" "rh") 0))))
+ (lex.add.entry '("ordinairement" nil ((("oh" "rh") 0) (("d" "i") 0) (("n" "eh" "rh") 0) (("m" "ahn") 0))))
+ (lex.add.entry '("ordonnance" nil ((("oh" "rh") 0) (("d" "oh") 0) (("n" "ahn" "s") 0))))
+ (lex.add.entry '("ore" nil ((("oh" "rh") 0))))
+ (lex.add.entry '("origine" nil ((("oh") 0) (("rh" "i") 0) (("zh" "i" "n") 0))))
+ (lex.add.entry '("orthographe" nil ((("oh" "rh") 0) (("t" "oh") 0) (("g" "rh" "a" "f") 0))))
+ (lex.add.entry '("oubliera" nil ((("u") 0) (("b" "l" "i") 0) (("rh" "a") 0))))
+ (lex.add.entry '("partage" nil ((("p" "a" "rh") 0) (("t" "a" "zh") 0))))
+ (lex.add.entry '("pesamment" nil ((("p" "ae") 0) (("z" "a") 0) (("m" "ahn") 0))))
+ (lex.add.entry '("plet" nil ((("p" "l" "eh") 0))))
+ (lex.add.entry '("practicien" nil ((("p" "rh" "a" "k") 0) (("t" "i") 0) (("s" "j" "ehn") 0))))
+
+ (lex.add.entry '("presqu" nil ((("p" "rh" "eh" "s" "k") 0))))
+ (lex.add.entry '("privilège" nil ((("p" "rh" "i") 0) (("v" "i") 0) (("l" "eh" "zh") 0))))
+ (lex.add.entry '("procédé" nil ((("p" "rh" "oh") 0) (("s" "e") 0) (("d" "e") 0))))
+ (lex.add.entry '("provençal" nil ((("p" "rh" "oh") 0) (("v" "ahn") 0) (("s" "a" "l") 0))))
+ (lex.add.entry '("péricarpe" nil ((("p" "e") 0) (("rh" "i") 0) (("k" "a" "rh" "p") 0))))
+ (lex.add.entry '("radical" nil ((("rh" "a") 0) (("d" "i") 0) (("k" "a" "l") 0))))
+
+
+ (lex.add.entry '("rebroussère" nil ((("rh" "ae") 0) (("b" "rh" "u") 0) (("s" "eh" "rh") 0))))
+ (lex.add.entry '("riz" nil ((("rh" "i") 0))))
+ (lex.add.entry '("réhabilité" nil ((("rh" "e") 0) (("a") 0) (("b" "i") 0) (("l" "i") 0) (("t" "e") 0))))
+ (lex.add.entry '("répartie" nil ((("rh" "e") 0) (("p" "a" "rh") 0) (("t" "i") 0))))
+
+ (lex.add.entry '("sortît" nil ((("s" "oh" "rh") 0) (("t" "i") 0))))
+
+ (lex.add.entry '("surement" nil ((("s" "y" "rh") 0) (("m" "ahn" "m") 0))))
+ (lex.add.entry '("symposium" nil ((("s" "ehn") 0) (("p" "o") 0) (("z" "j" "oh" "m") 0))))
+ (lex.add.entry '("tira" nil ((("t" "i") 0) (("rh" "a") 0))))
+ (lex.add.entry '("tout_compri" nil ((("t" "u") 0) (("k" "ohn") 0) (("p" "rh" "i") 0))))
+ (lex.add.entry '("tout_pari" nil ((("t" "u") 0) (("p" "a") 0) (("rh" "i") 0))))
+ (lex.add.entry '("tout_à" nil ((("t" "u") 0) (("t" "a") 0))))
+ (lex.add.entry '("tout_à_l_heure" nil ((("t" "u") 0) (("t" "a") 0) (("l" "oe" "rh") 0))))
+
+ (lex.add.entry '("tégument" nil ((("t" "e") 0) (("g" "y") 0) (("m" "ahn") 0))))
+ (lex.add.entry '("unau" nil ((("y") 0) (("n" "o") 0))))
+
+ (lex.add.entry '("volée" nil ((("v" "oh") 0) (("l" "e") 0))))
+ (lex.add.entry '("zéro" nil ((("z" "e") 0) (("rh" "o") 0))))
+
+ (lex.add.entry '("écrit" nil ((("e") 0) (("k" "rh" "i") 0))))
+ (lex.add.entry '("écriture" nil ((("e") 0) (("k" "rh" "i") 0) (("t" "y" "rh") 0))))
+ (lex.add.entry '("éducation" nil ((("e") 0) (("d" "y") 0) (("k" "a") 0) (("s" "j" "ohn") 0))))
+ (lex.add.entry '("éliminé" nil ((("e") 0) (("l" "i") 0) (("m" "i") 0) (("n" "e") 0))))
+ (lex.add.entry '("émancipation" nil ((("e") 0) (("m" "ahn") 0) (("s" "i") 0) (("p" "a") 0) (("s" "j" "ohn") 0))))
+ (lex.add.entry '("énigme" nil ((("e") 0) (("n" "i" "g" "m") 0))))
+
+
+ (lex.add.entry '("étendre" nil ((("e") 0) (("t" "ahn" "d" "rh") 0))))
+ (lex.add.entry '("évase" nil ((("e") 0) (("v" "a" "z") 0))))
+ (lex.add.entry '("évidence" nil ((("e") 0) (("v" "i") 0) (("d" "ahn" "s") 0))))
+
+
+
+
+
 
  (lex.add.entry '("talisman" nil ((("t" "a") 0) (("l" "i" "s") 0) (("m" "ahn") 0))))
 
@@ -2837,7 +2947,7 @@
 (lex.add.entry '( "doive" nil ((("d" "w" "a" "v") 0))))
 (lex.add.entry '( "domaine" nil ((("d" "oh") 0) (("m" "eh" "n") 0))))
 (lex.add.entry '( "domine" nil ((("d" "oh") 0) (("m" "i" "n") 0))))
-(lex.add.entry '( "dompté" nil ((("d" "ohn") 0) (("t" "e") 0))))
+(lex.add.entry '( "dompté" nil ((("d" "ohn" "p") 0) (("t" "e") 0))))
 (lex.add.entry '( "don" nil ((("d" "ohn") 0))))
 (lex.add.entry '( "donnè" nil ((("d" "oh") 0) (("n" "eh") 0))))
 (lex.add.entry '( "dormant" nil ((("d" "oh" "rh") 0) (("m" "ahn") 0))))
