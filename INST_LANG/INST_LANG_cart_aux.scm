@@ -7,7 +7,7 @@
 ;;;                                                                       ;;
 ;;;  Permission is hereby granted, free of charge, to use and distribute  ;;
 ;;;  this software and its documentation without restriction, including   ;;
-;;;  without limitation the rights to use, copy, modify, merge, publish,  ;;
+;;;  without limitation the rights to use, copy, modify, merge, pulkjlklblish,  ;;
 ;;;  distribute, sublicense, and/or sell copies of this work, and to      ;;
 ;;;  permit persons to whom this work is furnished to do so, subject to   ;;
 ;;;  the following conditions:                                            ;;
