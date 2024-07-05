@@ -23,6 +23,7 @@ ls -al "${tests_dir}"/tests
  # ln -s -L -r  -v  -T  "${tests_dir}"/tests1 "${tests_dir}"/tests; # cible nom de lien relatif
 # pour mémoire    
 cp -b "$FESTIVALDIR"/lib/INST_LANG/INST_LANG_token_to_words_autre.scm "${tests_dir}"/tests/
+cp -b "$FESTIVALDIR"/lib/dicts/INST_LANG/INST_LANG_words_exceptions.scm "${tests_dir}"/tests/
 cp -b "$FESTIVALDIR"/lib/INST_LANG/INST_LANG_norm.scm "${tests_dir}"/tests/
 cp -b "$FESTIVALDIR"/lib/dicts/INST_LANG/INST_LANG_token_to_words_lists.scm "${tests_dir}"/tests/
 
