@@ -97,7 +97,7 @@
  (lex.add.entry '("tout_à_l_heure" nil ((("t" "u") 0) (("t" "a") 0) (("l" "oe" "rh") 0))))
 
  (lex.add.entry '("tégument" nil ((("t" "e") 0) (("g" "y") 0) (("m" "ahn") 0))))
- (lex.add.entry '("unau" nil ((("y") 0) (("n" "o") 0))))
+ (lex.add.entry '("unau" nil ((("hs" "y") 0) (("n" "o") 0))))
 
  (lex.add.entry '("volée" nil ((("v" "oh") 0) (("l" "e") 0))))
  (lex.add.entry '("zéro" nil ((("z" "e") 0) (("rh" "o") 0))))
@@ -138,8 +138,8 @@
 ;;;
  (lex.add.entry '("dites-le" nil ((("d" "i" t) 0) ((l eu) 0))))
 
-(lex.add.entry '("messieurs_dame" NOM (((m e) 0) ((s j oe) 0) ((d a m) 0))))
-(lex.add.entry '("messieurs_NOM" NOM (((m e) 0) ((s j oe) 0) ((d a m) 0))))
+;(lex.add.entry '("messieurs_dame" NOM (((m e) 0) ((s j oe) 0) ((d a m) 0))))
+(lex.add.entry '("messieurs_NOM" NOM (((m e) 0) ((s j oe) 0))))
 
 (lex.add.entry '("chefs_d_oeuvre" nil ((("sh" "eh") 0) (("d" "oe" "v" "rh") 0)))); et non sh" "e" "f" "z
 

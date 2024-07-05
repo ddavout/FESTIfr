@@ -1635,7 +1635,11 @@
                 ("en_quoi" . ("ADV"))
                 ("en_suspens" . ("ADV"))
                 ("en_tapinois" . ("ADV"))
-                ("en_tête" . ("ADV"))               
+                ("en_tête" . ("ADV"))    
+                ("pas_plus" . ("ADV"))
+                ("et_plus" . ("ADV"))
+                ("non_grata" . ("ADJ"))
+           
                 
 ; avant ADV NOM
 ; devant ADV NOM VER                 

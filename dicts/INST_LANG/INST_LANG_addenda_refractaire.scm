@@ -5,6 +5,18 @@
 
 (lex.add.entry '("l_émotion" nil ((("l" "e") 0) (("m" "o") 0) (("s" "j" "ohn") 0))))
 
+(lex.add.entry '("gardez-les_VER" VER ((("g" "a" "rh") 0) (("d" "e")0) (("l" "e") 0))))
+
+(lex.add.entry '("pas_plus_ADV" ADV ((("p" "a") 0) (("p" "l" "y" "s") 0))))
+(lex.add.entry '("et_plus_ADV" ADV ((("e") 0) (("p" "l" "y" "s") 0))))
+
+(lex.add.entry '("non_grata" nil ((("n" "oh" "n") 0) (("g" "rh" "a") 0) (("t" "a") 0)))) 
+(lex.add.entry '("à_tous_égard_ADV" ADV ((("a") 0) (("t" "u") 0) (( z "e") 0) (("g" "a" "rh") 0))))
+(lex.add.entry '("à_tous_égard_NOM" NOM ((("a") 0) (("t" "u") 0) (( z "e") 0) (("g" "a" "rh") 0))))
+(lex.add.entry '("ayants_droits_NOM" NOM ((("e") 0) (("j" "ahn") 0) ((d "rh" "w" "a") 0))))
+(lex.add.entry '("ayants_droit_NOM" NOM ((("e") 0) (("j" "ahn") 0) ((d "rh" "w" "a") 0))))
+(lex.add.entry '("acidulés_VER" VER ((("a") 0) (("s" "i") 0) (("d" "y") 0) (("l" "e") 0))))
+
 ; branche mots
  (lex.add.entry '("_apo_l" nil  (((pau)0))))
  (lex.add.entry '("_apo_r" nil  (((pau)0))))
@@ -295,12 +307,14 @@
 (lex.add.entry '("de_PRE" PRE (((d ae)0))))
 (lex.add.entry '("de_ART:ind" ART:ind (((d ae)0))))
 (lex.add.entry '("des_ART:ind" "ART:ind" (((d e)0))))
+; se soucier des autres
+(lex.add.entry '("des_PRE" "PRE" (((d e)0))))
+
 
 (lex.add.entry '("leur" nil ((("l" "oe" "rh")0))))
 (lex.add.entry '("ma" nil ((("m" "a")0))))
 (lex.add.entry '("me" nil (((m "ae")0))))
 (lex.add.entry '("mes_ADJ:pos" ADJ:pos ((("m" "e")0))))
-(lex.add.entry '("mon" nil ((("m" "ahn")0))))
 (lex.add.entry '("nou" nil (((n u)0))))
 (lex.add.entry '("un" nil ((("oen")0))))
 (lex.add.entry '("du" nil ((("d" y)0))))
@@ -324,7 +338,8 @@
 ; tous à revoir tokenizer et exceptions
 (lex.add.entry '("tous_PRO:ind" PRO:ind (((t u s)0))))
 (lex.add.entry '("tous_ADJ:ind" "ADJ:ind" (((t u s) 0))))
-(lex.add.entry '("tous_le" nil ((("t" "u")0)(("l")0))))
+(lex.add.entry '("tous_le" nil ((("t" "u")0)(("l" oe)0))))
+(lex.add.entry '("tous_les_ART:def" ART:def ((("t" "u")0)(("l" e)0))))
 
 
 (lex.add.entry '("quelque" nil ((("k" "eh" "l")0) (("k" ae) 0))))
@@ -820,7 +835,7 @@
 
 ; (utf8ord "ï") 239
 (lex.add.entry '("maïs" nil (((m a)0)((i s)0))))
-(lex.add.entry '("haï" nil ((( a )0)((i)0))))
+(lex.add.entry '("haï" nil (((hs a )0)((i)0))))
 (lex.add.entry '("À" nil (((a)0)))); ou norm ? TODO check
 
 

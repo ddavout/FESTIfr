@@ -1,6 +1,0 @@
-separator ;
-nfields 1
-#
-	0.00000e+00 26 	Le ; id _4 ; pos_index 7 ; pos_index_score 0 ; pos ART:def ; 
-	0.00000e+00 26 	IIIe ; id _5 ; pos_index 13 ; pos_index_score 0 ; pos NOM ; 
-	0.00000e+00 26 	Reich ; id _6 ; pos_index 12 ; pos_index_score 0 ; pos NAM ; pbreak B ; 

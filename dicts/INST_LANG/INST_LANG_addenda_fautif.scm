@@ -1,7 +1,7 @@
 (defvar verbose_addendas)
 (if verbose_addendas (format t "addenda_fautif.scm loaded"))
 
-(lex.add.entry '("ayants_droit" NOM ((("eh") 0) (("j" "ahn") 0) ((d "rh" "w" "a") 0))))
+(lex.add.entry '("ayants_droit" NOM ((("e") 0) (("j" "ahn") 0) ((d "rh" "w" "a") 0))))
 ; /!\ bizarrerie de wordroot
 ; (wordroot "États_généraux" nil) -> États_générau
 ; (wordroot "états_généraux" nil) -> états_générau"
@@ -15,6 +15,14 @@
 ; et ça ne marcherait pas !! TODO
 ; MAIS cela marche pour des mots non composés
 ; voir le cas de "ranger" (SayText "le ranger se mit à ranger")
+
+;; pour verbes "réguliers" non dans poslex
+(lex.add.entry '("n_aiment" nil (((n "eh" m) 0)))); et non ahn
+
+;; 
+(lex.add.entry '("n_ont_VER" VER (((n "ohn") 0))))
+(lex.add.entry '("n_ont_AUX" AUX (((n "ohn") 0))))
+
 
 (lex.add.entry '("n_arriveré" nil ((("a") 0) (("rh" "i") 0) (("v" "rh" "e") 0))))
 (lex.add.entry '("en_quoi" nil ((("ahn") 0) (("k" "w" "a") 0)))); et non ahn n 
@@ -171,7 +179,7 @@
 (lex.add.entry '("tardez-vou" nil ((("t" "a" "rh") 0) (("d" "e") 0) (("v" "u") 0))))
 (lex.add.entry '("va-t_on" nil ((("v" "a") 0) (("t" "ohn") 0)))); ok
 (lex.add.entry '("venons-en" nil ((("v" "n" "ohn") 0) (("z" "ahn") 0))))
- (lex.add.entry '("profitez-en" nil ((("p" "rh" "oh") 0) (("f" "i") 0) (("t" "eh") 0) (("z" "ahn") 0))))
+(lex.add.entry '("profitez-en" nil ((("p" "rh" "oh") 0) (("f" "i") 0) (("t" "e") 0) (("z" "ahn") 0))))
 (lex.add.entry '("verron" nil ((("v" "eh") 0) (("rh" "ohn") 0)))); ok
 (lex.add.entry '("vire-moi" nil ((("v" "i" "rh") 0) (("m" "w" "a") 0)))); ok
 (lex.add.entry '("vis-à-vi" nil ((("v" "i") 0) (("z" "a") 0) (("v" "i") 0)))); ok

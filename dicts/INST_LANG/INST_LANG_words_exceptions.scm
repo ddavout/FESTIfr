@@ -180,6 +180,7 @@
         ; "canifs"
         ; "captifs"
         ; "captives"
+        "cependant" ; ADV long
         ; "cerfs"
         ; "chars"
         "châssis"; sing. ou plur.
@@ -262,6 +263,7 @@
         ; "liards"
         ; "lords"
         ; "logis"
+        "longtemps" ; ADV long
         ; "marcs"
         ; "mélodies"; siwi
         ; "milliards"
@@ -289,6 +291,7 @@
         ; "porcs"
         ; "ports"
         "pouls"; sing. ou plur. OBLG
+        "pourtant"; pourtant issu
         ; "puisards"
         ; "rapports"
         ; "regards"
@@ -1568,8 +1571,19 @@
 (define (is_exception_ONO->ADV na_word na_next_word))
 (define (is_exception_ONO->PRO:per na_word na_next_word))
 
-(define (is_exception_PRE->ADJ na_word na_next_word))
+; se soucier des autres... -> t
+(define (is_exception_PRE->ADJ na_word na_next_word)
+      (if (or (member_string na_next_word list_exclus*->)
+          (member_string na_word list_exclus->*)
+          )
+     (begin nil)
+     (begin 
+         (if (not (member_string na_word (list "des")))
+            nil
+            t))))
+
 (define (is_exception_PRE->ADJ:dem na_word na_next_word))
+
 (define (is_exception_PRE->ADJ:ind na_word na_next_word)
   (if (or (member_string na_next_word list_exclus*->)
           (member_string na_word list_exclus->*)
@@ -1591,7 +1605,7 @@
      (begin nil)
      (begin 
           
-         (if (member_string na_word (list "dans" "Dans")))
+         (if (member_string na_word (list "dans" "Dans" "des" "Des")))
             t)
             nil))
 
@@ -1612,6 +1626,7 @@
 
 (define (is_exception_PRE->CON na_word na_next_word))
 
+; aujourd hui t
 (define (is_exception_PRE->NOM na_word na_next_word)
   (if (or (member_string na_next_word list_exclus*->)
           (member_string na_word list_exclus->*)
@@ -1619,7 +1634,7 @@
      (begin nil)
      (begin 
           ; en avance, en Albanie
-         (if (member_string na_word (list "sans" "Sans" "aux" "Aux" "en" "En" "chez" "Chez" "quant_aux" "Quant_aux")))
+         (if (member_string na_word (list "sans" "Sans" "aux" "Aux" "en" "En" "chez" "Chez" "quant_aux" "Quant_aux" "aujourd" "d_aujourd" )))
             t)
             nil))
 (define (is_exception_PRE->NAM na_word na_next_word)
@@ -1653,9 +1668,11 @@
 (define (is_exception_PRE->PRO:pos na_word na_next_word))
 (define (is_exception_PRE->PRO:rel na_word na_next_word))
 
+; L_essentiel vu comme PRE si n'est pas dans poslex
 (define (is_exception_PRE->VER na_word na_next_word)
   (if (or (member_string na_next_word list_exclus*->)
           (member_string na_word list_exclus->*)
+          (member_string (string-before na_word "_") (list "L" "l"))
           )
      (begin nil)
      (begin 
@@ -1814,8 +1831,10 @@
 (define (is_exception_VER->ADJ:int na_word na_next_word))
 (define (is_exception_VER->ADJ:num na_word na_next_word))
 (define (is_exception_VER->ADJ:pos na_word na_next_word))
+
+; sommes aux guets -> nil
 (define (is_exception_VER->ADV na_word na_next_word)  
-  (if (member_string na_word never_exception_list)  nil  t))
+  (if (or (member_string na_word never_exception_list) (member_string na_next_word (list "aux_aguets")))  nil  t))
 
 (set! toujours_exception_list (list "maintenant" "jeun"))
 
@@ -1824,12 +1843,11 @@
 
 ; c'est un peu fort ! t
 ; prends-en un nil
-
+; ils se baissèrent un à un nil
 (define (is_exception_VER->ART:ind na_word na_next_word)
       (if (member_string na_word never_exception_list)
         nil
-        ;(if (and (member_string na_next_word (list "un")) (not  (string-equal (string-after na_word "-" "en" ) "en")))
-        (if (and (member_string na_next_word (list "un")) (string-equal (string-after na_word "-") ""))
+        (if (and (member_string na_next_word (list "un")) (string-equal (string-after na_word "-") "") (not (member_string na_word (list "baissèrent" "levèrent"))))
             t
             nil))) 
 

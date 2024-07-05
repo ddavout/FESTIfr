@@ -58,7 +58,7 @@
               (item.set_name token1 nam1 )
 
               ;marquage pour suppression au tour suivant
-              (item.set_feat token 'delete  "next")     
+             ;;; al dente (item.set_feat token 'delete  "next")     
               ; impose le POS ou laisse poslex décider
               ; suivant que la valeur de pos_sur
               (set! pos_sur (car (tab_lookup nam1 locution2_tab)))

@@ -205,7 +205,7 @@
 ;   (lex.add.entry '("pater_noster" ((NOM -6.561) ) () ))
 ;   (lex.add.entry '("pax_americana" ((NOM -6.561) ) () ))
 ;   (lex.add.entry '("persona_grata" ((NOM -6.038) ) () ))
-;   (lex.add.entry '("persona_non_grata" ((NOM -5.959) ) () ))
+  (lex.add.entry '("persona_non_grata" ((NOM -5.959) ) () ))
 ;   (lex.add.entry '("peu_ou_prou" ((ADV -5.840) ) () ))
 ;   (lex.add.entry '("pic_vert" ((NOM -6.017) ) () ))
 ;   (lex.add.entry '("pied-à-terre" ((NOM -6.017) ) () ))

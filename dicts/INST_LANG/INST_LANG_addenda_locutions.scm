@@ -176,6 +176,7 @@
 ; (lex.add.entry '("ice_cream" ((NOM -6.385) ) () ))
 ; (lex.add.entry '("in_absentia" ((ADV -6.208) ) () ))
 ; (lex.add.entry '("in_extremis" ((ADV -5.782) ) () ))
+ (lex.add.entry '("in_extremis_ADV" ADV ((("i" "n") 0) (("eh" "k" "s") 0) (("t" "rh" "e") 0) (("m" "i" "s") 0))))
 ; (lex.add.entry '("in_memoriam" ((ADV -5.907) ) () ))
 ; (lex.add.entry '("in_pace" ((NOM -6.260) ) () ))
 ; (lex.add.entry '("in_utero" ((ADJ -5.640)(ADV -5.986) ) () ))
@@ -189,7 +190,7 @@
 
 
 (lex.add.entry '("j._c" NOM (((zh e) 0) ((z y) 0)((k rh i s t) 0)))) ; truc
-(lex.add.entry '("messieurs_dames" NOM (((m e) 0) ((s j oe) 0) ((d a m) 0))))
+(lex.add.entry '("messieurs_dame" NOM (((m e) 0) ((s j oe) 0) ((d o m) 0))))
 (lex.add.entry '("nota_bene" NOM (((n o)0)((t a)0)((b e)0)((n e)0)))) 
 (lex.add.entry '("pic_vert" NOM (((p i) 0) ((v eh rh) 0))))
 (lex.add.entry '("post_scriptum" NOM (((p oh s t) 0) ((s k rh i p) 0) ((t oh m) 0))))

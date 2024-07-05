@@ -64,6 +64,7 @@
 (lex.add.entry '("n_y_en_a" (( AUX -0.616) ( VER -1.569))())) ; neut_book_s01_0119                
 (lex.add.entry '("n_étaient" (( VER -2.384))())) 
 (lex.add.entry '("n_était" (( VER -2.384))()))
+(lex.add.entry '("n_aiment" ( ( VER -3.609) )()))
 
 (lex.add.entry '("et_caetera" ( ( ADV -5.509) )())) 
 (lex.add.entry '("et_cetera" ( ( ADV -4.893) )())) 
