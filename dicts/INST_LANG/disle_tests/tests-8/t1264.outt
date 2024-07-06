@@ -1,0 +1,18 @@
+separator ;
+nfields 1
+#
+	0.00000e+00 26 	Un ; id _1 ; whitespace "" ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	fait ; id _2 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	est ; id _3 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	coïncident ; id _4 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	à ; id _5 ; whitespace " " ; prepunctuation "" ; ru QTletter ; pos PRE ; 
+	0.00000e+00 26 	un ; id _6 ; whitespace " " ; prepunctuation "" ; ru QTloc2m ; pos PRO:ind ; 
+	0.00000e+00 26 	un_autre ; id _7 ; punc , ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	lorsqu ; id _8 ; whitespace " " ; prepunctuation "" ; ru QTbefapo ; delete next ; 
+	0.00000e+00 26 	lorsqu_il ; id _9 ; whitespace " " ; prepunctuation "" ; pos CON ; ru del ; 
+	0.00000e+00 26 	est ; id _10 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	arrivé ; id _11 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	dans ; id _12 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	le ; id _13 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	même ; id _14 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	temps ; id _15 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 

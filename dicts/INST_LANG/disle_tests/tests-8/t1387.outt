@@ -1,0 +1,16 @@
+separator ;
+nfields 1
+#
+	0.00000e+00 26 	il ; id _1 ; whitespace "" ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	ne ; id _2 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	vous ; id _3 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	eût ; id _4 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	pas ; id _5 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	été ; id _6 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	permis ; id _7 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	de ; id _8 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	vivre ; id _9 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	d ; id _10 ; whitespace " " ; prepunctuation "" ; ru QTbefapo ; delete next ; 
+	0.00000e+00 26 	d_humeur ; id _11 ; punc , ; whitespace " " ; prepunctuation "" ; pos 0 ; ru del ; 
+	0.00000e+00 26 	de ; id _12 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	tempérament ; id _13 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 

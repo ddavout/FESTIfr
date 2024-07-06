@@ -1,0 +1,8 @@
+separator ;
+nfields 1
+#
+	0.00000e+00 26 	; ; id _1 ; punc ";;;;;;;;;;;;;;;;;;;;;;;;;;" ; whitespace "" ; prepunctuation "" ; ru QTmis ; 
+	0.00000e+00 26 	10sans ; id _2 ; whitespace " " ; prepunctuation "" ; ru QTmis ; 
+	0.00000e+00 26 	espace ; id _3 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	" ; id _4 ; whitespace " " ; prepunctuation "" ; ru QTpos0 ; 
+	0.00000e+00 26 	50 ; id _5 ; whitespace " " ; prepunctuation "" ; token_pos cardinal ; ru QTdiglist ; 

@@ -1,0 +1,11 @@
+separator ;
+nfields 1
+#
+	0.00000e+00 26 	quand ; id _1 ; whitespace "" ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	reviendra ; id _2 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	le ; id _3 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	printemps ; id _4 ; punc , ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	nous ; id _5 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	ferons ; id _6 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	la ; id _7 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	fête ; id _8 ; punc . ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 

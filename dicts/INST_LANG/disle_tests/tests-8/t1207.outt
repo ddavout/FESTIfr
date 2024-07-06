@@ -1,0 +1,9 @@
+separator ;
+nfields 1
+#
+	0.00000e+00 26 	deux ; id _1 ; whitespace "" ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	poires ; id _2 ; punc , ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	leurs ; id _3 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	aventures ; id _4 ; punc , ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	son ; id _5 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	adjectif ; id _6 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 

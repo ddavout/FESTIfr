@@ -1,0 +1,8 @@
+separator ;
+nfields 1
+#
+	0.00000e+00 26 	Il ; id _1 ; whitespace "" ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	ne ; id _2 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	sait ; id _3 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	quoi ; id _4 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	faire ; id _5 ; punc . ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 

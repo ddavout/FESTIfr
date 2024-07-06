@@ -1,0 +1,5 @@
+separator ;
+nfields 1
+#
+	0.00000e+00 26 	Dequels ; id _1 ; whitespace "" ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	parlez-vous ; id _2 ; punc ? ; whitespace " " ; prepunctuation "" ; ru QTnormal ; pos VER ; 

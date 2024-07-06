@@ -1,0 +1,19 @@
+separator ;
+nfields 1
+#
+	0.00000e+00 26 	en ; id _1 ; whitespace "" ; prepunctuation "" ; ru QTloc2m ; pos ADV ; 
+	0.00000e+00 26 	en_plus ; id _2 ; punc , ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	en ; id _3 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	moins ; id _4 ; punc , ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	en ; id _5 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	trop ; id _6 ; punc , ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	en ; id _7 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	Allemagne ; id _8 ; punc , ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	en ; id _9 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	traître ; id _10 ; punc , ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	en ; id _11 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	fonction ; id _12 ; punc , ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	en ; id _13 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	coton ; id _14 ; punc , ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	en ; id _15 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	larmes ; id _16 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 

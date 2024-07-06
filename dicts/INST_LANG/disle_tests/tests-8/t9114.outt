@@ -1,0 +1,8 @@
+separator ;
+nfields 1
+#
+	0.00000e+00 26 	une ; id _1 ; whitespace "" ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	source ; id _2 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	de ; id _3 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	mieux ; id _4 ; whitespace " " ; prepunctuation "" ; ru QTloc2m ; pos ADV ; 
+	0.00000e+00 26 	mieux_être ; id _5 ; whitespace " " ; prepunctuation "" ; punc 0 ; ru QTnormal ; 

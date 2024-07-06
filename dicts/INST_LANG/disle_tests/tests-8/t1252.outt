@@ -1,0 +1,17 @@
+separator ;
+nfields 1
+#
+	0.00000e+00 26 	L ; id _1 ; whitespace "" ; prepunctuation "" ; ru QTbefapo ; delete next ; 
+	0.00000e+00 26 	L_éducation ; id _2 ; whitespace " " ; prepunctuation "" ; pos 0 ; ru del ; 
+	0.00000e+00 26 	des ; id _3 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	enfants ; id _4 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	est ; id _5 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	une ; id _6 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	chose ; id _7 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	à ; id _8 ; whitespace " " ; prepunctuation "" ; ru QTletter ; pos PRE ; 
+	0.00000e+00 26 	quoi ; id _9 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	il ; id _10 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	faut ; id _11 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	s ; id _12 ; whitespace " " ; prepunctuation "" ; ru QTbefapo ; delete next ; 
+	0.00000e+00 26 	s_attacher ; id _13 ; whitespace " " ; prepunctuation "" ; pos VER ; ru del ; 
+	0.00000e+00 26 	fortement ; id _14 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 

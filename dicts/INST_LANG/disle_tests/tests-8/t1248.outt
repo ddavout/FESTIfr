@@ -1,0 +1,20 @@
+separator ;
+nfields 1
+#
+	0.00000e+00 26 	Il ; id _1 ; whitespace "" ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	se ; id _2 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	trouve ; id _3 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	vis-à-vis ; id _4 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	de ; id _5 ; whitespace " " ; prepunctuation "" ; ru QTloc2m ; pos ADV ; 
+	0.00000e+00 26 	de_rien ; id _6 ; punc , ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	se ; id _7 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	dit ; id _8 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	d ; id _9 ; whitespace " " ; prepunctuation "" ; ru QTbefapo ; delete next ; 
+	0.00000e+00 26 	d_un ; id _10 ; whitespace " " ; prepunctuation "" ; pos 0 ; ru del ; 
+	0.00000e+00 26 	homme ; id _11 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	dont ; id _12 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	tout ; id _13 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	l ; id _14 ; whitespace " " ; prepunctuation "" ; ru QTbefapo ; delete next ; 
+	0.00000e+00 26 	l_avoir ; id _15 ; whitespace " " ; prepunctuation "" ; pos 0 ; ru del ; 
+	0.00000e+00 26 	a ; id _16 ; whitespace " " ; prepunctuation "" ; ru QTletter ; pos PRE ; 
+	0.00000e+00 26 	disparu ; id _17 ; punc . ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 

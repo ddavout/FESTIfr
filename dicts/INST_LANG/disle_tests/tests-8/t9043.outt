@@ -1,0 +1,10 @@
+separator ;
+nfields 1
+#
+	0.00000e+00 26 	parce ; id _1 ; whitespace "" ; prepunctuation "" ; ru QTloc2m ; pos CON ; 
+	0.00000e+00 26 	parce_qu ; id _2 ; whitespace " " ; prepunctuation "" ; punc 0 ; ru QTbefapo ; delete next ; 
+	0.00000e+00 26 	parce_qu_on ; id _3 ; whitespace " " ; prepunctuation "" ; pos CON ; ru del ; 
+	0.00000e+00 26 	y ; id _4 ; whitespace " " ; prepunctuation "" ; ru QTletter ; pos ADV ; 
+	0.00000e+00 26 	voit ; id _5 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	une ; id _6 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	issue ; id _7 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 

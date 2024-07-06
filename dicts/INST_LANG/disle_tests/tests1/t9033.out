@@ -1,8 +1,0 @@
-separator ;
-nfields 1
-#
-	0.00000e+00 26 	y_a ; id _8 ; pos_index 22 ; pos_index_score 0 ; pos VER ; 
-	0.00000e+00 26 	qu_à ; id _9 ; pos_index 15 ; pos_index_score 0 ; pos PRE ; 
-	0.00000e+00 26 	en ; id _10 ; pos_index 15 ; pos_index_score 0 ; pos PRE ; 
-	0.00000e+00 26 	faire ; id _11 ; pos_index 22 ; pos_index_score 0 ; pos VER ; 
-	0.00000e+00 26 	autant ; id _12 ; pos_index 6 ; pos_index_score 0 ; pos ADV ; pbreak B ; 

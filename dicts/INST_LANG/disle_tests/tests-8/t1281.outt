@@ -1,0 +1,12 @@
+separator ;
+nfields 1
+#
+	0.00000e+00 26 	donnez-en ; id _1 ; whitespace "" ; prepunctuation "" ; ru QTnormal ; pos VER ; 
+	0.00000e+00 26 	un ; id _2 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	ou ; id _3 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	deux ; id _4 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	exemples ; id _5 ; punc , ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	s ; id _6 ; whitespace " " ; prepunctuation "" ; ru QTbefapo ; delete next ; 
+	0.00000e+00 26 	s_il ; id _7 ; whitespace " " ; prepunctuation "" ; pos VER ; ru del ; 
+	0.00000e+00 26 	vous ; id _8 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	plait ; id _9 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 

@@ -1,0 +1,5 @@
+separator ;
+nfields 1
+#
+	0.00000e+00 26 	Aix-en-provence ; id _1 ; punc , ; whitespace "" ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	Aix-les-bains ; id _2 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 

@@ -1,0 +1,11 @@
+separator ;
+nfields 1
+#
+	0.00000e+00 26 	Il ; id _1 ; whitespace "" ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	y ; id _2 ; whitespace " " ; prepunctuation "" ; ru QTletter ; pos ADV ; 
+	0.00000e+00 26 	a ; id _3 ; whitespace " " ; prepunctuation "" ; ru QTletter ; pos PRE ; 
+	0.00000e+00 26 	eu ; id _4 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	1000 ; id _5 ; whitespace " " ; prepunctuation "" ; token_pos cardinal ; ru QTdiglist ; 
+	0.00000e+00 26 	soldats ; id _6 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	de ; id _7 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	tués ; id _8 ; punc . ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 

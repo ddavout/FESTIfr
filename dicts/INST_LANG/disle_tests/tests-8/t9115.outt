@@ -1,0 +1,13 @@
+separator ;
+nfields 1
+#
+	0.00000e+00 26 	au ; id _1 ; whitespace "" ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	jour ; id _2 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	d ; id _3 ; whitespace " " ; prepunctuation "" ; ru QTbefapo ; delete next ; 
+	0.00000e+00 26 	d_aujourd ; id _4 ; whitespace " " ; prepunctuation "" ; pos 0 ; ru del ; 
+	0.00000e+00 26 	hui ; id _5 ; whitespace ' ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	et ; id _6 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	non ; id _7 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	pas ; id _8 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	avant ; id _9 ; whitespace " " ; prepunctuation "" ; ru QTloc2m ; pos ADV ; 
+	0.00000e+00 26 	avant_hier ; id _10 ; whitespace " " ; prepunctuation "" ; punc 0 ; ru QTnormal ; 

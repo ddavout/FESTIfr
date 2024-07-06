@@ -1,0 +1,5 @@
+separator ;
+nfields 1
+#
+	0.00000e+00 26 	qu ; id _1 ; whitespace "" ; prepunctuation "" ; ru QTbefapo ; delete next ; 
+	0.00000e+00 26 	qu_obtient-on ; id _2 ; punc ? ; whitespace " " ; prepunctuation "" ; pos CON ; ru del ; 

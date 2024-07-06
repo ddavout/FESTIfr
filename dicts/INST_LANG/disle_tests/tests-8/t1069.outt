@@ -1,0 +1,15 @@
+separator ;
+nfields 1
+#
+	0.00000e+00 26 	bien ; id _1 ; whitespace "" ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	des ; id _2 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	gens ; id _3 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	m ; id _4 ; whitespace " " ; prepunctuation "" ; ru QTbefapo ; delete next ; 
+	0.00000e+00 26 	m_ont ; id _5 ; whitespace " " ; prepunctuation "" ; pos VER ; ru del ; 
+	0.00000e+00 26 	dit ; id _6 ; punc , ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	trop ; id _7 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	de ; id _8 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	cas ; id _9 ; punc , ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	trop ; id _10 ; whitespace " " ; prepunctuation "" ; ru QTbefapo ; delete next ; 
+	0.00000e+00 26 	trop_d ; id _11 ; whitespace " " ; prepunctuation "" ; punc 0 ; ru del ; 
+	0.00000e+00 26 	argent ; id _12 ; whitespace ' ; prepunctuation "" ; ru QTnormal ; 

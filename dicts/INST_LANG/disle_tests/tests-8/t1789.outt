@@ -1,0 +1,7 @@
+separator ;
+nfields 1
+#
+	0.00000e+00 26 	¼ ; id _1 ; whitespace "" ; prepunctuation "" ; ru QTmis ; 
+	0.00000e+00 26 	l ; id _2 ; punc . ; whitespace " " ; prepunctuation "" ; ru QTmis ; 
+	0.00000e+00 26 	d ; id _3 ; whitespace " " ; prepunctuation "" ; ru QTbefapo ; delete next ; 
+	0.00000e+00 26 	d_eau ; id _4 ; whitespace " " ; prepunctuation "" ; pos 0 ; ru del ; 

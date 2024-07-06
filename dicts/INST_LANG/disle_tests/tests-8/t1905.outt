@@ -1,0 +1,6 @@
+separator ;
+nfields 1
+#
+	0.00000e+00 26 	gagne-t_il ; id _1 ; whitespace "" ; prepunctuation "" ; ru QTnormal ; pos VER ; 
+	0.00000e+00 26 	sa ; id _2 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	vie ; id _3 ; punc ? ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 

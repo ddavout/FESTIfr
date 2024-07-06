@@ -1,0 +1,15 @@
+separator ;
+nfields 1
+#
+	0.00000e+00 26 	c ; id _1 ; whitespace "" ; prepunctuation "" ; ru QTbefapo ; delete next ; 
+	0.00000e+00 26 	c_est ; id _2 ; whitespace " " ; prepunctuation "" ; pos VER ; ru del ; 
+	0.00000e+00 26 	tout ; id _3 ; whitespace " " ; prepunctuation "" ; ru QTbefapo ; delete next ; 
+	0.00000e+00 26 	tout_à ; id _4 ; whitespace " " ; prepunctuation "" ; punc 0 ; ru del ; 
+	0.00000e+00 26 	" ; id _5 ; whitespace " " ; prepunctuation "" ; ru QTpos0 ; 
+	0.00000e+00 26 	coup ; id _6 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	" ; id _7 ; whitespace " " ; prepunctuation "" ; ru QTpos0 ; 
+	0.00000e+00 26 	qu ; id _8 ; whitespace " " ; prepunctuation "" ; ru QTbefapo ; delete next ; 
+	0.00000e+00 26 	qu_il ; id _9 ; whitespace " " ; prepunctuation "" ; pos CON ; ru del ; 
+	0.00000e+00 26 	prit ; id _10 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	la ; id _11 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	volée ; id _12 ; punc . ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 

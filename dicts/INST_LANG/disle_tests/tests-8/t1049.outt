@@ -1,0 +1,6 @@
+separator ;
+nfields 1
+#
+	0.00000e+00 26 	Allons ; id _1 ; punc ! ; whitespace "" ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	Que ; id _2 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	tardez-vous ; id _3 ; punc ? ; whitespace " " ; prepunctuation "" ; ru QTnormal ; pos VER ; 

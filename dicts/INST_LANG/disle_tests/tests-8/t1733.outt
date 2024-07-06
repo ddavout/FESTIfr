@@ -1,0 +1,7 @@
+separator ;
+nfields 1
+#
+	0.00000e+00 26 	Croyez-moi ; id _1 ; punc , ; whitespace "" ; prepunctuation "" ; ru QTnormal ; pos VER ; 
+	0.00000e+00 26 	cela ; id _2 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	vaut ; id _3 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	mieux ; id _4 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 

@@ -1,0 +1,17 @@
+separator ;
+nfields 1
+#
+	0.00000e+00 26 	il ; id _1 ; whitespace "" ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	est ; id _2 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	question ; id _3 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	de ; id _4 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	pourcent ; id _5 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	mais ; id _6 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	on ; id _7 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	devrait ; id _8 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	entendre ; id _9 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	aussi ; id _10 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	virgule ; id _11 ; punc : ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	24 ; id _12 ; punc , ; whitespace " " ; prepunctuation "" ; token_pos cardinal ; ru QTdiglist ; 
+	0.00000e+00 26 	56 ; id _13 ; whitespace " " ; prepunctuation "" ; token_pos cardinal ; ru QTdiglist ; 
+	0.00000e+00 26 	% ; id _14 ; whitespace " " ; prepunctuation "" ; ru QTmis ; 

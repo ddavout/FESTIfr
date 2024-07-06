@@ -1,0 +1,10 @@
+separator ;
+nfields 1
+#
+	0.00000e+00 26 	voici ; id _1 ; whitespace "" ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	un ; id _2 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	adj ; id _3 ; punc . ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	à ; id _4 ; whitespace " " ; prepunctuation "" ; ru QTletter ; pos PRE ; 
+	0.00000e+00 26 	la ; id _5 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	pp ; id _6 ; punc . ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	4 ; id _7 ; punc ? ; whitespace " " ; prepunctuation "" ; token_pos cardinal ; ru QTdiglist ; 

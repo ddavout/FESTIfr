@@ -1,0 +1,5 @@
+separator ;
+nfields 1
+#
+	0.00000e+00 26 	Allez-y ; id _1 ; punc , ; whitespace "" ; prepunctuation "" ; ru QTnormal ; pos VER ; 
+	0.00000e+00 26 	moquez-vous ; id _2 ; punc ! ; whitespace " " ; prepunctuation "" ; ru QTnormal ; pos VER ; 

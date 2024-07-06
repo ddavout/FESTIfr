@@ -1,0 +1,5 @@
+separator ;
+nfields 1
+#
+	0.00000e+00 26 	donne-moi-s ; id _1 ; whitespace "" ; prepunctuation "" ; ru QTbefapo ; delete next ; 
+	0.00000e+00 26 	donne-moi-s_en ; id _2 ; whitespace " " ; prepunctuation "" ; pos 0 ; ru del ; 

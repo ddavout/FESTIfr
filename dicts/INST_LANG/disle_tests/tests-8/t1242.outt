@@ -1,0 +1,8 @@
+separator ;
+nfields 1
+#
+	0.00000e+00 26 	à ; id _1 ; whitespace "" ; prepunctuation "" ; ru QTletter ; pos PRE ; 
+	0.00000e+00 26 	une ; id _2 ; whitespace " " ; prepunctuation "" ; ru QTloc2m ; pos PRO:ind ; 
+	0.00000e+00 26 	une_autre ; id _3 ; whitespace " " ; prepunctuation "" ; punc 0 ; ru QTnormal ; 
+	0.00000e+00 26 	fois ; id _4 ; punc , ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	peut-être ; id _5 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 

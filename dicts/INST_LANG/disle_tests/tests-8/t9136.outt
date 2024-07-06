@@ -1,0 +1,7 @@
+separator ;
+nfields 1
+#
+	0.00000e+00 26 	quelques ; id _1 ; whitespace "" ; prepunctuation "" ; ru QTloc2m ; pos PRO:ind ; 
+	0.00000e+00 26 	quelques_uns ; id _2 ; whitespace " " ; prepunctuation "" ; punc 0 ; ru QTnormal ; 
+	0.00000e+00 26 	rebroussèrent ; id _3 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	chemin ; id _4 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 

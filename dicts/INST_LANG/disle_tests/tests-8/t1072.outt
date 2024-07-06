@@ -1,0 +1,9 @@
+separator ;
+nfields 1
+#
+	0.00000e+00 26 	bla ; id _1 ; whitespace "" ; prepunctuation "" ; ru QTloc2m ; pos ADV ; 
+	0.00000e+00 26 	bla_bla ; id _2 ; punc . ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	le ; id _3 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	XXe ; id _4 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	Le ; id _5 ; whitespace " " ; prepunctuation "(" ; ru QTnormal ; 
+	0.00000e+00 26 	monde ; id _6 ; punc ")" ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 

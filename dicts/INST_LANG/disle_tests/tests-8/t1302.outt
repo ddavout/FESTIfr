@@ -1,0 +1,8 @@
+separator ;
+nfields 1
+#
+	0.00000e+00 26 	empereur ; id _1 ; punc , ; whitespace "" ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	papillote ; id _2 ; punc , ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	empeigné ; id _3 ; punc , ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	empennage ; id _4 ; punc , ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	empeau ; id _5 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 

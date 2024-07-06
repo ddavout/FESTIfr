@@ -1,0 +1,7 @@
+separator ;
+nfields 1
+#
+	0.00000e+00 26 	se ; id _1 ; whitespace "" ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	voit-elle ; id _2 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; pos VER ; 
+	0.00000e+00 26 	en ; id _3 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	paysanne ; id _4 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 

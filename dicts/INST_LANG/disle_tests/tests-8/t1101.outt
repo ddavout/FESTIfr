@@ -1,0 +1,12 @@
+separator ;
+nfields 1
+#
+	0.00000e+00 26 	cabus ; id _1 ; punc , ; whitespace "" ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	inclus ; id _2 ; punc , ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	perclus ; id _3 ; punc , ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	jésus ; id _4 ; punc , ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	intrus ; id _5 ; punc , ; whitespace "  " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	merlus ; id _6 ; punc , ; whitespace "  " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	actus ; id _7 ; punc , ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	cabus ; id _8 ; punc , ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	cocus ; id _9 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 

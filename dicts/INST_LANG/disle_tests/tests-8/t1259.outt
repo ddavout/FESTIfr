@@ -1,0 +1,22 @@
+separator ;
+nfields 1
+#
+	0.00000e+00 26 	Quoi ; id _1 ; punc ! ; whitespace "" ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	mes ; id _2 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	plus ; id _3 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	chers ; id _4 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	amis ; id _5 ; punc ! ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	quoi ; id _6 ; punc ! ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	Cinna ; id _7 ; punc ! ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	quoi ; id _8 ; punc ! ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	Maxime ; id _9 ; punc ! ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	Les ; id _10 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	deux ; id _11 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	que ; id _12 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	j ; id _13 ; whitespace " " ; prepunctuation "" ; ru QTbefapo ; delete next ; 
+	0.00000e+00 26 	j_honorais ; id _14 ; whitespace " " ; prepunctuation "" ; pos VER ; ru del ; 
+	0.00000e+00 26 	d ; id _15 ; whitespace " " ; prepunctuation "" ; ru QTbefapo ; delete next ; 
+	0.00000e+00 26 	d_une ; id _16 ; whitespace " " ; prepunctuation "" ; pos 0 ; ru del ; 
+	0.00000e+00 26 	si ; id _17 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	haute ; id _18 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	estime ; id _19 ; punc ! ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 

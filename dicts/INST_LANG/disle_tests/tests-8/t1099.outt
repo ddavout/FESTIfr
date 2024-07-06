@@ -1,0 +1,5 @@
+separator ;
+nfields 1
+#
+	0.00000e+00 26 	c ; id _1 ; whitespace "" ; prepunctuation "" ; ru QTbefapo ; delete next ; 
+	0.00000e+00 26 	c_est-à-dire ; id _2 ; whitespace " " ; prepunctuation "" ; pos VER ; ru del ; 

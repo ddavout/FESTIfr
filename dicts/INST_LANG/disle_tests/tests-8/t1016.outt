@@ -1,0 +1,9 @@
+separator ;
+nfields 1
+#
+	0.00000e+00 26 	1_o ; id _1 ; whitespace "" ; prepunctuation "" ; ru QTmis ; 
+	0.00000e+00 26 	de ; id _2 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	l ; id _3 ; whitespace " " ; prepunctuation "" ; ru QTbefapo ; delete next ; 
+	0.00000e+00 26 	l_ordonnance ; id _4 ; whitespace " " ; prepunctuation "" ; pos 0 ; ru del ; 
+	0.00000e+00 26 	n_o ; id _5 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	2005 ; id _6 ; whitespace " " ; prepunctuation "" ; token_pos cardinal ; ru QTdiglist ; 

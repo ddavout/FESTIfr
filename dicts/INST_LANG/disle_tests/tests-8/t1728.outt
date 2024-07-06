@@ -1,0 +1,6 @@
+separator ;
+nfields 1
+#
+	0.00000e+00 26 	Vous ; id _1 ; whitespace "" ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	y ; id _2 ; whitespace " " ; prepunctuation "" ; ru QTletter ; pos ADV ; 
+	0.00000e+00 26 	viendrez ; id _3 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 

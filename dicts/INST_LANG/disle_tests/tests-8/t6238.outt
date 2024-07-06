@@ -1,0 +1,5 @@
+separator ;
+nfields 1
+#
+	0.00000e+00 26 	M ; id _1 ; punc . ; whitespace "" ; prepunctuation "" ; ru QTmis ; 
+	0.00000e+00 26 	Duras ; id _2 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 

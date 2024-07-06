@@ -1,0 +1,7 @@
+separator ;
+nfields 1
+#
+	0.00000e+00 26 	cinq ; id _1 ; punc , ; whitespace "" ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	six ; id _2 ; punc , ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	sept ; id _3 ; punc , ; whitespace "  " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	huit ; id _4 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 

@@ -1,9 +1,0 @@
-pos_pp_start_tag : VER 
-ici: INST_LANG_VOX:select
-fil: /home/getac/Develop/festival/lib/dicts/INST_LANG/disle_tests//tests/ttd BACKTRACE:
-   0: (load fil t)
-   1: (set! p (load fil t))
-   2: (begin
-    (set_backtrace t)
-    (set! suivi t)
-    ...)

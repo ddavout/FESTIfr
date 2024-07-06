@@ -1,0 +1,9 @@
+separator ;
+nfields 1
+#
+	0.00000e+00 26 	Y ; id _1 ; whitespace "" ; prepunctuation "" ; ru QTletter ; pos ADV ; 
+	0.00000e+00 26 	voit-on ; id _2 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; pos VER ; 
+	0.00000e+00 26 	une ; id _3 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	marque ; id _4 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	d ; id _5 ; whitespace " " ; prepunctuation "" ; ru QTbefapo ; delete next ; 
+	0.00000e+00 26 	d_ironie ; id _6 ; whitespace " " ; prepunctuation "" ; pos 0 ; ru del ; 

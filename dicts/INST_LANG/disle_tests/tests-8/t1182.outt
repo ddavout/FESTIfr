@@ -1,0 +1,9 @@
+separator ;
+nfields 1
+#
+	0.00000e+00 26 	de ; id _1 ; whitespace "" ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	quel ; id _2 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	acabit ; id _3 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	était-il ; id _4 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; pos VER ; 
+	0.00000e+00 26 	le ; id _5 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	conseiller ; id _6 ; punc ? ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 

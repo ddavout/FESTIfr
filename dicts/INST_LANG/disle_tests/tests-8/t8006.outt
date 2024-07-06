@@ -1,0 +1,8 @@
+separator ;
+nfields 1
+#
+	0.00000e+00 26 	un ; id _1 ; whitespace "" ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	chef ; id _2 ; whitespace " " ; prepunctuation "" ; ru QTbefapo ; delete next ; 
+	0.00000e+00 26 	chef_d ; id _3 ; whitespace " " ; prepunctuation "" ; punc 0 ; ru del ; 
+	0.00000e+00 26 	industrie ; id _4 ; whitespace ' ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	contesté ; id _5 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 

@@ -1,0 +1,8 @@
+separator ;
+nfields 1
+#
+	0.00000e+00 26 	ils ; id _1 ; whitespace "" ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	étaient ; id _2 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	tous ; id _3 ; whitespace " " ; prepunctuation "" ; ru QTloc2m ; pos ART:def ; 
+	0.00000e+00 26 	tous_les ; id _4 ; whitespace " " ; prepunctuation "" ; punc 0 ; ru QTnormal ; 
+	0.00000e+00 26 	cinq ; id _5 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 

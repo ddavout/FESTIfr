@@ -1,0 +1,8 @@
+separator ;
+nfields 1
+#
+	0.00000e+00 26 	; ; id _1 ; whitespace "" ; prepunctuation "" ; ru QTmis ; 
+	0.00000e+00 26 	des ; id _2 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	yeux ; id _3 ; punc , ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	des ; id _4 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	ouies ; id _5 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 

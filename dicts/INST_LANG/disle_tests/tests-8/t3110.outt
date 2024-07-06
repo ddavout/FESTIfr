@@ -1,0 +1,8 @@
+separator ;
+nfields 1
+#
+	0.00000e+00 26 	auquel ; id _1 ; whitespace "" ; prepunctuation "" ; ru QTloc2m ; pos ADV ; 
+	0.00000e+00 26 	auquel_cas ; id _2 ; punc , ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	il ; id _3 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	faudra ; id _4 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	agir ; id _5 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 

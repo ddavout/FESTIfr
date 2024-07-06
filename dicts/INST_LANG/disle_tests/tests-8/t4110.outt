@@ -1,0 +1,8 @@
+separator ;
+nfields 1
+#
+	0.00000e+00 26 	un ; id _1 ; whitespace "" ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	billet ; id _2 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	de ; id _3 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	1US ; id _4 ; whitespace " " ; prepunctuation "" ; ru QTmis ; 
+	0.00000e+00 26 	$ ; id _5 ; whitespace "" ; prepunctuation "" ; ru QTmis ; 

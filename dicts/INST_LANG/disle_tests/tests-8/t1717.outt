@@ -1,0 +1,5 @@
+separator ;
+nfields 1
+#
+	0.00000e+00 26 	12 ; id _1 ; whitespace "" ; prepunctuation "" ; token_pos cardinal ; ru QTdiglist ; 
+	0.00000e+00 26 	045 ; id _2 ; whitespace " " ; prepunctuation "" ; token_pos cardinal ; ru QTdiglist ; 

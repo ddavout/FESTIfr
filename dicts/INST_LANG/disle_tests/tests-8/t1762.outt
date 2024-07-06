@@ -1,0 +1,18 @@
+separator ;
+nfields 1
+#
+	0.00000e+00 26 	un ; id _1 ; whitespace "" ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	point ; id _2 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	situé ; id _3 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	par ; id _4 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	52_o ; id _5 ; whitespace " " ; prepunctuation "" ; ru QTmis ; 
+	0.00000e+00 26 	4 ; id _6 ; whitespace " " ; prepunctuation "" ; token_pos cardinal ; ru QTdiglist ; 
+	0.00000e+00 26 	de ; id _7 ; whitespace "' " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	latitude ; id _8 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	N ; id _9 ; whitespace " " ; prepunctuation "" ; pos NOM ; ru QTmis ; 
+	0.00000e+00 26 	et ; id _10 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	41_o ; id _11 ; whitespace " " ; prepunctuation "" ; ru QTmis ; 
+	0.00000e+00 26 	6 ; id _12 ; whitespace " " ; prepunctuation "" ; token_pos cardinal ; ru QTdiglist ; 
+	0.00000e+00 26 	de ; id _13 ; whitespace "' " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	longitude ; id _14 ; whitespace " " ; prepunctuation "" ; ru QTnormal ; 
+	0.00000e+00 26 	E ; id _15 ; whitespace " " ; prepunctuation "" ; ru QTmis ; 
